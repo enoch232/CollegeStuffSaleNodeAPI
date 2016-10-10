@@ -8,25 +8,24 @@ const userSchema = new mongoose.Schema({
   email:{
   	type: String,
   	required: true
-
   },
   gender:{
     type: String
   },
-  password:{
-  	type: String,
-  	required: true
+  phoneNumber:{
+    type: String
   },
-  passwordConfirmation:{
-  	type: String,
-  	required: true
+  hideNumber:{
+    type: Boolean
+  },
+  password_digest:{
+    type: String
   },
   accessToken:{
     type: String
   }
 })
 // var User = module.exports = mongoose.model('User', userSchema);
-module.exports = User = mongoose.model('User', userSchema)
-module.exports.registerUser = (params)=>{
-  console.log(params)
-}
+
+const User = mongoose.model('User', userSchema)
+module.exports = User
