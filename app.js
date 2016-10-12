@@ -16,33 +16,25 @@ const postController = require("./controllers/post")
 const sessionController = require("./controllers/session")
 
 mongoose.connect("mongodb://localhost:27017/collegestuffsale")
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 app.set("view engine", "ejs")
 app.set('views', path.join(__dirname, 'views'))
 app.use(expressJWT({secret: "this is secretkey"}).unless({path: ['/login','/signup','/api/sessions', '/api/users']}))
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next)=>{
   if (err.name === 'UnauthorizedError') {
     res.json({error: "Unauthorized."})
   }
 })
+app.use((res, req, next)=>{
+  console.log("logged.")
+  next()
+})
 app.use(express.static('public'))
 app.use('/scripts', express.static(__dirname + '/node_modules/'))
 console.log("Server is now running at port "+ port)
+
 app.listen(port)
-
-
-
-//SERVER RENDERING
-//GET
-app.get("/", postController.index)
-app.get("/posts" , postController.index)
-app.get("/login", sessionController.new)
-app.get("/signup", userController.new)
-
-//POST
-app.post("/sessions", sessionController.create)
-app.post("/users", userController.create)
 
 
 
