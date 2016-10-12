@@ -6,6 +6,8 @@ const User = require("./models/User")
 const multer = require('multer')
 const path = require("path")
 const dotenv = require("dotenv")
+const jwt = require('jsonwebtoken')
+const expressJWT = require('express-jwt')
 dotenv.load({path: ".env"})
 const port = process.env.PORT || 3000
 
@@ -18,6 +20,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 app.set("view engine", "ejs")
 app.set('views', path.join(__dirname, 'views'))
+app.use(expressJWT({secret: "this is secretkey"}).unless({path: ['/login','/signup','/sessions', '/users']}))
 app.use(express.static('public'))
 app.use('/scripts', express.static(__dirname + '/node_modules/'))
 console.log("Server is now running at port "+ port)

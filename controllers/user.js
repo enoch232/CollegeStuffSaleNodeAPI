@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 const User = require("../models/User");
 const bcrypt = require('bcrypt')
+const jwt = require("jsonwebtoken")
 
 module.exports.new = function(req, res){
   res.render("user/new")
@@ -15,7 +16,8 @@ module.exports.create = function(req, res){
   let promise = newuser.save()
   promise.then((user)=>{
   	console.log(user)
-  	res.redirect("post/dashboard")
+    let webToken = jwt.sign({username: req.body.email}, "this is secretkey")
+    res.json({webToken})
   })
   .catch((err)=>{
   	console.log("error while saving user." + err)
