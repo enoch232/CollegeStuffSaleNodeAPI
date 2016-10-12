@@ -20,12 +20,12 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 app.set("view engine", "ejs")
 app.set('views', path.join(__dirname, 'views'))
-app.use(expressJWT({secret: "this is secretkey"}).unless({path: ['/login','/signup','/sessions', '/users']}))
+app.use(expressJWT({secret: "this is secretkey"}).unless({path: ['/login','/signup','/api/sessions', '/api/users']}))
 app.use(function (err, req, res, next) {
   if (err.name === 'UnauthorizedError') {
     res.json({error: "Unauthorized."})
   }
-});
+})
 app.use(express.static('public'))
 app.use('/scripts', express.static(__dirname + '/node_modules/'))
 console.log("Server is now running at port "+ port)
@@ -47,6 +47,9 @@ app.post("/users", userController.create)
 
 
 //API
+
+//GET
+app.get("/api/posts", postController.indexAPI)
 //POST
 app.post("/api/sessions", sessionController.createAPI)
 app.post("/api/users", userController.createAPI)

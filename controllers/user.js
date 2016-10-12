@@ -35,11 +35,12 @@ module.exports.createAPI = function(req, res){
   let promise = newuser.save()
   promise.then((user)=>{
     console.log(user)
-    let webToken = jwt.sign({user_id: user._id}, "this is secretkey")
-    res.status[200].json({webToken})
+    let webToken = jwt.sign({user_id: user._id}, "this is secretkey", {expiresIn: "60"})
+    res.status(200).json({webToken})
   })
   .catch((err)=>{
-    res.status[200].json({error: err})
+    console.log(err)
+    res.status(200).json({error: err})
   })
 
 }

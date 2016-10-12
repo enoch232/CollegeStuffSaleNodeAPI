@@ -22,11 +22,13 @@ module.exports.createAPI = function(req, res){
     email: req.body.email
   }).exec()
   .then((user)=>{
-    let webToken = jwt.sign({username: user.email}, "this is secretkey")
-    res.status[200].json({webToken})
+    let webToken = jwt.sign({user_id: user._id}, "this is secretkey", {expiresIn: "60"})
+    console.log(webToken)
+    res.status(200).json({webToken})
   })
   .catch((err)=>{
-    res.status[200].json({error: err})
+    console.log(err)
+    res.status(200).json({error: err})
   })
   
 }
