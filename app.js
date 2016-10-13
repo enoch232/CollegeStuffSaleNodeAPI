@@ -43,6 +43,7 @@ console.log("Server is now running at port "+ port)
 app.listen(port)
 //Routes
 app.get('/', homeController.index)
+app.get('/signup', homeController.signup)
 
 
 //API

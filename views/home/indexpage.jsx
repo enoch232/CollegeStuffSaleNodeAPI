@@ -20,6 +20,7 @@ class IndexPage extends React.Component{
         {/* styles needed for carousel slider */}
         <link href="assets/css/owl.carousel.css" rel="stylesheet" />
         <link href="assets/css/owl.theme.css" rel="stylesheet" />
+        
         {/* include pace script for automatic web page progress bar  */}
         <div id="wrapper">
           <div className="header">
