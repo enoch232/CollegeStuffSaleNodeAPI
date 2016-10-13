@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
   },
   email:{
   	type: String,
-  	required: true
+  	required: true,
+    unique: true
   },
   gender:{
     type: String
@@ -19,7 +20,8 @@ const userSchema = new mongoose.Schema({
     type: Boolean
   },
   password_digest:{
-    type: String
+    type: String,
+    required: true
   },
   accessToken:{
     type: String
