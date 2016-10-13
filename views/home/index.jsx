@@ -1,8 +1,9 @@
 const React = require("react")
+const Category = require("./categories.jsx")
 class IndexPage extends React.Component{
-	render(){
-		return (
-      <html>
+  render() {
+    return (
+      <div>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* Fav and touch icons */}
@@ -13,117 +14,193 @@ class IndexPage extends React.Component{
         <link rel="shortcut icon" href="assets/ico/favicon.png" />
         <title>CollegeStuffSale</title>
         {/* Bootstrap core CSS */}
-        <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         {/* Custom styles for this template */}
         <link href="assets/css/style.css" rel="stylesheet" />
         {/* styles needed for carousel slider */}
-        {/* <link href="assets/css/owl.carousel.css" rel="stylesheet"> */}
+        <link href="assets/css/owl.carousel.css" rel="stylesheet" />
         <link href="assets/css/owl.theme.css" rel="stylesheet" />
+        {/* include pace script for automatic web page progress bar  */}
+        <div id="wrapper">
+          <div className="header">
+            <nav className="navbar   navbar-site navbar-default" role="navigation">
+              <div className="container">
+                <div className="navbar-header">
+                  <button data-target=".navbar-collapse" data-toggle="collapse" className="navbar-toggle" type="button">
+                    <span className="sr-only">Toggle navigation</span> <span className="icon-bar" /> <span className="icon-bar" /> <span className="icon-bar" /></button>
+                  <a href="/" className="navbar-brand logo logo-title">
+                    {/* Original Logo will be placed here  */}
+                    <span className="logo-icon"><i className="icon icon-search-1 ln-shadow-logo shape-0" /> </span>
+                    College<span>StuffSale </span> </a></div>
+                <div className="navbar-collapse collapse">
+                  <ul className="nav navbar-nav navbar-right">
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">Signup</a></li>
+                    <li className="postadd"><a className="btn btn-block   btn-border btn-post btn-danger" href="/post/new">Post New Item</a></li>
+                  </ul>
+                </div>
+                {/*/.nav-collapse */}
+              </div>
+              {/* /.container-fluid */}
+            </nav>
+          </div>
+          {/* /.header */}
+          <div className="intro" style={{backgroundImage: 'url(assets/img/bg3.jpg)'}}>
+            <div className="dtable hw100">
+              <div className="dtable-cell hw100">
+                <div className="container text-center">
+                  <h1 className="intro-title animated fadeInDown">The Largest Online Marketplace for Your College Expereince </h1>
+                  <p className="sub animateme fittext3 animated fadeIn"> Buy, Sell Your College Items Today </p>
+                  <div className="row search-row animated fadeInUp">
+                    <div className="col-lg-4 col-sm-4 search-col relative locationicon">
+                      <i className="icon-location-2 icon-append" />
+                      <input type="text" name="country" id="autocomplete-ajax" className="form-control locinput input-rel searchtag-input has-icon" placeholder="University/School..." defaultValue />
+                    </div>
+                    <div className="col-lg-4 col-sm-4 search-col relative"><i className="icon-docs icon-append" />
+                      <input type="text" name="ads" className="form-control has-icon" placeholder="I'm looking for a ..." defaultValue />
+                    </div>
+                    <div className="col-lg-4 col-sm-4 search-col">
+                      <button className="btn btn-primary btn-search btn-block"><i className="icon-search" /><strong>Find</strong></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* /.intro */}
+          <div className="main-container">
+            <div className="container">
+              <div className="col-lg-12 content-box" id="content-box">
+                {/*moved to react file */}
+                <Category />
+              </div>
+              <div style={{clear: 'both'}} />
 
-        <body>
-	        <div id="wrapper">
-	          <div className="header">
-	            <nav className="navbar navbar-site navbar-default" role="navigation">
-	              <div className="container">
-	                <div className="navbar-header">
-	                  <button data-target=".navbar-collapse" data-toggle="collapse" className="navbar-toggle" type="button">
-	                    <span className="sr-only">Toggle navigation</span> <span className="icon-bar" />
-	                    <span className="icon-bar" /> <span className="icon-bar" />
-	                  </button>
-	                  <a href="index-v-2.html" className="navbar-brand logo logo-title">
-	                    {/* Original Logo will be placed here  */}
-	                    <span className="logo-icon">
-	                      <i className="icon icon-search-1 ln-shadow-logo shape-0">
-	                      </i>
-	                    </span>College<span>StuffSale</span>
-	                  </a>
-	                </div>
-	                <div className="navbar-collapse collapse">
-	                  <ul className="nav navbar-nav navbar-right">
-	                    <li><a href="login.html">Login</a></li>
-	                    <li><a href="signup.html">Signup</a></li>
-	                    <li className="postadd">
-	                      <a className="btn btn-block btn-border btn-post btn-danger" href="post-ads.html">Post New Item</a>
-	                    </li>
-	                  </ul>
-	                </div>
-	                {/*/.nav-collapse */}
-	              </div>
-	              {/* /.container-fluid */}
-	            </nav>
-	          </div>
-	          {/* /.header */}
-	          <div className="main-container">
-	            <div className="container">
-	              <div className="row">
-	                <div className="col-md-8 page-content">
-	                  <div className="inner-box category-content">
-	                    <h2 className="title-2"><i className="icon-user-add" /> Create a free account </h2>
-	                    <div className="row">
-	                      <div className="col-sm-12" id="sign-up-form">
-	                      </div>
-	                    </div>
-	                  </div>
-	                </div>
-	                {/* /.page-content */}
-	                <div className="col-md-4 reg-sidebar">
-	                  <div className="reg-sidebar-inner text-center">
-	                    <div className="promo-text-box"><i className=" icon-picture fa fa-4x icon-color-1" />
-	                      <h3><strong>Post a Free Classified</strong></h3>
-	                      <p> Post your free online classified ads with us. Lorem ipsum dolor sit amet, consectetur
-	                        adipiscing elit. </p>
-	                    </div>
-	                    <div className="promo-text-box"><i className=" icon-pencil-circled fa fa-4x icon-color-2" />
-	                      <h3><strong>Create and Manage Items</strong></h3>
-	                      <p> Nam sit amet dui vel orci venenatis ullamcorper eget in lacus.
-	                        Praesent tristique elit pharetra magna efficitur laoreet.</p>
-	                    </div>
-	                    <div className="promo-text-box"><i className="  icon-heart-2 fa fa-4x icon-color-3" />
-	                      <h3><strong>Create your Favorite ads list.</strong></h3>
-	                      <p> PostNullam quis orci ut ipsum mollis malesuada varius eget metus.
-	                        Nulla aliquet dui sed quam iaculis, ut finibus massa tincidunt.</p>
-	                    </div>
-	                  </div>
-	                </div>
-	              </div>
-	              {/* /.row */}
-	            </div>
-	            {/* /.container */}
-	          </div>
-	          {/* /.main-container */}
-	          <div className="footer" id="footer">
-	            <div className="container">
-	              <ul className=" pull-left navbar-link footer-nav">
-	                <li>
-	                  <a href="index-v-2.html">
-	                    Home
-	                  </a>
-	                  <a href="about-us.html">
-	                    About us
-	                  </a>
-	                  <a href="#">
-	                    Terms and Conditions
-	                  </a>
-	                  <a href="#">
-	                    Privacy Policy
-	                  </a>
-	                  <a href="contact.html">
-	                    Contact us
-	                  </a>
-	                  <a href="faq.html">
-	                    FAQ
-	                  </a>
-	                </li>
-	              </ul>
-	              <ul className=" pull-right navbar-link footer-nav">
-	                <li> © 2016 CollegeStuffSale</li>
-	              </ul>
-	            </div>
-	          </div>
-	          {/*/.footer*/}
-	        </div>
-        </body>
-        {/* /.wrapper */} {/* Le javascript
+              <div className="col-lg-12 content-box ">
+                <div className="row row-featured">
+                  <div style={{clear: 'both'}} />
+                  <div className=" relative  content  clearfix">
+                    <div className>
+                      <div className="tab-lite">
+                        {/* Nav tabs */}
+                        <ul className="nav nav-tabs " role="tablist">
+                          <li role="presentation" className="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"><i className="icon-location-2" /> Top Locations</a></li>
+                          <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab"><i className="icon-search" /> Top Search</a>
+                          </li>
+                          <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab"><i className="icon-th-list" /> Top Makes</a>
+                          </li>
+                        </ul>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row">
+                    
+                  </div>
+                  
+                </div>
+                <div className="col-sm-3 page-sidebar col-thin-left">
+                  <aside>
+                    
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* /.main-container */}
+          <div className="page-info hasOverly" style={{background: 'url(assets/img/bg.jpg)', backgroundSize: 'cover'}}>
+            <div className="bg-overly">
+              <div className="container text-center section-promo">
+                <div className="row">
+                  <div className="col-sm-3 col-xs-6 col-xxs-12">
+                    <div className="iconbox-wrap">
+                      <div className="iconbox">
+                        <div className="iconbox-wrap-icon">
+                          <i className="icon  icon-group" />
+                        </div>
+                        <div className="iconbox-wrap-content">
+                          <h5><span>2200</span></h5>
+                          <div className="iconbox-wrap-text">Trusted Seller</div>
+                        </div>
+                      </div>
+                      {/* /..iconbox */}
+                    </div>
+                    {/*/.iconbox-wrap*/}
+                  </div>
+                  <div className="col-sm-3 col-xs-6 col-xxs-12">
+                    <div className="iconbox-wrap">
+                      <div className="iconbox">
+                        <div className="iconbox-wrap-icon">
+                          <i className="icon  icon-th-large-1" />
+                        </div>
+                        <div className="iconbox-wrap-content">
+                          <h5><span>100</span></h5>
+                          <div className="iconbox-wrap-text">Categories</div>
+                        </div>
+                      </div>
+                      {/* /..iconbox */}
+                    </div>
+                    {/*/.iconbox-wrap*/}
+                  </div>
+                  <div className="col-sm-3 col-xs-6  col-xxs-12">
+                    <div className="iconbox-wrap">
+                      <div className="iconbox">
+                        <div className="iconbox-wrap-icon">
+                          <i className="icon  icon-map" />
+                        </div>
+                        <div className="iconbox-wrap-content">
+                          <h5><span>700</span></h5>
+                          <div className="iconbox-wrap-text">Location</div>
+                        </div>
+                      </div>
+                      {/* /..iconbox */}
+                    </div>
+                    {/*/.iconbox-wrap*/}
+                  </div>
+                  <div className="col-sm-3 col-xs-6 col-xxs-12">
+                    <div className="iconbox-wrap">
+                      <div className="iconbox">
+                        <div className="iconbox-wrap-icon">
+                          <i className="icon icon-facebook" />
+                        </div>
+                        <div className="iconbox-wrap-content">
+                          <h5><span>50,000</span></h5>
+                          <div className="iconbox-wrap-text"> Facebook Fans</div>
+                        </div>
+                      </div>
+                      {/* /..iconbox */}
+                    </div>
+                    {/*/.iconbox-wrap*/}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* /.page-info */}
+          <div className="page-bottom-info">
+            <div className="page-bottom-info-inner">
+              <div className="page-bottom-info-content text-center">
+                <h1>For Business Inquires and Assistance: 623-271-5349</h1>
+                <a className="btn  btn-lg btn-primary-dark" href="tel:+6232715349">
+                  <i className="icon-mobile" /> <span className="hide-xs color50">Call Now:</span> (623) 217-5349 </a>
+              </div>
+            </div>
+          </div>
+          <div className="footer" id="footer">
+            <div className="container">
+              <ul className=" pull-left navbar-link footer-nav">
+                <li><a href="/"> Home </a> <a href="/aboutus"> About us </a> <a href="/terms"> Terms and
+                    Conditions </a> <a href="#"> Privacy Policy </a> <a href="/contact"> Contact us </a> <a href="/faq"> FAQ </a>
+                </li></ul>
+              <ul className=" pull-right navbar-link footer-nav">
+                <li> © 2016 CollegeStuffSale</li>
+              </ul>
+            </div>
+          </div>
+          {/* /.footer */}
+        </div>
+        {/* /.wrapper */}
+        {/* Le javascript
 ================================================== */}
         {/* Placed at the end of the document so the pages load faster */}
         {/* include carousel slider plugin  */}
@@ -131,10 +208,9 @@ class IndexPage extends React.Component{
         {/* include jquery list shorting plugin plugin  */}
         {/* include jquery.fs plugin for custom scroller and selecter  */}
         {/* include custom script for site  */}
-      </html>
+        {/* include jquery autocomplete plugin  */}
+      </div>
     )
-		
-	}
-
+  }
 }
 module.exports = IndexPage
