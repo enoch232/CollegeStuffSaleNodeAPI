@@ -41,7 +41,7 @@ class SignUpForm extends React.Component{
     })
     .then((responseJson)=>{
       if (responseJson.access_token){
-        window.location = "./account-home.html"
+        window.location = "/"
       }else{
         console.log(responseJson)
       }

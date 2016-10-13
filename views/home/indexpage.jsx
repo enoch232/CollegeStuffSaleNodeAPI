@@ -20,7 +20,7 @@ class IndexPage extends React.Component{
         {/* styles needed for carousel slider */}
         <link href="assets/css/owl.carousel.css" rel="stylesheet" />
         <link href="assets/css/owl.theme.css" rel="stylesheet" />
-        
+
         {/* include pace script for automatic web page progress bar  */}
         <div id="wrapper">
           <div className="header">
@@ -37,7 +37,7 @@ class IndexPage extends React.Component{
                   <ul className="nav navbar-nav navbar-right">
                     <li><a href="/login">Login</a></li>
                     <li><a href="/signup">Signup</a></li>
-                    <li className="postadd"><a className="btn btn-block   btn-border btn-post btn-danger" href="/post/new">Post New Item</a></li>
+                    <li className="postadd"><a className="btn btn-block   btn-border btn-post btn-danger" href="/posts/new">Post New Item</a></li>
                   </ul>
                 </div>
                 {/*/.nav-collapse */}

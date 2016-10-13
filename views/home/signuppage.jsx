@@ -31,7 +31,7 @@ class SignUpPage extends React.Component{
 		                    <span className="sr-only">Toggle navigation</span> <span className="icon-bar" />
 		                    <span className="icon-bar" /> <span className="icon-bar" />
 		                  </button>
-		                  <a href="index-v-2.html" className="navbar-brand logo logo-title">
+		                  <a href="/" className="navbar-brand logo logo-title">
 		                    {/* Original Logo will be placed here  */}
 		                    <span className="logo-icon">
 		                      <i className="icon icon-search-1 ln-shadow-logo shape-0">
@@ -41,10 +41,10 @@ class SignUpPage extends React.Component{
 		                </div>
 		                <div className="navbar-collapse collapse">
 		                  <ul className="nav navbar-nav navbar-right">
-		                    <li><a href="login.html">Login</a></li>
-		                    <li><a href="signup.html">Signup</a></li>
+		                    <li><a href="/login">Login</a></li>
+		                    <li><a href="/signup">Signup</a></li>
 		                    <li className="postadd">
-		                      <a className="btn btn-block btn-border btn-post btn-danger" href="post-ads.html">Post New Item</a>
+		                      <a className="btn btn-block btn-border btn-post btn-danger" href="/posts/new">Post New Item</a>
 		                    </li>
 		                  </ul>
 		                </div>
@@ -97,22 +97,22 @@ class SignUpPage extends React.Component{
 		            <div className="container">
 		              <ul className=" pull-left navbar-link footer-nav">
 		                <li>
-		                  <a href="index-v-2.html">
+		                  <a href="/">
 		                    Home
 		                  </a>
-		                  <a href="about-us.html">
+		                  <a href="/aboutus">
 		                    About us
 		                  </a>
-		                  <a href="#">
+		                  <a href="/terms">
 		                    Terms and Conditions
 		                  </a>
-		                  <a href="#">
+		                  <a href="/privacy">
 		                    Privacy Policy
 		                  </a>
-		                  <a href="contact.html">
+		                  <a href="/contact">
 		                    Contact us
 		                  </a>
-		                  <a href="faq.html">
+		                  <a href="/faq">
 		                    FAQ
 		                  </a>
 		                </li>
