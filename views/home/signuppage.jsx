@@ -36,7 +36,7 @@ class SignUpPage extends React.Component{
 		                    <span className="logo-icon">
 		                      <i className="icon icon-search-1 ln-shadow-logo shape-0">
 		                      </i>
-		                    </span>College<span>StuffSale</span>
+		                    </span> College<span>StuffSale</span>
 		                  </a>
 		                </div>
 		                <div className="navbar-collapse collapse">

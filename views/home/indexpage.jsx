@@ -31,8 +31,8 @@ class IndexPage extends React.Component{
                     <span className="sr-only">Toggle navigation</span> <span className="icon-bar" /> <span className="icon-bar" /> <span className="icon-bar" /></button>
                   <a href="/" className="navbar-brand logo logo-title">
                     {/* Original Logo will be placed here  */}
-                    <span className="logo-icon"><i className="icon icon-search-1 ln-shadow-logo shape-0" /> </span>
-                    College<span>StuffSale </span> </a></div>
+                    <span className="logo-icon"><i className="icon icon-search-1 ln-shadow-logo shape-0" />
+                    </span> College<span>StuffSale </span> </a></div>
                 <div className="navbar-collapse collapse">
                   <ul className="nav navbar-nav navbar-right">
                     <li><a href="/login">Login</a></li>

@@ -82,7 +82,7 @@ class Category extends React.Component {
 	      </div>
 
 	      <div className="col-lg-2 col-md-3 col-sm-3 col-xs-4 f-category">
-          <a href="category.html"><img src="/assets/img/clothing.png" className="img-responsive" alt="img"/>
+          <a href="category.html"><img src="/assets/img/category/clothing.png" className="img-responsive" alt="img"/>
           	<h6> Clothing & Fashion </h6>
           </a>
 	      </div>
