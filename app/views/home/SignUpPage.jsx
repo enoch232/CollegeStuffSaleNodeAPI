@@ -17,35 +17,33 @@ class SignUpPage extends React.Component{
   }
 
   _handleSubmit(){
-		console.log("hello")
-    // return fetch('http://localhost:3000/api/users', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Accept':"application/json",
-    //     'Content-Type': 'application/x-www-form-urlencoded',
-    //   },
-    //   body: JSON.stringify({
-    //     user:{
-    //         name: (this.state.firstName + " "+ this.state.lastName),
-    //         email: this.state.email,
-    //         bio: this.state.bio,
-    //         phone_number: this.state.phoneNumber,
-    //         gender: !this.state.gender ? "male" : "female",
-    //         hideNumber: this.state.hideNumber,
-    //         password: this.state.password,
-    //         password_confirmation: this.state.passwordConfirmation
-    //       }
-    //   })
-    // })
-    // .then((response) => {
-    //   return response.json()
-    // })
-    // .then((responseJson)=>{
-    //   console.log(responseJson)
-    // })
-    // .catch((error) => {
-    //   console.error(error)
-    // })
+		console.log("fetching..")
+    return fetch('http://localhost:3000/api/users', {
+      method: 'POST',
+      headers: {
+        'Accept':"application/json",
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+	      name: (this.state.firstName + " "+ this.state.lastName),
+	      email: this.state.email,
+	      bio: this.state.bio,
+	      phone_number: this.state.phoneNumber,
+	      gender: !this.state.gender ? "male" : "female",
+	      hideNumber: this.state.hideNumber,
+	      password: this.state.password,
+	      password_confirmation: this.state.passwordConfirmation
+      })
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((responseJson)=>{
+      console.log(responseJson)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
 
 
   }
@@ -205,7 +203,7 @@ class SignUpPage extends React.Component{
 							                </label>
 							              </div>
 							              <div style={{clear: 'both'}} />
-							                <a disabled={!this.state.readTermsConditions} className="btn btn-primary" onClick = {this._handleSubmit}>
+							                <a disabled={!this.state.readTermsConditions} className="btn btn-primary" onClick = {this._handleSubmit.bind(this)}>
 							                  Register
 							                </a>
 							              </div>

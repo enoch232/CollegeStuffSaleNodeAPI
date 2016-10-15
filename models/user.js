@@ -11,6 +11,9 @@ const userSchema = new mongoose.Schema({
   	required: true,
     unique: true
   },
+  bio:{
+    type: String,
+  },
   gender:{
     type: String
   },
@@ -23,9 +26,6 @@ const userSchema = new mongoose.Schema({
   password_digest:{
     type: String,
     required: true
-  },
-  accessToken:{
-    type: String
   }
 })
 // var User = module.exports = mongoose.model('User', userSchema);

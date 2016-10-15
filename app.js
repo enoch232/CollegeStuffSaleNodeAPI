@@ -19,7 +19,7 @@ dotenv.load({path: ".env"})
 const port = process.env.PORT || 3000
 
 mongoose.connect(process.env.PROD_MONGODB_URI)
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 app.set('views', path.join(__dirname, path.join('app','views')))
 // app.set('view engine', 'jsx')
