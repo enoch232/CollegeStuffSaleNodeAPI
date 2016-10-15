@@ -27773,7 +27773,7 @@
 	        React.createElement(
 	          "title",
 	          null,
-	          "CollegeStuffSale"
+	          "CollegeStuffSaleNODE"
 	        ),
 	        React.createElement("link", { href: "assets/bootstrap/css/bootstrap.min.css", rel: "stylesheet" }),
 	        React.createElement("link", { href: "assets/css/style.css", rel: "stylesheet" }),
@@ -28267,223 +28267,111 @@
 	var React = __webpack_require__(1);
 
 	var Category = function (_React$Component) {
-	         _inherits(Category, _React$Component);
+	  _inherits(Category, _React$Component);
 
-	         function Category(props) {
-	                  _classCallCheck(this, Category);
+	  function Category(props) {
+	    _classCallCheck(this, Category);
 
-	                  var _this = _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).call(this, props));
 
-	                  _this.state = {
-	                           name: "Enoch Ko"
-	                  };
-	                  return _this;
-	         }
+	    _this.state = {
+	      name: "Enoch Ko"
+	    };
+	    return _this;
+	  }
 
-	         _createClass(Category, [{
-	                  key: "render",
-	                  value: function render() {
-	                           return React.createElement(
-	                                    "div",
-	                                    { className: "row row-featured row-featured-category" },
-	                                    React.createElement(
-	                                             "div",
-	                                             { className: "col-lg-12  box-title no-border" },
-	                                             React.createElement(
-	                                                      "div",
-	                                                      { className: "inner" },
-	                                                      React.createElement(
-	                                                               "h2",
-	                                                               null,
-	                                                               React.createElement(
-	                                                                        "span",
-	                                                                        null,
-	                                                                        "Browse by"
-	                                                               ),
-	                                                               "Category ",
-	                                                               React.createElement(
-	                                                                        "a",
-	                                                                        { href: "category.html", className: "sell-your-item" },
-	                                                                        " View more ",
-	                                                                        React.createElement("i", { className: "icon-th-list" }),
-	                                                                        " "
-	                                                               )
-	                                                      )
-	                                             )
-	                                    ),
-	                                    React.createElement(
-	                                             "div",
-	                                             { className: "col-lg-2 col-md-3 col-sm-3 col-xs-4 f-category" },
-	                                             React.createElement(
-	                                                      "a",
-	                                                      { href: "category.html" },
-	                                                      React.createElement("img", { src: "/assets/img/category/cars.jpg", className: "img-responsive", alt: "img" }),
-	                                                      React.createElement(
-	                                                               "h6",
-	                                                               null,
-	                                                               " Automobiles "
-	                                                      )
-	                                             )
-	                                    ),
-	                                    React.createElement(
-	                                             "div",
-	                                             { className: "col-lg-2 col-md-3 col-sm-3 col-xs-4 f-category" },
-	                                             React.createElement(
-	                                                      "a",
-	                                                      { href: "category.html" },
-	                                                      React.createElement("img", { src: "/assets/img/category/laptops.png", className: "img-responsive", alt: "img" }),
-	                                                      React.createElement(
-	                                                               "h6",
-	                                                               null,
-	                                                               " Computers & Tablets"
-	                                                      )
-	                                             )
-	                                    ),
-	                                    React.createElement(
-	                                             "div",
-	                                             { className: "col-lg-2 col-md-3 col-sm-3 col-xs-4 f-category" },
-	                                             React.createElement(
-	                                                      "a",
-	                                                      { href: "category.html" },
-	                                                      React.createElement("img", { src: "/assets/img/category/cellphones.png", className: "img-responsive", alt: "img" }),
-	                                                      React.createElement(
-	                                                               "h6",
-	                                                               null,
-	                                                               " Cellphones"
-	                                                      )
-	                                             )
-	                                    ),
-	                                    React.createElement(
-	                                             "div",
-	                                             { className: "col-lg-2 col-md-3 col-sm-3 col-xs-4 f-category" },
-	                                             React.createElement(
-	                                                      "a",
-	                                                      { href: "category.html" },
-	                                                      React.createElement("img", { src: "/assets/img/category/applewatch.png", className: "img-responsive", alt: "img" }),
-	                                                      React.createElement(
-	                                                               "h6",
-	                                                               null,
-	                                                               "Electronics "
-	                                                      )
-	                                             )
-	                                    ),
-	                                    React.createElement(
-	                                             "div",
-	                                             { className: "col-lg-2 col-md-3 col-sm-3 col-xs-4 f-category" },
-	                                             React.createElement(
-	                                                      "a",
-	                                                      { href: "category.html" },
-	                                                      React.createElement("img", { src: "/assets/img/category/games.png", className: "img-responsive", alt: "img" }),
-	                                                      React.createElement(
-	                                                               "h6",
-	                                                               null,
-	                                                               " Movies & Games "
-	                                                      )
-	                                             )
-	                                    ),
-	                                    React.createElement(
-	                                             "div",
-	                                             { className: "col-lg-2 col-md-3 col-sm-3 col-xs-4 f-category" },
-	                                             React.createElement(
-	                                                      "a",
-	                                                      { href: "category.html" },
-	                                                      React.createElement("img", { src: "/assets/img/category/textbooks.jpg", className: "img-responsive", alt: "img" }),
-	                                                      React.createElement(
-	                                                               "h6",
-	                                                               null,
-	                                                               " Textbooks "
-	                                                      )
-	                                             )
-	                                    ),
-	                                    React.createElement(
-	                                             "div",
-	                                             { className: "col-lg-2 col-md-3 col-sm-3 col-xs-4 f-category" },
-	                                             React.createElement(
-	                                                      "a",
-	                                                      { href: "category.html" },
-	                                                      React.createElement("img", { src: "/assets/img/category/home .png", className: "img-responsive", alt: "img" }),
-	                                                      React.createElement(
-	                                                               "h6",
-	                                                               null,
-	                                                               " Home "
-	                                                      )
-	                                             )
-	                                    ),
-	                                    React.createElement(
-	                                             "div",
-	                                             { className: "col-lg-2 col-md-3 col-sm-3 col-xs-4 f-category" },
-	                                             React.createElement(
-	                                                      "a",
-	                                                      { href: "category.html" },
-	                                                      React.createElement("img", { src: "/assets/img/category/camera.jpg", className: "img-responsive", alt: "img" }),
-	                                                      React.createElement(
-	                                                               "h6",
-	                                                               null,
-	                                                               " Cameras "
-	                                                      )
-	                                             )
-	                                    ),
-	                                    React.createElement(
-	                                             "div",
-	                                             { className: "col-lg-2 col-md-3 col-sm-3 col-xs-4 f-category" },
-	                                             React.createElement(
-	                                                      "a",
-	                                                      { href: "category.html" },
-	                                                      React.createElement("img", { src: "/assets/img/category/makeup.jpg", className: "img-responsive", alt: "img" }),
-	                                                      React.createElement(
-	                                                               "h6",
-	                                                               null,
-	                                                               " Beauty "
-	                                                      )
-	                                             )
-	                                    ),
-	                                    React.createElement(
-	                                             "div",
-	                                             { className: "col-lg-2 col-md-3 col-sm-3 col-xs-4 f-category" },
-	                                             React.createElement(
-	                                                      "a",
-	                                                      { href: "category.html" },
-	                                                      React.createElement("img", { src: "/assets/img/category/friends.png", className: "img-responsive", alt: "img" }),
-	                                                      React.createElement(
-	                                                               "h6",
-	                                                               null,
-	                                                               " Roommates "
-	                                                      )
-	                                             )
-	                                    ),
-	                                    React.createElement(
-	                                             "div",
-	                                             { className: "col-lg-2 col-md-3 col-sm-3 col-xs-4 f-category" },
-	                                             React.createElement(
-	                                                      "a",
-	                                                      { href: "category.html" },
-	                                                      React.createElement("img", { src: "/assets/img/category/jobs.png", className: "img-responsive", alt: "img" }),
-	                                                      React.createElement(
-	                                                               "h6",
-	                                                               null,
-	                                                               " Jobs "
-	                                                      )
-	                                             )
-	                                    ),
-	                                    React.createElement(
-	                                             "div",
-	                                             { className: "col-lg-2 col-md-3 col-sm-3 col-xs-4 f-category" },
-	                                             React.createElement(
-	                                                      "a",
-	                                                      { href: "category.html" },
-	                                                      React.createElement("img", { src: "/assets/img/category/clothing.png", className: "img-responsive", alt: "img" }),
-	                                                      React.createElement(
-	                                                               "h6",
-	                                                               null,
-	                                                               " Clothing & Fashion "
-	                                                      )
-	                                             )
-	                                    )
-	                           );
-	                  }
-	         }]);
+	  _createClass(Category, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "div",
+	        { className: "row row-featured row-featured-category" },
+	        React.createElement(
+	          "div",
+	          { className: "col-lg-12  box-title no-border" },
+	          React.createElement(
+	            "div",
+	            { className: "inner" },
+	            React.createElement(
+	              "h2",
+	              null,
+	              React.createElement(
+	                "span",
+	                null,
+	                "Browse by"
+	              ),
+	              "Category ",
+	              React.createElement(
+	                "a",
+	                { href: "category.html", className: "sell-your-item" },
+	                " View more ",
+	                React.createElement("i", { className: "icon-th-list" }),
+	                " "
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "col-md-4 col-md-3 col-sm-3 col-xs-4 f-category" },
+	          React.createElement(
+	            "a",
+	            { href: "category.html" },
+	            React.createElement("img", { src: "/assets/img/category/cellphones.png", className: "img-responsive", alt: "img" }),
+	            React.createElement(
+	              "h6",
+	              null,
+	              " Cellphones"
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "col-md-4 col-md-3 col-sm-3 col-xs-4 f-category" },
+	          React.createElement(
+	            "a",
+	            { href: "category.html" },
+	            React.createElement("img", { src: "/assets/img/category/applewatch.png", className: "img-responsive", alt: "img" }),
+	            React.createElement(
+	              "h6",
+	              null,
+	              "Electronics "
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "col-md-4 col-md-3 col-sm-3 col-xs-4 " },
+	          React.createElement(
+	            "a",
+	            { href: "category.html" },
+	            React.createElement("img", { src: "/assets/img/category/textbookcarry.jpg", className: "img-responsive", alt: "img" }),
+	            React.createElement(
+	              "h6",
+	              null,
+	              " Textbooks "
+	            )
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "col-md-4 col-md-3 col-sm-3 col-xs-4 f-category" },
+	          React.createElement(
+	            "a",
+	            { href: "category.html" },
+	            React.createElement("img", { src: "/assets/img/category/home .png", className: "img-responsive", alt: "img" }),
+	            React.createElement(
+	              "h6",
+	              null,
+	              " Home "
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
 
-	         return Category;
+	  return Category;
 	}(React.Component);
 
 	module.exports = Category;
