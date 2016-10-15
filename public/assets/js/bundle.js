@@ -27158,576 +27158,570 @@
 	var React = __webpack_require__(1);
 
 	var SignUpPage = function (_React$Component) {
-		_inherits(SignUpPage, _React$Component);
+			_inherits(SignUpPage, _React$Component);
 
-		function SignUpPage(props) {
-			_classCallCheck(this, SignUpPage);
+			function SignUpPage(props) {
+					_classCallCheck(this, SignUpPage);
 
-			var _this = _possibleConstructorReturn(this, (SignUpPage.__proto__ || Object.getPrototypeOf(SignUpPage)).call(this, props));
+					var _this = _possibleConstructorReturn(this, (SignUpPage.__proto__ || Object.getPrototypeOf(SignUpPage)).call(this, props));
 
-			_this.state = {
-				firstName: "",
-				lastName: "",
-				email: "",
-				phoneNumber: "",
-				hideNumber: false,
-				gender: 0, //0 is male, 1 is female
-				bio: "",
-				password: "",
-				passwordConfirmation: "",
-				readTermsConditions: 0
-			};
-			return _this;
-		}
-
-		_createClass(SignUpPage, [{
-			key: "_handleSubmit",
-			value: function _handleSubmit() {
-				console.log("hello");
-				// return fetch('http://localhost:3000/api/users', {
-				//   method: 'POST',
-				//   headers: {
-				//     'Accept':"application/json",
-				//     'Content-Type': 'application/x-www-form-urlencoded',
-				//   },
-				//   body: JSON.stringify({
-				//     user:{
-				//         name: (this.state.firstName + " "+ this.state.lastName),
-				//         email: this.state.email,
-				//         bio: this.state.bio,
-				//         phone_number: this.state.phoneNumber,
-				//         gender: !this.state.gender ? "male" : "female",
-				//         hideNumber: this.state.hideNumber,
-				//         password: this.state.password,
-				//         password_confirmation: this.state.passwordConfirmation
-				//       }
-				//   })
-				// })
-				// .then((response) => {
-				//   return response.json()
-				// })
-				// .then((responseJson)=>{
-				//   console.log(responseJson)
-				// })
-				// .catch((error) => {
-				//   console.error(error)
-				// })
-
+					_this.state = {
+							firstName: "",
+							lastName: "",
+							email: "",
+							phoneNumber: "",
+							hideNumber: false,
+							gender: 0, //0 is male, 1 is female
+							bio: "",
+							password: "",
+							passwordConfirmation: "",
+							readTermsConditions: 0
+					};
+					return _this;
 			}
-		}, {
-			key: "render",
-			value: function render() {
-				var _this2 = this;
 
-				return React.createElement(
-					"div",
-					null,
-					React.createElement("meta", { charSet: "utf-8" }),
-					React.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
-					React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "144x144", href: "assets/ico/apple-touch-icon-144-precomposed.png" }),
-					React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "114x114", href: "assets/ico/apple-touch-icon-114-precomposed.png" }),
-					React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "72x72", href: "assets/ico/apple-touch-icon-72-precomposed.png" }),
-					React.createElement("link", { rel: "apple-touch-icon-precomposed", href: "ico/apple-touch-icon-57-precomposed.png" }),
-					React.createElement("link", { rel: "shortcut icon", href: "assets/ico/favicon.png" }),
-					React.createElement(
-						"title",
-						null,
-						"CollegeStuffSale"
-					),
-					React.createElement("link", { href: "assets/bootstrap/css/bootstrap.css", rel: "stylesheet" }),
-					React.createElement("link", { href: "assets/css/style.css", rel: "stylesheet" }),
-					React.createElement("link", { href: "assets/css/owl.theme.css", rel: "stylesheet" }),
-					React.createElement(
-						"div",
-						null,
-						React.createElement(
-							"div",
-							{ id: "wrapper" },
-							React.createElement(
-								"div",
-								{ className: "header" },
-								React.createElement(
-									"nav",
-									{ className: "navbar navbar-site navbar-default", role: "navigation" },
-									React.createElement(
-										"div",
-										{ className: "container" },
-										React.createElement(
-											"div",
-											{ className: "navbar-header" },
-											React.createElement(
-												"button",
-												{ "data-target": ".navbar-collapse", "data-toggle": "collapse", className: "navbar-toggle", type: "button" },
-												React.createElement(
-													"span",
-													{ className: "sr-only" },
-													"Toggle navigation"
-												),
-												" ",
-												React.createElement("span", { className: "icon-bar" }),
-												React.createElement("span", { className: "icon-bar" }),
-												" ",
-												React.createElement("span", { className: "icon-bar" })
-											),
-											React.createElement(
-												"a",
-												{ href: "/", className: "navbar-brand logo logo-title" },
-												React.createElement(
-													"span",
-													{ className: "logo-icon" },
-													React.createElement("i", { className: "icon icon-search-1 ln-shadow-logo shape-0" })
-												),
-												" College",
-												React.createElement(
-													"span",
-													null,
-													"StuffSale"
-												)
-											)
-										),
-										React.createElement(
-											"div",
-											{ className: "navbar-collapse collapse" },
-											React.createElement(
-												"ul",
-												{ className: "nav navbar-nav navbar-right" },
-												React.createElement(
-													"li",
-													null,
-													React.createElement(
-														"a",
-														{ href: "/login" },
-														"Login"
-													)
-												),
-												React.createElement(
-													"li",
-													null,
-													React.createElement(
-														"a",
-														{ href: "/signup" },
-														"Signup"
-													)
-												),
-												React.createElement(
-													"li",
-													{ className: "postadd" },
-													React.createElement(
-														"a",
-														{ className: "btn btn-block btn-border btn-post btn-danger", href: "/posts/new" },
-														"Post New Item"
-													)
-												)
-											)
-										)
-									)
-								)
-							),
-							React.createElement(
-								"div",
-								{ className: "main-container" },
-								React.createElement(
+			_createClass(SignUpPage, [{
+					key: "_handleSubmit",
+					value: function _handleSubmit() {
+							console.log("fetching..");
+							return fetch('http://localhost:3000/api/users', {
+									method: 'POST',
+									headers: {
+											'Accept': "application/json",
+											'Content-Type': 'application/json'
+									},
+									body: JSON.stringify({
+											name: this.state.firstName + " " + this.state.lastName,
+											email: this.state.email,
+											bio: this.state.bio,
+											phone_number: this.state.phoneNumber,
+											gender: !this.state.gender ? "male" : "female",
+											hideNumber: this.state.hideNumber,
+											password: this.state.password,
+											password_confirmation: this.state.passwordConfirmation
+									})
+							}).then(function (response) {
+									return response.json();
+							}).then(function (responseJson) {
+									console.log(responseJson);
+							}).catch(function (error) {
+									console.error(error);
+							});
+					}
+			}, {
+					key: "render",
+					value: function render() {
+							var _this2 = this;
+
+							return React.createElement(
 									"div",
-									{ className: "container" },
+									null,
+									React.createElement("meta", { charSet: "utf-8" }),
+									React.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
+									React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "144x144", href: "assets/ico/apple-touch-icon-144-precomposed.png" }),
+									React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "114x114", href: "assets/ico/apple-touch-icon-114-precomposed.png" }),
+									React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "72x72", href: "assets/ico/apple-touch-icon-72-precomposed.png" }),
+									React.createElement("link", { rel: "apple-touch-icon-precomposed", href: "ico/apple-touch-icon-57-precomposed.png" }),
+									React.createElement("link", { rel: "shortcut icon", href: "assets/ico/favicon.png" }),
 									React.createElement(
-										"div",
-										{ className: "row" },
-										React.createElement(
-											"div",
-											{ className: "col-md-8 page-content" },
-											React.createElement(
-												"div",
-												{ className: "inner-box category-content" },
-												React.createElement(
-													"h2",
-													{ className: "title-2" },
-													React.createElement("i", { className: "icon-user-add" }),
-													" Create a free account "
-												),
-												React.createElement(
-													"div",
-													{ className: "row" },
-													React.createElement(
-														"div",
-														{ className: "col-sm-12", id: "sign-up-form" },
-														React.createElement(
-															"form",
-															{ className: "form-horizontal" },
-															React.createElement("link", { href: "assets/css/help-tip.css", rel: "stylesheet" }),
-															React.createElement(
-																"fieldset",
-																null,
-																React.createElement(
-																	"div",
-																	{ className: "form-group required" },
-																	React.createElement(
-																		"label",
-																		{ className: "col-md-4 control-label" },
-																		"First Name ",
-																		React.createElement(
-																			"sup",
-																			null,
-																			"*"
-																		)
-																	),
-																	React.createElement(
-																		"div",
-																		{ className: "col-md-6" },
-																		React.createElement("input", { name: true, placeholder: "First Name", className: "form-control input-md", required: true, type: "text", value: this.state.firstName, onChange: function onChange(event) {
-																				return _this2.setState({ firstName: event.target.value.substr(0, 40) });
-																			} })
-																	)
-																),
-																React.createElement(
-																	"div",
-																	{ className: "form-group required" },
-																	React.createElement(
-																		"label",
-																		{ className: "col-md-4 control-label" },
-																		"Last Name ",
-																		React.createElement(
-																			"sup",
-																			null,
-																			"*"
-																		)
-																	),
-																	React.createElement(
-																		"div",
-																		{ className: "col-md-6" },
-																		React.createElement("input", { name: "textinput", placeholder: "Last Name", className: "form-control input-md", type: "text", value: this.state.lastName, onChange: function onChange(event) {
-																				_this2.setState({ lastName: event.target.value.substr(0, 40) });
-																			} })
-																	)
-																),
-																React.createElement(
-																	"div",
-																	{ className: "form-group required" },
-																	React.createElement(
-																		"label",
-																		{ htmlFor: "inputEmail3", className: "col-md-4 control-label" },
-																		"Email ",
-																		React.createElement(
-																			"sup",
-																			null,
-																			"*"
-																		)
-																	),
-																	React.createElement(
-																		"div",
-																		{ className: "col-md-6" },
-																		React.createElement("input", { type: "email", className: "form-control", id: "inputEmail3", placeholder: "Email", value: this.state.email, onChange: function onChange(event) {
-																				_this2.setState({ email: event.target.value.substr(0, 140) });
-																			} })
-																	)
-																),
-																React.createElement(
-																	"div",
-																	{ className: "form-group required" },
-																	React.createElement(
-																		"label",
-																		{ className: "col-md-4 control-label" },
-																		"Phone Number "
-																	),
-																	React.createElement(
-																		"div",
-																		{ className: "col-md-6" },
-																		React.createElement("input", { name: "textinput", placeholder: "Phone Number", className: "form-control input-md", type: "text", value: this.state.phoneNumber, onChange: function onChange(event) {
-																				_this2.setState({ phoneNumber: event.target.value.substr(0, 16) });
-																			} }),
-																		React.createElement(
-																			"div",
-																			{ className: "checkbox" },
-																			React.createElement(
-																				"label",
-																				null,
-																				React.createElement("input", { type: "checkbox", checked: this.state.hideNumber, onChange: function onChange() {
-																						_this2.setState({ hideNumber: !_this2.state.hideNumber });
-																					} }),
-																				React.createElement(
-																					"small",
-																					null,
-																					" Hide the phone number on the published ads."
-																				)
-																			)
-																		)
-																	),
-																	React.createElement(
-																		"div",
-																		{ className: "col-md-1" },
-																		React.createElement(
-																			"div",
-																			{ className: "help-tip" },
-																			React.createElement(
-																				"p",
-																				null,
-																				"Phone number is needed to let other users contact you."
-																			)
-																		)
-																	)
-																),
-																React.createElement(
-																	"div",
-																	{ className: "form-group" },
-																	React.createElement(
-																		"label",
-																		{ className: "col-md-4 control-label" },
-																		"Gender"
-																	),
-																	React.createElement(
-																		"div",
-																		{ className: "col-md-6" },
-																		React.createElement(
-																			"div",
-																			{ className: "radio" },
-																			React.createElement(
-																				"label",
-																				{ htmlFor: "Gender-0" },
-																				React.createElement("input", { name: "Gender", id: "Gender-0", type: "radio", checked: !this.state.gender, onChange: function onChange() {
-																						_this2.setState({ gender: !_this2.state.gender });
-																					} }),
-																				"Male"
-																			)
-																		),
-																		React.createElement(
-																			"div",
-																			{ className: "radio" },
-																			React.createElement(
-																				"label",
-																				{ htmlFor: "Gender-1" },
-																				React.createElement("input", { name: "Gender", id: "Gender-1", type: "radio", checked: this.state.gender, onChange: function onChange() {
-																						_this2.setState({ gender: !_this2.state.gender });
-																					} }),
-																				"Female"
-																			)
-																		)
-																	)
-																),
-																React.createElement(
-																	"div",
-																	{ className: "form-group" },
-																	React.createElement(
-																		"label",
-																		{ className: "col-md-4 control-label", htmlFor: "textarea" },
-																		"About Yourself"
-																	),
-																	React.createElement(
-																		"div",
-																		{ className: "col-md-6" },
-																		React.createElement("textarea", { className: "form-control", id: "textarea", name: "textarea", placeholder: "About Yourself in 500 words", value: this.state.bio, onChange: function onChange(event) {
-																				_this2.setState({ bio: event.target.value.substr(0, 500) });
-																			} })
-																	)
-																),
-																React.createElement(
-																	"div",
-																	{ className: "form-group required" },
-																	React.createElement(
-																		"label",
-																		{ htmlFor: "password-input", className: "col-md-4 control-label" },
-																		"Password ",
-																		React.createElement(
-																			"sup",
-																			null,
-																			"*"
-																		)
-																	),
-																	React.createElement(
-																		"div",
-																		{ className: "col-md-6" },
-																		React.createElement("input", { type: "password", className: "form-control", id: "password-input", placeholder: "Password", value: this.state.password, onChange: function onChange(event) {
-																				_this2.setState({ password: event.target.value.substr(0, 25) });
-																			} })
-																	)
-																),
-																React.createElement(
-																	"div",
-																	{ className: "form-group required" },
-																	React.createElement(
-																		"label",
-																		{ htmlFor: "password-confirmation-input", className: "col-md-4 control-label" },
-																		"Password Confirmation ",
-																		React.createElement(
-																			"sup",
-																			null,
-																			"*"
-																		)
-																	),
-																	React.createElement(
-																		"div",
-																		{ className: "col-md-6" },
-																		React.createElement("input", { type: "password", className: "form-control", id: "password-confirmation-input", placeholder: "Password", value: this.state.passwordConfirmation, onChange: function onChange(event) {
-																				_this2.setState({ passwordConfirmation: event.target.value.substr(0, 25) });
-																			} })
-																	)
-																),
-																React.createElement(
-																	"div",
-																	{ className: "form-group" },
-																	React.createElement("label", { className: "col-md-4 control-label" }),
-																	React.createElement(
-																		"div",
-																		{ className: "col-md-8" },
-																		React.createElement(
-																			"div",
-																			{ className: "termbox mb10" },
-																			React.createElement(
-																				"label",
-																				{ className: "checkbox-inline", htmlFor: "checkboxes-1" },
-																				React.createElement("input", { name: "checkboxes", id: "checkboxes-1", checked: this.state.readTermsConditions, type: "checkbox", onChange: function onChange() {
-																						_this2.setState({ readTermsConditions: !_this2.state.readTermsConditions });
-																					} }),
-																				"I have read and agree to the ",
-																				React.createElement(
-																					"a",
-																					{ href: "terms-conditions.html" },
-																					"Terms & Conditions"
-																				)
-																			)
-																		),
-																		React.createElement("div", { style: { clear: 'both' } }),
-																		React.createElement(
-																			"a",
-																			{ disabled: !this.state.readTermsConditions, className: "btn btn-primary", onClick: this._handleSubmit },
-																			"Register"
-																		)
-																	)
-																)
-															)
-														)
-													)
-												)
-											)
-										),
-										React.createElement(
-											"div",
-											{ className: "col-md-4 reg-sidebar" },
-											React.createElement(
-												"div",
-												{ className: "reg-sidebar-inner text-center" },
-												React.createElement(
-													"div",
-													{ className: "promo-text-box" },
-													React.createElement("i", { className: " icon-picture fa fa-4x icon-color-1" }),
-													React.createElement(
-														"h3",
-														null,
-														React.createElement(
-															"strong",
-															null,
-															"Post a Free Classified"
-														)
-													),
-													React.createElement(
-														"p",
-														null,
-														" Post your free online classified ads with us. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-													)
-												),
-												React.createElement(
-													"div",
-													{ className: "promo-text-box" },
-													React.createElement("i", { className: " icon-pencil-circled fa fa-4x icon-color-2" }),
-													React.createElement(
-														"h3",
-														null,
-														React.createElement(
-															"strong",
-															null,
-															"Create and Manage Items"
-														)
-													),
-													React.createElement(
-														"p",
-														null,
-														" Nam sit amet dui vel orci venenatis ullamcorper eget in lacus. Praesent tristique elit pharetra magna efficitur laoreet."
-													)
-												),
-												React.createElement(
-													"div",
-													{ className: "promo-text-box" },
-													React.createElement("i", { className: "  icon-heart-2 fa fa-4x icon-color-3" }),
-													React.createElement(
-														"h3",
-														null,
-														React.createElement(
-															"strong",
-															null,
-															"Create your Favorite ads list."
-														)
-													),
-													React.createElement(
-														"p",
-														null,
-														" PostNullam quis orci ut ipsum mollis malesuada varius eget metus. Nulla aliquet dui sed quam iaculis, ut finibus massa tincidunt."
-													)
-												)
-											)
-										)
-									)
-								)
-							),
-							React.createElement(
-								"div",
-								{ className: "footer", id: "footer" },
-								React.createElement(
-									"div",
-									{ className: "container" },
-									React.createElement(
-										"ul",
-										{ className: " pull-left navbar-link footer-nav" },
-										React.createElement(
-											"li",
+											"title",
 											null,
-											React.createElement(
-												"a",
-												{ href: "/" },
-												"Home"
-											),
-											React.createElement(
-												"a",
-												{ href: "/aboutus" },
-												"About us"
-											),
-											React.createElement(
-												"a",
-												{ href: "/terms" },
-												"Terms and Conditions"
-											),
-											React.createElement(
-												"a",
-												{ href: "/privacy" },
-												"Privacy Policy"
-											),
-											React.createElement(
-												"a",
-												{ href: "/contact" },
-												"Contact us"
-											),
-											React.createElement(
-												"a",
-												{ href: "/faq" },
-												"FAQ"
-											)
-										)
+											"CollegeStuffSale"
 									),
+									React.createElement("link", { href: "assets/bootstrap/css/bootstrap.css", rel: "stylesheet" }),
+									React.createElement("link", { href: "assets/css/style.css", rel: "stylesheet" }),
+									React.createElement("link", { href: "assets/css/owl.theme.css", rel: "stylesheet" }),
 									React.createElement(
-										"ul",
-										{ className: " pull-right navbar-link footer-nav" },
-										React.createElement(
-											"li",
+											"div",
 											null,
-											" \xA9 2016 CollegeStuffSale"
-										)
+											React.createElement(
+													"div",
+													{ id: "wrapper" },
+													React.createElement(
+															"div",
+															{ className: "header" },
+															React.createElement(
+																	"nav",
+																	{ className: "navbar navbar-site navbar-default", role: "navigation" },
+																	React.createElement(
+																			"div",
+																			{ className: "container" },
+																			React.createElement(
+																					"div",
+																					{ className: "navbar-header" },
+																					React.createElement(
+																							"button",
+																							{ "data-target": ".navbar-collapse", "data-toggle": "collapse", className: "navbar-toggle", type: "button" },
+																							React.createElement(
+																									"span",
+																									{ className: "sr-only" },
+																									"Toggle navigation"
+																							),
+																							" ",
+																							React.createElement("span", { className: "icon-bar" }),
+																							React.createElement("span", { className: "icon-bar" }),
+																							" ",
+																							React.createElement("span", { className: "icon-bar" })
+																					),
+																					React.createElement(
+																							"a",
+																							{ href: "/", className: "navbar-brand logo logo-title" },
+																							React.createElement(
+																									"span",
+																									{ className: "logo-icon" },
+																									React.createElement("i", { className: "icon icon-search-1 ln-shadow-logo shape-0" })
+																							),
+																							" College",
+																							React.createElement(
+																									"span",
+																									null,
+																									"StuffSale"
+																							)
+																					)
+																			),
+																			React.createElement(
+																					"div",
+																					{ className: "navbar-collapse collapse" },
+																					React.createElement(
+																							"ul",
+																							{ className: "nav navbar-nav navbar-right" },
+																							React.createElement(
+																									"li",
+																									null,
+																									React.createElement(
+																											"a",
+																											{ href: "/login" },
+																											"Login"
+																									)
+																							),
+																							React.createElement(
+																									"li",
+																									null,
+																									React.createElement(
+																											"a",
+																											{ href: "/signup" },
+																											"Signup"
+																									)
+																							),
+																							React.createElement(
+																									"li",
+																									{ className: "postadd" },
+																									React.createElement(
+																											"a",
+																											{ className: "btn btn-block btn-border btn-post btn-danger", href: "/posts/new" },
+																											"Post New Item"
+																									)
+																							)
+																					)
+																			)
+																	)
+															)
+													),
+													React.createElement(
+															"div",
+															{ className: "main-container" },
+															React.createElement(
+																	"div",
+																	{ className: "container" },
+																	React.createElement(
+																			"div",
+																			{ className: "row" },
+																			React.createElement(
+																					"div",
+																					{ className: "col-md-8 page-content" },
+																					React.createElement(
+																							"div",
+																							{ className: "inner-box category-content" },
+																							React.createElement(
+																									"h2",
+																									{ className: "title-2" },
+																									React.createElement("i", { className: "icon-user-add" }),
+																									" Create a free account "
+																							),
+																							React.createElement(
+																									"div",
+																									{ className: "row" },
+																									React.createElement(
+																											"div",
+																											{ className: "col-sm-12", id: "sign-up-form" },
+																											React.createElement(
+																													"form",
+																													{ className: "form-horizontal" },
+																													React.createElement("link", { href: "assets/css/help-tip.css", rel: "stylesheet" }),
+																													React.createElement(
+																															"fieldset",
+																															null,
+																															React.createElement(
+																																	"div",
+																																	{ className: "form-group required" },
+																																	React.createElement(
+																																			"label",
+																																			{ className: "col-md-4 control-label" },
+																																			"First Name ",
+																																			React.createElement(
+																																					"sup",
+																																					null,
+																																					"*"
+																																			)
+																																	),
+																																	React.createElement(
+																																			"div",
+																																			{ className: "col-md-6" },
+																																			React.createElement("input", { name: true, placeholder: "First Name", className: "form-control input-md", required: true, type: "text", value: this.state.firstName, onChange: function onChange(event) {
+																																							return _this2.setState({ firstName: event.target.value.substr(0, 40) });
+																																					} })
+																																	)
+																															),
+																															React.createElement(
+																																	"div",
+																																	{ className: "form-group required" },
+																																	React.createElement(
+																																			"label",
+																																			{ className: "col-md-4 control-label" },
+																																			"Last Name ",
+																																			React.createElement(
+																																					"sup",
+																																					null,
+																																					"*"
+																																			)
+																																	),
+																																	React.createElement(
+																																			"div",
+																																			{ className: "col-md-6" },
+																																			React.createElement("input", { name: "textinput", placeholder: "Last Name", className: "form-control input-md", type: "text", value: this.state.lastName, onChange: function onChange(event) {
+																																							_this2.setState({ lastName: event.target.value.substr(0, 40) });
+																																					} })
+																																	)
+																															),
+																															React.createElement(
+																																	"div",
+																																	{ className: "form-group required" },
+																																	React.createElement(
+																																			"label",
+																																			{ htmlFor: "inputEmail3", className: "col-md-4 control-label" },
+																																			"Email ",
+																																			React.createElement(
+																																					"sup",
+																																					null,
+																																					"*"
+																																			)
+																																	),
+																																	React.createElement(
+																																			"div",
+																																			{ className: "col-md-6" },
+																																			React.createElement("input", { type: "email", className: "form-control", id: "inputEmail3", placeholder: "Email", value: this.state.email, onChange: function onChange(event) {
+																																							_this2.setState({ email: event.target.value.substr(0, 140) });
+																																					} })
+																																	)
+																															),
+																															React.createElement(
+																																	"div",
+																																	{ className: "form-group required" },
+																																	React.createElement(
+																																			"label",
+																																			{ className: "col-md-4 control-label" },
+																																			"Phone Number "
+																																	),
+																																	React.createElement(
+																																			"div",
+																																			{ className: "col-md-6" },
+																																			React.createElement("input", { name: "textinput", placeholder: "Phone Number", className: "form-control input-md", type: "text", value: this.state.phoneNumber, onChange: function onChange(event) {
+																																							_this2.setState({ phoneNumber: event.target.value.substr(0, 16) });
+																																					} }),
+																																			React.createElement(
+																																					"div",
+																																					{ className: "checkbox" },
+																																					React.createElement(
+																																							"label",
+																																							null,
+																																							React.createElement("input", { type: "checkbox", checked: this.state.hideNumber, onChange: function onChange() {
+																																											_this2.setState({ hideNumber: !_this2.state.hideNumber });
+																																									} }),
+																																							React.createElement(
+																																									"small",
+																																									null,
+																																									" Hide the phone number on the published ads."
+																																							)
+																																					)
+																																			)
+																																	),
+																																	React.createElement(
+																																			"div",
+																																			{ className: "col-md-1" },
+																																			React.createElement(
+																																					"div",
+																																					{ className: "help-tip" },
+																																					React.createElement(
+																																							"p",
+																																							null,
+																																							"Phone number is needed to let other users contact you."
+																																					)
+																																			)
+																																	)
+																															),
+																															React.createElement(
+																																	"div",
+																																	{ className: "form-group" },
+																																	React.createElement(
+																																			"label",
+																																			{ className: "col-md-4 control-label" },
+																																			"Gender"
+																																	),
+																																	React.createElement(
+																																			"div",
+																																			{ className: "col-md-6" },
+																																			React.createElement(
+																																					"div",
+																																					{ className: "radio" },
+																																					React.createElement(
+																																							"label",
+																																							{ htmlFor: "Gender-0" },
+																																							React.createElement("input", { name: "Gender", id: "Gender-0", type: "radio", checked: !this.state.gender, onChange: function onChange() {
+																																											_this2.setState({ gender: !_this2.state.gender });
+																																									} }),
+																																							"Male"
+																																					)
+																																			),
+																																			React.createElement(
+																																					"div",
+																																					{ className: "radio" },
+																																					React.createElement(
+																																							"label",
+																																							{ htmlFor: "Gender-1" },
+																																							React.createElement("input", { name: "Gender", id: "Gender-1", type: "radio", checked: this.state.gender, onChange: function onChange() {
+																																											_this2.setState({ gender: !_this2.state.gender });
+																																									} }),
+																																							"Female"
+																																					)
+																																			)
+																																	)
+																															),
+																															React.createElement(
+																																	"div",
+																																	{ className: "form-group" },
+																																	React.createElement(
+																																			"label",
+																																			{ className: "col-md-4 control-label", htmlFor: "textarea" },
+																																			"About Yourself"
+																																	),
+																																	React.createElement(
+																																			"div",
+																																			{ className: "col-md-6" },
+																																			React.createElement("textarea", { className: "form-control", id: "textarea", name: "textarea", placeholder: "About Yourself in 500 words", value: this.state.bio, onChange: function onChange(event) {
+																																							_this2.setState({ bio: event.target.value.substr(0, 500) });
+																																					} })
+																																	)
+																															),
+																															React.createElement(
+																																	"div",
+																																	{ className: "form-group required" },
+																																	React.createElement(
+																																			"label",
+																																			{ htmlFor: "password-input", className: "col-md-4 control-label" },
+																																			"Password ",
+																																			React.createElement(
+																																					"sup",
+																																					null,
+																																					"*"
+																																			)
+																																	),
+																																	React.createElement(
+																																			"div",
+																																			{ className: "col-md-6" },
+																																			React.createElement("input", { type: "password", className: "form-control", id: "password-input", placeholder: "Password", value: this.state.password, onChange: function onChange(event) {
+																																							_this2.setState({ password: event.target.value.substr(0, 25) });
+																																					} })
+																																	)
+																															),
+																															React.createElement(
+																																	"div",
+																																	{ className: "form-group required" },
+																																	React.createElement(
+																																			"label",
+																																			{ htmlFor: "password-confirmation-input", className: "col-md-4 control-label" },
+																																			"Password Confirmation ",
+																																			React.createElement(
+																																					"sup",
+																																					null,
+																																					"*"
+																																			)
+																																	),
+																																	React.createElement(
+																																			"div",
+																																			{ className: "col-md-6" },
+																																			React.createElement("input", { type: "password", className: "form-control", id: "password-confirmation-input", placeholder: "Password", value: this.state.passwordConfirmation, onChange: function onChange(event) {
+																																							_this2.setState({ passwordConfirmation: event.target.value.substr(0, 25) });
+																																					} })
+																																	)
+																															),
+																															React.createElement(
+																																	"div",
+																																	{ className: "form-group" },
+																																	React.createElement("label", { className: "col-md-4 control-label" }),
+																																	React.createElement(
+																																			"div",
+																																			{ className: "col-md-8" },
+																																			React.createElement(
+																																					"div",
+																																					{ className: "termbox mb10" },
+																																					React.createElement(
+																																							"label",
+																																							{ className: "checkbox-inline", htmlFor: "checkboxes-1" },
+																																							React.createElement("input", { name: "checkboxes", id: "checkboxes-1", checked: this.state.readTermsConditions, type: "checkbox", onChange: function onChange() {
+																																											_this2.setState({ readTermsConditions: !_this2.state.readTermsConditions });
+																																									} }),
+																																							"I have read and agree to the ",
+																																							React.createElement(
+																																									"a",
+																																									{ href: "terms-conditions.html" },
+																																									"Terms & Conditions"
+																																							)
+																																					)
+																																			),
+																																			React.createElement("div", { style: { clear: 'both' } }),
+																																			React.createElement(
+																																					"a",
+																																					{ disabled: !this.state.readTermsConditions, className: "btn btn-primary", onClick: this._handleSubmit.bind(this) },
+																																					"Register"
+																																			)
+																																	)
+																															)
+																													)
+																											)
+																									)
+																							)
+																					)
+																			),
+																			React.createElement(
+																					"div",
+																					{ className: "col-md-4 reg-sidebar" },
+																					React.createElement(
+																							"div",
+																							{ className: "reg-sidebar-inner text-center" },
+																							React.createElement(
+																									"div",
+																									{ className: "promo-text-box" },
+																									React.createElement("i", { className: " icon-picture fa fa-4x icon-color-1" }),
+																									React.createElement(
+																											"h3",
+																											null,
+																											React.createElement(
+																													"strong",
+																													null,
+																													"Post a Free Classified"
+																											)
+																									),
+																									React.createElement(
+																											"p",
+																											null,
+																											" Post your free online classified ads with us. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+																									)
+																							),
+																							React.createElement(
+																									"div",
+																									{ className: "promo-text-box" },
+																									React.createElement("i", { className: " icon-pencil-circled fa fa-4x icon-color-2" }),
+																									React.createElement(
+																											"h3",
+																											null,
+																											React.createElement(
+																													"strong",
+																													null,
+																													"Create and Manage Items"
+																											)
+																									),
+																									React.createElement(
+																											"p",
+																											null,
+																											" Nam sit amet dui vel orci venenatis ullamcorper eget in lacus. Praesent tristique elit pharetra magna efficitur laoreet."
+																									)
+																							),
+																							React.createElement(
+																									"div",
+																									{ className: "promo-text-box" },
+																									React.createElement("i", { className: "  icon-heart-2 fa fa-4x icon-color-3" }),
+																									React.createElement(
+																											"h3",
+																											null,
+																											React.createElement(
+																													"strong",
+																													null,
+																													"Create your Favorite ads list."
+																											)
+																									),
+																									React.createElement(
+																											"p",
+																											null,
+																											" PostNullam quis orci ut ipsum mollis malesuada varius eget metus. Nulla aliquet dui sed quam iaculis, ut finibus massa tincidunt."
+																									)
+																							)
+																					)
+																			)
+																	)
+															)
+													),
+													React.createElement(
+															"div",
+															{ className: "footer", id: "footer" },
+															React.createElement(
+																	"div",
+																	{ className: "container" },
+																	React.createElement(
+																			"ul",
+																			{ className: " pull-left navbar-link footer-nav" },
+																			React.createElement(
+																					"li",
+																					null,
+																					React.createElement(
+																							"a",
+																							{ href: "/" },
+																							"Home"
+																					),
+																					React.createElement(
+																							"a",
+																							{ href: "/aboutus" },
+																							"About us"
+																					),
+																					React.createElement(
+																							"a",
+																							{ href: "/terms" },
+																							"Terms and Conditions"
+																					),
+																					React.createElement(
+																							"a",
+																							{ href: "/privacy" },
+																							"Privacy Policy"
+																					),
+																					React.createElement(
+																							"a",
+																							{ href: "/contact" },
+																							"Contact us"
+																					),
+																					React.createElement(
+																							"a",
+																							{ href: "/faq" },
+																							"FAQ"
+																					)
+																			)
+																	),
+																	React.createElement(
+																			"ul",
+																			{ className: " pull-right navbar-link footer-nav" },
+																			React.createElement(
+																					"li",
+																					null,
+																					" \xA9 2016 CollegeStuffSale"
+																			)
+																	)
+															)
+													)
+											)
 									)
-								)
-							)
-						)
-					)
-				);
-			}
-		}]);
+							);
+					}
+			}]);
 
-		return SignUpPage;
+			return SignUpPage;
 	}(React.Component);
 
 	module.exports = SignUpPage;
