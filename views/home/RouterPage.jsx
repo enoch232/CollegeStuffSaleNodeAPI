@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, Link, browserHistory } from 'react-router'
-import SignUpPage from './signuppage.jsx'
-import IndexPage from './indexpage.jsx'
+import SignUpPage from './SignUpPage.jsx'
+import IndexPage from './IndexPage.jsx'
 class RouterPage extends React.Component{
   render(){
     return(

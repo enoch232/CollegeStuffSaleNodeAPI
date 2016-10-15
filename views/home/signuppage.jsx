@@ -17,6 +17,7 @@ class SignUpPage extends React.Component{
   }
 
   _handleSubmit(){
+		console.log("hello")
     // return fetch('http://localhost:3000/api/users', {
     //   method: 'POST',
     //   headers: {
@@ -53,7 +54,7 @@ class SignUpPage extends React.Component{
 
 	render(){
 		return (
-	      <html>
+	      <div>
 	        <meta charSet="utf-8" />
 	        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	        {/* Fav and touch icons */}
@@ -71,7 +72,7 @@ class SignUpPage extends React.Component{
 	        {/* <link href="assets/css/owl.carousel.css" rel="stylesheet"> */}
 	        <link href="assets/css/owl.theme.css" rel="stylesheet" />
 
-	        <body>
+	        <div>
 		        <div id="wrapper">
 		          <div className="header">
 		            <nav className="navbar navbar-site navbar-default" role="navigation">
@@ -204,7 +205,7 @@ class SignUpPage extends React.Component{
 							                </label>
 							              </div>
 							              <div style={{clear: 'both'}} />
-							                <a disabled={!this.state.readTermsConditions} className="btn btn-primary" onClick = {console.log}>
+							                <a disabled={!this.state.readTermsConditions} className="btn btn-primary" onClick = {this._handleSubmit}>
 							                  Register
 							                </a>
 							              </div>
@@ -272,8 +273,8 @@ class SignUpPage extends React.Component{
 		          </div>
 		          {/*/.footer*/}
 		        </div>
-	        </body>
-	      </html>
+	        </div>
+	      </div>
     	)
 
 	}

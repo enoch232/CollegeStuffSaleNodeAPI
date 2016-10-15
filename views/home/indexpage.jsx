@@ -91,18 +91,18 @@ class IndexPage extends React.Component{
                           <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab"><i className="icon-th-list" /> Top Makes</a>
                           </li>
                         </ul>
-                        
+
                       </div>
                     </div>
                   </div>
                   <div className="row">
-                    
+
                   </div>
-                  
+
                 </div>
                 <div className="col-sm-3 page-sidebar col-thin-left">
                   <aside>
-                    
+
                   </aside>
                 </div>
               </div>
