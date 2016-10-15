@@ -21455,6 +21455,10 @@
 
 	var _IndexPage2 = _interopRequireDefault(_IndexPage);
 
+	var _LoginPage = __webpack_require__(321);
+
+	var _LoginPage2 = _interopRequireDefault(_LoginPage);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21479,7 +21483,8 @@
 	        _reactRouter.Router,
 	        { history: _reactRouter.browserHistory },
 	        _react2.default.createElement(_reactRouter.Route, { path: '/', component: _IndexPage2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/signup', component: _SignUpPage2.default })
+	        _react2.default.createElement(_reactRouter.Route, { path: '/signup', component: _SignUpPage2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _LoginPage2.default })
 	      );
 	    }
 	  }]);
@@ -28482,6 +28487,423 @@
 	}(React.Component);
 
 	module.exports = Category;
+
+/***/ },
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var React = __webpack_require__(1);
+
+	var LoginPage = function (_React$Component) {
+	  _inherits(LoginPage, _React$Component);
+
+	  function LoginPage() {
+	    _classCallCheck(this, LoginPage);
+
+	    return _possibleConstructorReturn(this, (LoginPage.__proto__ || Object.getPrototypeOf(LoginPage)).apply(this, arguments));
+	  }
+
+	  _createClass(LoginPage, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "div",
+	        null,
+	        React.createElement("meta", { charSet: "utf-8" }),
+	        React.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
+	        React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "144x144", href: "assets/ico/apple-touch-icon-144-precomposed.png" }),
+	        React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "114x114", href: "assets/ico/apple-touch-icon-114-precomposed.png" }),
+	        React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "72x72", href: "assets/ico/apple-touch-icon-72-precomposed.png" }),
+	        React.createElement("link", { rel: "apple-touch-icon-precomposed", href: "ico/apple-touch-icon-57-precomposed.png" }),
+	        React.createElement("link", { rel: "shortcut icon", href: "assets/ico/favicon.png" }),
+	        React.createElement(
+	          "title",
+	          null,
+	          "CollegeStuffSale"
+	        ),
+	        React.createElement("link", { href: "assets/bootstrap/css/bootstrap.css", rel: "stylesheet" }),
+	        React.createElement("link", { href: "assets/css/style.css", rel: "stylesheet" }),
+	        React.createElement("link", { href: "assets/css/owl.carousel.css", rel: "stylesheet" }),
+	        React.createElement("link", { href: "assets/css/owl.theme.css", rel: "stylesheet" }),
+	        React.createElement(
+	          "div",
+	          { id: "wrapper" },
+	          React.createElement(
+	            "div",
+	            { className: "header" },
+	            React.createElement(
+	              "nav",
+	              { className: "navbar   navbar-site navbar-default", role: "navigation" },
+	              React.createElement(
+	                "div",
+	                { className: "container" },
+	                React.createElement(
+	                  "div",
+	                  { className: "navbar-header" },
+	                  React.createElement(
+	                    "button",
+	                    { "data-target": ".navbar-collapse", "data-toggle": "collapse", className: "navbar-toggle", type: "button" },
+	                    React.createElement(
+	                      "span",
+	                      { className: "sr-only" },
+	                      "Toggle navigation"
+	                    ),
+	                    " ",
+	                    React.createElement("span", { className: "icon-bar" }),
+	                    " ",
+	                    React.createElement("span", { className: "icon-bar" }),
+	                    " ",
+	                    React.createElement("span", { className: "icon-bar" })
+	                  ),
+	                  React.createElement(
+	                    "a",
+	                    { href: "/", className: "navbar-brand logo logo-title" },
+	                    React.createElement(
+	                      "span",
+	                      { className: "logo-icon" },
+	                      React.createElement("i", { className: "icon icon-search-1 ln-shadow-logo shape-0" }),
+	                      " "
+	                    ),
+	                    "College",
+	                    React.createElement(
+	                      "span",
+	                      null,
+	                      "StuffSale "
+	                    ),
+	                    " "
+	                  )
+	                ),
+	                React.createElement(
+	                  "div",
+	                  { className: "navbar-collapse collapse" },
+	                  React.createElement(
+	                    "ul",
+	                    { className: "nav navbar-nav navbar-right" },
+	                    React.createElement(
+	                      "li",
+	                      null,
+	                      React.createElement(
+	                        "a",
+	                        { href: "/#" },
+	                        "Login"
+	                      )
+	                    ),
+	                    React.createElement(
+	                      "li",
+	                      null,
+	                      React.createElement(
+	                        "a",
+	                        { href: "/signup" },
+	                        "Signup"
+	                      )
+	                    ),
+	                    React.createElement(
+	                      "li",
+	                      { className: "postadd" },
+	                      React.createElement(
+	                        "a",
+	                        { className: "btn btn-block   btn-border btn-post btn-danger", href: "post-ads.html" },
+	                        "Post New Item"
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            "div",
+	            { className: "main-container" },
+	            React.createElement(
+	              "div",
+	              { className: "container" },
+	              React.createElement(
+	                "div",
+	                { className: "row" },
+	                React.createElement(
+	                  "div",
+	                  { className: "col-sm-5 login-box" },
+	                  React.createElement(
+	                    "div",
+	                    { className: "panel panel-default" },
+	                    React.createElement(
+	                      "div",
+	                      { className: "panel-intro text-center" },
+	                      React.createElement(
+	                        "h2",
+	                        { className: "logo-title" },
+	                        React.createElement(
+	                          "span",
+	                          { className: "logo-icon" },
+	                          React.createElement("i", { className: "icon icon-search-1 ln-shadow-logo shape-0" }),
+	                          " "
+	                        ),
+	                        " College",
+	                        React.createElement(
+	                          "span",
+	                          null,
+	                          "StuffSale "
+	                        )
+	                      )
+	                    ),
+	                    React.createElement(
+	                      "div",
+	                      { className: "panel-body" },
+	                      React.createElement(
+	                        "form",
+	                        { role: "form" },
+	                        React.createElement(
+	                          "div",
+	                          { className: "form-group" },
+	                          React.createElement(
+	                            "label",
+	                            { htmlFor: "sender-email", className: "control-label" },
+	                            "Username:"
+	                          ),
+	                          React.createElement(
+	                            "div",
+	                            { className: "input-icon" },
+	                            React.createElement("i", { className: "icon-user fa" }),
+	                            React.createElement("input", { id: "sender-email", type: "text", placeholder: "Username", className: "form-control email" })
+	                          )
+	                        ),
+	                        React.createElement(
+	                          "div",
+	                          { className: "form-group" },
+	                          React.createElement(
+	                            "label",
+	                            { htmlFor: "user-pass", className: "control-label" },
+	                            "Password:"
+	                          ),
+	                          React.createElement(
+	                            "div",
+	                            { className: "input-icon" },
+	                            React.createElement("i", { className: "icon-lock fa" }),
+	                            React.createElement("input", { type: "password", className: "form-control", placeholder: "Password", id: "user-pass" })
+	                          )
+	                        ),
+	                        React.createElement(
+	                          "div",
+	                          { className: "form-group" },
+	                          React.createElement(
+	                            "a",
+	                            { href: "/account", className: "btn btn-primary  btn-block" },
+	                            "Submit"
+	                          )
+	                        )
+	                      )
+	                    ),
+	                    React.createElement(
+	                      "div",
+	                      { className: "panel-footer" },
+	                      React.createElement(
+	                        "div",
+	                        { className: "checkbox pull-left" },
+	                        React.createElement(
+	                          "label",
+	                          null,
+	                          " ",
+	                          React.createElement("input", { type: "checkbox", defaultValue: 1, name: "remember", id: "remember" }),
+	                          " Keep me logged in"
+	                        )
+	                      ),
+	                      React.createElement(
+	                        "p",
+	                        { className: "text-center pull-right" },
+	                        React.createElement(
+	                          "a",
+	                          { href: "/forgot-password" },
+	                          " Lost your password? "
+	                        )
+	                      ),
+	                      React.createElement("div", { style: { clear: 'both' } })
+	                    )
+	                  ),
+	                  React.createElement(
+	                    "div",
+	                    { className: "login-box-btm text-center" },
+	                    React.createElement(
+	                      "p",
+	                      null,
+	                      " Don't have an account? ",
+	                      React.createElement("br", null),
+	                      React.createElement(
+	                        "a",
+	                        { href: "/signup" },
+	                        React.createElement(
+	                          "strong",
+	                          null,
+	                          "Sign Up !"
+	                        ),
+	                        " "
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            "div",
+	            { className: "footer", id: "footer" },
+	            React.createElement(
+	              "div",
+	              { className: "container" },
+	              React.createElement(
+	                "ul",
+	                { className: " pull-left navbar-link footer-nav" },
+	                React.createElement(
+	                  "li",
+	                  null,
+	                  React.createElement(
+	                    "a",
+	                    { href: "/" },
+	                    " Home "
+	                  ),
+	                  " ",
+	                  React.createElement(
+	                    "a",
+	                    { href: "about-us.html" },
+	                    " About us "
+	                  ),
+	                  " ",
+	                  React.createElement(
+	                    "a",
+	                    { href: "/terms" },
+	                    " Terms and Conditions "
+	                  ),
+	                  " ",
+	                  React.createElement(
+	                    "a",
+	                    { href: "/privacy" },
+	                    " Privacy Policy "
+	                  ),
+	                  " ",
+	                  React.createElement(
+	                    "a",
+	                    { href: "/contact" },
+	                    " Contact us "
+	                  ),
+	                  " ",
+	                  React.createElement(
+	                    "a",
+	                    { href: "/faq" },
+	                    " FAQ "
+	                  )
+	                )
+	              ),
+	              React.createElement(
+	                "ul",
+	                { className: " pull-right navbar-link footer-nav" },
+	                React.createElement(
+	                  "li",
+	                  null,
+	                  " \xA9 2016 CollegeStuffSale"
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return LoginPage;
+	}(React.Component);
+
+	module.exports = LoginPage;
 
 /***/ }
 /******/ ]);

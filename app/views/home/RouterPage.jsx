@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom'
 import { Router, Route, Link, browserHistory } from 'react-router'
 import SignUpPage from './SignUpPage.jsx'
 import IndexPage from './IndexPage.jsx'
+import LoginPage from './LoginPage.jsx'
 class RouterPage extends React.Component{
   render(){
     return(
       <Router history={browserHistory}>
         <Route path="/" component={IndexPage}></Route>
         <Route path="/signup" component={SignUpPage}></Route>
+        <Route path="/login" component={LoginPage}></Route>
       </Router>
     )
   }
