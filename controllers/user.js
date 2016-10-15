@@ -3,6 +3,7 @@ const User = require("../models/User");
 const bcrypt = require('bcrypt')
 const jwt = require("jsonwebtoken")
 
+
 module.exports.createAPI = function(req, res){
   let newuser = new User({
     name: req.body.name,
@@ -22,7 +23,7 @@ module.exports.createAPI = function(req, res){
           newuser.save()
           .then((user)=>{
             console.log(user)
-            let webToken = jwt.sign({user_id: user._id}, "this is secretkey", {expiresIn: 60*60})
+            let webToken = jwt.sign({user_id: user._id}, "this is secretkey", {expiresIn: 60})
             res.status(200).json({webToken})
           })
           .catch((err)=>{

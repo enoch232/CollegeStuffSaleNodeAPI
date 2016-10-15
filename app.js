@@ -18,11 +18,12 @@ dotenv.load({path: ".env"})
 const port = process.env.PORT || 3000
 
 mongoose.connect("mongodb://localhost:27017/collegestuffsale")
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
 
 app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'jsx')
-app.engine('jsx', reactView.createEngine())
+// app.set('view engine', 'jsx')
+// app.engine('jsx', reactView.createEngine())
+app.set('view engine','ejs')
 
 const removeAuthenticationArray = ['/login','/signup','/api/sessions', '/api/users','/',/(assets\/)/]
 
@@ -42,8 +43,8 @@ console.log("Server is now running at port "+ port)
 
 app.listen(port)
 //Routes
-app.get('/', homeController.index)
-app.get('/signup', homeController.signup)
+// app.get('/', homeController.index)
+// app.get('/signup', homeController.signup)
 
 
 //API
@@ -54,6 +55,9 @@ app.get("/api/posts", postController.indexAPI)
 app.post("/api/sessions", sessionController.createAPI)
 app.post("/api/users", userController.createAPI)
 
+app.get('/*', function (req, res){
+  res.render("index")
+})
 
 
 
