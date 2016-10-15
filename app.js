@@ -17,10 +17,10 @@ const homeController = require("./controllers/home")
 dotenv.load({path: ".env"})
 const port = process.env.PORT || 3000
 
-mongoose.connect("mongodb://localhost:27017/collegestuffsale")
+mongoose.connect(process.env.DEV_MONGODB_URI)
 app.use(bodyParser.urlencoded({extended: false}))
 
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, path.join('app','views')))
 // app.set('view engine', 'jsx')
 // app.engine('jsx', reactView.createEngine())
 app.set('view engine','ejs')
@@ -56,7 +56,7 @@ app.post("/api/sessions", sessionController.createAPI)
 app.post("/api/users", userController.createAPI)
 
 app.get('/*', function (req, res){
-  res.render("index")
+  res.render('index')
 })
 
 
