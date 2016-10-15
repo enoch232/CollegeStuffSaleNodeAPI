@@ -16,22 +16,19 @@ module.exports.createAPI = function(req, res){
     })
     bcrypt.genSalt(10, function(err, salt) {
       if (err){
-        console.log("error while callback to salt.")
+        res.status(200).json({"error":"salt error"})
       }else{
         bcrypt.hash(req.body.password, salt, function(err, hash) {
-          console.log("created password")
           if (err){
-            console.log("error while call back to hash")
+            res.status(200).json({"error":"hashing error"})
           }else{
             newuser.password_digest = hash
             newuser.save()
             .then((user)=>{
-              console.log(user)
               let webToken = jwt.sign({user_id: user._id}, "this is secretkey", {expiresIn: 60})
               res.status(200).json({webToken})
             })
             .catch((err)=>{
-              console.log(err)
               res.status(200).json({error: err})
             })
           }

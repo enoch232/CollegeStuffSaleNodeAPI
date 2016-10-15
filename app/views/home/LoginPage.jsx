@@ -113,16 +113,6 @@ class LoginPage extends React.Component{
           </div>
           {/* /.footer */}
         </div>
-        {/* /.wrapper */}
-        {/* Le javascript
-================================================== */}
-        {/* Placed at the end of the document so the pages load faster */}
-        {/* include carousel slider plugin  */}
-        {/* include form-validation plugin || add this script where you need validation   */}
-        {/* include equal height plugin  */}
-        {/* include jquery list shorting plugin plugin  */}
-        {/* include jquery.fs plugin for custom scroller and selecter  */}
-        {/* include custom script for site  */}
       </div>
     )
   }
