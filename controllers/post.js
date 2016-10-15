@@ -1,5 +1,5 @@
 "use strict"
-const Post = require("../models/Post")
+const Post = require("../models/post")
 
 module.exports.indexAPI = function(req, res){
 	Post.find().exec()
