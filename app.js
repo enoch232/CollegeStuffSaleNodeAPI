@@ -26,6 +26,7 @@ app.set('views', path.join(__dirname, path.join('app','views')))
 // app.engine('jsx', reactView.createEngine())
 app.set('view engine','ejs')
 
+const forDev = []
 const removeAuthenticationArray = ['/login','/signup','/api/sessions', '/api/users','/',/(assets\/)/]
 
 app.use(expressJWT({secret: "this is secretkey"}).unless({path: removeAuthenticationArray}))
