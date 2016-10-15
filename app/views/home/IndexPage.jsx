@@ -50,7 +50,7 @@ class IndexPage extends React.Component{
             <div className="dtable hw100">
               <div className="dtable-cell hw100">
                 <div className="container text-center">
-                  <h1 className="intro-title animated fadeInDown">The Largest Online Marketplace for Your College Expereince </h1>
+                  <h1 className="intro-title animated fadeInDown">The Online Marketplace for Your College Expereince </h1>
                   <p className="sub animateme fittext3 animated fadeIn"> Buy, Sell Your College Items Today </p>
                   <div className="row search-row animated fadeInUp">
                     <div className="col-lg-4 col-sm-4 search-col relative locationicon">
@@ -120,7 +120,7 @@ class IndexPage extends React.Component{
                           <i className="icon  icon-group" />
                         </div>
                         <div className="iconbox-wrap-content">
-                          <h5><span>2200</span></h5>
+                          <h5><span>2</span></h5>
                           <div className="iconbox-wrap-text">Trusted Seller</div>
                         </div>
                       </div>
@@ -135,7 +135,7 @@ class IndexPage extends React.Component{
                           <i className="icon  icon-th-large-1" />
                         </div>
                         <div className="iconbox-wrap-content">
-                          <h5><span>100</span></h5>
+                          <h5><span>4</span></h5>
                           <div className="iconbox-wrap-text">Categories</div>
                         </div>
                       </div>
@@ -150,7 +150,7 @@ class IndexPage extends React.Component{
                           <i className="icon  icon-map" />
                         </div>
                         <div className="iconbox-wrap-content">
-                          <h5><span>700</span></h5>
+                          <h5><span>1</span></h5>
                           <div className="iconbox-wrap-text">Location</div>
                         </div>
                       </div>
@@ -165,7 +165,7 @@ class IndexPage extends React.Component{
                           <i className="icon icon-facebook" />
                         </div>
                         <div className="iconbox-wrap-content">
-                          <h5><span>50,000</span></h5>
+                          <h5><span>No</span></h5>
                           <div className="iconbox-wrap-text"> Facebook Fans</div>
                         </div>
                       </div>
