@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack ./main.jsx public/assets/js/bundle.js"
+    "start": "webpack ./main.jsx public/assets/js/bundle.js && node app.js"
   },
   "author": "Enoch Ko",
   "license": "ISC",

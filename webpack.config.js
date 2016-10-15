@@ -2,7 +2,7 @@ const config = {
   entry: './main.jsx',
   output: {
   	filename: 'bundle.js',
-  	path: 'public/assets/js/'
+  	path: 'public/assets/js'
   },
   module: {
   	loaders: [
