@@ -28308,11 +28308,11 @@
 	        ),
 	        React.createElement(
 	          "div",
-	          { className: "col-md-4 col-md-3 col-sm-3 col-xs-4 f-category" },
+	          { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 " },
 	          React.createElement(
 	            "a",
 	            { href: "category.html" },
-	            React.createElement("img", { src: "/assets/img/category/cellphones.png", className: "img-responsive", alt: "img" }),
+	            React.createElement("img", { src: "/assets/img/category/textbookcarry.jpg", className: "img-responsive", alt: "img" }),
 	            React.createElement(
 	              "h6",
 	              null,
@@ -28322,11 +28322,11 @@
 	        ),
 	        React.createElement(
 	          "div",
-	          { className: "col-md-4 col-md-3 col-sm-3 col-xs-4 f-category" },
+	          { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 " },
 	          React.createElement(
 	            "a",
 	            { href: "category.html" },
-	            React.createElement("img", { src: "/assets/img/category/applewatch.png", className: "img-responsive", alt: "img" }),
+	            React.createElement("img", { src: "/assets/img/category/textbookcarry.jpg", className: "img-responsive", alt: "img" }),
 	            React.createElement(
 	              "h6",
 	              null,
@@ -28336,7 +28336,7 @@
 	        ),
 	        React.createElement(
 	          "div",
-	          { className: "col-md-4 col-md-3 col-sm-3 col-xs-4 " },
+	          { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 " },
 	          React.createElement(
 	            "a",
 	            { href: "category.html" },
@@ -28350,11 +28350,11 @@
 	        ),
 	        React.createElement(
 	          "div",
-	          { className: "col-md-4 col-md-3 col-sm-3 col-xs-4 f-category" },
+	          { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 " },
 	          React.createElement(
 	            "a",
 	            { href: "category.html" },
-	            React.createElement("img", { src: "/assets/img/category/home .png", className: "img-responsive", alt: "img" }),
+	            React.createElement("img", { src: "/assets/img/category/textbookcarry.jpg", className: "img-responsive", alt: "img" }),
 	            React.createElement(
 	              "h6",
 	              null,
