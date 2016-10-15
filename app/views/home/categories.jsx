@@ -15,27 +15,27 @@ class Category extends React.Component {
 	        </div>
 	      </div>
 
-	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 ">
-          <a href="category.html"><img src="/assets/img/category/textbookcarry.jpg" className="img-responsive" alt="img"/>
+	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 f-category">
+          <a href="category.html"><img src="/assets/img/category/Cellphones.png" className="img-responsive" alt="img"/>
             <h6> Cellphones</h6>
           </a>
 	      </div>
 
-	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 ">
-          <a href="category.html"><img src="/assets/img/category/textbookcarry.jpg" className="img-responsive" alt="img"/>
+	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 f-category">
+          <a href="category.html"><img src="/assets/img/category/laptops.png" className="img-responsive" alt="img"/>
           	<h6>Electronics </h6>
           </a>
 	      </div>
 
-	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 ">
+	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 f-category">
           <a href="category.html">
-          	<img src="/assets/img/category/textbookcarry.jpg" className="img-responsive" alt="img"/>
+          	<img src="/assets/img/category/Textbooks.jpg" className="img-responsive" alt="img"/>
             <h6> Textbooks </h6>
           </a>
 	      </div>
 
-	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 ">
-	        <a href="category.html"><img src="/assets/img/category/textbookcarry.jpg" className="img-responsive" alt="img"/>
+	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 f-category">
+	        <a href="category.html"><img src="/assets/img/category/home .png" className="img-responsive" alt="img"/>
 	        	<h6> Home </h6>
 	        </a>
 	      </div>
