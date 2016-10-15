@@ -12,7 +12,7 @@ class IndexPage extends React.Component{
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png" />
         <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
         <link rel="shortcut icon" href="assets/ico/favicon.png" />
-        <title>CollegeStuffSale</title>
+        <title>CollegeStuffSaleNODE</title>
         {/* Bootstrap core CSS */}
         <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         {/* Custom styles for this template */}
