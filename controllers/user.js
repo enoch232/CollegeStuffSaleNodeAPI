@@ -1,3 +1,4 @@
+"use strict"
 const mongoose = require("mongoose")
 const User = require("../models/User");
 const bcrypt = require('bcrypt')
@@ -31,7 +32,7 @@ module.exports.createAPI = function(req, res){
             res.status(200).json({error: err})
           })
         }
-        
+
       })
     }
   })

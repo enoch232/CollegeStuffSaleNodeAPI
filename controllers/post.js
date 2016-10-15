@@ -1,3 +1,4 @@
+"use strict"
 const Post = require("../models/Post")
 
 module.exports.indexAPI = function(req, res){
