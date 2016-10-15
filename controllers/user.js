@@ -4,7 +4,6 @@ const User = require("../models/user");
 const bcrypt = require('bcrypt')
 const jwt = require("jsonwebtoken")
 
-
 module.exports.createAPI = function(req, res){
   if (req.body.password == req.body.password_confirmation){
     let newuser = new User({
@@ -36,7 +35,6 @@ module.exports.createAPI = function(req, res){
               res.status(200).json({error: err})
             })
           }
-
         })
       }
     })
