@@ -18,7 +18,7 @@ const homeController = require("./controllers/home")
 dotenv.load({path: ".env"})
 const port = process.env.PORT || 3000
 
-mongoose.connect(process.env.PROD_MONGODB_URI)
+mongoose.connect(process.env.DEV_MONGODB_URI)
 app.use(bodyParser.json())
 
 app.set('views', path.join(__dirname, path.join('app','views')))

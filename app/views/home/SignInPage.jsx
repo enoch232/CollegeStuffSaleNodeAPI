@@ -1,6 +1,39 @@
 import React from 'react'
 
 export default class SignInPage extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      email: "",
+      password: ""
+    }
+  }
+  _handleSubmit(){
+    console.log("fetching..")
+    return fetch('http://localhost:3000/api/sessions', {
+      method: 'POST',
+      headers: {
+        'Accept':"application/json",
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password
+      })
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((responseJson)=>{
+      console.log(responseJson)
+      localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+
+
+  }
   render() {
     return (
       <div>
@@ -19,19 +52,19 @@ export default class SignInPage extends React.Component{
                     <div className="panel-body">
                       <form role="form">
                         <div className="form-group">
-                          <label htmlFor="sender-email" className="control-label">Username:</label>
+                          <label htmlFor="sender-email" className="control-label">email:</label>
                           <div className="input-icon"><i className="icon-user fa" />
-                            <input id="sender-email" type="text" placeholder="Username" className="form-control email" />
+                            <input id="sender-email" type="text" placeholder="Username" className="form-control email" value = {this.state.email} onChange = {(event) => this.setState({email: event.target.value.substr(0,140)})} />
                           </div>
                         </div>
                         <div className="form-group">
                           <label htmlFor="user-pass" className="control-label">Password:</label>
                           <div className="input-icon"><i className="icon-lock fa" />
-                            <input type="password" className="form-control" placeholder="Password" id="user-pass" />
+                            <input type="password" className="form-control" placeholder="Password" id="user-pass" value = {this.state.password} onChange = {(event) => this.setState({password: event.target.value.substr(0,25)})}/>
                           </div>
                         </div>
                         <div className="form-group">
-                          <a href="/account" className="btn btn-primary  btn-block">Submit</a>
+                          <a className="btn btn-primary btn-block" onClick = {this._handleSubmit.bind(this)}>Submit</a>
                         </div>
                       </form>
                     </div>

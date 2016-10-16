@@ -1,6 +1,6 @@
 import React from 'react'
 export default class SignUpPage extends React.Component{
-	constructor(props){
+  constructor(props){
     super(props)
     this.state = {
       firstName: "",
@@ -12,13 +12,13 @@ export default class SignUpPage extends React.Component{
       bio: "",
       password: "",
       passwordConfirmation: "",
-			readTermsConditions: 0
+	  readTermsConditions: 0
     }
   }
 
   _handleSubmit(){
 	console.log("fetching..")
-    return fetch('http://localhost.com/api/users', {
+    return fetch('http://localhost:3000/api/users', {
       method: 'POST',
       headers: {
         'Accept':"application/json",
@@ -40,6 +40,8 @@ export default class SignUpPage extends React.Component{
     })
     .then((responseJson)=>{
       console.log(responseJson)
+      localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken)
+
     })
     .catch((error) => {
       console.error(error)

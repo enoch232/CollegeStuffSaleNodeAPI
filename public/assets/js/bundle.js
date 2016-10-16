@@ -27227,7 +27227,7 @@
 					key: "_handleSubmit",
 					value: function _handleSubmit() {
 							console.log("fetching..");
-							return fetch('http://localhost.com/api/users', {
+							return fetch('http://localhost:3000/api/users', {
 									method: 'POST',
 									headers: {
 											'Accept': "application/json",
@@ -27247,6 +27247,7 @@
 									return response.json();
 							}).then(function (responseJson) {
 									console.log(responseJson);
+									localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken);
 							}).catch(function (error) {
 									console.error(error);
 							});
@@ -29586,15 +29587,46 @@
 	var SignInPage = function (_React$Component) {
 	  _inherits(SignInPage, _React$Component);
 
-	  function SignInPage() {
+	  function SignInPage(props) {
 	    _classCallCheck(this, SignInPage);
 
-	    return _possibleConstructorReturn(this, (SignInPage.__proto__ || Object.getPrototypeOf(SignInPage)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (SignInPage.__proto__ || Object.getPrototypeOf(SignInPage)).call(this, props));
+
+	    _this.state = {
+	      email: "",
+	      password: ""
+	    };
+	    return _this;
 	  }
 
 	  _createClass(SignInPage, [{
+	    key: "_handleSubmit",
+	    value: function _handleSubmit() {
+	      console.log("fetching..");
+	      return fetch('http://localhost:3000/api/sessions', {
+	        method: 'POST',
+	        headers: {
+	          'Accept': "application/json",
+	          'Content-Type': 'application/json'
+	        },
+	        body: JSON.stringify({
+	          email: this.state.email,
+	          password: this.state.password
+	        })
+	      }).then(function (response) {
+	        return response.json();
+	      }).then(function (responseJson) {
+	        console.log(responseJson);
+	        localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken);
+	      }).catch(function (error) {
+	        console.error(error);
+	      });
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
+	      var _this2 = this;
+
 	      return _react2.default.createElement(
 	        "div",
 	        null,
@@ -29637,13 +29669,15 @@
 	                          _react2.default.createElement(
 	                            "label",
 	                            { htmlFor: "sender-email", className: "control-label" },
-	                            "Username:"
+	                            "email:"
 	                          ),
 	                          _react2.default.createElement(
 	                            "div",
 	                            { className: "input-icon" },
 	                            _react2.default.createElement("i", { className: "icon-user fa" }),
-	                            _react2.default.createElement("input", { id: "sender-email", type: "text", placeholder: "Username", className: "form-control email" })
+	                            _react2.default.createElement("input", { id: "sender-email", type: "text", placeholder: "Username", className: "form-control email", value: this.state.email, onChange: function onChange(event) {
+	                                return _this2.setState({ email: event.target.value.substr(0, 140) });
+	                              } })
 	                          )
 	                        ),
 	                        _react2.default.createElement(
@@ -29658,7 +29692,9 @@
 	                            "div",
 	                            { className: "input-icon" },
 	                            _react2.default.createElement("i", { className: "icon-lock fa" }),
-	                            _react2.default.createElement("input", { type: "password", className: "form-control", placeholder: "Password", id: "user-pass" })
+	                            _react2.default.createElement("input", { type: "password", className: "form-control", placeholder: "Password", id: "user-pass", value: this.state.password, onChange: function onChange(event) {
+	                                return _this2.setState({ password: event.target.value.substr(0, 25) });
+	                              } })
 	                          )
 	                        ),
 	                        _react2.default.createElement(
@@ -29666,7 +29702,7 @@
 	                          { className: "form-group" },
 	                          _react2.default.createElement(
 	                            "a",
-	                            { href: "/account", className: "btn btn-primary  btn-block" },
+	                            { className: "btn btn-primary btn-block", onClick: this._handleSubmit.bind(this) },
 	                            "Submit"
 	                          )
 	                        )
