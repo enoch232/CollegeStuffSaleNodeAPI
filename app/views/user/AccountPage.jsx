@@ -319,3 +319,4 @@ class AccountPage extends React.Component{
     )
   }
 }
+module.exports = AccountPage

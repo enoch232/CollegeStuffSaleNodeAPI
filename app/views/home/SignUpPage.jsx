@@ -198,8 +198,8 @@ class SignUpPage extends React.Component{
 							              <div className="termbox mb10">
 							                <label className="checkbox-inline" htmlFor="checkboxes-1">
 							                  <input name="checkboxes" id="checkboxes-1" checked = {this.state.readTermsConditions} type="checkbox" onChange = {()=>{this.setState({readTermsConditions: !this.state.readTermsConditions})}}/>
-							                  I have read and agree to the <a href="terms-conditions.html">Terms
-							                    &amp; Conditions</a>
+							                  I have read and agreed to the <a href="terms-conditions.html">Terms
+							                    &amp; Conditions</a><sup> *</sup>
 							                </label>
 							              </div>
 							              <div style={{clear: 'both'}} />

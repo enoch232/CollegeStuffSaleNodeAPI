@@ -12,7 +12,7 @@ class IndexPage extends React.Component{
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png" />
         <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
         <link rel="shortcut icon" href="assets/ico/favicon.png" />
-        <title>CollegeStuffSaleNODE</title>
+        <title>CollegeStuffSale</title>
         {/* Bootstrap core CSS */}
         <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         {/* Custom styles for this template */}
@@ -55,10 +55,10 @@ class IndexPage extends React.Component{
                   <div className="row search-row animated fadeInUp">
                     <div className="col-lg-4 col-sm-4 search-col relative locationicon">
                       <i className="icon-location-2 icon-append" />
-                      <input type="text" name="country" id="autocomplete-ajax" className="form-control locinput input-rel searchtag-input has-icon" placeholder="University/School..." defaultValue />
+                      <input type="text" name="country" id="autocomplete-ajax" className="form-control locinput input-rel searchtag-input has-icon" placeholder="University/School..."/>
                     </div>
                     <div className="col-lg-4 col-sm-4 search-col relative"><i className="icon-docs icon-append" />
-                      <input type="text" name="ads" className="form-control has-icon" placeholder="I'm looking for a ..." defaultValue />
+                      <input type="text" name="ads" className="form-control has-icon" placeholder="I'm looking for a ..." />
                     </div>
                     <div className="col-lg-4 col-sm-4 search-col">
                       <button className="btn btn-primary btn-search btn-block"><i className="icon-search" /><strong>Find</strong></button>

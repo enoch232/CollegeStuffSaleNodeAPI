@@ -27580,11 +27580,16 @@
 																																							React.createElement("input", { name: "checkboxes", id: "checkboxes-1", checked: this.state.readTermsConditions, type: "checkbox", onChange: function onChange() {
 																																											_this2.setState({ readTermsConditions: !_this2.state.readTermsConditions });
 																																									} }),
-																																							"I have read and agree to the ",
+																																							"I have read and agreed to the ",
 																																							React.createElement(
 																																									"a",
 																																									{ href: "terms-conditions.html" },
 																																									"Terms & Conditions"
+																																							),
+																																							React.createElement(
+																																									"sup",
+																																									null,
+																																									" *"
 																																							)
 																																					)
 																																			),
@@ -27778,7 +27783,7 @@
 	        React.createElement(
 	          "title",
 	          null,
-	          "CollegeStuffSaleNODE"
+	          "CollegeStuffSale"
 	        ),
 	        React.createElement("link", { href: "assets/bootstrap/css/bootstrap.min.css", rel: "stylesheet" }),
 	        React.createElement("link", { href: "assets/css/style.css", rel: "stylesheet" }),
@@ -27898,13 +27903,13 @@
 	                      "div",
 	                      { className: "col-lg-4 col-sm-4 search-col relative locationicon" },
 	                      React.createElement("i", { className: "icon-location-2 icon-append" }),
-	                      React.createElement("input", { type: "text", name: "country", id: "autocomplete-ajax", className: "form-control locinput input-rel searchtag-input has-icon", placeholder: "University/School...", defaultValue: true })
+	                      React.createElement("input", { type: "text", name: "country", id: "autocomplete-ajax", className: "form-control locinput input-rel searchtag-input has-icon", placeholder: "University/School..." })
 	                    ),
 	                    React.createElement(
 	                      "div",
 	                      { className: "col-lg-4 col-sm-4 search-col relative" },
 	                      React.createElement("i", { className: "icon-docs icon-append" }),
-	                      React.createElement("input", { type: "text", name: "ads", className: "form-control has-icon", placeholder: "I'm looking for a ...", defaultValue: true })
+	                      React.createElement("input", { type: "text", name: "ads", className: "form-control has-icon", placeholder: "I'm looking for a ..." })
 	                    ),
 	                    React.createElement(
 	                      "div",
@@ -29640,6 +29645,8 @@
 
 	  return AccountPage;
 	}(_react2.default.Component);
+
+	module.exports = AccountPage;
 
 /***/ }
 /******/ ]);
