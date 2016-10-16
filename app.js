@@ -38,7 +38,7 @@ app.set('view engine','ejs')
 //     }
 // })
 
-const forDev = ['/new-post','/aboutus']
+const forDev = ['/new-post','/aboutus','/faq','/account','/manage-posts']
 const removeAuthenticationArray = ['/signin','/signup','/api/sessions', '/api/users','/',/(assets\/)/].concat(forDev)
 
 app.use(expressJWT({secret: "this is secretkey"}).unless({path: removeAuthenticationArray}))

@@ -7,6 +7,8 @@ import SignInPage from './SignInPage.jsx'
 import AccountPage from '../user/AccountPage.jsx'
 import NewPostPage from '../post/NewPostPage.jsx'
 import AboutUsPage from './AboutUsPage.jsx'
+import FAQPage from './FAQPage.jsx'
+import ManagePostsPage from '../user/ManagePostsPage.jsx'
 //refactor so that all goes in the '/' and refactor the header and footer, so that it doesnt load up first"
 export default class RouterPage extends React.Component{
   render(){
@@ -18,6 +20,8 @@ export default class RouterPage extends React.Component{
         <Route path="/account" component={AccountPage}></Route>
         <Route path="/new-post" component={NewPostPage}></Route>
         <Route path="/aboutus" component={AboutUsPage}></Route>
+        <Route path="/faq" component={FAQPage}></Route>
+        <Route path="/manage-posts" component={ManagePostsPage}></Route>
       </Router>
     )
   }

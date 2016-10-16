@@ -21475,6 +21475,14 @@
 
 	var _AboutUsPage2 = _interopRequireDefault(_AboutUsPage);
 
+	var _FAQPage = __webpack_require__(244);
+
+	var _FAQPage2 = _interopRequireDefault(_FAQPage);
+
+	var _ManagePostsPage = __webpack_require__(247);
+
+	var _ManagePostsPage2 = _interopRequireDefault(_ManagePostsPage);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21504,7 +21512,9 @@
 	        _react2.default.createElement(_reactRouter.Route, { path: '/signin', component: _SignInPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/account', component: _AccountPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/new-post', component: _NewPostPage2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/aboutus', component: _AboutUsPage2.default })
+	        _react2.default.createElement(_reactRouter.Route, { path: '/aboutus', component: _AboutUsPage2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/faq', component: _FAQPage2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/manage-posts', component: _ManagePostsPage2.default })
 	      );
 	    }
 	  }]);
@@ -28098,6 +28108,10 @@
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
@@ -28207,9 +28221,9 @@
 	                                null,
 	                                _react2.default.createElement(
 	                                  "a",
-	                                  { href: "account-myads.html" },
+	                                  { href: "/manage-posts" },
 	                                  _react2.default.createElement("i", { className: "icon-docs" }),
-	                                  " My ads ",
+	                                  " My Posts ",
 	                                  _react2.default.createElement(
 	                                    "span",
 	                                    { className: "badge" },
@@ -28337,7 +28351,7 @@
 	                          _react2.default.createElement(
 	                            "a",
 	                            { href: true },
-	                            _react2.default.createElement("img", { className: "userImg", src: "images/user.jpg", alt: "user" }),
+	                            _react2.default.createElement("img", { className: "userImg", src: "assets/img/user.jpg", alt: "user" }),
 	                            " Jhon Doe"
 	                          )
 	                        )
@@ -28774,7 +28788,7 @@
 	  return AccountPage;
 	}(_react2.default.Component);
 
-	module.exports = AccountPage;
+	exports.default = AccountPage;
 
 /***/ },
 /* 241 */
@@ -29930,6 +29944,1350 @@
 	}(_react2.default.Component);
 
 	exports.default = AboutUsPage;
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var FAQPage = function (_React$Component) {
+	  _inherits(FAQPage, _React$Component);
+
+	  function FAQPage() {
+	    _classCallCheck(this, FAQPage);
+
+	    return _possibleConstructorReturn(this, (FAQPage.__proto__ || Object.getPrototypeOf(FAQPage)).apply(this, arguments));
+	  }
+
+	  _createClass(FAQPage, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { id: "wrapper" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "intro-inner" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "about-intro", style: { background: 'url(assets/img/bg2.jpg) no-repeat center', backgroundSize: 'cover' } },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "dtable hw100" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "dtable-cell hw100" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "container text-center" },
+	                    _react2.default.createElement(
+	                      "h1",
+	                      { className: "intro-title animated fadeInDown" },
+	                      " Frequently Asked Questions "
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "main-container inner-page" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "section-content" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "row " },
+	                  _react2.default.createElement(
+	                    "h1",
+	                    { className: "text-center title-1" },
+	                    " classified ads ",
+	                    _react2.default.createElement(
+	                      "strong",
+	                      null,
+	                      "FAQ"
+	                    )
+	                  ),
+	                  _react2.default.createElement("hr", { className: "center-block small text-hr" })
+	                ),
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "faq-content" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { "aria-multiselectable": "true", role: "tablist", id: "accordion", className: "panel-group faq-panel" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { id: "headingOne", role: "tab", className: "panel-heading" },
+	                        _react2.default.createElement(
+	                          "h4",
+	                          { className: "panel-title" },
+	                          _react2.default.createElement(
+	                            "a",
+	                            { "aria-controls": "collapseOne", "aria-expanded": "true", href: "#collapseOne", "data-parent": "#accordion", "data-toggle": "collapse" },
+	                            "How do I place an ad?"
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { "aria-labelledby": "headingOne", role: "tabpanel", className: "panel-collapse collapse in", id: "collapseOne" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body" },
+	                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sit amet ante nec vulputate. Nulla aliquam, justo auctor consequat tincidunt, arcu erat mattis lorem, lacinia lacinia dui enim at eros. Pellentesque ut gravida augue. Duis ac dictum tellus",
+	                          _react2.default.createElement("br", null),
+	                          _react2.default.createElement("br", null),
+	                          "Pellentesque in mauris placerat, porttitor lorem id, ornare nisl. Pellentesque rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales nisi quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum. Nulla nec odio eu nisi imperdiet dictum.",
+	                          _react2.default.createElement("br", null),
+	                          _react2.default.createElement("br", null),
+	                          "Curabitur sed leo dictum, convallis lorem eu, suscipit mi. Mauris viverra blandit varius. Proin non sem turpis. Etiam fringilla hendrerit nunc at accumsan. Duis mollis auctor lobortis."
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { id: "headingTwo", role: "tab", className: "panel-heading" },
+	                        _react2.default.createElement(
+	                          "h4",
+	                          { className: "panel-title" },
+	                          _react2.default.createElement(
+	                            "a",
+	                            { "aria-controls": "collapseTwo", "aria-expanded": "false", href: "#collapseTwo", "data-parent": "#accordion", "data-toggle": "collapse", className: "collapsed" },
+	                            "What does it cost to advertise?"
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { "aria-labelledby": "headingTwo", role: "tabpanel", className: "panel-collapse collapse", id: "collapseTwo" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body" },
+	                          "Curabitur sed leo dictum, convallis lorem eu, suscipit mi. Mauris viverra blandit varius. Proin non sem turpis. Etiam fringilla hendrerit nunc at accumsan. Duis mollis auctor lobortis.",
+	                          _react2.default.createElement("br", null),
+	                          _react2.default.createElement("br", null),
+	                          "Etiam elementum nulla non erat blandit, sed porttitor urna malesuada. Cras euismod a nulla sed ornare. Vestibulum id molestie nulla. Phasellus sodales, sapien vitae auctor rhoncus"
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { id: "headingThree", role: "tab", className: "panel-heading" },
+	                        _react2.default.createElement(
+	                          "h4",
+	                          { className: "panel-title" },
+	                          _react2.default.createElement(
+	                            "a",
+	                            { "aria-controls": "collapseThree", "aria-expanded": "false", href: "#collapseThree", "data-parent": "#accordion", "data-toggle": "collapse", className: "collapsed" },
+	                            "If I post an ad, will I also get more spam e-mails?"
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { "aria-labelledby": "headingThree", role: "tabpanel", className: "panel-collapse collapse", id: "collapseThree" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body" },
+	                          "Pellentesque in mauris placerat, porttitor lorem id, ornare nisl. Pellentesque rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales nisi quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum. Nulla nec odio eu nisi imperdiet dictum."
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { id: "heading_04", role: "tab", className: "panel-heading" },
+	                        _react2.default.createElement(
+	                          "h4",
+	                          { className: "panel-title" },
+	                          _react2.default.createElement(
+	                            "a",
+	                            { "aria-controls": "collapse_04", "aria-expanded": "false", href: "#collapse_04", "data-parent": "#accordion", "data-toggle": "collapse", className: "collapsed" },
+	                            "How long will my ad remain on the website?"
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { "aria-labelledby": "heading_04", role: "tabpanel", className: "panel-collapse collapse", id: "collapse_04" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body" },
+	                          "Pellentesque in mauris placerat, porttitor lorem id, ornare nisl. Pellentesque rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales nisi quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum. Nulla nec odio eu nisi imperdiet dictum."
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { id: "heading_05", role: "tab", className: "panel-heading" },
+	                        _react2.default.createElement(
+	                          "h4",
+	                          { className: "panel-title" },
+	                          _react2.default.createElement(
+	                            "a",
+	                            { "aria-controls": "collapse_05", "aria-expanded": "false", href: "#collapse_05", "data-parent": "#accordion", "data-toggle": "collapse", className: "collapsed" },
+	                            "I sold my item. How do I delete my ad?"
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { "aria-labelledby": "heading_05", role: "tabpanel", className: "panel-collapse collapse", id: "collapse_05" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body" },
+	                          "Pellentesque in mauris placerat, porttitor lorem id, ornare nisl. Pellentesque rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales nisi quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum. Nulla nec odio eu nisi imperdiet dictum."
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { id: "heading_06", role: "tab", className: "panel-heading" },
+	                        _react2.default.createElement(
+	                          "h4",
+	                          { className: "panel-title" },
+	                          _react2.default.createElement(
+	                            "a",
+	                            { "aria-controls": "collapse_06", "aria-expanded": "false", href: "#collapse_06", "data-parent": "#accordion", "data-toggle": "collapse", className: "collapsed" },
+	                            "What is a wish list?"
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { "aria-labelledby": "heading_06", role: "tabpanel", className: "panel-collapse collapse", id: "collapse_06" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body" },
+	                          "Curabitur sed leo dictum, convallis lorem eu, suscipit mi. Mauris viverra blandit varius. Proin non sem turpis. Etiam fringilla hendrerit nunc at accumsan. Duis mollis auctor lobortis."
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "parallaxbox about-parallax-bottom" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row text-center featuredbox" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-4 xs-gap" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "inner" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "icon-box-wrap" },
+	                      _react2.default.createElement("i", { className: "icon-book-open ln-shadow-box shape-3" })
+	                    ),
+	                    _react2.default.createElement(
+	                      "h3",
+	                      { className: "title-4" },
+	                      "herausragendes Beispiel"
+	                    ),
+	                    _react2.default.createElement(
+	                      "p",
+	                      null,
+	                      "Ein herausragendes Beispiel f\xFCr Story-Telling im modernen Webdesign. et suscipit sapien posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit tortor."
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-4 xs-gap" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "inner" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "icon-box-wrap" },
+	                      _react2.default.createElement("i", { className: " icon-lightbulb ln-shadow-box shape-2" })
+	                    ),
+	                    _react2.default.createElement(
+	                      "h3",
+	                      { className: "title-4" },
+	                      "Fusce ex ipsum"
+	                    ),
+	                    _react2.default.createElement(
+	                      "p",
+	                      null,
+	                      "Ein herausragendes Beispiel f\xFCr Story-Telling im modernen Webdesign. et suscipit sapien posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit tortor. ."
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-4 xs-gap" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "inner" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "icon-box-wrap" },
+	                      _react2.default.createElement("i", { className: "icon-megaphone ln-shadow-box shape-7" })
+	                    ),
+	                    _react2.default.createElement(
+	                      "h3",
+	                      { className: "title-4" },
+	                      "Pellentesque rhoncus "
+	                    ),
+	                    _react2.default.createElement(
+	                      "p",
+	                      null,
+	                      "Ein herausragendes Beispiel f\xFCr Story-Telling im modernen Webdesign. et suscipit sapien posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit tortor. "
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return FAQPage;
+	}(_react2.default.Component);
+
+	exports.default = FAQPage;
+
+/***/ },
+/* 245 */,
+/* 246 */,
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ManagePostsPage = function (_React$Component) {
+	  _inherits(ManagePostsPage, _React$Component);
+
+	  function ManagePostsPage() {
+	    _classCallCheck(this, ManagePostsPage);
+
+	    return _possibleConstructorReturn(this, (ManagePostsPage.__proto__ || Object.getPrototypeOf(ManagePostsPage)).apply(this, arguments));
+	  }
+
+	  _createClass(ManagePostsPage, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { id: "wrapper" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "main-container" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-3 page-sidebar" },
+	                  _react2.default.createElement(
+	                    "aside",
+	                    null,
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "inner-box" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "user-panel-sidebar" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "collapse-box" },
+	                          _react2.default.createElement(
+	                            "h5",
+	                            { className: "collapse-title no-border" },
+	                            " My Classified ",
+	                            _react2.default.createElement(
+	                              "a",
+	                              { className: "pull-right", "data-toggle": "collapse", href: "#MyClassified" },
+	                              _react2.default.createElement("i", { className: "fa fa-angle-down" })
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "div",
+	                            { id: "MyClassified", className: "panel-collapse collapse in" },
+	                            _react2.default.createElement(
+	                              "ul",
+	                              { className: "acc-list" },
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "/account" },
+	                                  _react2.default.createElement("i", { className: "icon-home" }),
+	                                  " Personal Home "
+	                                )
+	                              )
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "collapse-box" },
+	                          _react2.default.createElement(
+	                            "h5",
+	                            { className: "collapse-title" },
+	                            " My Ads ",
+	                            _react2.default.createElement(
+	                              "a",
+	                              { className: "pull-right", "data-toggle": "collapse", href: "#MyAds" },
+	                              _react2.default.createElement("i", { className: "fa fa-angle-down" })
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "div",
+	                            { id: "MyAds", className: "panel-collapse collapse in" },
+	                            _react2.default.createElement(
+	                              "ul",
+	                              { className: "acc-list" },
+	                              _react2.default.createElement(
+	                                "li",
+	                                { className: "active" },
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "#" },
+	                                  _react2.default.createElement("i", { className: "icon-docs" }),
+	                                  " My ads ",
+	                                  _react2.default.createElement(
+	                                    "span",
+	                                    { className: "badge" },
+	                                    "42"
+	                                  ),
+	                                  " "
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "/account-favourites" },
+	                                  _react2.default.createElement("i", { className: "icon-heart" }),
+	                                  "Favourites",
+	                                  _react2.default.createElement(
+	                                    "span",
+	                                    { className: "badge" },
+	                                    "42"
+	                                  ),
+	                                  " "
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "/account-saved-search" },
+	                                  _react2.default.createElement("i", { className: "icon-star-circled" }),
+	                                  "Saved search ",
+	                                  _react2.default.createElement(
+	                                    "span",
+	                                    { className: "badge" },
+	                                    "42"
+	                                  ),
+	                                  " "
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "/account-archives" },
+	                                  _react2.default.createElement("i", { className: "icon-folder-close" }),
+	                                  "Archives",
+	                                  _react2.default.createElement(
+	                                    "span",
+	                                    { className: "badge" },
+	                                    "42"
+	                                  )
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "/account-pending-approval-posts" },
+	                                  _react2.default.createElement("i", { className: "icon-hourglass" }),
+	                                  " Pending approval ",
+	                                  _react2.default.createElement(
+	                                    "span",
+	                                    { className: "badge" },
+	                                    "42"
+	                                  )
+	                                )
+	                              )
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "collapse-box" },
+	                          _react2.default.createElement(
+	                            "h5",
+	                            { className: "collapse-title" },
+	                            " Terminate Account ",
+	                            _react2.default.createElement(
+	                              "a",
+	                              { className: "pull-right", "data-toggle": "collapse", href: "#TerminateAccount" },
+	                              _react2.default.createElement("i", { className: "fa fa-angle-down" })
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "div",
+	                            { id: "TerminateAccount", className: "panel-collapse collapse in" },
+	                            _react2.default.createElement(
+	                              "ul",
+	                              { className: "acc-list" },
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "account-close.html" },
+	                                  _react2.default.createElement("i", { className: "icon-cancel-circled " }),
+	                                  " Close account "
+	                                )
+	                              )
+	                            )
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-9 page-content" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "inner-box" },
+	                    _react2.default.createElement(
+	                      "h2",
+	                      { className: "title-2" },
+	                      _react2.default.createElement("i", { className: "icon-docs" }),
+	                      " My Ads "
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "table-responsive" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "table-action" },
+	                        _react2.default.createElement(
+	                          "label",
+	                          { htmlFor: "checkAll" },
+	                          _react2.default.createElement("input", { type: "checkbox", onclick: "checkAll(this)", id: "checkAll" }),
+	                          "Select: All | ",
+	                          _react2.default.createElement(
+	                            "a",
+	                            { href: "#", className: "btn btn-xs btn-danger" },
+	                            "Delete ",
+	                            _react2.default.createElement("i", { className: "glyphicon glyphicon-remove " })
+	                          ),
+	                          " "
+	                        ),
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "table-search pull-right col-xs-7" },
+	                          _react2.default.createElement(
+	                            "div",
+	                            { className: "form-group" },
+	                            _react2.default.createElement(
+	                              "label",
+	                              { className: "col-xs-5 control-label text-right" },
+	                              "Search ",
+	                              _react2.default.createElement("br", null),
+	                              _react2.default.createElement(
+	                                "a",
+	                                { title: "clear filter", className: "clear-filter", href: "#clear" },
+	                                "[clear]"
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "col-xs-7 searchpan" },
+	                              _react2.default.createElement("input", { type: "text", className: "form-control", id: "filter" })
+	                            )
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "table",
+	                        { id: "addManageTable", className: "table table-striped table-bordered add-manage-table table demo", "data-filter": "#filter", "data-filter-text-only": "true" },
+	                        _react2.default.createElement(
+	                          "thead",
+	                          null,
+	                          _react2.default.createElement(
+	                            "tr",
+	                            null,
+	                            _react2.default.createElement("th", { "data-type": "numeric", "data-sort-initial": "true" }),
+	                            _react2.default.createElement(
+	                              "th",
+	                              null,
+	                              " Photo"
+	                            ),
+	                            _react2.default.createElement(
+	                              "th",
+	                              { "data-sort-ignore": "true" },
+	                              " Adds Details"
+	                            ),
+	                            _react2.default.createElement(
+	                              "th",
+	                              { "data-type": "numeric" },
+	                              " Price"
+	                            ),
+	                            _react2.default.createElement(
+	                              "th",
+	                              null,
+	                              " Option"
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          "tbody",
+	                          null,
+	                          _react2.default.createElement(
+	                            "tr",
+	                            null,
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '2%' }, className: "add-img-selector" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "checkbox" },
+	                                _react2.default.createElement(
+	                                  "label",
+	                                  null,
+	                                  _react2.default.createElement("input", { type: "checkbox" })
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '14%' }, className: "add-img-td" },
+	                              _react2.default.createElement(
+	                                "a",
+	                                { href: "ads-details.html" },
+	                                _react2.default.createElement("img", { className: "thumbnail  img-responsive", src: "assets/img/item/FreeGreatPicture.com-46407-nexus-4-starts-at-199.jpg", alt: "img" })
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '58%' }, className: "ads-details-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " ",
+	                                    _react2.default.createElement(
+	                                      "a",
+	                                      { href: "ads-details.html", title: "Brend New Nexus 4" },
+	                                      "Brend New Nexus 4"
+	                                    ),
+	                                    " "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " Posted On "
+	                                  ),
+	                                  ": 02-Oct-2014, 04:38 PM "
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Visitors "
+	                                  ),
+	                                  ": 221 ",
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Located In:"
+	                                  ),
+	                                  " New York"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '16%' }, className: "price-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "strong",
+	                                  null,
+	                                  " $199"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '10%' }, className: "action-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-primary btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-edit" }),
+	                                    " Edit "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-info btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-mail-forward" }),
+	                                    " Share"
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-danger btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: " fa fa-trash" }),
+	                                    " Delete"
+	                                  )
+	                                )
+	                              )
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "tr",
+	                            null,
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '2%' }, className: "add-img-selector" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "checkbox" },
+	                                _react2.default.createElement(
+	                                  "label",
+	                                  null,
+	                                  _react2.default.createElement("input", { type: "checkbox" })
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '14%' }, className: "add-img-td" },
+	                              _react2.default.createElement(
+	                                "a",
+	                                { href: "ads-details.html" },
+	                                _react2.default.createElement("img", { className: "thumbnail  img-responsive", src: "assets/img/item/tp/Image00020.jpg", alt: "img" })
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '58%' }, className: "ads-details-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " ",
+	                                    _react2.default.createElement(
+	                                      "a",
+	                                      { href: "ads-details.html", title: "I pod 16 gb" },
+	                                      "I pod 16 gb "
+	                                    )
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " Posted On "
+	                                  ),
+	                                  ": 02-Oct-2014, 04:38 PM "
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Visitors "
+	                                  ),
+	                                  ": 680 ",
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Located In:"
+	                                  ),
+	                                  " New York"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '16%' }, className: "price-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "strong",
+	                                  null,
+	                                  " $90"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '10%' }, className: "action-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-primary btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-edit" }),
+	                                    " Edit "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-info btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-mail-forward" }),
+	                                    " Share"
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-danger btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: " fa fa-trash" }),
+	                                    " Delete"
+	                                  )
+	                                )
+	                              )
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "tr",
+	                            null,
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '2%' }, className: "add-img-selector" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "checkbox" },
+	                                _react2.default.createElement(
+	                                  "label",
+	                                  null,
+	                                  _react2.default.createElement("input", { type: "checkbox" })
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '14%' }, className: "add-img-td" },
+	                              _react2.default.createElement(
+	                                "a",
+	                                { href: "ads-details.html" },
+	                                _react2.default.createElement("img", { className: "thumbnail  img-responsive", src: "assets/img/item/tp/Image00014.jpg", alt: "img" })
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '58%' }, className: "ads-details-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " ",
+	                                    _react2.default.createElement(
+	                                      "a",
+	                                      { href: "ads-details.html", title: "SAMSUNG GALAXY S CORE Duos " },
+	                                      "SAMSUNG GALAXY S CORE Duos "
+	                                    ),
+	                                    " "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " Posted On "
+	                                  ),
+	                                  ": 02-Oct-2014, 04:38 PM "
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Visitors "
+	                                  ),
+	                                  ": 221 ",
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Located In:"
+	                                  ),
+	                                  " New York"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '16%' }, className: "price-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "strong",
+	                                  null,
+	                                  " $150"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '10%' }, className: "action-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-primary btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-edit" }),
+	                                    " Edit "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-info btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-mail-forward" }),
+	                                    " Share"
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-danger btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: " fa fa-trash" }),
+	                                    " Delete"
+	                                  )
+	                                )
+	                              )
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "tr",
+	                            null,
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '2%' }, className: "add-img-selector" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "checkbox" },
+	                                _react2.default.createElement(
+	                                  "label",
+	                                  null,
+	                                  _react2.default.createElement("input", { type: "checkbox" })
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '14%' }, className: "add-img-td" },
+	                              _react2.default.createElement(
+	                                "a",
+	                                { href: "ads-details.html" },
+	                                _react2.default.createElement("img", { className: "thumbnail  img-responsive", src: "assets/img/item/tp/Image00002.jpg", alt: "img" })
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '58%' }, className: "ads-details-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " ",
+	                                    _react2.default.createElement(
+	                                      "a",
+	                                      { href: "ads-details.html", title: "HTC one x 32 GB intact Seal box For sale" },
+	                                      "HTC one x 32 GB intact Seal box For sale"
+	                                    ),
+	                                    " "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " Posted On "
+	                                  ),
+	                                  ": 02-Sept-2014, 09:00 PM "
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Visitors "
+	                                  ),
+	                                  ": 896 ",
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Located In:"
+	                                  ),
+	                                  " New York"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '16%' }, className: "price-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "strong",
+	                                  null,
+	                                  " $210"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '10%' }, className: "action-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-primary btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-edit" }),
+	                                    " Edit "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-info btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-mail-forward" }),
+	                                    " Share"
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-danger btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: " fa fa-trash" }),
+	                                    " Delete"
+	                                  )
+	                                )
+	                              )
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "tr",
+	                            null,
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '2%' }, className: "add-img-selector" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "checkbox" },
+	                                _react2.default.createElement(
+	                                  "label",
+	                                  null,
+	                                  _react2.default.createElement("input", { type: "checkbox" })
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '14%' }, className: "add-img-td" },
+	                              _react2.default.createElement(
+	                                "a",
+	                                { href: "ads-details.html" },
+	                                _react2.default.createElement("img", { className: "thumbnail  img-responsive", src: "assets/img/item/tp/Image00011.jpg", alt: "img" })
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '58%' }, className: "ads-details-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " ",
+	                                    _react2.default.createElement(
+	                                      "a",
+	                                      { href: "ads-details.html", title: "Sony Xperia TX " },
+	                                      "Sony Xperia TX "
+	                                    ),
+	                                    " "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " Posted On "
+	                                  ),
+	                                  ": 02-Oct-2014, 04:38 PM "
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Visitors "
+	                                  ),
+	                                  ": 221 ",
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Located In:"
+	                                  ),
+	                                  " New York"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '16%' }, className: "price-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "strong",
+	                                  null,
+	                                  " $260"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '10%' }, className: "action-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-primary btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-edit" }),
+	                                    " Edit "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-info btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-mail-forward" }),
+	                                    " Share"
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-danger btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: " fa fa-trash" }),
+	                                    " Delete"
+	                                  )
+	                                )
+	                              )
+	                            )
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ManagePostsPage;
+	}(_react2.default.Component);
+
+	exports.default = ManagePostsPage;
 
 /***/ }
 /******/ ]);

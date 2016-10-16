@@ -1,5 +1,5 @@
 import React from 'react'
-class AccountPage extends React.Component{
+export default class AccountPage extends React.Component{
   render() {
     return (
       <div>
@@ -26,7 +26,7 @@ class AccountPage extends React.Component{
                           <h5 className="collapse-title"> My Ads <a href="#MyAds" data-toggle="collapse" className="pull-right"><i className="fa fa-angle-down" /></a></h5>
                           <div className="panel-collapse collapse in" id="MyAds">
                             <ul className="acc-list">
-                              <li><a href="account-myads.html"><i className="icon-docs" /> My ads <span className="badge">42</span> </a></li>
+                              <li><a href="/manage-posts"><i className="icon-docs" /> My Posts <span className="badge">42</span> </a></li>
                               <li><a href="account-favourite-ads.html"><i className="icon-heart" />
                                   Favourite ads <span className="badge">42</span> </a></li>
                               <li><a href="account-saved-search.html"><i className="icon-star-circled" />
@@ -58,7 +58,7 @@ class AccountPage extends React.Component{
                   <div className="inner-box">
                     <div className="row">
                       <div className="col-md-5 col-xs-4 col-xxs-12">
-                        <h3 className="no-padding text-center-480 useradmin"><a href><img className="userImg" src="images/user.jpg" alt="user" /> Jhon Doe
+                        <h3 className="no-padding text-center-480 useradmin"><a href><img className="userImg" src="assets/img/user.jpg" alt="user" /> Jhon Doe
                           </a></h3>
                       </div>
                       <div className="col-md-7 col-xs-8 col-xxs-12">
@@ -246,4 +246,3 @@ class AccountPage extends React.Component{
     )
   }
 }
-module.exports = AccountPage
