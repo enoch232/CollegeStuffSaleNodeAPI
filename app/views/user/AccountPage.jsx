@@ -1,70 +1,9 @@
 import React from 'react'
-class AccountPage extends React.Component{
+export default class AccountPage extends React.Component{
   render() {
     return (
       <div>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* Fav and touch icons */}
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png" />
-        <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
-        <link rel="shortcut icon" href="assets/ico/favicon.png" />
-        <title>CollegeStuffSale</title>
-        {/* Bootstrap core CSS */}
-        <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-        {/* Custom styles for this template */}
-        <link href="assets/css/style.css" rel="stylesheet" />
-        {/* styles needed for carousel slider */}
-        <link href="assets/css/owl.carousel.css" rel="stylesheet" />
-        <link href="assets/css/owl.theme.css" rel="stylesheet" />
-        {/* Just for debugging purposes. */}
-        {/* HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries */}
-        {/*[if lt IE 9]>
-
-
-    <![endif]*/}
-        {/* include pace script for automatic web page progress bar  */}
         <div id="wrapper">
-          <div className="header">
-            <nav className="navbar navbar-site navbar-default" role="navigation">
-              <div className="container">
-                <div className="navbar-header">
-                  <button data-target=".navbar-collapse" data-toggle="collapse" className="navbar-toggle" type="button">
-                    <span className="sr-only">Toggle navigation</span> <span className="icon-bar" /> <span className="icon-bar" /> <span className="icon-bar" /></button>
-                  <a href="/" className="navbar-brand logo logo-title">
-                    {/* Original Logo will be placed here  */}
-                    <span className="logo-icon"><i className="icon icon-search-1 ln-shadow-logo shape-0" /> </span>
-                    College<span>StuffSale </span> </a></div>
-                <div className="navbar-collapse collapse">
-                  <ul className="nav navbar-nav navbar-right">
-                    <li><a href="#">Signout <i className="glyphicon glyphicon-off" /> </a></li>
-                    <li className="dropdown"><a href="#" className="dropdown-toggle" data-toggle="dropdown">
-                        <span>Jhon Doe</span> <i className="icon-user fa" /> <i className=" icon-down-open-big fa" /></a>
-                      <ul className="dropdown-menu user-menu">
-                        <li className="active"><a href="/"><i className="icon-home" /> Personal Home
-                          </a></li>
-                        <li><a href="account-myads.html"><i className="icon-th-thumb" /> My ads </a></li>
-                        <li><a href="account-favourite-ads.html"><i className="icon-heart" /> Favourite ads </a>
-                        </li>
-                        <li><a href="account-saved-search.html"><i className="icon-star-circled" /> Saved search
-                          </a></li>
-                        <li><a href="account-archived-ads.html"><i className="icon-folder-close" /> Archived ads
-                          </a></li>
-                        <li><a href="account-pending-approval-ads.html"><i className="icon-hourglass" /> Pending
-                            approval </a></li>
-                        <li><a href="statements.html"><i className=" icon-money " /> Payment history </a></li>
-                      </ul>
-                    </li>
-                    <li className="postadd"><a className="btn btn-block   btn-border btn-post btn-danger" href="post-ads.html">Post Free Add</a></li>
-                  </ul>
-                </div>
-                {/*/.nav-collapse */}
-              </div>
-              {/* /.container-fluid */}
-            </nav>
-          </div>
           {/* /.header */}
           <div className="main-container">
             <div className="container">
@@ -87,7 +26,7 @@ class AccountPage extends React.Component{
                           <h5 className="collapse-title"> My Ads <a href="#MyAds" data-toggle="collapse" className="pull-right"><i className="fa fa-angle-down" /></a></h5>
                           <div className="panel-collapse collapse in" id="MyAds">
                             <ul className="acc-list">
-                              <li><a href="account-myads.html"><i className="icon-docs" /> My ads <span className="badge">42</span> </a></li>
+                              <li><a href="/manage-posts"><i className="icon-docs" /> My Posts <span className="badge">42</span> </a></li>
                               <li><a href="account-favourite-ads.html"><i className="icon-heart" />
                                   Favourite ads <span className="badge">42</span> </a></li>
                               <li><a href="account-saved-search.html"><i className="icon-star-circled" />
@@ -119,7 +58,7 @@ class AccountPage extends React.Component{
                   <div className="inner-box">
                     <div className="row">
                       <div className="col-md-5 col-xs-4 col-xxs-12">
-                        <h3 className="no-padding text-center-480 useradmin"><a href><img className="userImg" src="images/user.jpg" alt="user" /> Jhon Doe
+                        <h3 className="no-padding text-center-480 useradmin"><a href><img className="userImg" src="assets/img/user.jpg" alt="user" /> Jhon Doe
                           </a></h3>
                       </div>
                       <div className="col-md-7 col-xs-8 col-xxs-12">
@@ -302,21 +241,8 @@ class AccountPage extends React.Component{
             {/*/.container*/}
           </div>
           {/* /.main-container */}
-          <div className="footer" id="footer">
-            <div className="container">
-              <ul className=" pull-left navbar-link footer-nav">
-                <li><a href="index-v-2.html"> Home </a> <a href="about-us.html"> About us </a> <a href="#"> Terms and
-                    Conditions </a> <a href="#"> Privacy Policy </a> <a href="contact.html"> Contact us </a> <a href="faq.html"> FAQ </a>
-                </li></ul>
-              <ul className=" pull-right navbar-link footer-nav">
-                <li> © 2016 CollegeStuffSale</li>
-              </ul>
-            </div>
-          </div>
-          {/*/.footer*/}
         </div>
       </div>
     )
   }
 }
-module.exports = AccountPage

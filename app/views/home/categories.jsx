@@ -1,5 +1,5 @@
-const React = require("react")
-class Category extends React.Component {
+import React from 'react'
+export default class Category extends React.Component {
   constructor(props){
   	super(props)
   	this.state = {
@@ -45,4 +45,3 @@ class Category extends React.Component {
     )
   }
 }
-module.exports = Category

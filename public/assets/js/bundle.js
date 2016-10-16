@@ -21444,6 +21444,10 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(2);
@@ -21464,13 +21468,33 @@
 
 	var _IndexPage2 = _interopRequireDefault(_IndexPage);
 
+<<<<<<< HEAD
 	var _LoginPage = __webpack_require__(240);
+=======
+	var _SignInPage = __webpack_require__(242);
+>>>>>>> aac50bfcdc8fe5254842cae02862748c7517bcae
 
-	var _LoginPage2 = _interopRequireDefault(_LoginPage);
+	var _SignInPage2 = _interopRequireDefault(_SignInPage);
 
 	var _AccountPage = __webpack_require__(241);
 
 	var _AccountPage2 = _interopRequireDefault(_AccountPage);
+
+	var _NewPostPage = __webpack_require__(241);
+
+	var _NewPostPage2 = _interopRequireDefault(_NewPostPage);
+
+	var _AboutUsPage = __webpack_require__(243);
+
+	var _AboutUsPage2 = _interopRequireDefault(_AboutUsPage);
+
+	var _FAQPage = __webpack_require__(244);
+
+	var _FAQPage2 = _interopRequireDefault(_FAQPage);
+
+	var _ManagePostsPage = __webpack_require__(247);
+
+	var _ManagePostsPage2 = _interopRequireDefault(_ManagePostsPage);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21480,6 +21504,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	//refactor so that all goes in the '/' and refactor the header and footer, so that it doesnt load up first"
 	var RouterPage = function (_React$Component) {
 	  _inherits(RouterPage, _React$Component);
 
@@ -21497,8 +21522,12 @@
 	        { history: _reactRouter.browserHistory },
 	        _react2.default.createElement(_reactRouter.Route, { path: '/', component: _IndexPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/signup', component: _SignUpPage2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _LoginPage2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/account', component: _AccountPage2.default })
+	        _react2.default.createElement(_reactRouter.Route, { path: '/signin', component: _SignInPage2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/account', component: _AccountPage2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/new-post', component: _NewPostPage2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/aboutus', component: _AboutUsPage2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/faq', component: _FAQPage2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/manage-posts', component: _ManagePostsPage2.default })
 	      );
 	    }
 	  }]);
@@ -21506,7 +21535,7 @@
 	  return RouterPage;
 	}(_react2.default.Component);
 
-	module.exports = RouterPage;
+	exports.default = RouterPage;
 
 /***/ },
 /* 174 */
@@ -27166,7 +27195,17 @@
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+			value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -27174,8 +27213,11 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+<<<<<<< HEAD
 	var React = __webpack_require__(2);
 
+=======
+>>>>>>> aac50bfcdc8fe5254842cae02862748c7517bcae
 	var SignUpPage = function (_React$Component) {
 			_inherits(SignUpPage, _React$Component);
 
@@ -27203,7 +27245,7 @@
 					key: "_handleSubmit",
 					value: function _handleSubmit() {
 							console.log("fetching..");
-							return fetch('http://localhost:3000/api/users', {
+							return fetch('http://localhost.com/api/users', {
 									method: 'POST',
 									headers: {
 											'Accept': "application/json",
@@ -27232,231 +27274,136 @@
 					value: function render() {
 							var _this2 = this;
 
-							return React.createElement(
+							return _react2.default.createElement(
 									"div",
 									null,
-									React.createElement("meta", { charSet: "utf-8" }),
-									React.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
-									React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "144x144", href: "assets/ico/apple-touch-icon-144-precomposed.png" }),
-									React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "114x114", href: "assets/ico/apple-touch-icon-114-precomposed.png" }),
-									React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "72x72", href: "assets/ico/apple-touch-icon-72-precomposed.png" }),
-									React.createElement("link", { rel: "apple-touch-icon-precomposed", href: "ico/apple-touch-icon-57-precomposed.png" }),
-									React.createElement("link", { rel: "shortcut icon", href: "assets/ico/favicon.png" }),
-									React.createElement(
-											"title",
-											null,
-											"CollegeStuffSale"
-									),
-									React.createElement("link", { href: "assets/bootstrap/css/bootstrap.css", rel: "stylesheet" }),
-									React.createElement("link", { href: "assets/css/style.css", rel: "stylesheet" }),
-									React.createElement("link", { href: "assets/css/owl.theme.css", rel: "stylesheet" }),
-									React.createElement(
+									_react2.default.createElement(
 											"div",
 											null,
-											React.createElement(
+											_react2.default.createElement(
 													"div",
 													{ id: "wrapper" },
-													React.createElement(
-															"div",
-															{ className: "header" },
-															React.createElement(
-																	"nav",
-																	{ className: "navbar navbar-site navbar-default", role: "navigation" },
-																	React.createElement(
-																			"div",
-																			{ className: "container" },
-																			React.createElement(
-																					"div",
-																					{ className: "navbar-header" },
-																					React.createElement(
-																							"button",
-																							{ "data-target": ".navbar-collapse", "data-toggle": "collapse", className: "navbar-toggle", type: "button" },
-																							React.createElement(
-																									"span",
-																									{ className: "sr-only" },
-																									"Toggle navigation"
-																							),
-																							" ",
-																							React.createElement("span", { className: "icon-bar" }),
-																							React.createElement("span", { className: "icon-bar" }),
-																							" ",
-																							React.createElement("span", { className: "icon-bar" })
-																					),
-																					React.createElement(
-																							"a",
-																							{ href: "/", className: "navbar-brand logo logo-title" },
-																							React.createElement(
-																									"span",
-																									{ className: "logo-icon" },
-																									React.createElement("i", { className: "icon icon-search-1 ln-shadow-logo shape-0" })
-																							),
-																							" College",
-																							React.createElement(
-																									"span",
-																									null,
-																									"StuffSale"
-																							)
-																					)
-																			),
-																			React.createElement(
-																					"div",
-																					{ className: "navbar-collapse collapse" },
-																					React.createElement(
-																							"ul",
-																							{ className: "nav navbar-nav navbar-right" },
-																							React.createElement(
-																									"li",
-																									null,
-																									React.createElement(
-																											"a",
-																											{ href: "/login" },
-																											"Login"
-																									)
-																							),
-																							React.createElement(
-																									"li",
-																									null,
-																									React.createElement(
-																											"a",
-																											{ href: "/signup" },
-																											"Signup"
-																									)
-																							),
-																							React.createElement(
-																									"li",
-																									{ className: "postadd" },
-																									React.createElement(
-																											"a",
-																											{ className: "btn btn-block btn-border btn-post btn-danger", href: "/posts/new" },
-																											"Post New Item"
-																									)
-																							)
-																					)
-																			)
-																	)
-															)
-													),
-													React.createElement(
+													_react2.default.createElement(
 															"div",
 															{ className: "main-container" },
-															React.createElement(
+															_react2.default.createElement(
 																	"div",
 																	{ className: "container" },
-																	React.createElement(
+																	_react2.default.createElement(
 																			"div",
 																			{ className: "row" },
-																			React.createElement(
+																			_react2.default.createElement(
 																					"div",
 																					{ className: "col-md-8 page-content" },
-																					React.createElement(
+																					_react2.default.createElement(
 																							"div",
 																							{ className: "inner-box category-content" },
-																							React.createElement(
+																							_react2.default.createElement(
 																									"h2",
 																									{ className: "title-2" },
-																									React.createElement("i", { className: "icon-user-add" }),
+																									_react2.default.createElement("i", { className: "icon-user-add" }),
 																									" Create a free account "
 																							),
-																							React.createElement(
+																							_react2.default.createElement(
 																									"div",
 																									{ className: "row" },
-																									React.createElement(
+																									_react2.default.createElement(
 																											"div",
 																											{ className: "col-sm-12", id: "sign-up-form" },
-																											React.createElement(
+																											_react2.default.createElement(
 																													"form",
 																													{ className: "form-horizontal" },
-																													React.createElement("link", { href: "assets/css/help-tip.css", rel: "stylesheet" }),
-																													React.createElement(
+																													_react2.default.createElement("link", { href: "assets/css/help-tip.css", rel: "stylesheet" }),
+																													_react2.default.createElement(
 																															"fieldset",
 																															null,
-																															React.createElement(
+																															_react2.default.createElement(
 																																	"div",
 																																	{ className: "form-group required" },
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"label",
 																																			{ className: "col-md-4 control-label" },
 																																			"First Name ",
-																																			React.createElement(
+																																			_react2.default.createElement(
 																																					"sup",
 																																					null,
 																																					"*"
 																																			)
 																																	),
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"div",
 																																			{ className: "col-md-6" },
-																																			React.createElement("input", { name: true, placeholder: "First Name", className: "form-control input-md", required: true, type: "text", value: this.state.firstName, onChange: function onChange(event) {
+																																			_react2.default.createElement("input", { name: true, placeholder: "First Name", className: "form-control input-md", required: true, type: "text", value: this.state.firstName, onChange: function onChange(event) {
 																																							return _this2.setState({ firstName: event.target.value.substr(0, 40) });
 																																					} })
 																																	)
 																															),
-																															React.createElement(
+																															_react2.default.createElement(
 																																	"div",
 																																	{ className: "form-group required" },
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"label",
 																																			{ className: "col-md-4 control-label" },
 																																			"Last Name ",
-																																			React.createElement(
+																																			_react2.default.createElement(
 																																					"sup",
 																																					null,
 																																					"*"
 																																			)
 																																	),
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"div",
 																																			{ className: "col-md-6" },
-																																			React.createElement("input", { name: "textinput", placeholder: "Last Name", className: "form-control input-md", type: "text", value: this.state.lastName, onChange: function onChange(event) {
+																																			_react2.default.createElement("input", { name: "textinput", placeholder: "Last Name", className: "form-control input-md", type: "text", value: this.state.lastName, onChange: function onChange(event) {
 																																							_this2.setState({ lastName: event.target.value.substr(0, 40) });
 																																					} })
 																																	)
 																															),
-																															React.createElement(
+																															_react2.default.createElement(
 																																	"div",
 																																	{ className: "form-group required" },
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"label",
 																																			{ htmlFor: "inputEmail3", className: "col-md-4 control-label" },
 																																			"Email ",
-																																			React.createElement(
+																																			_react2.default.createElement(
 																																					"sup",
 																																					null,
 																																					"*"
 																																			)
 																																	),
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"div",
 																																			{ className: "col-md-6" },
-																																			React.createElement("input", { type: "email", className: "form-control", id: "inputEmail3", placeholder: "Email", value: this.state.email, onChange: function onChange(event) {
+																																			_react2.default.createElement("input", { type: "email", className: "form-control", id: "inputEmail3", placeholder: "Email", value: this.state.email, onChange: function onChange(event) {
 																																							_this2.setState({ email: event.target.value.substr(0, 140) });
 																																					} })
 																																	)
 																															),
-																															React.createElement(
+																															_react2.default.createElement(
 																																	"div",
 																																	{ className: "form-group required" },
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"label",
 																																			{ className: "col-md-4 control-label" },
 																																			"Phone Number "
 																																	),
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"div",
 																																			{ className: "col-md-6" },
-																																			React.createElement("input", { name: "textinput", placeholder: "Phone Number", className: "form-control input-md", type: "text", value: this.state.phoneNumber, onChange: function onChange(event) {
+																																			_react2.default.createElement("input", { name: "textinput", placeholder: "Phone Number", className: "form-control input-md", type: "text", value: this.state.phoneNumber, onChange: function onChange(event) {
 																																							_this2.setState({ phoneNumber: event.target.value.substr(0, 16) });
 																																					} }),
-																																			React.createElement(
+																																			_react2.default.createElement(
 																																					"div",
 																																					{ className: "checkbox" },
-																																					React.createElement(
+																																					_react2.default.createElement(
 																																							"label",
 																																							null,
-																																							React.createElement("input", { type: "checkbox", checked: this.state.hideNumber, onChange: function onChange() {
+																																							_react2.default.createElement("input", { type: "checkbox", checked: this.state.hideNumber, onChange: function onChange() {
 																																											_this2.setState({ hideNumber: !_this2.state.hideNumber });
 																																									} }),
-																																							React.createElement(
+																																							_react2.default.createElement(
 																																									"small",
 																																									null,
 																																									" Hide the phone number on the published ads."
@@ -27464,13 +27411,13 @@
 																																					)
 																																			)
 																																	),
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"div",
 																																			{ className: "col-md-1" },
-																																			React.createElement(
+																																			_react2.default.createElement(
 																																					"div",
 																																					{ className: "help-tip" },
-																																					React.createElement(
+																																					_react2.default.createElement(
 																																							"p",
 																																							null,
 																																							"Phone number is needed to let other users contact you."
@@ -27478,36 +27425,36 @@
 																																			)
 																																	)
 																															),
-																															React.createElement(
+																															_react2.default.createElement(
 																																	"div",
 																																	{ className: "form-group" },
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"label",
 																																			{ className: "col-md-4 control-label" },
 																																			"Gender"
 																																	),
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"div",
 																																			{ className: "col-md-6" },
-																																			React.createElement(
+																																			_react2.default.createElement(
 																																					"div",
 																																					{ className: "radio" },
-																																					React.createElement(
+																																					_react2.default.createElement(
 																																							"label",
 																																							{ htmlFor: "Gender-0" },
-																																							React.createElement("input", { name: "Gender", id: "Gender-0", type: "radio", checked: !this.state.gender, onChange: function onChange() {
+																																							_react2.default.createElement("input", { name: "Gender", id: "Gender-0", type: "radio", checked: !this.state.gender, onChange: function onChange() {
 																																											_this2.setState({ gender: !_this2.state.gender });
 																																									} }),
 																																							"Male"
 																																					)
 																																			),
-																																			React.createElement(
+																																			_react2.default.createElement(
 																																					"div",
 																																					{ className: "radio" },
-																																					React.createElement(
+																																					_react2.default.createElement(
 																																							"label",
 																																							{ htmlFor: "Gender-1" },
-																																							React.createElement("input", { name: "Gender", id: "Gender-1", type: "radio", checked: this.state.gender, onChange: function onChange() {
+																																							_react2.default.createElement("input", { name: "Gender", id: "Gender-1", type: "radio", checked: this.state.gender, onChange: function onChange() {
 																																											_this2.setState({ gender: !_this2.state.gender });
 																																									} }),
 																																							"Female"
@@ -27515,95 +27462,95 @@
 																																			)
 																																	)
 																															),
-																															React.createElement(
+																															_react2.default.createElement(
 																																	"div",
 																																	{ className: "form-group" },
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"label",
 																																			{ className: "col-md-4 control-label", htmlFor: "textarea" },
 																																			"About Yourself"
 																																	),
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"div",
 																																			{ className: "col-md-6" },
-																																			React.createElement("textarea", { className: "form-control", id: "textarea", name: "textarea", placeholder: "About Yourself in 500 words", value: this.state.bio, onChange: function onChange(event) {
+																																			_react2.default.createElement("textarea", { className: "form-control", id: "textarea", name: "textarea", placeholder: "About Yourself in 500 words", value: this.state.bio, onChange: function onChange(event) {
 																																							_this2.setState({ bio: event.target.value.substr(0, 500) });
 																																					} })
 																																	)
 																															),
-																															React.createElement(
+																															_react2.default.createElement(
 																																	"div",
 																																	{ className: "form-group required" },
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"label",
 																																			{ htmlFor: "password-input", className: "col-md-4 control-label" },
 																																			"Password ",
-																																			React.createElement(
+																																			_react2.default.createElement(
 																																					"sup",
 																																					null,
 																																					"*"
 																																			)
 																																	),
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"div",
 																																			{ className: "col-md-6" },
-																																			React.createElement("input", { type: "password", className: "form-control", id: "password-input", placeholder: "Password", value: this.state.password, onChange: function onChange(event) {
+																																			_react2.default.createElement("input", { type: "password", className: "form-control", id: "password-input", placeholder: "Password", value: this.state.password, onChange: function onChange(event) {
 																																							_this2.setState({ password: event.target.value.substr(0, 25) });
 																																					} })
 																																	)
 																															),
-																															React.createElement(
+																															_react2.default.createElement(
 																																	"div",
 																																	{ className: "form-group required" },
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"label",
 																																			{ htmlFor: "password-confirmation-input", className: "col-md-4 control-label" },
 																																			"Password Confirmation ",
-																																			React.createElement(
+																																			_react2.default.createElement(
 																																					"sup",
 																																					null,
 																																					"*"
 																																			)
 																																	),
-																																	React.createElement(
+																																	_react2.default.createElement(
 																																			"div",
 																																			{ className: "col-md-6" },
-																																			React.createElement("input", { type: "password", className: "form-control", id: "password-confirmation-input", placeholder: "Password", value: this.state.passwordConfirmation, onChange: function onChange(event) {
+																																			_react2.default.createElement("input", { type: "password", className: "form-control", id: "password-confirmation-input", placeholder: "Password", value: this.state.passwordConfirmation, onChange: function onChange(event) {
 																																							_this2.setState({ passwordConfirmation: event.target.value.substr(0, 25) });
 																																					} })
 																																	)
 																															),
-																															React.createElement(
+																															_react2.default.createElement(
 																																	"div",
 																																	{ className: "form-group" },
-																																	React.createElement("label", { className: "col-md-4 control-label" }),
-																																	React.createElement(
+																																	_react2.default.createElement("label", { className: "col-md-4 control-label" }),
+																																	_react2.default.createElement(
 																																			"div",
 																																			{ className: "col-md-8" },
-																																			React.createElement(
+																																			_react2.default.createElement(
 																																					"div",
 																																					{ className: "termbox mb10" },
-																																					React.createElement(
+																																					_react2.default.createElement(
 																																							"label",
 																																							{ className: "checkbox-inline", htmlFor: "checkboxes-1" },
-																																							React.createElement("input", { name: "checkboxes", id: "checkboxes-1", checked: this.state.readTermsConditions, type: "checkbox", onChange: function onChange() {
+																																							_react2.default.createElement("input", { name: "checkboxes", id: "checkboxes-1", checked: this.state.readTermsConditions, type: "checkbox", onChange: function onChange() {
 																																											_this2.setState({ readTermsConditions: !_this2.state.readTermsConditions });
 																																									} }),
 																																							"I have read and agreed to the ",
-																																							React.createElement(
+																																							_react2.default.createElement(
 																																									"a",
 																																									{ href: "terms-conditions.html" },
 																																									"Terms & Conditions"
 																																							),
-																																							React.createElement(
+																																							_react2.default.createElement(
 																																									"sup",
 																																									null,
 																																									" *"
 																																							)
 																																					)
 																																			),
-																																			React.createElement("div", { style: { clear: 'both' } }),
-																																			React.createElement(
+																																			_react2.default.createElement("div", { style: { clear: 'both' } }),
+																																			_react2.default.createElement(
 																																					"a",
 																																					{ disabled: !this.state.readTermsConditions, className: "btn btn-primary", onClick: this._handleSubmit.bind(this) },
 																																					"Register"
@@ -27616,125 +27563,70 @@
 																							)
 																					)
 																			),
-																			React.createElement(
+																			_react2.default.createElement(
 																					"div",
 																					{ className: "col-md-4 reg-sidebar" },
-																					React.createElement(
+																					_react2.default.createElement(
 																							"div",
 																							{ className: "reg-sidebar-inner text-center" },
-																							React.createElement(
+																							_react2.default.createElement(
 																									"div",
 																									{ className: "promo-text-box" },
-																									React.createElement("i", { className: " icon-picture fa fa-4x icon-color-1" }),
-																									React.createElement(
+																									_react2.default.createElement("i", { className: " icon-picture fa fa-4x icon-color-1" }),
+																									_react2.default.createElement(
 																											"h3",
 																											null,
-																											React.createElement(
+																											_react2.default.createElement(
 																													"strong",
 																													null,
 																													"Post a Free Classified"
 																											)
 																									),
-																									React.createElement(
+																									_react2.default.createElement(
 																											"p",
 																											null,
 																											" Post your free online classified ads with us. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
 																									)
 																							),
-																							React.createElement(
+																							_react2.default.createElement(
 																									"div",
 																									{ className: "promo-text-box" },
-																									React.createElement("i", { className: " icon-pencil-circled fa fa-4x icon-color-2" }),
-																									React.createElement(
+																									_react2.default.createElement("i", { className: " icon-pencil-circled fa fa-4x icon-color-2" }),
+																									_react2.default.createElement(
 																											"h3",
 																											null,
-																											React.createElement(
+																											_react2.default.createElement(
 																													"strong",
 																													null,
 																													"Create and Manage Items"
 																											)
 																									),
-																									React.createElement(
+																									_react2.default.createElement(
 																											"p",
 																											null,
 																											" Nam sit amet dui vel orci venenatis ullamcorper eget in lacus. Praesent tristique elit pharetra magna efficitur laoreet."
 																									)
 																							),
-																							React.createElement(
+																							_react2.default.createElement(
 																									"div",
 																									{ className: "promo-text-box" },
-																									React.createElement("i", { className: "  icon-heart-2 fa fa-4x icon-color-3" }),
-																									React.createElement(
+																									_react2.default.createElement("i", { className: "  icon-heart-2 fa fa-4x icon-color-3" }),
+																									_react2.default.createElement(
 																											"h3",
 																											null,
-																											React.createElement(
+																											_react2.default.createElement(
 																													"strong",
 																													null,
 																													"Create your Favorite ads list."
 																											)
 																									),
-																									React.createElement(
+																									_react2.default.createElement(
 																											"p",
 																											null,
 																											" PostNullam quis orci ut ipsum mollis malesuada varius eget metus. Nulla aliquet dui sed quam iaculis, ut finibus massa tincidunt."
 																									)
 																							)
 																					)
-																			)
-																	)
-															)
-													),
-													React.createElement(
-															"div",
-															{ className: "footer", id: "footer" },
-															React.createElement(
-																	"div",
-																	{ className: "container" },
-																	React.createElement(
-																			"ul",
-																			{ className: " pull-left navbar-link footer-nav" },
-																			React.createElement(
-																					"li",
-																					null,
-																					React.createElement(
-																							"a",
-																							{ href: "/" },
-																							"Home"
-																					),
-																					React.createElement(
-																							"a",
-																							{ href: "/aboutus" },
-																							"About us"
-																					),
-																					React.createElement(
-																							"a",
-																							{ href: "/terms" },
-																							"Terms and Conditions"
-																					),
-																					React.createElement(
-																							"a",
-																							{ href: "/privacy" },
-																							"Privacy Policy"
-																					),
-																					React.createElement(
-																							"a",
-																							{ href: "/contact" },
-																							"Contact us"
-																					),
-																					React.createElement(
-																							"a",
-																							{ href: "/faq" },
-																							"FAQ"
-																					)
-																			)
-																	),
-																	React.createElement(
-																			"ul",
-																			{ className: " pull-right navbar-link footer-nav" },
-																			React.createElement(
-																					"li",
-																					null,
-																					" \xA9 2016 CollegeStuffSale"
 																			)
 																	)
 															)
@@ -27746,9 +27638,9 @@
 			}]);
 
 			return SignUpPage;
-	}(React.Component);
+	}(_react2.default.Component);
 
-	module.exports = SignUpPage;
+	exports.default = SignUpPage;
 
 /***/ },
 /* 238 */
@@ -27756,7 +27648,21 @@
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _categories = __webpack_require__(238);
+
+	var _categories2 = _interopRequireDefault(_categories);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -27764,9 +27670,12 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+<<<<<<< HEAD
 	var React = __webpack_require__(2);
 	var Category = __webpack_require__(239);
 
+=======
+>>>>>>> aac50bfcdc8fe5254842cae02862748c7517bcae
 	var IndexPage = function (_React$Component) {
 	  _inherits(IndexPage, _React$Component);
 
@@ -27779,155 +27688,57 @@
 	  _createClass(IndexPage, [{
 	    key: "render",
 	    value: function render() {
-	      return React.createElement(
+	      return _react2.default.createElement(
 	        "div",
 	        null,
-	        React.createElement("meta", { charSet: "utf-8" }),
-	        React.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
-	        React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "144x144", href: "assets/ico/apple-touch-icon-144-precomposed.png" }),
-	        React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "114x114", href: "assets/ico/apple-touch-icon-114-precomposed.png" }),
-	        React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "72x72", href: "assets/ico/apple-touch-icon-72-precomposed.png" }),
-	        React.createElement("link", { rel: "apple-touch-icon-precomposed", href: "ico/apple-touch-icon-57-precomposed.png" }),
-	        React.createElement("link", { rel: "shortcut icon", href: "assets/ico/favicon.png" }),
-	        React.createElement(
-	          "title",
-	          null,
-	          "CollegeStuffSale"
-	        ),
-	        React.createElement("link", { href: "assets/bootstrap/css/bootstrap.min.css", rel: "stylesheet" }),
-	        React.createElement("link", { href: "assets/css/style.css", rel: "stylesheet" }),
-	        React.createElement("link", { href: "assets/css/owl.carousel.css", rel: "stylesheet" }),
-	        React.createElement("link", { href: "assets/css/owl.theme.css", rel: "stylesheet" }),
-	        React.createElement(
+	        _react2.default.createElement(
 	          "div",
 	          { id: "wrapper" },
-	          React.createElement(
-	            "div",
-	            { className: "header" },
-	            React.createElement(
-	              "nav",
-	              { className: "navbar   navbar-site navbar-default", role: "navigation" },
-	              React.createElement(
-	                "div",
-	                { className: "container" },
-	                React.createElement(
-	                  "div",
-	                  { className: "navbar-header" },
-	                  React.createElement(
-	                    "button",
-	                    { "data-target": ".navbar-collapse", "data-toggle": "collapse", className: "navbar-toggle", type: "button" },
-	                    React.createElement(
-	                      "span",
-	                      { className: "sr-only" },
-	                      "Toggle navigation"
-	                    ),
-	                    " ",
-	                    React.createElement("span", { className: "icon-bar" }),
-	                    " ",
-	                    React.createElement("span", { className: "icon-bar" }),
-	                    " ",
-	                    React.createElement("span", { className: "icon-bar" })
-	                  ),
-	                  React.createElement(
-	                    "a",
-	                    { href: "/", className: "navbar-brand logo logo-title" },
-	                    React.createElement(
-	                      "span",
-	                      { className: "logo-icon" },
-	                      React.createElement("i", { className: "icon icon-search-1 ln-shadow-logo shape-0" })
-	                    ),
-	                    " College",
-	                    React.createElement(
-	                      "span",
-	                      null,
-	                      "StuffSale "
-	                    ),
-	                    " "
-	                  )
-	                ),
-	                React.createElement(
-	                  "div",
-	                  { className: "navbar-collapse collapse" },
-	                  React.createElement(
-	                    "ul",
-	                    { className: "nav navbar-nav navbar-right" },
-	                    React.createElement(
-	                      "li",
-	                      null,
-	                      React.createElement(
-	                        "a",
-	                        { href: "/login" },
-	                        "Login"
-	                      )
-	                    ),
-	                    React.createElement(
-	                      "li",
-	                      null,
-	                      React.createElement(
-	                        "a",
-	                        { href: "/signup" },
-	                        "Signup"
-	                      )
-	                    ),
-	                    React.createElement(
-	                      "li",
-	                      { className: "postadd" },
-	                      React.createElement(
-	                        "a",
-	                        { className: "btn btn-block   btn-border btn-post btn-danger", href: "/posts/new" },
-	                        "Post New Item"
-	                      )
-	                    )
-	                  )
-	                )
-	              )
-	            )
-	          ),
-	          React.createElement(
+	          _react2.default.createElement(
 	            "div",
 	            { className: "intro", style: { backgroundImage: 'url(assets/img/bg3.jpg)' } },
-	            React.createElement(
+	            _react2.default.createElement(
 	              "div",
 	              { className: "dtable hw100" },
-	              React.createElement(
+	              _react2.default.createElement(
 	                "div",
 	                { className: "dtable-cell hw100" },
-	                React.createElement(
+	                _react2.default.createElement(
 	                  "div",
 	                  { className: "container text-center" },
-	                  React.createElement(
+	                  _react2.default.createElement(
 	                    "h1",
 	                    { className: "intro-title animated fadeInDown" },
 	                    "The Online Marketplace for Your College Expereince "
 	                  ),
-	                  React.createElement(
+	                  _react2.default.createElement(
 	                    "p",
 	                    { className: "sub animateme fittext3 animated fadeIn" },
 	                    " Buy, Sell Your College Items Today "
 	                  ),
-	                  React.createElement(
+	                  _react2.default.createElement(
 	                    "div",
 	                    { className: "row search-row animated fadeInUp" },
-	                    React.createElement(
+	                    _react2.default.createElement(
 	                      "div",
 	                      { className: "col-lg-4 col-sm-4 search-col relative locationicon" },
-	                      React.createElement("i", { className: "icon-location-2 icon-append" }),
-	                      React.createElement("input", { type: "text", name: "country", id: "autocomplete-ajax", className: "form-control locinput input-rel searchtag-input has-icon", placeholder: "University/School..." })
+	                      _react2.default.createElement("i", { className: "icon-location-2 icon-append" }),
+	                      _react2.default.createElement("input", { type: "text", name: "country", id: "autocomplete-ajax", className: "form-control locinput input-rel searchtag-input has-icon", placeholder: "University/School..." })
 	                    ),
-	                    React.createElement(
+	                    _react2.default.createElement(
 	                      "div",
 	                      { className: "col-lg-4 col-sm-4 search-col relative" },
-	                      React.createElement("i", { className: "icon-docs icon-append" }),
-	                      React.createElement("input", { type: "text", name: "ads", className: "form-control has-icon", placeholder: "I'm looking for a ..." })
+	                      _react2.default.createElement("i", { className: "icon-docs icon-append" }),
+	                      _react2.default.createElement("input", { type: "text", name: "ads", className: "form-control has-icon", placeholder: "I'm looking for a ..." })
 	                    ),
-	                    React.createElement(
+	                    _react2.default.createElement(
 	                      "div",
 	                      { className: "col-lg-4 col-sm-4 search-col" },
-	                      React.createElement(
+	                      _react2.default.createElement(
 	                        "button",
 	                        { className: "btn btn-primary btn-search btn-block" },
-	                        React.createElement("i", { className: "icon-search" }),
-	                        React.createElement(
+	                        _react2.default.createElement("i", { className: "icon-search" }),
+	                        _react2.default.createElement(
 	                          "strong",
 	                          null,
 	                          "Find"
@@ -27939,64 +27750,64 @@
 	              )
 	            )
 	          ),
-	          React.createElement(
+	          _react2.default.createElement(
 	            "div",
 	            { className: "main-container" },
-	            React.createElement(
+	            _react2.default.createElement(
 	              "div",
 	              { className: "container" },
-	              React.createElement(
+	              _react2.default.createElement(
 	                "div",
 	                { className: "col-lg-12 content-box", id: "content-box" },
-	                React.createElement(Category, null)
+	                _react2.default.createElement(_categories2.default, null)
 	              ),
-	              React.createElement("div", { style: { clear: 'both' } }),
-	              React.createElement(
+	              _react2.default.createElement("div", { style: { clear: 'both' } }),
+	              _react2.default.createElement(
 	                "div",
 	                { className: "col-lg-12 content-box " },
-	                React.createElement(
+	                _react2.default.createElement(
 	                  "div",
 	                  { className: "row row-featured" },
-	                  React.createElement("div", { style: { clear: 'both' } }),
-	                  React.createElement(
+	                  _react2.default.createElement("div", { style: { clear: 'both' } }),
+	                  _react2.default.createElement(
 	                    "div",
 	                    { className: " relative  content  clearfix" },
-	                    React.createElement(
+	                    _react2.default.createElement(
 	                      "div",
 	                      { className: true },
-	                      React.createElement(
+	                      _react2.default.createElement(
 	                        "div",
 	                        { className: "tab-lite" },
-	                        React.createElement(
+	                        _react2.default.createElement(
 	                          "ul",
 	                          { className: "nav nav-tabs ", role: "tablist" },
-	                          React.createElement(
+	                          _react2.default.createElement(
 	                            "li",
 	                            { role: "presentation", className: "active" },
-	                            React.createElement(
+	                            _react2.default.createElement(
 	                              "a",
 	                              { href: "#tab1", "aria-controls": "tab1", role: "tab", "data-toggle": "tab" },
-	                              React.createElement("i", { className: "icon-location-2" }),
+	                              _react2.default.createElement("i", { className: "icon-location-2" }),
 	                              " Top Locations"
 	                            )
 	                          ),
-	                          React.createElement(
+	                          _react2.default.createElement(
 	                            "li",
 	                            { role: "presentation" },
-	                            React.createElement(
+	                            _react2.default.createElement(
 	                              "a",
 	                              { href: "#tab2", "aria-controls": "tab2", role: "tab", "data-toggle": "tab" },
-	                              React.createElement("i", { className: "icon-search" }),
+	                              _react2.default.createElement("i", { className: "icon-search" }),
 	                              " Top Search"
 	                            )
 	                          ),
-	                          React.createElement(
+	                          _react2.default.createElement(
 	                            "li",
 	                            { role: "presentation" },
-	                            React.createElement(
+	                            _react2.default.createElement(
 	                              "a",
 	                              { href: "#tab3", "aria-controls": "tab3", role: "tab", "data-toggle": "tab" },
-	                              React.createElement("i", { className: "icon-th-list" }),
+	                              _react2.default.createElement("i", { className: "icon-th-list" }),
 	                              " Top Makes"
 	                            )
 	                          )
@@ -28004,55 +27815,55 @@
 	                      )
 	                    )
 	                  ),
-	                  React.createElement("div", { className: "row" })
+	                  _react2.default.createElement("div", { className: "row" })
 	                ),
-	                React.createElement(
+	                _react2.default.createElement(
 	                  "div",
 	                  { className: "col-sm-3 page-sidebar col-thin-left" },
-	                  React.createElement("aside", null)
+	                  _react2.default.createElement("aside", null)
 	                )
 	              )
 	            )
 	          ),
-	          React.createElement(
+	          _react2.default.createElement(
 	            "div",
 	            { className: "page-info hasOverly", style: { background: 'url(assets/img/bg.jpg)', backgroundSize: 'cover' } },
-	            React.createElement(
+	            _react2.default.createElement(
 	              "div",
 	              { className: "bg-overly" },
-	              React.createElement(
+	              _react2.default.createElement(
 	                "div",
 	                { className: "container text-center section-promo" },
-	                React.createElement(
+	                _react2.default.createElement(
 	                  "div",
 	                  { className: "row" },
-	                  React.createElement(
+	                  _react2.default.createElement(
 	                    "div",
 	                    { className: "col-sm-3 col-xs-6 col-xxs-12" },
-	                    React.createElement(
+	                    _react2.default.createElement(
 	                      "div",
 	                      { className: "iconbox-wrap" },
-	                      React.createElement(
+	                      _react2.default.createElement(
 	                        "div",
 	                        { className: "iconbox" },
-	                        React.createElement(
+	                        _react2.default.createElement(
 	                          "div",
 	                          { className: "iconbox-wrap-icon" },
-	                          React.createElement("i", { className: "icon  icon-group" })
+	                          _react2.default.createElement("i", { className: "icon  icon-group" })
 	                        ),
-	                        React.createElement(
+	                        _react2.default.createElement(
 	                          "div",
 	                          { className: "iconbox-wrap-content" },
-	                          React.createElement(
+	                          _react2.default.createElement(
 	                            "h5",
 	                            null,
-	                            React.createElement(
+	                            _react2.default.createElement(
 	                              "span",
 	                              null,
 	                              "2"
 	                            )
 	                          ),
-	                          React.createElement(
+	                          _react2.default.createElement(
 	                            "div",
 	                            { className: "iconbox-wrap-text" },
 	                            "Trusted Seller"
@@ -28061,33 +27872,33 @@
 	                      )
 	                    )
 	                  ),
-	                  React.createElement(
+	                  _react2.default.createElement(
 	                    "div",
 	                    { className: "col-sm-3 col-xs-6 col-xxs-12" },
-	                    React.createElement(
+	                    _react2.default.createElement(
 	                      "div",
 	                      { className: "iconbox-wrap" },
-	                      React.createElement(
+	                      _react2.default.createElement(
 	                        "div",
 	                        { className: "iconbox" },
-	                        React.createElement(
+	                        _react2.default.createElement(
 	                          "div",
 	                          { className: "iconbox-wrap-icon" },
-	                          React.createElement("i", { className: "icon  icon-th-large-1" })
+	                          _react2.default.createElement("i", { className: "icon  icon-th-large-1" })
 	                        ),
-	                        React.createElement(
+	                        _react2.default.createElement(
 	                          "div",
 	                          { className: "iconbox-wrap-content" },
-	                          React.createElement(
+	                          _react2.default.createElement(
 	                            "h5",
 	                            null,
-	                            React.createElement(
+	                            _react2.default.createElement(
 	                              "span",
 	                              null,
 	                              "4"
 	                            )
 	                          ),
-	                          React.createElement(
+	                          _react2.default.createElement(
 	                            "div",
 	                            { className: "iconbox-wrap-text" },
 	                            "Categories"
@@ -28096,33 +27907,33 @@
 	                      )
 	                    )
 	                  ),
-	                  React.createElement(
+	                  _react2.default.createElement(
 	                    "div",
 	                    { className: "col-sm-3 col-xs-6  col-xxs-12" },
-	                    React.createElement(
+	                    _react2.default.createElement(
 	                      "div",
 	                      { className: "iconbox-wrap" },
-	                      React.createElement(
+	                      _react2.default.createElement(
 	                        "div",
 	                        { className: "iconbox" },
-	                        React.createElement(
+	                        _react2.default.createElement(
 	                          "div",
 	                          { className: "iconbox-wrap-icon" },
-	                          React.createElement("i", { className: "icon  icon-map" })
+	                          _react2.default.createElement("i", { className: "icon  icon-map" })
 	                        ),
-	                        React.createElement(
+	                        _react2.default.createElement(
 	                          "div",
 	                          { className: "iconbox-wrap-content" },
-	                          React.createElement(
+	                          _react2.default.createElement(
 	                            "h5",
 	                            null,
-	                            React.createElement(
+	                            _react2.default.createElement(
 	                              "span",
 	                              null,
 	                              "1"
 	                            )
 	                          ),
-	                          React.createElement(
+	                          _react2.default.createElement(
 	                            "div",
 	                            { className: "iconbox-wrap-text" },
 	                            "Location"
@@ -28131,33 +27942,33 @@
 	                      )
 	                    )
 	                  ),
-	                  React.createElement(
+	                  _react2.default.createElement(
 	                    "div",
 	                    { className: "col-sm-3 col-xs-6 col-xxs-12" },
-	                    React.createElement(
+	                    _react2.default.createElement(
 	                      "div",
 	                      { className: "iconbox-wrap" },
-	                      React.createElement(
+	                      _react2.default.createElement(
 	                        "div",
 	                        { className: "iconbox" },
-	                        React.createElement(
+	                        _react2.default.createElement(
 	                          "div",
 	                          { className: "iconbox-wrap-icon" },
-	                          React.createElement("i", { className: "icon icon-facebook" })
+	                          _react2.default.createElement("i", { className: "icon icon-facebook" })
 	                        ),
-	                        React.createElement(
+	                        _react2.default.createElement(
 	                          "div",
 	                          { className: "iconbox-wrap-content" },
-	                          React.createElement(
+	                          _react2.default.createElement(
 	                            "h5",
 	                            null,
-	                            React.createElement(
+	                            _react2.default.createElement(
 	                              "span",
 	                              null,
 	                              "No"
 	                            )
 	                          ),
-	                          React.createElement(
+	                          _react2.default.createElement(
 	                            "div",
 	                            { className: "iconbox-wrap-text" },
 	                            " Facebook Fans"
@@ -28169,95 +27980,6 @@
 	                )
 	              )
 	            )
-	          ),
-	          React.createElement(
-	            "div",
-	            { className: "page-bottom-info" },
-	            React.createElement(
-	              "div",
-	              { className: "page-bottom-info-inner" },
-	              React.createElement(
-	                "div",
-	                { className: "page-bottom-info-content text-center" },
-	                React.createElement(
-	                  "h1",
-	                  null,
-	                  "For Business Inquires and Assistance: 623-271-5349"
-	                ),
-	                React.createElement(
-	                  "a",
-	                  { className: "btn  btn-lg btn-primary-dark", href: "tel:+6232715349" },
-	                  React.createElement("i", { className: "icon-mobile" }),
-	                  " ",
-	                  React.createElement(
-	                    "span",
-	                    { className: "hide-xs color50" },
-	                    "Call Now:"
-	                  ),
-	                  " (623) 217-5349 "
-	                )
-	              )
-	            )
-	          ),
-	          React.createElement(
-	            "div",
-	            { className: "footer", id: "footer" },
-	            React.createElement(
-	              "div",
-	              { className: "container" },
-	              React.createElement(
-	                "ul",
-	                { className: " pull-left navbar-link footer-nav" },
-	                React.createElement(
-	                  "li",
-	                  null,
-	                  React.createElement(
-	                    "a",
-	                    { href: "/" },
-	                    " Home "
-	                  ),
-	                  " ",
-	                  React.createElement(
-	                    "a",
-	                    { href: "/aboutus" },
-	                    " About us "
-	                  ),
-	                  " ",
-	                  React.createElement(
-	                    "a",
-	                    { href: "/terms" },
-	                    " Terms and Conditions "
-	                  ),
-	                  " ",
-	                  React.createElement(
-	                    "a",
-	                    { href: "#" },
-	                    " Privacy Policy "
-	                  ),
-	                  " ",
-	                  React.createElement(
-	                    "a",
-	                    { href: "/contact" },
-	                    " Contact us "
-	                  ),
-	                  " ",
-	                  React.createElement(
-	                    "a",
-	                    { href: "/faq" },
-	                    " FAQ "
-	                  )
-	                )
-	              ),
-	              React.createElement(
-	                "ul",
-	                { className: " pull-right navbar-link footer-nav" },
-	                React.createElement(
-	                  "li",
-	                  null,
-	                  " \xA9 2016 CollegeStuffSale"
-	                )
-	              )
-	            )
 	          )
 	        )
 	      );
@@ -28265,9 +27987,9 @@
 	  }]);
 
 	  return IndexPage;
-	}(React.Component);
+	}(_react2.default.Component);
 
-	module.exports = IndexPage;
+	exports.default = IndexPage;
 
 /***/ },
 /* 239 */
@@ -28275,7 +27997,17 @@
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -28283,8 +28015,11 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+<<<<<<< HEAD
 	var React = __webpack_require__(2);
 
+=======
+>>>>>>> aac50bfcdc8fe5254842cae02862748c7517bcae
 	var Category = function (_React$Component) {
 	  _inherits(Category, _React$Component);
 
@@ -28302,84 +28037,84 @@
 	  _createClass(Category, [{
 	    key: "render",
 	    value: function render() {
-	      return React.createElement(
+	      return _react2.default.createElement(
 	        "div",
 	        { className: "row row-featured row-featured-category" },
-	        React.createElement(
+	        _react2.default.createElement(
 	          "div",
 	          { className: "col-lg-12  box-title no-border" },
-	          React.createElement(
+	          _react2.default.createElement(
 	            "div",
 	            { className: "inner" },
-	            React.createElement(
+	            _react2.default.createElement(
 	              "h2",
 	              null,
-	              React.createElement(
+	              _react2.default.createElement(
 	                "span",
 	                null,
 	                "Browse by"
 	              ),
 	              "Category ",
-	              React.createElement(
+	              _react2.default.createElement(
 	                "a",
 	                { href: "category.html", className: "sell-your-item" },
 	                " View more ",
-	                React.createElement("i", { className: "icon-th-list" }),
+	                _react2.default.createElement("i", { className: "icon-th-list" }),
 	                " "
 	              )
 	            )
 	          )
 	        ),
-	        React.createElement(
+	        _react2.default.createElement(
 	          "div",
 	          { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 f-category" },
-	          React.createElement(
+	          _react2.default.createElement(
 	            "a",
 	            { href: "category.html" },
-	            React.createElement("img", { src: "/assets/img/category/cellphones.png", className: "img-responsive", alt: "img" }),
-	            React.createElement(
+	            _react2.default.createElement("img", { src: "/assets/img/category/cellphones.png", className: "img-responsive", alt: "img" }),
+	            _react2.default.createElement(
 	              "h6",
 	              null,
 	              " Cellphones"
 	            )
 	          )
 	        ),
-	        React.createElement(
+	        _react2.default.createElement(
 	          "div",
 	          { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 f-category" },
-	          React.createElement(
+	          _react2.default.createElement(
 	            "a",
 	            { href: "category.html" },
-	            React.createElement("img", { src: "/assets/img/category/laptops.png", className: "img-responsive", alt: "img" }),
-	            React.createElement(
+	            _react2.default.createElement("img", { src: "/assets/img/category/laptops.png", className: "img-responsive", alt: "img" }),
+	            _react2.default.createElement(
 	              "h6",
 	              null,
 	              "Electronics "
 	            )
 	          )
 	        ),
-	        React.createElement(
+	        _react2.default.createElement(
 	          "div",
 	          { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 f-category" },
-	          React.createElement(
+	          _react2.default.createElement(
 	            "a",
 	            { href: "category.html" },
-	            React.createElement("img", { src: "/assets/img/category/textbooks.jpg", className: "img-responsive", alt: "img" }),
-	            React.createElement(
+	            _react2.default.createElement("img", { src: "/assets/img/category/textbooks.jpg", className: "img-responsive", alt: "img" }),
+	            _react2.default.createElement(
 	              "h6",
 	              null,
 	              " Textbooks "
 	            )
 	          )
 	        ),
-	        React.createElement(
+	        _react2.default.createElement(
 	          "div",
 	          { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 f-category" },
-	          React.createElement(
+	          _react2.default.createElement(
 	            "a",
 	            { href: "category.html" },
-	            React.createElement("img", { src: "/assets/img/category/home .png", className: "img-responsive", alt: "img" }),
-	            React.createElement(
+	            _react2.default.createElement("img", { src: "/assets/img/category/home .png", className: "img-responsive", alt: "img" }),
+	            _react2.default.createElement(
 	              "h6",
 	              null,
 	              " Home "
@@ -28391,17 +28126,31 @@
 	  }]);
 
 	  return Category;
-	}(React.Component);
+	}(_react2.default.Component);
 
-	module.exports = Category;
+	exports.default = Category;
 
 /***/ },
+<<<<<<< HEAD
+=======
+/* 239 */,
+>>>>>>> aac50bfcdc8fe5254842cae02862748c7517bcae
 /* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -28409,128 +28158,35 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+<<<<<<< HEAD
 	var React = __webpack_require__(2);
 
 	var LoginPage = function (_React$Component) {
 	  _inherits(LoginPage, _React$Component);
+=======
+	var AccountPage = function (_React$Component) {
+	  _inherits(AccountPage, _React$Component);
+>>>>>>> aac50bfcdc8fe5254842cae02862748c7517bcae
 
-	  function LoginPage() {
-	    _classCallCheck(this, LoginPage);
+	  function AccountPage() {
+	    _classCallCheck(this, AccountPage);
 
-	    return _possibleConstructorReturn(this, (LoginPage.__proto__ || Object.getPrototypeOf(LoginPage)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (AccountPage.__proto__ || Object.getPrototypeOf(AccountPage)).apply(this, arguments));
 	  }
 
-	  _createClass(LoginPage, [{
+	  _createClass(AccountPage, [{
 	    key: "render",
 	    value: function render() {
-	      return React.createElement(
+	      return _react2.default.createElement(
 	        "div",
 	        null,
-	        React.createElement("meta", { charSet: "utf-8" }),
-	        React.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
-	        React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "144x144", href: "assets/ico/apple-touch-icon-144-precomposed.png" }),
-	        React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "114x114", href: "assets/ico/apple-touch-icon-114-precomposed.png" }),
-	        React.createElement("link", { rel: "apple-touch-icon-precomposed", sizes: "72x72", href: "assets/ico/apple-touch-icon-72-precomposed.png" }),
-	        React.createElement("link", { rel: "apple-touch-icon-precomposed", href: "ico/apple-touch-icon-57-precomposed.png" }),
-	        React.createElement("link", { rel: "shortcut icon", href: "assets/ico/favicon.png" }),
-	        React.createElement(
-	          "title",
-	          null,
-	          "CollegeStuffSale"
-	        ),
-	        React.createElement("link", { href: "assets/bootstrap/css/bootstrap.css", rel: "stylesheet" }),
-	        React.createElement("link", { href: "assets/css/style.css", rel: "stylesheet" }),
-	        React.createElement("link", { href: "assets/css/owl.carousel.css", rel: "stylesheet" }),
-	        React.createElement("link", { href: "assets/css/owl.theme.css", rel: "stylesheet" }),
-	        React.createElement(
+	        _react2.default.createElement(
 	          "div",
 	          { id: "wrapper" },
-	          React.createElement(
-	            "div",
-	            { className: "header" },
-	            React.createElement(
-	              "nav",
-	              { className: "navbar   navbar-site navbar-default", role: "navigation" },
-	              React.createElement(
-	                "div",
-	                { className: "container" },
-	                React.createElement(
-	                  "div",
-	                  { className: "navbar-header" },
-	                  React.createElement(
-	                    "button",
-	                    { "data-target": ".navbar-collapse", "data-toggle": "collapse", className: "navbar-toggle", type: "button" },
-	                    React.createElement(
-	                      "span",
-	                      { className: "sr-only" },
-	                      "Toggle navigation"
-	                    ),
-	                    " ",
-	                    React.createElement("span", { className: "icon-bar" }),
-	                    " ",
-	                    React.createElement("span", { className: "icon-bar" }),
-	                    " ",
-	                    React.createElement("span", { className: "icon-bar" })
-	                  ),
-	                  React.createElement(
-	                    "a",
-	                    { href: "/", className: "navbar-brand logo logo-title" },
-	                    React.createElement(
-	                      "span",
-	                      { className: "logo-icon" },
-	                      React.createElement("i", { className: "icon icon-search-1 ln-shadow-logo shape-0" }),
-	                      " "
-	                    ),
-	                    "College",
-	                    React.createElement(
-	                      "span",
-	                      null,
-	                      "StuffSale "
-	                    ),
-	                    " "
-	                  )
-	                ),
-	                React.createElement(
-	                  "div",
-	                  { className: "navbar-collapse collapse" },
-	                  React.createElement(
-	                    "ul",
-	                    { className: "nav navbar-nav navbar-right" },
-	                    React.createElement(
-	                      "li",
-	                      null,
-	                      React.createElement(
-	                        "a",
-	                        { href: "/#" },
-	                        "Login"
-	                      )
-	                    ),
-	                    React.createElement(
-	                      "li",
-	                      null,
-	                      React.createElement(
-	                        "a",
-	                        { href: "/signup" },
-	                        "Signup"
-	                      )
-	                    ),
-	                    React.createElement(
-	                      "li",
-	                      { className: "postadd" },
-	                      React.createElement(
-	                        "a",
-	                        { className: "btn btn-block   btn-border btn-post btn-danger", href: "post-ads.html" },
-	                        "Post New Item"
-	                      )
-	                    )
-	                  )
-	                )
-	              )
-	            )
-	          ),
-	          React.createElement(
+	          _react2.default.createElement(
 	            "div",
 	            { className: "main-container" },
+<<<<<<< HEAD
 	            React.createElement(
 	              "div",
 	              { className: "container" },
@@ -28954,6 +28610,8 @@
 	          _react2.default.createElement(
 	            "div",
 	            { className: "main-container" },
+=======
+>>>>>>> aac50bfcdc8fe5254842cae02862748c7517bcae
 	            _react2.default.createElement(
 	              "div",
 	              { className: "container" },
@@ -29028,9 +28686,9 @@
 	                                null,
 	                                _react2.default.createElement(
 	                                  "a",
-	                                  { href: "account-myads.html" },
+	                                  { href: "/manage-posts" },
 	                                  _react2.default.createElement("i", { className: "icon-docs" }),
-	                                  " My ads ",
+	                                  " My Posts ",
 	                                  _react2.default.createElement(
 	                                    "span",
 	                                    { className: "badge" },
@@ -29158,7 +28816,7 @@
 	                          _react2.default.createElement(
 	                            "a",
 	                            { href: true },
-	                            _react2.default.createElement("img", { className: "userImg", src: "images/user.jpg", alt: "user" }),
+	                            _react2.default.createElement("img", { className: "userImg", src: "assets/img/user.jpg", alt: "user" }),
 	                            " Jhon Doe"
 	                          )
 	                        )
@@ -29586,66 +29244,6 @@
 	                )
 	              )
 	            )
-	          ),
-	          _react2.default.createElement(
-	            "div",
-	            { className: "footer", id: "footer" },
-	            _react2.default.createElement(
-	              "div",
-	              { className: "container" },
-	              _react2.default.createElement(
-	                "ul",
-	                { className: " pull-left navbar-link footer-nav" },
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "a",
-	                    { href: "index-v-2.html" },
-	                    " Home "
-	                  ),
-	                  " ",
-	                  _react2.default.createElement(
-	                    "a",
-	                    { href: "about-us.html" },
-	                    " About us "
-	                  ),
-	                  " ",
-	                  _react2.default.createElement(
-	                    "a",
-	                    { href: "#" },
-	                    " Terms and Conditions "
-	                  ),
-	                  " ",
-	                  _react2.default.createElement(
-	                    "a",
-	                    { href: "#" },
-	                    " Privacy Policy "
-	                  ),
-	                  " ",
-	                  _react2.default.createElement(
-	                    "a",
-	                    { href: "contact.html" },
-	                    " Contact us "
-	                  ),
-	                  " ",
-	                  _react2.default.createElement(
-	                    "a",
-	                    { href: "faq.html" },
-	                    " FAQ "
-	                  )
-	                )
-	              ),
-	              _react2.default.createElement(
-	                "ul",
-	                { className: " pull-right navbar-link footer-nav" },
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  " \xA9 2016 CollegeStuffSale"
-	                )
-	              )
-	            )
 	          )
 	        )
 	      );
@@ -29655,7 +29253,2506 @@
 	  return AccountPage;
 	}(_react2.default.Component);
 
-	module.exports = AccountPage;
+	exports.default = AccountPage;
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var NewPostPage = function (_React$Component) {
+	  _inherits(NewPostPage, _React$Component);
+
+	  function NewPostPage() {
+	    _classCallCheck(this, NewPostPage);
+
+	    return _possibleConstructorReturn(this, (NewPostPage.__proto__ || Object.getPrototypeOf(NewPostPage)).apply(this, arguments));
+	  }
+
+	  _createClass(NewPostPage, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { id: "wrapper" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "main-container" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-md-9 page-content" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "inner-box category-content" },
+	                    _react2.default.createElement(
+	                      "h2",
+	                      { className: "title-2 uppercase" },
+	                      _react2.default.createElement(
+	                        "strong",
+	                        null,
+	                        " ",
+	                        _react2.default.createElement("i", { className: "icon-docs" }),
+	                        " Post  Stuff To Sell"
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "row" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "col-sm-12" },
+	                        _react2.default.createElement(
+	                          "form",
+	                          { className: "form-horizontal" },
+	                          _react2.default.createElement(
+	                            "fieldset",
+	                            null,
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "form-group" },
+	                              _react2.default.createElement(
+	                                "label",
+	                                { className: "col-md-3 control-label" },
+	                                "Category"
+	                              ),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-md-8" },
+	                                _react2.default.createElement(
+	                                  "select",
+	                                  { name: "category-group", id: "category-group", className: "form-control" },
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: 0, selected: "selected" },
+	                                    " Select a category..."
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "Automobiles" },
+	                                    " Automobiles"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "Entertainment" },
+	                                    "Entertainment"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "Fashion" },
+	                                    "Fashion"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "Cellphones" },
+	                                    "Cellphones"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "Home" },
+	                                    " Home"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "Jobs" },
+	                                    " Jobs"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "Textbooks" },
+	                                    "Textbooks"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "Electronics" },
+	                                    "Electronics"
+	                                  )
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "form-group" },
+	                              _react2.default.createElement(
+	                                "label",
+	                                { className: "col-md-3 control-label", htmlFor: "Adtitle" },
+	                                "Ad title"
+	                              ),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-md-8" },
+	                                _react2.default.createElement("input", { id: "Adtitle", name: "Adtitle", placeholder: "Ad title", className: "form-control input-md", required: true, type: "text" }),
+	                                _react2.default.createElement(
+	                                  "span",
+	                                  { className: "help-block" },
+	                                  "A great title needs at least 60 characters. "
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "form-group" },
+	                              _react2.default.createElement(
+	                                "label",
+	                                { className: "col-md-3 control-label", htmlFor: "textarea" },
+	                                "Describe item"
+	                              ),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-md-8" },
+	                                _react2.default.createElement("textarea", { className: "form-control", id: "textarea", name: "textarea", placeholder: "Describe what makes your item unique", defaultValue: "" })
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "form-group" },
+	                              _react2.default.createElement(
+	                                "label",
+	                                { className: "col-md-3 control-label", htmlFor: "Price" },
+	                                "Price"
+	                              ),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-md-4" },
+	                                _react2.default.createElement(
+	                                  "div",
+	                                  { className: "input-group" },
+	                                  _react2.default.createElement(
+	                                    "span",
+	                                    { className: "input-group-addon" },
+	                                    "$"
+	                                  ),
+	                                  _react2.default.createElement("input", { id: "Price", name: "Price", className: "form-control", placeholder: 0, required: true, type: "text" })
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-md-4" },
+	                                _react2.default.createElement(
+	                                  "div",
+	                                  { className: "checkbox" },
+	                                  _react2.default.createElement(
+	                                    "label",
+	                                    null,
+	                                    _react2.default.createElement("input", { type: "checkbox" }),
+	                                    "Negotiable"
+	                                  )
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "form-group" },
+	                              _react2.default.createElement(
+	                                "label",
+	                                { className: "col-md-3 control-label", htmlFor: "item-condition" },
+	                                "Condition"
+	                              ),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-md-8" },
+	                                _react2.default.createElement(
+	                                  "select",
+	                                  { id: "item-Condition", name: "item-condition", className: "form-control" },
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: 1 },
+	                                    "New "
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: 2 },
+	                                    "Excellent"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: 3 },
+	                                    "Great"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: 4 },
+	                                    "Acceptable"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: 5 },
+	                                    "Bad"
+	                                  )
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "form-group" },
+	                              _react2.default.createElement(
+	                                "label",
+	                                { className: "col-md-3 control-label", htmlFor: "textarea" },
+	                                " Picture "
+	                              ),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-md-8" },
+	                                _react2.default.createElement(
+	                                  "div",
+	                                  { className: "mb10" },
+	                                  _react2.default.createElement("input", { id: "input-upload-img1", type: "file", className: "file", "data-preview-file-type": "text" })
+	                                ),
+	                                _react2.default.createElement(
+	                                  "div",
+	                                  { className: "mb10" },
+	                                  _react2.default.createElement("input", { id: "input-upload-img2", type: "file", className: "file", "data-preview-file-type": "text" })
+	                                ),
+	                                _react2.default.createElement(
+	                                  "div",
+	                                  { className: "mb10" },
+	                                  _react2.default.createElement("input", { id: "input-upload-img3", type: "file", className: "file", "data-preview-file-type": "text" })
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  { className: "help-block" },
+	                                  "Add up to 3 photos. Premium members will be able to add 3 or more photos."
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "content-subheading" },
+	                              _react2.default.createElement("i", { className: "icon-user fa" }),
+	                              " ",
+	                              _react2.default.createElement(
+	                                "strong",
+	                                null,
+	                                "Seller information"
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "form-group" },
+	                              _react2.default.createElement(
+	                                "label",
+	                                { className: "col-md-3 control-label", htmlFor: "textinput-name" },
+	                                "Name"
+	                              ),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-md-8" },
+	                                _react2.default.createElement("input", { id: "textinput-name", name: "textinput-name", placeholder: "Seller Name", className: "form-control input-md", required: true, type: "text" })
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "form-group" },
+	                              _react2.default.createElement(
+	                                "label",
+	                                { className: "col-md-3 control-label", htmlFor: "seller-email" },
+	                                " Seller Email"
+	                              ),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-md-8" },
+	                                _react2.default.createElement("input", { id: "seller-email", name: "seller-email", className: "form-control", placeholder: "Email", required: true, type: "text" }),
+	                                _react2.default.createElement(
+	                                  "div",
+	                                  { className: "checkbox" },
+	                                  _react2.default.createElement(
+	                                    "label",
+	                                    null,
+	                                    _react2.default.createElement("input", { type: "checkbox", defaultValue: true }),
+	                                    _react2.default.createElement(
+	                                      "small",
+	                                      null,
+	                                      " Hide the phone number on this ads."
+	                                    )
+	                                  )
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "form-group" },
+	                              _react2.default.createElement(
+	                                "label",
+	                                { className: "col-md-3 control-label", htmlFor: "seller-Number" },
+	                                "Phone Number"
+	                              ),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-md-8" },
+	                                _react2.default.createElement("input", { id: "seller-Number", name: "seller-Number", placeholder: "Phone Number", className: "form-control input-md", required: true, type: "text" })
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "form-group" },
+	                              _react2.default.createElement(
+	                                "label",
+	                                { className: "col-md-3 control-label", htmlFor: "seller-Location" },
+	                                "State"
+	                              ),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-sm-3" },
+	                                _react2.default.createElement(
+	                                  "select",
+	                                  { className: "form-control selecter", name: "state", id: "id-state" },
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { selected: "selected", value: true },
+	                                    "Choose State"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "AL" },
+	                                    "Alabama"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "AK" },
+	                                    "Alaska"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "AZ" },
+	                                    "Arizona"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "AR" },
+	                                    "Arkansas"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "CA" },
+	                                    "California"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "CO" },
+	                                    "Colorado"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "CT" },
+	                                    "Connecticut"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "DE" },
+	                                    "Delaware"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "DC" },
+	                                    "District Of Columbia"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "FL" },
+	                                    "Florida"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "GA" },
+	                                    "Georgia"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "HI" },
+	                                    "Hawaii"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "ID" },
+	                                    "Idaho"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "IL" },
+	                                    "Illinois"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "IN" },
+	                                    "Indiana"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "IA" },
+	                                    "Iowa"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "KS" },
+	                                    "Kansas"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "KY" },
+	                                    "Kentucky"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "LA" },
+	                                    "Louisiana"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "ME" },
+	                                    "Maine"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "MD" },
+	                                    "Maryland"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "MA" },
+	                                    "Massachusetts"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "MI" },
+	                                    "Michigan"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "MN" },
+	                                    "Minnesota"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "MS" },
+	                                    "Mississippi"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "MO" },
+	                                    "Missouri"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "MT" },
+	                                    "Montana"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "NE" },
+	                                    "Nebraska"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "NV" },
+	                                    "Nevada"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "NH" },
+	                                    "New Hampshire"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "NJ" },
+	                                    "New Jersey"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "NM" },
+	                                    "New Mexico"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "NY" },
+	                                    "New York"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "NC" },
+	                                    "North Carolina"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "ND" },
+	                                    "North Dakota"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "OH" },
+	                                    "Ohio"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "OK" },
+	                                    "Oklahoma"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "OR" },
+	                                    "Oregon"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "PA" },
+	                                    "Pennsylvania"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "RI" },
+	                                    "Rhode Island"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "SC" },
+	                                    "South Carolina"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "SD" },
+	                                    "South Dakota"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "TN" },
+	                                    "Tennessee"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "TX" },
+	                                    "Texas"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "UT" },
+	                                    "Utah"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "VT" },
+	                                    "Vermont"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "VA" },
+	                                    "Virginia"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "WA" },
+	                                    "Washington"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "WV" },
+	                                    "West Virginia"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "WI" },
+	                                    "Wisconsin"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "WY" },
+	                                    "Wyoming"
+	                                  ),
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "Other-Locations" },
+	                                    "Other Locations"
+	                                  )
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "form-group" },
+	                              _react2.default.createElement(
+	                                "label",
+	                                { className: "col-md-3 control-label" },
+	                                "Terms"
+	                              ),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-md-8" },
+	                                _react2.default.createElement(
+	                                  "label",
+	                                  { className: "checkbox-inline", htmlFor: "checkboxes-0" },
+	                                  _react2.default.createElement("input", { name: "checkboxes", id: "checkboxes-0", defaultValue: "Remember above contact information.", type: "checkbox" }),
+	                                  "Remember above contact information. "
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "form-group" },
+	                              _react2.default.createElement("label", { className: "col-md-3 control-label" }),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-md-8" },
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "posting-success.html", id: "button1id", className: "btn btn-success btn-lg" },
+	                                  "Submit"
+	                                )
+	                              )
+	                            )
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-md-3 reg-sidebar" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "reg-sidebar-inner text-center" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "promo-text-box" },
+	                      _react2.default.createElement("i", { className: " icon-picture fa fa-4x icon-color-1" }),
+	                      _react2.default.createElement(
+	                        "h3",
+	                        null,
+	                        _react2.default.createElement(
+	                          "strong",
+	                          null,
+	                          "Post an item to sell"
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "p",
+	                        null,
+	                        " Post your item with us to sell. Search for items you want to buy. "
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel sidebar-panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "panel-heading uppercase" },
+	                        _react2.default.createElement(
+	                          "small",
+	                          null,
+	                          _react2.default.createElement(
+	                            "strong",
+	                            null,
+	                            "How to sell quickly?"
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "panel-content" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body text-left" },
+	                          _react2.default.createElement(
+	                            "ul",
+	                            { className: "list-check" },
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              " Use a brief title and description of the item"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              " Make sure you post in the correct category"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              " Add nice photos to your ad"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              " Put a reasonable price"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              " Check the item before publish"
+	                            )
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return NewPostPage;
+	}(_react2.default.Component);
+
+	exports.default = NewPostPage;
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SignInPage = function (_React$Component) {
+	  _inherits(SignInPage, _React$Component);
+
+	  function SignInPage() {
+	    _classCallCheck(this, SignInPage);
+
+	    return _possibleConstructorReturn(this, (SignInPage.__proto__ || Object.getPrototypeOf(SignInPage)).apply(this, arguments));
+	  }
+
+	  _createClass(SignInPage, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { id: "wrapper" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "main-container" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-5 login-box" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "panel panel-default" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel-intro text-center" },
+	                      _react2.default.createElement(
+	                        "h2",
+	                        { className: "logo-title" },
+	                        "Sign In"
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel-body" },
+	                      _react2.default.createElement(
+	                        "form",
+	                        { role: "form" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "form-group" },
+	                          _react2.default.createElement(
+	                            "label",
+	                            { htmlFor: "sender-email", className: "control-label" },
+	                            "Username:"
+	                          ),
+	                          _react2.default.createElement(
+	                            "div",
+	                            { className: "input-icon" },
+	                            _react2.default.createElement("i", { className: "icon-user fa" }),
+	                            _react2.default.createElement("input", { id: "sender-email", type: "text", placeholder: "Username", className: "form-control email" })
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "form-group" },
+	                          _react2.default.createElement(
+	                            "label",
+	                            { htmlFor: "user-pass", className: "control-label" },
+	                            "Password:"
+	                          ),
+	                          _react2.default.createElement(
+	                            "div",
+	                            { className: "input-icon" },
+	                            _react2.default.createElement("i", { className: "icon-lock fa" }),
+	                            _react2.default.createElement("input", { type: "password", className: "form-control", placeholder: "Password", id: "user-pass" })
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "form-group" },
+	                          _react2.default.createElement(
+	                            "a",
+	                            { href: "/account", className: "btn btn-primary  btn-block" },
+	                            "Submit"
+	                          )
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel-footer" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "checkbox pull-left" },
+	                        _react2.default.createElement(
+	                          "label",
+	                          null,
+	                          " ",
+	                          _react2.default.createElement("input", { type: "checkbox", defaultValue: 1, name: "remember", id: "remember" }),
+	                          " Keep me logged in"
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "p",
+	                        { className: "text-center pull-right" },
+	                        _react2.default.createElement(
+	                          "a",
+	                          { href: "/forgot-password" },
+	                          " Lost your password? "
+	                        )
+	                      ),
+	                      _react2.default.createElement("div", { style: { clear: 'both' } })
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "login-box-btm text-center" },
+	                    _react2.default.createElement(
+	                      "p",
+	                      null,
+	                      " Don't have an account? ",
+	                      _react2.default.createElement("br", null),
+	                      _react2.default.createElement(
+	                        "a",
+	                        { href: "/signup" },
+	                        _react2.default.createElement(
+	                          "strong",
+	                          null,
+	                          "Sign Up !"
+	                        ),
+	                        " "
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return SignInPage;
+	}(_react2.default.Component);
+
+	exports.default = SignInPage;
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AboutUsPage = function (_React$Component) {
+	  _inherits(AboutUsPage, _React$Component);
+
+	  function AboutUsPage() {
+	    _classCallCheck(this, AboutUsPage);
+
+	    return _possibleConstructorReturn(this, (AboutUsPage.__proto__ || Object.getPrototypeOf(AboutUsPage)).apply(this, arguments));
+	  }
+
+	  _createClass(AboutUsPage, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { id: "wrapper" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "intro-inner" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "about-intro", style: { background: 'url(assets/img/bg2.jpg) no-repeat center', backgroundSize: 'cover' } },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "dtable hw100" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "dtable-cell hw100" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "container text-center" },
+	                    _react2.default.createElement(
+	                      "h1",
+	                      { className: "intro-title animated fadeInDown" },
+	                      " Building a customer focus "
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "main-container inner-page" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "section-content" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "row " },
+	                  _react2.default.createElement(
+	                    "h1",
+	                    { className: "text-center title-1" },
+	                    " What Makes Us Special "
+	                  ),
+	                  _react2.default.createElement("hr", { className: "center-block small text-hr" }),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "col-sm-6" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "text-content has-lead-para text-left" },
+	                      _react2.default.createElement(
+	                        "p",
+	                        { className: "lead" },
+	                        " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sit amet ante nec vulputate. Nulla aliquam, justo auctor consequat tincidunt, arcu erat mattis lorem, lacinia lacinia dui enim at eros. Pellentesque ut gravida augue. Duis ac dictum tellus "
+	                      ),
+	                      _react2.default.createElement(
+	                        "p",
+	                        { className: "lead" },
+	                        " Pellentesque in mauris placerat, porttitor lorem id, ornare nisl. Pellentesque rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales nisi quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum. Nulla nec odio eu nisi imperdiet dictum. "
+	                      ),
+	                      _react2.default.createElement(
+	                        "p",
+	                        { className: "lead" },
+	                        " Curabitur sed leo dictum, convallis lorem eu, suscipit mi. Mauris viverra blandit varius. Proin non sem turpis. Etiam fringilla hendrerit nunc at accumsan. Duis mollis auctor lobortis. "
+	                      ),
+	                      _react2.default.createElement(
+	                        "p",
+	                        { className: "lead" },
+	                        " Etiam elementum nulla non erat blandit, sed porttitor urna malesuada. Cras euismod a nulla sed ornare. Vestibulum id molestie nulla. Phasellus sodales, sapien vitae auctor rhoncus "
+	                      )
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "col-sm-6" },
+	                    _react2.default.createElement("img", { src: "assets/img/info.png", alt: "imfo", className: "img-responsive" })
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "parallaxbox about-parallax-bottom" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row text-center featuredbox" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-4 xs-gap" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "inner" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "icon-box-wrap" },
+	                      _react2.default.createElement("i", { className: "icon-book-open ln-shadow-box shape-3" })
+	                    ),
+	                    _react2.default.createElement(
+	                      "h3",
+	                      { className: "title-4" },
+	                      "Customer service"
+	                    ),
+	                    _react2.default.createElement(
+	                      "p",
+	                      null,
+	                      "Ein herausragendes Beispiel f\xFCr Story-Telling im modernen Webdesign. et suscipit sapien posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit tortor."
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-4 xs-gap" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "inner" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "icon-box-wrap" },
+	                      _react2.default.createElement("i", { className: " icon-lightbulb ln-shadow-box shape-6" })
+	                    ),
+	                    _react2.default.createElement(
+	                      "h3",
+	                      { className: "title-4" },
+	                      "Seller satisfaction"
+	                    ),
+	                    _react2.default.createElement(
+	                      "p",
+	                      null,
+	                      "Ein herausragendes Beispiel f\xFCr Story-Telling im modernen Webdesign. et suscipit sapien posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit tortor. ."
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-4 xs-gap" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "inner" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "icon-box-wrap" },
+	                      _react2.default.createElement("i", { className: "icon-megaphone ln-shadow-box shape-5" })
+	                    ),
+	                    _react2.default.createElement(
+	                      "h3",
+	                      { className: "title-4" },
+	                      "Best Offers "
+	                    ),
+	                    _react2.default.createElement(
+	                      "p",
+	                      null,
+	                      "Ein herausragendes Beispiel f\xFCr Story-Telling im modernen Webdesign. et suscipit sapien posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit tortor. "
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return AboutUsPage;
+	}(_react2.default.Component);
+
+	exports.default = AboutUsPage;
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var FAQPage = function (_React$Component) {
+	  _inherits(FAQPage, _React$Component);
+
+	  function FAQPage() {
+	    _classCallCheck(this, FAQPage);
+
+	    return _possibleConstructorReturn(this, (FAQPage.__proto__ || Object.getPrototypeOf(FAQPage)).apply(this, arguments));
+	  }
+
+	  _createClass(FAQPage, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { id: "wrapper" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "intro-inner" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "about-intro", style: { background: 'url(assets/img/bg2.jpg) no-repeat center', backgroundSize: 'cover' } },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "dtable hw100" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "dtable-cell hw100" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "container text-center" },
+	                    _react2.default.createElement(
+	                      "h1",
+	                      { className: "intro-title animated fadeInDown" },
+	                      " Frequently Asked Questions "
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "main-container inner-page" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "section-content" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "row " },
+	                  _react2.default.createElement(
+	                    "h1",
+	                    { className: "text-center title-1" },
+	                    " classified ads ",
+	                    _react2.default.createElement(
+	                      "strong",
+	                      null,
+	                      "FAQ"
+	                    )
+	                  ),
+	                  _react2.default.createElement("hr", { className: "center-block small text-hr" })
+	                ),
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "faq-content" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { "aria-multiselectable": "true", role: "tablist", id: "accordion", className: "panel-group faq-panel" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { id: "headingOne", role: "tab", className: "panel-heading" },
+	                        _react2.default.createElement(
+	                          "h4",
+	                          { className: "panel-title" },
+	                          _react2.default.createElement(
+	                            "a",
+	                            { "aria-controls": "collapseOne", "aria-expanded": "true", href: "#collapseOne", "data-parent": "#accordion", "data-toggle": "collapse" },
+	                            "How do I place an ad?"
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { "aria-labelledby": "headingOne", role: "tabpanel", className: "panel-collapse collapse in", id: "collapseOne" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body" },
+	                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sit amet ante nec vulputate. Nulla aliquam, justo auctor consequat tincidunt, arcu erat mattis lorem, lacinia lacinia dui enim at eros. Pellentesque ut gravida augue. Duis ac dictum tellus",
+	                          _react2.default.createElement("br", null),
+	                          _react2.default.createElement("br", null),
+	                          "Pellentesque in mauris placerat, porttitor lorem id, ornare nisl. Pellentesque rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales nisi quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum. Nulla nec odio eu nisi imperdiet dictum.",
+	                          _react2.default.createElement("br", null),
+	                          _react2.default.createElement("br", null),
+	                          "Curabitur sed leo dictum, convallis lorem eu, suscipit mi. Mauris viverra blandit varius. Proin non sem turpis. Etiam fringilla hendrerit nunc at accumsan. Duis mollis auctor lobortis."
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { id: "headingTwo", role: "tab", className: "panel-heading" },
+	                        _react2.default.createElement(
+	                          "h4",
+	                          { className: "panel-title" },
+	                          _react2.default.createElement(
+	                            "a",
+	                            { "aria-controls": "collapseTwo", "aria-expanded": "false", href: "#collapseTwo", "data-parent": "#accordion", "data-toggle": "collapse", className: "collapsed" },
+	                            "What does it cost to advertise?"
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { "aria-labelledby": "headingTwo", role: "tabpanel", className: "panel-collapse collapse", id: "collapseTwo" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body" },
+	                          "Curabitur sed leo dictum, convallis lorem eu, suscipit mi. Mauris viverra blandit varius. Proin non sem turpis. Etiam fringilla hendrerit nunc at accumsan. Duis mollis auctor lobortis.",
+	                          _react2.default.createElement("br", null),
+	                          _react2.default.createElement("br", null),
+	                          "Etiam elementum nulla non erat blandit, sed porttitor urna malesuada. Cras euismod a nulla sed ornare. Vestibulum id molestie nulla. Phasellus sodales, sapien vitae auctor rhoncus"
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { id: "headingThree", role: "tab", className: "panel-heading" },
+	                        _react2.default.createElement(
+	                          "h4",
+	                          { className: "panel-title" },
+	                          _react2.default.createElement(
+	                            "a",
+	                            { "aria-controls": "collapseThree", "aria-expanded": "false", href: "#collapseThree", "data-parent": "#accordion", "data-toggle": "collapse", className: "collapsed" },
+	                            "If I post an ad, will I also get more spam e-mails?"
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { "aria-labelledby": "headingThree", role: "tabpanel", className: "panel-collapse collapse", id: "collapseThree" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body" },
+	                          "Pellentesque in mauris placerat, porttitor lorem id, ornare nisl. Pellentesque rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales nisi quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum. Nulla nec odio eu nisi imperdiet dictum."
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { id: "heading_04", role: "tab", className: "panel-heading" },
+	                        _react2.default.createElement(
+	                          "h4",
+	                          { className: "panel-title" },
+	                          _react2.default.createElement(
+	                            "a",
+	                            { "aria-controls": "collapse_04", "aria-expanded": "false", href: "#collapse_04", "data-parent": "#accordion", "data-toggle": "collapse", className: "collapsed" },
+	                            "How long will my ad remain on the website?"
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { "aria-labelledby": "heading_04", role: "tabpanel", className: "panel-collapse collapse", id: "collapse_04" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body" },
+	                          "Pellentesque in mauris placerat, porttitor lorem id, ornare nisl. Pellentesque rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales nisi quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum. Nulla nec odio eu nisi imperdiet dictum."
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { id: "heading_05", role: "tab", className: "panel-heading" },
+	                        _react2.default.createElement(
+	                          "h4",
+	                          { className: "panel-title" },
+	                          _react2.default.createElement(
+	                            "a",
+	                            { "aria-controls": "collapse_05", "aria-expanded": "false", href: "#collapse_05", "data-parent": "#accordion", "data-toggle": "collapse", className: "collapsed" },
+	                            "I sold my item. How do I delete my ad?"
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { "aria-labelledby": "heading_05", role: "tabpanel", className: "panel-collapse collapse", id: "collapse_05" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body" },
+	                          "Pellentesque in mauris placerat, porttitor lorem id, ornare nisl. Pellentesque rhoncus convallis felis, in egestas libero. Donec et nibh dapibus, sodales nisi quis, fringilla augue. Donec dui quam, egestas in varius ut, tincidunt quis ipsum. Nulla nec odio eu nisi imperdiet dictum."
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { id: "heading_06", role: "tab", className: "panel-heading" },
+	                        _react2.default.createElement(
+	                          "h4",
+	                          { className: "panel-title" },
+	                          _react2.default.createElement(
+	                            "a",
+	                            { "aria-controls": "collapse_06", "aria-expanded": "false", href: "#collapse_06", "data-parent": "#accordion", "data-toggle": "collapse", className: "collapsed" },
+	                            "What is a wish list?"
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { "aria-labelledby": "heading_06", role: "tabpanel", className: "panel-collapse collapse", id: "collapse_06" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body" },
+	                          "Curabitur sed leo dictum, convallis lorem eu, suscipit mi. Mauris viverra blandit varius. Proin non sem turpis. Etiam fringilla hendrerit nunc at accumsan. Duis mollis auctor lobortis."
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "parallaxbox about-parallax-bottom" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row text-center featuredbox" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-4 xs-gap" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "inner" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "icon-box-wrap" },
+	                      _react2.default.createElement("i", { className: "icon-book-open ln-shadow-box shape-3" })
+	                    ),
+	                    _react2.default.createElement(
+	                      "h3",
+	                      { className: "title-4" },
+	                      "herausragendes Beispiel"
+	                    ),
+	                    _react2.default.createElement(
+	                      "p",
+	                      null,
+	                      "Ein herausragendes Beispiel f\xFCr Story-Telling im modernen Webdesign. et suscipit sapien posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit tortor."
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-4 xs-gap" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "inner" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "icon-box-wrap" },
+	                      _react2.default.createElement("i", { className: " icon-lightbulb ln-shadow-box shape-2" })
+	                    ),
+	                    _react2.default.createElement(
+	                      "h3",
+	                      { className: "title-4" },
+	                      "Fusce ex ipsum"
+	                    ),
+	                    _react2.default.createElement(
+	                      "p",
+	                      null,
+	                      "Ein herausragendes Beispiel f\xFCr Story-Telling im modernen Webdesign. et suscipit sapien posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit tortor. ."
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-4 xs-gap" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "inner" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "icon-box-wrap" },
+	                      _react2.default.createElement("i", { className: "icon-megaphone ln-shadow-box shape-7" })
+	                    ),
+	                    _react2.default.createElement(
+	                      "h3",
+	                      { className: "title-4" },
+	                      "Pellentesque rhoncus "
+	                    ),
+	                    _react2.default.createElement(
+	                      "p",
+	                      null,
+	                      "Ein herausragendes Beispiel f\xFCr Story-Telling im modernen Webdesign. et suscipit sapien posuere quis. Maecenas ut iaculis nunc, eget efficitur ipsum. Nam vitae hendrerit tortor. "
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return FAQPage;
+	}(_react2.default.Component);
+
+	exports.default = FAQPage;
+
+/***/ },
+/* 245 */,
+/* 246 */,
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ManagePostsPage = function (_React$Component) {
+	  _inherits(ManagePostsPage, _React$Component);
+
+	  function ManagePostsPage() {
+	    _classCallCheck(this, ManagePostsPage);
+
+	    return _possibleConstructorReturn(this, (ManagePostsPage.__proto__ || Object.getPrototypeOf(ManagePostsPage)).apply(this, arguments));
+	  }
+
+	  _createClass(ManagePostsPage, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { id: "wrapper" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "main-container" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-3 page-sidebar" },
+	                  _react2.default.createElement(
+	                    "aside",
+	                    null,
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "inner-box" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "user-panel-sidebar" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "collapse-box" },
+	                          _react2.default.createElement(
+	                            "h5",
+	                            { className: "collapse-title no-border" },
+	                            " My Classified ",
+	                            _react2.default.createElement(
+	                              "a",
+	                              { className: "pull-right", "data-toggle": "collapse", href: "#MyClassified" },
+	                              _react2.default.createElement("i", { className: "fa fa-angle-down" })
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "div",
+	                            { id: "MyClassified", className: "panel-collapse collapse in" },
+	                            _react2.default.createElement(
+	                              "ul",
+	                              { className: "acc-list" },
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "/account" },
+	                                  _react2.default.createElement("i", { className: "icon-home" }),
+	                                  " Personal Home "
+	                                )
+	                              )
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "collapse-box" },
+	                          _react2.default.createElement(
+	                            "h5",
+	                            { className: "collapse-title" },
+	                            " My Ads ",
+	                            _react2.default.createElement(
+	                              "a",
+	                              { className: "pull-right", "data-toggle": "collapse", href: "#MyAds" },
+	                              _react2.default.createElement("i", { className: "fa fa-angle-down" })
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "div",
+	                            { id: "MyAds", className: "panel-collapse collapse in" },
+	                            _react2.default.createElement(
+	                              "ul",
+	                              { className: "acc-list" },
+	                              _react2.default.createElement(
+	                                "li",
+	                                { className: "active" },
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "#" },
+	                                  _react2.default.createElement("i", { className: "icon-docs" }),
+	                                  " My ads ",
+	                                  _react2.default.createElement(
+	                                    "span",
+	                                    { className: "badge" },
+	                                    "42"
+	                                  ),
+	                                  " "
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "/account-favourites" },
+	                                  _react2.default.createElement("i", { className: "icon-heart" }),
+	                                  "Favourites",
+	                                  _react2.default.createElement(
+	                                    "span",
+	                                    { className: "badge" },
+	                                    "42"
+	                                  ),
+	                                  " "
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "/account-saved-search" },
+	                                  _react2.default.createElement("i", { className: "icon-star-circled" }),
+	                                  "Saved search ",
+	                                  _react2.default.createElement(
+	                                    "span",
+	                                    { className: "badge" },
+	                                    "42"
+	                                  ),
+	                                  " "
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "/account-archives" },
+	                                  _react2.default.createElement("i", { className: "icon-folder-close" }),
+	                                  "Archives",
+	                                  _react2.default.createElement(
+	                                    "span",
+	                                    { className: "badge" },
+	                                    "42"
+	                                  )
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "/account-pending-approval-posts" },
+	                                  _react2.default.createElement("i", { className: "icon-hourglass" }),
+	                                  " Pending approval ",
+	                                  _react2.default.createElement(
+	                                    "span",
+	                                    { className: "badge" },
+	                                    "42"
+	                                  )
+	                                )
+	                              )
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "collapse-box" },
+	                          _react2.default.createElement(
+	                            "h5",
+	                            { className: "collapse-title" },
+	                            " Terminate Account ",
+	                            _react2.default.createElement(
+	                              "a",
+	                              { className: "pull-right", "data-toggle": "collapse", href: "#TerminateAccount" },
+	                              _react2.default.createElement("i", { className: "fa fa-angle-down" })
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "div",
+	                            { id: "TerminateAccount", className: "panel-collapse collapse in" },
+	                            _react2.default.createElement(
+	                              "ul",
+	                              { className: "acc-list" },
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "account-close.html" },
+	                                  _react2.default.createElement("i", { className: "icon-cancel-circled " }),
+	                                  " Close account "
+	                                )
+	                              )
+	                            )
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-9 page-content" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "inner-box" },
+	                    _react2.default.createElement(
+	                      "h2",
+	                      { className: "title-2" },
+	                      _react2.default.createElement("i", { className: "icon-docs" }),
+	                      " My Ads "
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "table-responsive" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "table-action" },
+	                        _react2.default.createElement(
+	                          "label",
+	                          { htmlFor: "checkAll" },
+	                          _react2.default.createElement("input", { type: "checkbox", onclick: "checkAll(this)", id: "checkAll" }),
+	                          "Select: All | ",
+	                          _react2.default.createElement(
+	                            "a",
+	                            { href: "#", className: "btn btn-xs btn-danger" },
+	                            "Delete ",
+	                            _react2.default.createElement("i", { className: "glyphicon glyphicon-remove " })
+	                          ),
+	                          " "
+	                        ),
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "table-search pull-right col-xs-7" },
+	                          _react2.default.createElement(
+	                            "div",
+	                            { className: "form-group" },
+	                            _react2.default.createElement(
+	                              "label",
+	                              { className: "col-xs-5 control-label text-right" },
+	                              "Search ",
+	                              _react2.default.createElement("br", null),
+	                              _react2.default.createElement(
+	                                "a",
+	                                { title: "clear filter", className: "clear-filter", href: "#clear" },
+	                                "[clear]"
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "col-xs-7 searchpan" },
+	                              _react2.default.createElement("input", { type: "text", className: "form-control", id: "filter" })
+	                            )
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "table",
+	                        { id: "addManageTable", className: "table table-striped table-bordered add-manage-table table demo", "data-filter": "#filter", "data-filter-text-only": "true" },
+	                        _react2.default.createElement(
+	                          "thead",
+	                          null,
+	                          _react2.default.createElement(
+	                            "tr",
+	                            null,
+	                            _react2.default.createElement("th", { "data-type": "numeric", "data-sort-initial": "true" }),
+	                            _react2.default.createElement(
+	                              "th",
+	                              null,
+	                              " Photo"
+	                            ),
+	                            _react2.default.createElement(
+	                              "th",
+	                              { "data-sort-ignore": "true" },
+	                              " Adds Details"
+	                            ),
+	                            _react2.default.createElement(
+	                              "th",
+	                              { "data-type": "numeric" },
+	                              " Price"
+	                            ),
+	                            _react2.default.createElement(
+	                              "th",
+	                              null,
+	                              " Option"
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          "tbody",
+	                          null,
+	                          _react2.default.createElement(
+	                            "tr",
+	                            null,
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '2%' }, className: "add-img-selector" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "checkbox" },
+	                                _react2.default.createElement(
+	                                  "label",
+	                                  null,
+	                                  _react2.default.createElement("input", { type: "checkbox" })
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '14%' }, className: "add-img-td" },
+	                              _react2.default.createElement(
+	                                "a",
+	                                { href: "ads-details.html" },
+	                                _react2.default.createElement("img", { className: "thumbnail  img-responsive", src: "assets/img/item/FreeGreatPicture.com-46407-nexus-4-starts-at-199.jpg", alt: "img" })
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '58%' }, className: "ads-details-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " ",
+	                                    _react2.default.createElement(
+	                                      "a",
+	                                      { href: "ads-details.html", title: "Brend New Nexus 4" },
+	                                      "Brend New Nexus 4"
+	                                    ),
+	                                    " "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " Posted On "
+	                                  ),
+	                                  ": 02-Oct-2014, 04:38 PM "
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Visitors "
+	                                  ),
+	                                  ": 221 ",
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Located In:"
+	                                  ),
+	                                  " New York"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '16%' }, className: "price-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "strong",
+	                                  null,
+	                                  " $199"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '10%' }, className: "action-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-primary btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-edit" }),
+	                                    " Edit "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-info btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-mail-forward" }),
+	                                    " Share"
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-danger btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: " fa fa-trash" }),
+	                                    " Delete"
+	                                  )
+	                                )
+	                              )
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "tr",
+	                            null,
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '2%' }, className: "add-img-selector" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "checkbox" },
+	                                _react2.default.createElement(
+	                                  "label",
+	                                  null,
+	                                  _react2.default.createElement("input", { type: "checkbox" })
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '14%' }, className: "add-img-td" },
+	                              _react2.default.createElement(
+	                                "a",
+	                                { href: "ads-details.html" },
+	                                _react2.default.createElement("img", { className: "thumbnail  img-responsive", src: "assets/img/item/tp/Image00020.jpg", alt: "img" })
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '58%' }, className: "ads-details-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " ",
+	                                    _react2.default.createElement(
+	                                      "a",
+	                                      { href: "ads-details.html", title: "I pod 16 gb" },
+	                                      "I pod 16 gb "
+	                                    )
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " Posted On "
+	                                  ),
+	                                  ": 02-Oct-2014, 04:38 PM "
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Visitors "
+	                                  ),
+	                                  ": 680 ",
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Located In:"
+	                                  ),
+	                                  " New York"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '16%' }, className: "price-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "strong",
+	                                  null,
+	                                  " $90"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '10%' }, className: "action-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-primary btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-edit" }),
+	                                    " Edit "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-info btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-mail-forward" }),
+	                                    " Share"
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-danger btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: " fa fa-trash" }),
+	                                    " Delete"
+	                                  )
+	                                )
+	                              )
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "tr",
+	                            null,
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '2%' }, className: "add-img-selector" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "checkbox" },
+	                                _react2.default.createElement(
+	                                  "label",
+	                                  null,
+	                                  _react2.default.createElement("input", { type: "checkbox" })
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '14%' }, className: "add-img-td" },
+	                              _react2.default.createElement(
+	                                "a",
+	                                { href: "ads-details.html" },
+	                                _react2.default.createElement("img", { className: "thumbnail  img-responsive", src: "assets/img/item/tp/Image00014.jpg", alt: "img" })
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '58%' }, className: "ads-details-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " ",
+	                                    _react2.default.createElement(
+	                                      "a",
+	                                      { href: "ads-details.html", title: "SAMSUNG GALAXY S CORE Duos " },
+	                                      "SAMSUNG GALAXY S CORE Duos "
+	                                    ),
+	                                    " "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " Posted On "
+	                                  ),
+	                                  ": 02-Oct-2014, 04:38 PM "
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Visitors "
+	                                  ),
+	                                  ": 221 ",
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Located In:"
+	                                  ),
+	                                  " New York"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '16%' }, className: "price-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "strong",
+	                                  null,
+	                                  " $150"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '10%' }, className: "action-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-primary btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-edit" }),
+	                                    " Edit "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-info btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-mail-forward" }),
+	                                    " Share"
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-danger btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: " fa fa-trash" }),
+	                                    " Delete"
+	                                  )
+	                                )
+	                              )
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "tr",
+	                            null,
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '2%' }, className: "add-img-selector" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "checkbox" },
+	                                _react2.default.createElement(
+	                                  "label",
+	                                  null,
+	                                  _react2.default.createElement("input", { type: "checkbox" })
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '14%' }, className: "add-img-td" },
+	                              _react2.default.createElement(
+	                                "a",
+	                                { href: "ads-details.html" },
+	                                _react2.default.createElement("img", { className: "thumbnail  img-responsive", src: "assets/img/item/tp/Image00002.jpg", alt: "img" })
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '58%' }, className: "ads-details-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " ",
+	                                    _react2.default.createElement(
+	                                      "a",
+	                                      { href: "ads-details.html", title: "HTC one x 32 GB intact Seal box For sale" },
+	                                      "HTC one x 32 GB intact Seal box For sale"
+	                                    ),
+	                                    " "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " Posted On "
+	                                  ),
+	                                  ": 02-Sept-2014, 09:00 PM "
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Visitors "
+	                                  ),
+	                                  ": 896 ",
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Located In:"
+	                                  ),
+	                                  " New York"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '16%' }, className: "price-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "strong",
+	                                  null,
+	                                  " $210"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '10%' }, className: "action-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-primary btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-edit" }),
+	                                    " Edit "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-info btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-mail-forward" }),
+	                                    " Share"
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-danger btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: " fa fa-trash" }),
+	                                    " Delete"
+	                                  )
+	                                )
+	                              )
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "tr",
+	                            null,
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '2%' }, className: "add-img-selector" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "checkbox" },
+	                                _react2.default.createElement(
+	                                  "label",
+	                                  null,
+	                                  _react2.default.createElement("input", { type: "checkbox" })
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '14%' }, className: "add-img-td" },
+	                              _react2.default.createElement(
+	                                "a",
+	                                { href: "ads-details.html" },
+	                                _react2.default.createElement("img", { className: "thumbnail  img-responsive", src: "assets/img/item/tp/Image00011.jpg", alt: "img" })
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '58%' }, className: "ads-details-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " ",
+	                                    _react2.default.createElement(
+	                                      "a",
+	                                      { href: "ads-details.html", title: "Sony Xperia TX " },
+	                                      "Sony Xperia TX "
+	                                    ),
+	                                    " "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    " Posted On "
+	                                  ),
+	                                  ": 02-Oct-2014, 04:38 PM "
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Visitors "
+	                                  ),
+	                                  ": 221 ",
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Located In:"
+	                                  ),
+	                                  " New York"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '16%' }, className: "price-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "strong",
+	                                  null,
+	                                  " $260"
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "td",
+	                              { style: { width: '10%' }, className: "action-td" },
+	                              _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-primary btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-edit" }),
+	                                    " Edit "
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-info btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: "fa fa-mail-forward" }),
+	                                    " Share"
+	                                  )
+	                                ),
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  null,
+	                                  _react2.default.createElement(
+	                                    "a",
+	                                    { className: "btn btn-danger btn-xs" },
+	                                    " ",
+	                                    _react2.default.createElement("i", { className: " fa fa-trash" }),
+	                                    " Delete"
+	                                  )
+	                                )
+	                              )
+	                            )
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ManagePostsPage;
+	}(_react2.default.Component);
+
+	exports.default = ManagePostsPage;
 
 /***/ },
 /* 242 */
