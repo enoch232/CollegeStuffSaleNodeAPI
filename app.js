@@ -25,10 +25,21 @@ app.set('views', path.join(__dirname, path.join('app','views')))
 // app.set('view engine', 'jsx')
 // app.engine('jsx', reactView.createEngine())
 app.set('view engine','ejs')
+// app.use(function(req, res, next) {
+// 	console.log(req.method)
+//     if ('OPTIONS' == req.method) {
+//       res.header('Access-Control-Allow-Origin', 'http://www.collegestuffsale.com,http://collegestuffsale.com');
+//       res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+//       res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+//       res.send(200);
+//     }
+//     else {
+//       next();
+//     }
+// })
 
-
-const forDev = []
-const removeAuthenticationArray = ['/login','/signup','/api/sessions', '/api/users','/',/(assets\/)/].concat(forDev)
+const forDev = ['/new-post','/aboutus']
+const removeAuthenticationArray = ['/signin','/signup','/api/sessions', '/api/users','/',/(assets\/)/].concat(forDev)
 
 app.use(expressJWT({secret: "this is secretkey"}).unless({path: removeAuthenticationArray}))
 app.use((err, req, res, next)=>{

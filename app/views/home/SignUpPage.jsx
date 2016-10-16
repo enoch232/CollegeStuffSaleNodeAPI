@@ -1,5 +1,5 @@
-const React = require("react")
-class SignUpPage extends React.Component{
+import React from 'react'
+export default class SignUpPage extends React.Component{
 	constructor(props){
     super(props)
     this.state = {
@@ -18,7 +18,7 @@ class SignUpPage extends React.Component{
 
   _handleSubmit(){
 	console.log("fetching..")
-    return fetch('http://www.collegestuffsale.com/api/users', {
+    return fetch('http://localhost.com/api/users', {
       method: 'POST',
       headers: {
         'Accept':"application/json",
@@ -202,4 +202,3 @@ class SignUpPage extends React.Component{
 	}
 
 }
-module.exports = SignUpPage

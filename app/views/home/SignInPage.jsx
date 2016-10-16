@@ -1,6 +1,6 @@
-const React = require("react")
+import React from 'react'
 
-class LoginPage extends React.Component{
+export default class SignInPage extends React.Component{
   render() {
     return (
       <div>
@@ -13,7 +13,7 @@ class LoginPage extends React.Component{
                     <div className="panel-intro text-center">
                       <h2 className="logo-title">
                         {/* Original Logo will be placed here  */}
-                        <span className="logo-icon"><i className="icon icon-search-1 ln-shadow-logo shape-0" /> </span> College<span>StuffSale </span>
+                        Sign In
                       </h2>
                     </div>
                     <div className="panel-body">
@@ -59,4 +59,3 @@ class LoginPage extends React.Component{
     )
   }
 }
-module.exports = LoginPage

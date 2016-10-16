@@ -1,6 +1,6 @@
-const React = require("react")
-const Category = require("./categories.jsx")
-class IndexPage extends React.Component{
+import React from 'react'
+import Category from "./categories.jsx"
+export default class IndexPage extends React.Component{
   render() {
     return (
       <div>
@@ -145,4 +145,3 @@ class IndexPage extends React.Component{
     )
   }
 }
-module.exports = IndexPage
