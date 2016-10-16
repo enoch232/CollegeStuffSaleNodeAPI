@@ -17,8 +17,8 @@ class SignUpPage extends React.Component{
   }
 
   _handleSubmit(){
-		console.log("fetching..")
-    return fetch('http://localhost:3000/api/users', {
+	console.log("fetching..")
+    return fetch('http://www.collegestuffsale.com/api/users', {
       method: 'POST',
       headers: {
         'Accept':"application/json",
@@ -53,55 +53,8 @@ class SignUpPage extends React.Component{
 	render(){
 		return (
 	      <div>
-	        <meta charSet="utf-8" />
-	        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	        {/* Fav and touch icons */}
-	        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png" />
-	        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png" />
-	        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png" />
-	        <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
-	        <link rel="shortcut icon" href="assets/ico/favicon.png" />
-	        <title>CollegeStuffSale</title>
-	        {/* Bootstrap core CSS */}
-	        <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
-	        {/* Custom styles for this template */}
-	        <link href="assets/css/style.css" rel="stylesheet" />
-	        {/* styles needed for carousel slider */}
-	        {/* <link href="assets/css/owl.carousel.css" rel="stylesheet"> */}
-	        <link href="assets/css/owl.theme.css" rel="stylesheet" />
-
 	        <div>
 		        <div id="wrapper">
-		          <div className="header">
-		            <nav className="navbar navbar-site navbar-default" role="navigation">
-		              <div className="container">
-		                <div className="navbar-header">
-		                  <button data-target=".navbar-collapse" data-toggle="collapse" className="navbar-toggle" type="button">
-		                    <span className="sr-only">Toggle navigation</span> <span className="icon-bar" />
-		                    <span className="icon-bar" /> <span className="icon-bar" />
-		                  </button>
-		                  <a href="/" className="navbar-brand logo logo-title">
-		                    {/* Original Logo will be placed here  */}
-		                    <span className="logo-icon">
-		                      <i className="icon icon-search-1 ln-shadow-logo shape-0">
-		                      </i>
-		                    </span> College<span>StuffSale</span>
-		                  </a>
-		                </div>
-		                <div className="navbar-collapse collapse">
-		                  <ul className="nav navbar-nav navbar-right">
-		                    <li><a href="/login">Login</a></li>
-		                    <li><a href="/signup">Signup</a></li>
-		                    <li className="postadd">
-		                      <a className="btn btn-block btn-border btn-post btn-danger" href="/posts/new">Post New Item</a>
-		                    </li>
-		                  </ul>
-		                </div>
-		                {/*/.nav-collapse */}
-		              </div>
-		              {/* /.container-fluid */}
-		            </nav>
-		          </div>
 		          {/* /.header */}
 		          <div className="main-container">
 		            <div className="container">
@@ -240,35 +193,6 @@ class SignUpPage extends React.Component{
 		            {/* /.container */}
 		          </div>
 		          {/* /.main-container */}
-		          <div className="footer" id="footer">
-		            <div className="container">
-		              <ul className=" pull-left navbar-link footer-nav">
-		                <li>
-		                  <a href="/">
-		                    Home
-		                  </a>
-		                  <a href="/aboutus">
-		                    About us
-		                  </a>
-		                  <a href="/terms">
-		                    Terms and Conditions
-		                  </a>
-		                  <a href="/privacy">
-		                    Privacy Policy
-		                  </a>
-		                  <a href="/contact">
-		                    Contact us
-		                  </a>
-		                  <a href="/faq">
-		                    FAQ
-		                  </a>
-		                </li>
-		              </ul>
-		              <ul className=" pull-right navbar-link footer-nav">
-		                <li> © 2016 CollegeStuffSale</li>
-		              </ul>
-		            </div>
-		          </div>
 		          {/*/.footer*/}
 		        </div>
 	        </div>

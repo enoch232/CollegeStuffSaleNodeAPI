@@ -25,7 +25,7 @@ module.exports.createAPI = function(req, res){
             newuser.password_digest = hash
             newuser.save()
             .then((user)=>{
-              let webToken = jwt.sign({user_id: user._id}, "this is secretkey", {expiresIn: 60})
+              let webToken = jwt.sign({user_id: user._id}, "this is secretkey", {expiresIn: 60 * 60})
               res.status(200).json({webToken})
             })
             .catch((err)=>{
