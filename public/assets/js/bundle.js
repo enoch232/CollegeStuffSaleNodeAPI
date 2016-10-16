@@ -28322,7 +28322,7 @@
 	          React.createElement(
 	            "a",
 	            { href: "category.html" },
-	            React.createElement("img", { src: "/assets/img/category/Cellphones.png", className: "img-responsive", alt: "img" }),
+	            React.createElement("img", { src: "/assets/img/category/cellphones.png", className: "img-responsive", alt: "img" }),
 	            React.createElement(
 	              "h6",
 	              null,
@@ -28350,7 +28350,7 @@
 	          React.createElement(
 	            "a",
 	            { href: "category.html" },
-	            React.createElement("img", { src: "/assets/img/category/Textbooks.jpg", className: "img-responsive", alt: "img" }),
+	            React.createElement("img", { src: "/assets/img/category/textbooks.jpg", className: "img-responsive", alt: "img" }),
 	            React.createElement(
 	              "h6",
 	              null,

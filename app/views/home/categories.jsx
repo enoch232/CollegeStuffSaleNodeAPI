@@ -16,7 +16,7 @@ class Category extends React.Component {
 	      </div>
 
 	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 f-category">
-          <a href="category.html"><img src="/assets/img/category/Cellphones.png" className="img-responsive" alt="img"/>
+          <a href="category.html"><img src="/assets/img/category/cellphones.png" className="img-responsive" alt="img"/>
             <h6> Cellphones</h6>
           </a>
 	      </div>
@@ -29,7 +29,7 @@ class Category extends React.Component {
 
 	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 f-category">
           <a href="category.html">
-          	<img src="/assets/img/category/Textbooks.jpg" className="img-responsive" alt="img"/>
+          	<img src="/assets/img/category/textbooks.jpg" className="img-responsive" alt="img"/>
             <h6> Textbooks </h6>
           </a>
 	      </div>
