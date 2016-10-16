@@ -26,8 +26,9 @@ app.set('views', path.join(__dirname, path.join('app','views')))
 // app.engine('jsx', reactView.createEngine())
 app.set('view engine','ejs')
 
+
 const forDev = []
-const removeAuthenticationArray = ['/login','/signup','/api/sessions', '/api/users','/',/(assets\/)/]
+const removeAuthenticationArray = ['/login','/signup','/api/sessions', '/api/users','/',/(assets\/)/].concat(forDev)
 
 app.use(expressJWT({secret: "this is secretkey"}).unless({path: removeAuthenticationArray}))
 app.use((err, req, res, next)=>{
@@ -54,6 +55,19 @@ app.listen(port)
 //GET
 app.get("/api/posts", postController.indexAPI)
 //POST
+app.all('/*', function(req, res, next) {
+  // CORS headers
+  res.header("Access-Control-Allow-Origin", "*"); // restrict it to the required domain
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  // Set custom headers for CORS
+  res.header('Access-Control-Allow-Headers', 'Content-type,Accept,Authorization');
+  if (req.headers.origin != 'collegestuffsale.com') {
+  	console.log(req.headers)
+    res.json({error: "cannot access"})
+  } else {
+    next();
+  }
+});
 app.post("/api/sessions", sessionController.createAPI)
 app.post("/api/users", userController.createAPI)
 
