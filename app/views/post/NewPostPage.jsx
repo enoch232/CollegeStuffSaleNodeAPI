@@ -10,8 +10,7 @@ export default class NewPostPage extends React.Component{
               <div className="row">
                 <div className="col-md-9 page-content">
                   <div className="inner-box category-content">
-                    <h2 className="title-2 uppercase"><strong> <i className="icon-docs" /> Post  Stuff
-                        To Sell</strong></h2>
+                    <h2 className="title-2 uppercase"><strong> <i className="icon-docs" /> Post Stuff To Sell</strong></h2>
                     <div className="row">
                       <div className="col-sm-12">
                         <form className="form-horizontal">
@@ -60,12 +59,12 @@ export default class NewPostPage extends React.Component{
                                 <div className="checkbox">
                                   <label>
                                     <input type="checkbox" />
-                                    Negotiable 
+                                    Negotiable
                                   </label>
                                 </div>
                               </div>
                             </div>
-                            {/* condition */}   
+                            {/* condition */}
                             <div className="form-group">
                               <label className="col-md-3 control-label" htmlFor="item-condition">
                                 Condition
@@ -106,98 +105,25 @@ export default class NewPostPage extends React.Component{
                                 <p className="help-block">Add up to 3 photos. Premium members will be able to add 3 or more photos.</p>
                               </div>
                             </div>
-                            <div className="content-subheading"><i className="icon-user fa" /> <strong>Seller
-                                information</strong></div>
-                            {/* Text input*/}
-                            <div className="form-group">
-                              <label className="col-md-3 control-label" htmlFor="textinput-name">Name</label>
-                              <div className="col-md-8">
-                                <input id="textinput-name" name="textinput-name" placeholder="Seller Name" className="form-control input-md" required type="text" />
-                              </div>
-                            </div>
-                            {/* Appended checkbox */}
-                            <div className="form-group">
-                              <label className="col-md-3 control-label" htmlFor="seller-email"> Seller
-                                Email</label>
-                              <div className="col-md-8">
-                                <input id="seller-email" name="seller-email" className="form-control" placeholder="Email" required type="text" />
-                                <div className="checkbox">
-                                  <label>
-                                    <input type="checkbox" defaultValue />
-                                    <small> Hide the phone number on this ads.</small>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                            {/* Text input*/}
-                            <div className="form-group">
-                              <label className="col-md-3 control-label" htmlFor="seller-Number">Phone
-                                Number</label>
-                              <div className="col-md-8">
-                                <input id="seller-Number" name="seller-Number" placeholder="Phone Number" className="form-control input-md" required type="text" />
-                              </div>
-                            </div>
+                            <div className="content-subheading"><i className="icon-map fa" /> <strong>Location </strong></div>
                             {/* Select State, add more states */}
                             <div className="form-group">
                               <label className="col-md-3 control-label" htmlFor="seller-Location">State</label>
                               <div className="col-sm-3">
                                 <select className="form-control selecter" name="state" id="id-state">
-                                  <option selected="selected" value>Choose State</option>
-                                  <option value="AL">Alabama</option>
-                                  <option value="AK">Alaska</option>
                                   <option value="AZ">Arizona</option>
-                                  <option value="AR">Arkansas</option>
-                                  <option value="CA">California</option>
-                                  <option value="CO">Colorado</option>
-                                  <option value="CT">Connecticut</option>
-                                  <option value="DE">Delaware</option>
-                                  <option value="DC">District Of Columbia</option>
-                                  <option value="FL">Florida</option>
-                                  <option value="GA">Georgia</option>
-                                  <option value="HI">Hawaii</option>
-                                  <option value="ID">Idaho</option>
-                                  <option value="IL">Illinois</option>
-                                  <option value="IN">Indiana</option>
-                                  <option value="IA">Iowa</option>
-                                  <option value="KS">Kansas</option>
-                                  <option value="KY">Kentucky</option>
-                                  <option value="LA">Louisiana</option>
-                                  <option value="ME">Maine</option>
-                                  <option value="MD">Maryland</option>
-                                  <option value="MA">Massachusetts</option>
-                                  <option value="MI">Michigan</option>
-                                  <option value="MN">Minnesota</option>
-                                  <option value="MS">Mississippi</option>
-                                  <option value="MO">Missouri</option>
-                                  <option value="MT">Montana</option>
-                                  <option value="NE">Nebraska</option>
-                                  <option value="NV">Nevada</option>
-                                  <option value="NH">New Hampshire</option>
-                                  <option value="NJ">New Jersey</option>
-                                  <option value="NM">New Mexico</option>
-                                  <option value="NY">New York</option>
-                                  <option value="NC">North Carolina</option>
-                                  <option value="ND">North Dakota</option>
-                                  <option value="OH">Ohio</option>
-                                  <option value="OK">Oklahoma</option>
-                                  <option value="OR">Oregon</option>
-                                  <option value="PA">Pennsylvania</option>
-                                  <option value="RI">Rhode Island</option>
-                                  <option value="SC">South Carolina</option>
-                                  <option value="SD">South Dakota</option>
-                                  <option value="TN">Tennessee</option>
-                                  <option value="TX">Texas</option>
-                                  <option value="UT">Utah</option>
-                                  <option value="VT">Vermont</option>
-                                  <option value="VA">Virginia</option>
-                                  <option value="WA">Washington</option>
-                                  <option value="WV">West Virginia</option>
-                                  <option value="WI">Wisconsin</option>
-                                  <option value="WY">Wyoming</option>
-                                  <option value="Other-Locations">Other Locations</option>
                                 </select>
                               </div>
                             </div>
+                            <div className="form-group">
+                              <label className="col-md-3 control-label" htmlFor="seller-Location">School</label>
+                              <div className="col-sm-3">
+                                <select className="form-control selecter" name="state" id="id-state">
+                                  <option value = "asu">ASU</option>
+                                </select>
+                              </div>
+                            </div>
+
                             <div className="form-group">
                               <label className="col-md-3 control-label">Terms</label>
                               <div className="col-md-8">

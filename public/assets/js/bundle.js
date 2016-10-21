@@ -21455,31 +21455,31 @@
 
 	var _SignUpPage2 = _interopRequireDefault(_SignUpPage);
 
-	var _IndexPage = __webpack_require__(237);
+	var _IndexPage = __webpack_require__(240);
 
 	var _IndexPage2 = _interopRequireDefault(_IndexPage);
 
-	var _SignInPage = __webpack_require__(239);
+	var _SignInPage = __webpack_require__(242);
 
 	var _SignInPage2 = _interopRequireDefault(_SignInPage);
 
-	var _AccountPage = __webpack_require__(240);
+	var _AccountPage = __webpack_require__(243);
 
 	var _AccountPage2 = _interopRequireDefault(_AccountPage);
 
-	var _NewPostPage = __webpack_require__(241);
+	var _NewPostPage = __webpack_require__(244);
 
 	var _NewPostPage2 = _interopRequireDefault(_NewPostPage);
 
-	var _AboutUsPage = __webpack_require__(242);
+	var _AboutUsPage = __webpack_require__(245);
 
 	var _AboutUsPage2 = _interopRequireDefault(_AboutUsPage);
 
-	var _FAQPage = __webpack_require__(243);
+	var _FAQPage = __webpack_require__(246);
 
 	var _FAQPage2 = _interopRequireDefault(_FAQPage);
 
-	var _ManagePostsPage = __webpack_require__(244);
+	var _ManagePostsPage = __webpack_require__(247);
 
 	var _ManagePostsPage2 = _interopRequireDefault(_ManagePostsPage);
 
@@ -21502,9 +21502,36 @@
 	  }
 
 	  _createClass(RouterPage, [{
+	    key: '_checkJWT',
+	    value: function _checkJWT(cb) {
+	      return fetch('http://localhost:3000/api/checkjwt', {
+	        method: 'POST',
+	        headers: {
+	          'Accept': "application/json",
+	          'Content-Type': 'application/json',
+	          'Authorization': 'bearer ' + localStorage.getItem("collegestuffsale-webtoken")
+	        }
+	      }).then(function (response) {
+	        return response.json();
+	      }).then(function (responseJson) {
+	        console.log("success was " + responseJson.success);
+	        cb(responseJson.success);
+	      }).catch(function (error) {
+	        console.error(error);
+	      });
+	    }
+	  }, {
 	    key: '_authenticate',
 	    value: function _authenticate(nextState, replace) {
-	      replace('/');
+	      this._checkJWT(function (result) {
+	        console.log("finished: " + result);
+	        if (result) {
+	          console.log("successfully Signed In");
+	        } else {
+	          console.log("Failed");
+	          _reactRouter.browserHistory.replace('/signin');
+	        }
+	      });
 	    }
 	  }, {
 	    key: 'render',
@@ -21515,8 +21542,8 @@
 	        _react2.default.createElement(_reactRouter.Route, { path: '/', component: _IndexPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/signup', component: _SignUpPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/signin', component: _SignInPage2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/account', component: _AccountPage2.default, onEnter: this._authenticate }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/new-post', component: _NewPostPage2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/account', component: _AccountPage2.default, onEnter: this._authenticate.bind(this) }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/new-post', component: _NewPostPage2.default, onEnter: this._authenticate.bind(this) }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/aboutus', component: _AboutUsPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/faq', component: _FAQPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/manage-posts', component: _ManagePostsPage2.default })
@@ -27197,7 +27224,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _jwtDecode = __webpack_require__(245);
+	var _jwtDecode = __webpack_require__(237);
 
 	var _jwtDecode2 = _interopRequireDefault(_jwtDecode);
 
@@ -27648,6 +27675,108 @@
 /* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var base64_url_decode = __webpack_require__(238);
+
+	module.exports = function (token,options) {
+	  if (typeof token !== 'string') {
+	    throw new Error('Invalid token specified');
+	  }
+
+	  options = options || {};
+	  var pos = options.header === true ? 0 : 1;
+	  return JSON.parse(base64_url_decode(token.split('.')[pos]));
+	};
+
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var atob = __webpack_require__(239);
+
+	function b64DecodeUnicode(str) {
+	  return decodeURIComponent(atob(str).replace(/(.)/g, function (m, p) {
+	    var code = p.charCodeAt(0).toString(16).toUpperCase();
+	    if (code.length < 2) {
+	      code = '0' + code;
+	    }
+	    return '%' + code;
+	  }));
+	}
+
+	module.exports = function(str) {
+	  var output = str.replace(/-/g, "+").replace(/_/g, "/");
+	  switch (output.length % 4) {
+	    case 0:
+	      break;
+	    case 2:
+	      output += "==";
+	      break;
+	    case 3:
+	      output += "=";
+	      break;
+	    default:
+	      throw "Illegal base64url string!";
+	  }
+
+	  try{
+	    return b64DecodeUnicode(output);
+	  } catch (err) {
+	    return atob(output);
+	  }
+	};
+
+
+/***/ },
+/* 239 */
+/***/ function(module, exports) {
+
+	/**
+	 * The code was extracted from:
+	 * https://github.com/davidchambers/Base64.js
+	 */
+
+	var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+
+	function InvalidCharacterError(message) {
+	  this.message = message;
+	}
+
+	InvalidCharacterError.prototype = new Error();
+	InvalidCharacterError.prototype.name = 'InvalidCharacterError';
+
+	function polyfill (input) {
+	  var str = String(input).replace(/=+$/, '');
+	  if (str.length % 4 == 1) {
+	    throw new InvalidCharacterError("'atob' failed: The string to be decoded is not correctly encoded.");
+	  }
+	  for (
+	    // initialize result and counters
+	    var bc = 0, bs, buffer, idx = 0, output = '';
+	    // get next character
+	    buffer = str.charAt(idx++);
+	    // character found in table? initialize bit storage and add its ascii value;
+	    ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer,
+	      // and if not first of each 4 characters,
+	      // convert the first 8 bits to one ascii character
+	      bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0
+	  ) {
+	    // try to find character in table (0-63, not found => -1)
+	    buffer = chars.indexOf(buffer);
+	  }
+	  return output;
+	}
+
+
+	module.exports = typeof window !== 'undefined' && window.atob && window.atob.bind(window) || polyfill;
+
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
@@ -27660,7 +27789,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _categories = __webpack_require__(238);
+	var _categories = __webpack_require__(241);
 
 	var _categories2 = _interopRequireDefault(_categories);
 
@@ -27988,7 +28117,7 @@
 	exports.default = IndexPage;
 
 /***/ },
-/* 238 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28122,7 +28251,7 @@
 	exports.default = Category;
 
 /***/ },
-/* 239 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28182,8 +28311,12 @@
 	        return response.json();
 	      }).then(function (responseJson) {
 	        console.log(responseJson);
-	        localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken);
-	        _this2.props.router.push('/account');
+	        if (responseJson.webToken) {
+	          localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken);
+	          _this2.props.router.push('/account');
+	        } else {
+	          console.log(responseJson);
+	        }
 	      }).catch(function (error) {
 	        console.error(error);
 	      });
@@ -28335,7 +28468,7 @@
 	exports.default = (0, _reactRouter.withRouter)(SignInPage);
 
 /***/ },
-/* 240 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29023,7 +29156,7 @@
 	exports.default = AccountPage;
 
 /***/ },
-/* 241 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29087,7 +29220,7 @@
 	                        null,
 	                        " ",
 	                        _react2.default.createElement("i", { className: "icon-docs" }),
-	                        " Post  Stuff To Sell"
+	                        " Post Stuff To Sell"
 	                      )
 	                    ),
 	                    _react2.default.createElement(
@@ -29312,68 +29445,12 @@
 	                            _react2.default.createElement(
 	                              "div",
 	                              { className: "content-subheading" },
-	                              _react2.default.createElement("i", { className: "icon-user fa" }),
+	                              _react2.default.createElement("i", { className: "icon-map fa" }),
 	                              " ",
 	                              _react2.default.createElement(
 	                                "strong",
 	                                null,
-	                                "Seller information"
-	                              )
-	                            ),
-	                            _react2.default.createElement(
-	                              "div",
-	                              { className: "form-group" },
-	                              _react2.default.createElement(
-	                                "label",
-	                                { className: "col-md-3 control-label", htmlFor: "textinput-name" },
-	                                "Name"
-	                              ),
-	                              _react2.default.createElement(
-	                                "div",
-	                                { className: "col-md-8" },
-	                                _react2.default.createElement("input", { id: "textinput-name", name: "textinput-name", placeholder: "Seller Name", className: "form-control input-md", required: true, type: "text" })
-	                              )
-	                            ),
-	                            _react2.default.createElement(
-	                              "div",
-	                              { className: "form-group" },
-	                              _react2.default.createElement(
-	                                "label",
-	                                { className: "col-md-3 control-label", htmlFor: "seller-email" },
-	                                " Seller Email"
-	                              ),
-	                              _react2.default.createElement(
-	                                "div",
-	                                { className: "col-md-8" },
-	                                _react2.default.createElement("input", { id: "seller-email", name: "seller-email", className: "form-control", placeholder: "Email", required: true, type: "text" }),
-	                                _react2.default.createElement(
-	                                  "div",
-	                                  { className: "checkbox" },
-	                                  _react2.default.createElement(
-	                                    "label",
-	                                    null,
-	                                    _react2.default.createElement("input", { type: "checkbox", defaultValue: true }),
-	                                    _react2.default.createElement(
-	                                      "small",
-	                                      null,
-	                                      " Hide the phone number on this ads."
-	                                    )
-	                                  )
-	                                )
-	                              )
-	                            ),
-	                            _react2.default.createElement(
-	                              "div",
-	                              { className: "form-group" },
-	                              _react2.default.createElement(
-	                                "label",
-	                                { className: "col-md-3 control-label", htmlFor: "seller-Number" },
-	                                "Phone Number"
-	                              ),
-	                              _react2.default.createElement(
-	                                "div",
-	                                { className: "col-md-8" },
-	                                _react2.default.createElement("input", { id: "seller-Number", name: "seller-Number", placeholder: "Phone Number", className: "form-control input-md", required: true, type: "text" })
+	                                "Location "
 	                              )
 	                            ),
 	                            _react2.default.createElement(
@@ -29392,268 +29469,30 @@
 	                                  { className: "form-control selecter", name: "state", id: "id-state" },
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { selected: "selected", value: true },
-	                                    "Choose State"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "AL" },
-	                                    "Alabama"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "AK" },
-	                                    "Alaska"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
 	                                    { value: "AZ" },
 	                                    "Arizona"
-	                                  ),
+	                                  )
+	                                )
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "div",
+	                              { className: "form-group" },
+	                              _react2.default.createElement(
+	                                "label",
+	                                { className: "col-md-3 control-label", htmlFor: "seller-Location" },
+	                                "School"
+	                              ),
+	                              _react2.default.createElement(
+	                                "div",
+	                                { className: "col-sm-3" },
+	                                _react2.default.createElement(
+	                                  "select",
+	                                  { className: "form-control selecter", name: "state", id: "id-state" },
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: "AR" },
-	                                    "Arkansas"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "CA" },
-	                                    "California"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "CO" },
-	                                    "Colorado"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "CT" },
-	                                    "Connecticut"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "DE" },
-	                                    "Delaware"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "DC" },
-	                                    "District Of Columbia"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "FL" },
-	                                    "Florida"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "GA" },
-	                                    "Georgia"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "HI" },
-	                                    "Hawaii"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "ID" },
-	                                    "Idaho"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "IL" },
-	                                    "Illinois"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "IN" },
-	                                    "Indiana"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "IA" },
-	                                    "Iowa"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "KS" },
-	                                    "Kansas"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "KY" },
-	                                    "Kentucky"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "LA" },
-	                                    "Louisiana"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "ME" },
-	                                    "Maine"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "MD" },
-	                                    "Maryland"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "MA" },
-	                                    "Massachusetts"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "MI" },
-	                                    "Michigan"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "MN" },
-	                                    "Minnesota"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "MS" },
-	                                    "Mississippi"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "MO" },
-	                                    "Missouri"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "MT" },
-	                                    "Montana"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "NE" },
-	                                    "Nebraska"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "NV" },
-	                                    "Nevada"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "NH" },
-	                                    "New Hampshire"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "NJ" },
-	                                    "New Jersey"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "NM" },
-	                                    "New Mexico"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "NY" },
-	                                    "New York"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "NC" },
-	                                    "North Carolina"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "ND" },
-	                                    "North Dakota"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "OH" },
-	                                    "Ohio"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "OK" },
-	                                    "Oklahoma"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "OR" },
-	                                    "Oregon"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "PA" },
-	                                    "Pennsylvania"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "RI" },
-	                                    "Rhode Island"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "SC" },
-	                                    "South Carolina"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "SD" },
-	                                    "South Dakota"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "TN" },
-	                                    "Tennessee"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "TX" },
-	                                    "Texas"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "UT" },
-	                                    "Utah"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "VT" },
-	                                    "Vermont"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "VA" },
-	                                    "Virginia"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "WA" },
-	                                    "Washington"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "WV" },
-	                                    "West Virginia"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "WI" },
-	                                    "Wisconsin"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "WY" },
-	                                    "Wyoming"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "Other-Locations" },
-	                                    "Other Locations"
+	                                    { value: "asu" },
+	                                    "ASU"
 	                                  )
 	                                )
 	                              )
@@ -29792,7 +29631,7 @@
 	exports.default = NewPostPage;
 
 /***/ },
-/* 242 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30005,7 +29844,7 @@
 	exports.default = AboutUsPage;
 
 /***/ },
-/* 243 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30363,7 +30202,7 @@
 	exports.default = FAQPage;
 
 /***/ },
-/* 244 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31345,108 +31184,6 @@
 	}(_react2.default.Component);
 
 	exports.default = ManagePostsPage;
-
-/***/ },
-/* 245 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var base64_url_decode = __webpack_require__(246);
-
-	module.exports = function (token,options) {
-	  if (typeof token !== 'string') {
-	    throw new Error('Invalid token specified');
-	  }
-
-	  options = options || {};
-	  var pos = options.header === true ? 0 : 1;
-	  return JSON.parse(base64_url_decode(token.split('.')[pos]));
-	};
-
-
-/***/ },
-/* 246 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var atob = __webpack_require__(247);
-
-	function b64DecodeUnicode(str) {
-	  return decodeURIComponent(atob(str).replace(/(.)/g, function (m, p) {
-	    var code = p.charCodeAt(0).toString(16).toUpperCase();
-	    if (code.length < 2) {
-	      code = '0' + code;
-	    }
-	    return '%' + code;
-	  }));
-	}
-
-	module.exports = function(str) {
-	  var output = str.replace(/-/g, "+").replace(/_/g, "/");
-	  switch (output.length % 4) {
-	    case 0:
-	      break;
-	    case 2:
-	      output += "==";
-	      break;
-	    case 3:
-	      output += "=";
-	      break;
-	    default:
-	      throw "Illegal base64url string!";
-	  }
-
-	  try{
-	    return b64DecodeUnicode(output);
-	  } catch (err) {
-	    return atob(output);
-	  }
-	};
-
-
-/***/ },
-/* 247 */
-/***/ function(module, exports) {
-
-	/**
-	 * The code was extracted from:
-	 * https://github.com/davidchambers/Base64.js
-	 */
-
-	var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-
-	function InvalidCharacterError(message) {
-	  this.message = message;
-	}
-
-	InvalidCharacterError.prototype = new Error();
-	InvalidCharacterError.prototype.name = 'InvalidCharacterError';
-
-	function polyfill (input) {
-	  var str = String(input).replace(/=+$/, '');
-	  if (str.length % 4 == 1) {
-	    throw new InvalidCharacterError("'atob' failed: The string to be decoded is not correctly encoded.");
-	  }
-	  for (
-	    // initialize result and counters
-	    var bc = 0, bs, buffer, idx = 0, output = '';
-	    // get next character
-	    buffer = str.charAt(idx++);
-	    // character found in table? initialize bit storage and add its ascii value;
-	    ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer,
-	      // and if not first of each 4 characters,
-	      // convert the first 8 bits to one ascii character
-	      bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0
-	  ) {
-	    // try to find character in table (0-63, not found => -1)
-	    buffer = chars.indexOf(buffer);
-	  }
-	  return output;
-	}
-
-
-	module.exports = typeof window !== 'undefined' && window.atob && window.atob.bind(window) || polyfill;
-
 
 /***/ }
 /******/ ]);

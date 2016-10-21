@@ -26,3 +26,6 @@ module.exports.createAPI = (req, res)=> {
     res.status(200).json({error: err})
   })
 }
+module.exports.checkJWT = (req, res) => {
+  
+}

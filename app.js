@@ -37,16 +37,16 @@ app.set('view engine','ejs')
 //       next();
 //     }
 // })
-
-const forDev = ['/new-post','/manage-posts','/account']
-const removeAuthenticationArray = ['/signin','/signup','/aboutus','/faq','/api/sessions', '/api/users','/',/(assets\/)/].concat(forDev)
-
-app.use(expressJWT({secret: "this is secretkey"}).unless({path: removeAuthenticationArray}))
-app.use((err, req, res, next)=>{
-  if (err.name === 'UnauthorizedError') {
-    res.json({error: "Unauthorized."})
-  }
-})
+//
+// const forDev = ['/new-post','/manage-posts','/account']
+// const removeAuthenticationArray = ['/signin','/signup','/aboutus','/faq','/api/sessions', '/api/users','/',/(assets\/)/].concat(forDev)
+//
+// app.use(expressJWT({secret: "this is secretkey"}).unless({path: removeAuthenticationArray}))
+// app.use((err, req, res, next)=>{
+//   if (err.name === 'UnauthorizedError') {
+//     res.json({error: "Unauthorized."})
+//   }
+// })
 app.use((req, res, next)=>{
   console.log(req.method+ " "+ req.url)
   next()
@@ -68,9 +68,32 @@ app.get("/api/posts", postController.indexAPI)
 //POST
 app.post("/api/sessions", sessionController.createAPI)
 app.post("/api/users", userController.createAPI)
+app.post("/api/checkjwt", (req, res, next)=>{
+  if (req.headers.authorization){
+    let token = req.headers.authorization.split(' ')[1]
+    console.log(token)
+    jwt.verify(token, "this is secretkey", function(err, decoded) {
+      if (err) {
+        app.set("User", "invalid")
+        res.json({ success: false, message: 'Failed to authenticate token.' });
+      } else {
+        // if everything is good, save to request for use in other routes
+        app.set("User", "valid")
+        req.decoded = decoded;
+        res.json({success: true})
+      }
+    });
+  }else{
+    res.status(403).json({
+      success: false,
+      message: 'No token provided.'
+    })
+  }
+})
 
 app.get('/*', function (req, res){
-  res.render('index')
+  console.log(app.get("User"))
+  res.render('index', {user: app.get("User")})
 })
 
 

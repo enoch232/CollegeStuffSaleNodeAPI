@@ -27,8 +27,13 @@ class SignInPage extends React.Component{
     })
     .then((responseJson)=>{
       console.log(responseJson)
-      localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken)
-      this.props.router.push('/account')
+      if (responseJson.webToken){
+        localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken)
+        this.props.router.push('/account')
+      }else{
+        console.log(responseJson)
+      }
+
     })
     .catch((error) => {
       console.error(error)
