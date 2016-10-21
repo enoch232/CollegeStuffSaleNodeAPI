@@ -21459,7 +21459,7 @@
 
 	var _IndexPage2 = _interopRequireDefault(_IndexPage);
 
-	var _SignInPage = __webpack_require__(242);
+	var _SignInPage = __webpack_require__(239);
 
 	var _SignInPage2 = _interopRequireDefault(_SignInPage);
 
@@ -21471,15 +21471,15 @@
 
 	var _NewPostPage2 = _interopRequireDefault(_NewPostPage);
 
-	var _AboutUsPage = __webpack_require__(243);
+	var _AboutUsPage = __webpack_require__(242);
 
 	var _AboutUsPage2 = _interopRequireDefault(_AboutUsPage);
 
-	var _FAQPage = __webpack_require__(244);
+	var _FAQPage = __webpack_require__(243);
 
 	var _FAQPage2 = _interopRequireDefault(_FAQPage);
 
-	var _ManagePostsPage = __webpack_require__(247);
+	var _ManagePostsPage = __webpack_require__(244);
 
 	var _ManagePostsPage2 = _interopRequireDefault(_ManagePostsPage);
 
@@ -21495,13 +21495,18 @@
 	var RouterPage = function (_React$Component) {
 	  _inherits(RouterPage, _React$Component);
 
-	  function RouterPage() {
+	  function RouterPage(props) {
 	    _classCallCheck(this, RouterPage);
 
-	    return _possibleConstructorReturn(this, (RouterPage.__proto__ || Object.getPrototypeOf(RouterPage)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (RouterPage.__proto__ || Object.getPrototypeOf(RouterPage)).call(this, props));
 	  }
 
 	  _createClass(RouterPage, [{
+	    key: '_authenticate',
+	    value: function _authenticate() {
+	      console.log(window.user);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -21510,7 +21515,7 @@
 	        _react2.default.createElement(_reactRouter.Route, { path: '/', component: _IndexPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/signup', component: _SignUpPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/signin', component: _SignInPage2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/account', component: _AccountPage2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/account', component: _AccountPage2.default, onEnter: this._authenticate }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/new-post', component: _NewPostPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/aboutus', component: _AboutUsPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/faq', component: _FAQPage2.default }),
@@ -27180,7 +27185,7 @@
 /* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 			value: true
@@ -27191,6 +27196,10 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _jwtDecode = __webpack_require__(245);
+
+	var _jwtDecode2 = _interopRequireDefault(_jwtDecode);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27224,7 +27233,7 @@
 			}
 
 			_createClass(SignUpPage, [{
-					key: "_handleSubmit",
+					key: '_handleSubmit',
 					value: function _handleSubmit() {
 							console.log("fetching..");
 							return fetch('http://localhost:3000/api/users', {
@@ -27247,296 +27256,303 @@
 									return response.json();
 							}).then(function (responseJson) {
 									console.log(responseJson);
-									localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken);
+									if (responseJson.webToken) {
+											localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken);
+											var claim = (0, _jwtDecode2.default)(responseJson.webToken);
+											localStorage.setItem("collegestuffsale-name", claim.name);
+											localStorage.setItem("collegestuffsale-email", claim.email);
+											localStorage.setItem("collegestuffsale-bio", claim.bio);
+											localStorage.setItem("collegestuffsale-phoneNumber", claim.phoneNumber);
+									}
 							}).catch(function (error) {
 									console.error(error);
 							});
 					}
 			}, {
-					key: "render",
+					key: 'render',
 					value: function render() {
 							var _this2 = this;
 
 							return _react2.default.createElement(
-									"div",
+									'div',
 									null,
 									_react2.default.createElement(
-											"div",
+											'div',
 											null,
 											_react2.default.createElement(
-													"div",
-													{ id: "wrapper" },
+													'div',
+													{ id: 'wrapper' },
 													_react2.default.createElement(
-															"div",
-															{ className: "main-container" },
+															'div',
+															{ className: 'main-container' },
 															_react2.default.createElement(
-																	"div",
-																	{ className: "container" },
+																	'div',
+																	{ className: 'container' },
 																	_react2.default.createElement(
-																			"div",
-																			{ className: "row" },
+																			'div',
+																			{ className: 'row' },
 																			_react2.default.createElement(
-																					"div",
-																					{ className: "col-md-8 page-content" },
+																					'div',
+																					{ className: 'col-md-8 page-content' },
 																					_react2.default.createElement(
-																							"div",
-																							{ className: "inner-box category-content" },
+																							'div',
+																							{ className: 'inner-box category-content' },
 																							_react2.default.createElement(
-																									"h2",
-																									{ className: "title-2" },
-																									_react2.default.createElement("i", { className: "icon-user-add" }),
-																									" Create a free account "
+																									'h2',
+																									{ className: 'title-2' },
+																									_react2.default.createElement('i', { className: 'icon-user-add' }),
+																									' Create a free account '
 																							),
 																							_react2.default.createElement(
-																									"div",
-																									{ className: "row" },
+																									'div',
+																									{ className: 'row' },
 																									_react2.default.createElement(
-																											"div",
-																											{ className: "col-sm-12", id: "sign-up-form" },
+																											'div',
+																											{ className: 'col-sm-12', id: 'sign-up-form' },
 																											_react2.default.createElement(
-																													"form",
-																													{ className: "form-horizontal" },
-																													_react2.default.createElement("link", { href: "assets/css/help-tip.css", rel: "stylesheet" }),
+																													'form',
+																													{ className: 'form-horizontal' },
+																													_react2.default.createElement('link', { href: 'assets/css/help-tip.css', rel: 'stylesheet' }),
 																													_react2.default.createElement(
-																															"fieldset",
+																															'fieldset',
 																															null,
 																															_react2.default.createElement(
-																																	"div",
-																																	{ className: "form-group required" },
+																																	'div',
+																																	{ className: 'form-group required' },
 																																	_react2.default.createElement(
-																																			"label",
-																																			{ className: "col-md-4 control-label" },
-																																			"First Name ",
+																																			'label',
+																																			{ className: 'col-md-4 control-label' },
+																																			'First Name ',
 																																			_react2.default.createElement(
-																																					"sup",
+																																					'sup',
 																																					null,
-																																					"*"
+																																					'*'
 																																			)
 																																	),
 																																	_react2.default.createElement(
-																																			"div",
-																																			{ className: "col-md-6" },
-																																			_react2.default.createElement("input", { name: true, placeholder: "First Name", className: "form-control input-md", required: true, type: "text", value: this.state.firstName, onChange: function onChange(event) {
+																																			'div',
+																																			{ className: 'col-md-6' },
+																																			_react2.default.createElement('input', { name: true, placeholder: 'First Name', className: 'form-control input-md', required: true, type: 'text', value: this.state.firstName, onChange: function onChange(event) {
 																																							return _this2.setState({ firstName: event.target.value.substr(0, 40) });
 																																					} })
 																																	)
 																															),
 																															_react2.default.createElement(
-																																	"div",
-																																	{ className: "form-group required" },
+																																	'div',
+																																	{ className: 'form-group required' },
 																																	_react2.default.createElement(
-																																			"label",
-																																			{ className: "col-md-4 control-label" },
-																																			"Last Name ",
+																																			'label',
+																																			{ className: 'col-md-4 control-label' },
+																																			'Last Name ',
 																																			_react2.default.createElement(
-																																					"sup",
+																																					'sup',
 																																					null,
-																																					"*"
+																																					'*'
 																																			)
 																																	),
 																																	_react2.default.createElement(
-																																			"div",
-																																			{ className: "col-md-6" },
-																																			_react2.default.createElement("input", { name: "textinput", placeholder: "Last Name", className: "form-control input-md", type: "text", value: this.state.lastName, onChange: function onChange(event) {
+																																			'div',
+																																			{ className: 'col-md-6' },
+																																			_react2.default.createElement('input', { name: 'textinput', placeholder: 'Last Name', className: 'form-control input-md', type: 'text', value: this.state.lastName, onChange: function onChange(event) {
 																																							_this2.setState({ lastName: event.target.value.substr(0, 40) });
 																																					} })
 																																	)
 																															),
 																															_react2.default.createElement(
-																																	"div",
-																																	{ className: "form-group required" },
+																																	'div',
+																																	{ className: 'form-group required' },
 																																	_react2.default.createElement(
-																																			"label",
-																																			{ htmlFor: "inputEmail3", className: "col-md-4 control-label" },
-																																			"Email ",
+																																			'label',
+																																			{ htmlFor: 'inputEmail3', className: 'col-md-4 control-label' },
+																																			'Email ',
 																																			_react2.default.createElement(
-																																					"sup",
+																																					'sup',
 																																					null,
-																																					"*"
+																																					'*'
 																																			)
 																																	),
 																																	_react2.default.createElement(
-																																			"div",
-																																			{ className: "col-md-6" },
-																																			_react2.default.createElement("input", { type: "email", className: "form-control", id: "inputEmail3", placeholder: "Email", value: this.state.email, onChange: function onChange(event) {
+																																			'div',
+																																			{ className: 'col-md-6' },
+																																			_react2.default.createElement('input', { type: 'email', className: 'form-control', id: 'inputEmail3', placeholder: 'Email', value: this.state.email, onChange: function onChange(event) {
 																																							_this2.setState({ email: event.target.value.substr(0, 140) });
 																																					} })
 																																	)
 																															),
 																															_react2.default.createElement(
-																																	"div",
-																																	{ className: "form-group required" },
+																																	'div',
+																																	{ className: 'form-group required' },
 																																	_react2.default.createElement(
-																																			"label",
-																																			{ className: "col-md-4 control-label" },
-																																			"Phone Number "
+																																			'label',
+																																			{ className: 'col-md-4 control-label' },
+																																			'Phone Number '
 																																	),
 																																	_react2.default.createElement(
-																																			"div",
-																																			{ className: "col-md-6" },
-																																			_react2.default.createElement("input", { name: "textinput", placeholder: "Phone Number", className: "form-control input-md", type: "text", value: this.state.phoneNumber, onChange: function onChange(event) {
+																																			'div',
+																																			{ className: 'col-md-6' },
+																																			_react2.default.createElement('input', { name: 'textinput', placeholder: 'Phone Number', className: 'form-control input-md', type: 'text', value: this.state.phoneNumber, onChange: function onChange(event) {
 																																							_this2.setState({ phoneNumber: event.target.value.substr(0, 16) });
 																																					} }),
 																																			_react2.default.createElement(
-																																					"div",
-																																					{ className: "checkbox" },
+																																					'div',
+																																					{ className: 'checkbox' },
 																																					_react2.default.createElement(
-																																							"label",
+																																							'label',
 																																							null,
-																																							_react2.default.createElement("input", { type: "checkbox", checked: this.state.hideNumber, onChange: function onChange() {
+																																							_react2.default.createElement('input', { type: 'checkbox', checked: this.state.hideNumber, onChange: function onChange() {
 																																											_this2.setState({ hideNumber: !_this2.state.hideNumber });
 																																									} }),
 																																							_react2.default.createElement(
-																																									"small",
+																																									'small',
 																																									null,
-																																									" Hide the phone number on the published ads."
+																																									' Hide the phone number on the published ads.'
 																																							)
 																																					)
 																																			)
 																																	),
 																																	_react2.default.createElement(
-																																			"div",
-																																			{ className: "col-md-1" },
+																																			'div',
+																																			{ className: 'col-md-1' },
 																																			_react2.default.createElement(
-																																					"div",
-																																					{ className: "help-tip" },
+																																					'div',
+																																					{ className: 'help-tip' },
 																																					_react2.default.createElement(
-																																							"p",
+																																							'p',
 																																							null,
-																																							"Phone number is needed to let other users contact you."
+																																							'Phone number is needed to let other users contact you.'
 																																					)
 																																			)
 																																	)
 																															),
 																															_react2.default.createElement(
-																																	"div",
-																																	{ className: "form-group" },
+																																	'div',
+																																	{ className: 'form-group' },
 																																	_react2.default.createElement(
-																																			"label",
-																																			{ className: "col-md-4 control-label" },
-																																			"Gender"
+																																			'label',
+																																			{ className: 'col-md-4 control-label' },
+																																			'Gender'
 																																	),
 																																	_react2.default.createElement(
-																																			"div",
-																																			{ className: "col-md-6" },
+																																			'div',
+																																			{ className: 'col-md-6' },
 																																			_react2.default.createElement(
-																																					"div",
-																																					{ className: "radio" },
+																																					'div',
+																																					{ className: 'radio' },
 																																					_react2.default.createElement(
-																																							"label",
-																																							{ htmlFor: "Gender-0" },
-																																							_react2.default.createElement("input", { name: "Gender", id: "Gender-0", type: "radio", checked: !this.state.gender, onChange: function onChange() {
+																																							'label',
+																																							{ htmlFor: 'Gender-0' },
+																																							_react2.default.createElement('input', { name: 'Gender', id: 'Gender-0', type: 'radio', checked: !this.state.gender, onChange: function onChange() {
 																																											_this2.setState({ gender: !_this2.state.gender });
 																																									} }),
-																																							"Male"
+																																							'Male'
 																																					)
 																																			),
 																																			_react2.default.createElement(
-																																					"div",
-																																					{ className: "radio" },
+																																					'div',
+																																					{ className: 'radio' },
 																																					_react2.default.createElement(
-																																							"label",
-																																							{ htmlFor: "Gender-1" },
-																																							_react2.default.createElement("input", { name: "Gender", id: "Gender-1", type: "radio", checked: this.state.gender, onChange: function onChange() {
+																																							'label',
+																																							{ htmlFor: 'Gender-1' },
+																																							_react2.default.createElement('input', { name: 'Gender', id: 'Gender-1', type: 'radio', checked: this.state.gender, onChange: function onChange() {
 																																											_this2.setState({ gender: !_this2.state.gender });
 																																									} }),
-																																							"Female"
+																																							'Female'
 																																					)
 																																			)
 																																	)
 																															),
 																															_react2.default.createElement(
-																																	"div",
-																																	{ className: "form-group" },
+																																	'div',
+																																	{ className: 'form-group' },
 																																	_react2.default.createElement(
-																																			"label",
-																																			{ className: "col-md-4 control-label", htmlFor: "textarea" },
-																																			"About Yourself"
+																																			'label',
+																																			{ className: 'col-md-4 control-label', htmlFor: 'textarea' },
+																																			'About Yourself'
 																																	),
 																																	_react2.default.createElement(
-																																			"div",
-																																			{ className: "col-md-6" },
-																																			_react2.default.createElement("textarea", { className: "form-control", id: "textarea", name: "textarea", placeholder: "About Yourself in 500 words", value: this.state.bio, onChange: function onChange(event) {
+																																			'div',
+																																			{ className: 'col-md-6' },
+																																			_react2.default.createElement('textarea', { className: 'form-control', id: 'textarea', name: 'textarea', placeholder: 'About Yourself in 500 words', value: this.state.bio, onChange: function onChange(event) {
 																																							_this2.setState({ bio: event.target.value.substr(0, 500) });
 																																					} })
 																																	)
 																															),
 																															_react2.default.createElement(
-																																	"div",
-																																	{ className: "form-group required" },
+																																	'div',
+																																	{ className: 'form-group required' },
 																																	_react2.default.createElement(
-																																			"label",
-																																			{ htmlFor: "password-input", className: "col-md-4 control-label" },
-																																			"Password ",
+																																			'label',
+																																			{ htmlFor: 'password-input', className: 'col-md-4 control-label' },
+																																			'Password ',
 																																			_react2.default.createElement(
-																																					"sup",
+																																					'sup',
 																																					null,
-																																					"*"
+																																					'*'
 																																			)
 																																	),
 																																	_react2.default.createElement(
-																																			"div",
-																																			{ className: "col-md-6" },
-																																			_react2.default.createElement("input", { type: "password", className: "form-control", id: "password-input", placeholder: "Password", value: this.state.password, onChange: function onChange(event) {
+																																			'div',
+																																			{ className: 'col-md-6' },
+																																			_react2.default.createElement('input', { type: 'password', className: 'form-control', id: 'password-input', placeholder: 'Password', value: this.state.password, onChange: function onChange(event) {
 																																							_this2.setState({ password: event.target.value.substr(0, 25) });
 																																					} })
 																																	)
 																															),
 																															_react2.default.createElement(
-																																	"div",
-																																	{ className: "form-group required" },
+																																	'div',
+																																	{ className: 'form-group required' },
 																																	_react2.default.createElement(
-																																			"label",
-																																			{ htmlFor: "password-confirmation-input", className: "col-md-4 control-label" },
-																																			"Password Confirmation ",
+																																			'label',
+																																			{ htmlFor: 'password-confirmation-input', className: 'col-md-4 control-label' },
+																																			'Password Confirmation ',
 																																			_react2.default.createElement(
-																																					"sup",
+																																					'sup',
 																																					null,
-																																					"*"
+																																					'*'
 																																			)
 																																	),
 																																	_react2.default.createElement(
-																																			"div",
-																																			{ className: "col-md-6" },
-																																			_react2.default.createElement("input", { type: "password", className: "form-control", id: "password-confirmation-input", placeholder: "Password", value: this.state.passwordConfirmation, onChange: function onChange(event) {
+																																			'div',
+																																			{ className: 'col-md-6' },
+																																			_react2.default.createElement('input', { type: 'password', className: 'form-control', id: 'password-confirmation-input', placeholder: 'Password', value: this.state.passwordConfirmation, onChange: function onChange(event) {
 																																							_this2.setState({ passwordConfirmation: event.target.value.substr(0, 25) });
 																																					} })
 																																	)
 																															),
 																															_react2.default.createElement(
-																																	"div",
-																																	{ className: "form-group" },
-																																	_react2.default.createElement("label", { className: "col-md-4 control-label" }),
+																																	'div',
+																																	{ className: 'form-group' },
+																																	_react2.default.createElement('label', { className: 'col-md-4 control-label' }),
 																																	_react2.default.createElement(
-																																			"div",
-																																			{ className: "col-md-8" },
+																																			'div',
+																																			{ className: 'col-md-8' },
 																																			_react2.default.createElement(
-																																					"div",
-																																					{ className: "termbox mb10" },
+																																					'div',
+																																					{ className: 'termbox mb10' },
 																																					_react2.default.createElement(
-																																							"label",
-																																							{ className: "checkbox-inline", htmlFor: "checkboxes-1" },
-																																							_react2.default.createElement("input", { name: "checkboxes", id: "checkboxes-1", checked: this.state.readTermsConditions, type: "checkbox", onChange: function onChange() {
+																																							'label',
+																																							{ className: 'checkbox-inline', htmlFor: 'checkboxes-1' },
+																																							_react2.default.createElement('input', { name: 'checkboxes', id: 'checkboxes-1', checked: this.state.readTermsConditions, type: 'checkbox', onChange: function onChange() {
 																																											_this2.setState({ readTermsConditions: !_this2.state.readTermsConditions });
 																																									} }),
-																																							"I have read and agreed to the ",
+																																							'I have read and agreed to the ',
 																																							_react2.default.createElement(
-																																									"a",
-																																									{ href: "terms-conditions.html" },
-																																									"Terms & Conditions"
+																																									'a',
+																																									{ href: 'terms-conditions.html' },
+																																									'Terms & Conditions'
 																																							),
 																																							_react2.default.createElement(
-																																									"sup",
+																																									'sup',
 																																									null,
-																																									" *"
+																																									' *'
 																																							)
 																																					)
 																																			),
-																																			_react2.default.createElement("div", { style: { clear: 'both' } }),
+																																			_react2.default.createElement('div', { style: { clear: 'both' } }),
 																																			_react2.default.createElement(
-																																					"a",
-																																					{ disabled: !this.state.readTermsConditions, className: "btn btn-primary", onClick: this._handleSubmit.bind(this) },
-																																					"Register"
+																																					'a',
+																																					{ disabled: !this.state.readTermsConditions, className: 'btn btn-primary', onClick: this._handleSubmit.bind(this) },
+																																					'Register'
 																																			)
 																																	)
 																															)
@@ -27547,66 +27563,66 @@
 																					)
 																			),
 																			_react2.default.createElement(
-																					"div",
-																					{ className: "col-md-4 reg-sidebar" },
+																					'div',
+																					{ className: 'col-md-4 reg-sidebar' },
 																					_react2.default.createElement(
-																							"div",
-																							{ className: "reg-sidebar-inner text-center" },
+																							'div',
+																							{ className: 'reg-sidebar-inner text-center' },
 																							_react2.default.createElement(
-																									"div",
-																									{ className: "promo-text-box" },
-																									_react2.default.createElement("i", { className: " icon-picture fa fa-4x icon-color-1" }),
+																									'div',
+																									{ className: 'promo-text-box' },
+																									_react2.default.createElement('i', { className: ' icon-picture fa fa-4x icon-color-1' }),
 																									_react2.default.createElement(
-																											"h3",
+																											'h3',
 																											null,
 																											_react2.default.createElement(
-																													"strong",
+																													'strong',
 																													null,
-																													"Post a Free Classified"
+																													'Post a Free Classified'
 																											)
 																									),
 																									_react2.default.createElement(
-																											"p",
+																											'p',
 																											null,
-																											" Post your free online classified ads with us. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+																											' Post your free online classified ads with us. Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
 																									)
 																							),
 																							_react2.default.createElement(
-																									"div",
-																									{ className: "promo-text-box" },
-																									_react2.default.createElement("i", { className: " icon-pencil-circled fa fa-4x icon-color-2" }),
+																									'div',
+																									{ className: 'promo-text-box' },
+																									_react2.default.createElement('i', { className: ' icon-pencil-circled fa fa-4x icon-color-2' }),
 																									_react2.default.createElement(
-																											"h3",
+																											'h3',
 																											null,
 																											_react2.default.createElement(
-																													"strong",
+																													'strong',
 																													null,
-																													"Create and Manage Items"
+																													'Create and Manage Items'
 																											)
 																									),
 																									_react2.default.createElement(
-																											"p",
+																											'p',
 																											null,
-																											" Nam sit amet dui vel orci venenatis ullamcorper eget in lacus. Praesent tristique elit pharetra magna efficitur laoreet."
+																											' Nam sit amet dui vel orci venenatis ullamcorper eget in lacus. Praesent tristique elit pharetra magna efficitur laoreet.'
 																									)
 																							),
 																							_react2.default.createElement(
-																									"div",
-																									{ className: "promo-text-box" },
-																									_react2.default.createElement("i", { className: "  icon-heart-2 fa fa-4x icon-color-3" }),
+																									'div',
+																									{ className: 'promo-text-box' },
+																									_react2.default.createElement('i', { className: '  icon-heart-2 fa fa-4x icon-color-3' }),
 																									_react2.default.createElement(
-																											"h3",
+																											'h3',
 																											null,
 																											_react2.default.createElement(
-																													"strong",
+																													'strong',
 																													null,
-																													"Create your Favorite ads list."
+																													'Create your Favorite ads list.'
 																											)
 																									),
 																									_react2.default.createElement(
-																											"p",
+																											'p',
 																											null,
-																											" PostNullam quis orci ut ipsum mollis malesuada varius eget metus. Nulla aliquet dui sed quam iaculis, ut finibus massa tincidunt."
+																											' PostNullam quis orci ut ipsum mollis malesuada varius eget metus. Nulla aliquet dui sed quam iaculis, ut finibus massa tincidunt.'
 																									)
 																							)
 																					)
@@ -28103,7 +28119,219 @@
 	exports.default = Category;
 
 /***/ },
-/* 239 */,
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(173);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SignInPage = function (_React$Component) {
+	  _inherits(SignInPage, _React$Component);
+
+	  function SignInPage(props) {
+	    _classCallCheck(this, SignInPage);
+
+	    var _this = _possibleConstructorReturn(this, (SignInPage.__proto__ || Object.getPrototypeOf(SignInPage)).call(this, props));
+
+	    _this.state = {
+	      email: "",
+	      password: ""
+	    };
+	    return _this;
+	  }
+
+	  _createClass(SignInPage, [{
+	    key: '_handleSubmit',
+	    value: function _handleSubmit() {
+	      var _this2 = this;
+
+	      console.log("fetching..");
+	      return fetch('http://localhost:3000/api/sessions', {
+	        method: 'POST',
+	        headers: {
+	          'Accept': "application/json",
+	          'Content-Type': 'application/json'
+	        },
+	        body: JSON.stringify({
+	          email: this.state.email,
+	          password: this.state.password
+	        })
+	      }).then(function (response) {
+	        return response.json();
+	      }).then(function (responseJson) {
+	        console.log(responseJson);
+	        localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken);
+	        _this2.props.router.push('/account');
+	      }).catch(function (error) {
+	        console.error(error);
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this3 = this;
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'wrapper' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'main-container' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'container' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'row' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'col-sm-5 login-box' },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'panel panel-default' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'panel-intro text-center' },
+	                      _react2.default.createElement(
+	                        'h2',
+	                        { className: 'logo-title' },
+	                        'Sign In'
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'panel-body' },
+	                      _react2.default.createElement(
+	                        'form',
+	                        { role: 'form' },
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'form-group' },
+	                          _react2.default.createElement(
+	                            'label',
+	                            { htmlFor: 'sender-email', className: 'control-label' },
+	                            'email:'
+	                          ),
+	                          _react2.default.createElement(
+	                            'div',
+	                            { className: 'input-icon' },
+	                            _react2.default.createElement('i', { className: 'icon-user fa' }),
+	                            _react2.default.createElement('input', { id: 'sender-email', type: 'text', placeholder: 'Username', className: 'form-control email', value: this.state.email, onChange: function onChange(event) {
+	                                return _this3.setState({ email: event.target.value.substr(0, 140) });
+	                              } })
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'form-group' },
+	                          _react2.default.createElement(
+	                            'label',
+	                            { htmlFor: 'user-pass', className: 'control-label' },
+	                            'Password:'
+	                          ),
+	                          _react2.default.createElement(
+	                            'div',
+	                            { className: 'input-icon' },
+	                            _react2.default.createElement('i', { className: 'icon-lock fa' }),
+	                            _react2.default.createElement('input', { type: 'password', className: 'form-control', placeholder: 'Password', id: 'user-pass', value: this.state.password, onChange: function onChange(event) {
+	                                return _this3.setState({ password: event.target.value.substr(0, 25) });
+	                              } })
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'form-group' },
+	                          _react2.default.createElement(
+	                            'a',
+	                            { className: 'btn btn-primary btn-block', onClick: this._handleSubmit.bind(this) },
+	                            'Submit'
+	                          )
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'panel-footer' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'checkbox pull-left' },
+	                        _react2.default.createElement(
+	                          'label',
+	                          null,
+	                          ' ',
+	                          _react2.default.createElement('input', { type: 'checkbox', defaultValue: 1, name: 'remember', id: 'remember' }),
+	                          ' Keep me logged in'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'p',
+	                        { className: 'text-center pull-right' },
+	                        _react2.default.createElement(
+	                          'a',
+	                          { href: '/forgot-password' },
+	                          ' Lost your password? '
+	                        )
+	                      ),
+	                      _react2.default.createElement('div', { style: { clear: 'both' } })
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'login-box-btm text-center' },
+	                    _react2.default.createElement(
+	                      'p',
+	                      null,
+	                      ' Don\'t have an account? ',
+	                      _react2.default.createElement('br', null),
+	                      _react2.default.createElement(
+	                        'a',
+	                        { href: '/signup' },
+	                        _react2.default.createElement(
+	                          'strong',
+	                          null,
+	                          'Sign Up !'
+	                        ),
+	                        ' '
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return SignInPage;
+	}(_react2.default.Component);
+
+	exports.default = (0, _reactRouter.withRouter)(SignInPage);
+
+/***/ },
 /* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -29584,214 +29812,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var SignInPage = function (_React$Component) {
-	  _inherits(SignInPage, _React$Component);
-
-	  function SignInPage(props) {
-	    _classCallCheck(this, SignInPage);
-
-	    var _this = _possibleConstructorReturn(this, (SignInPage.__proto__ || Object.getPrototypeOf(SignInPage)).call(this, props));
-
-	    _this.state = {
-	      email: "",
-	      password: ""
-	    };
-	    return _this;
-	  }
-
-	  _createClass(SignInPage, [{
-	    key: "_handleSubmit",
-	    value: function _handleSubmit() {
-	      console.log("fetching..");
-	      return fetch('http://localhost:3000/api/sessions', {
-	        method: 'POST',
-	        headers: {
-	          'Accept': "application/json",
-	          'Content-Type': 'application/json'
-	        },
-	        body: JSON.stringify({
-	          email: this.state.email,
-	          password: this.state.password
-	        })
-	      }).then(function (response) {
-	        return response.json();
-	      }).then(function (responseJson) {
-	        console.log(responseJson);
-	        localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken);
-	      }).catch(function (error) {
-	        console.error(error);
-	      });
-	    }
-	  }, {
-	    key: "render",
-	    value: function render() {
-	      var _this2 = this;
-
-	      return _react2.default.createElement(
-	        "div",
-	        null,
-	        _react2.default.createElement(
-	          "div",
-	          { id: "wrapper" },
-	          _react2.default.createElement(
-	            "div",
-	            { className: "main-container" },
-	            _react2.default.createElement(
-	              "div",
-	              { className: "container" },
-	              _react2.default.createElement(
-	                "div",
-	                { className: "row" },
-	                _react2.default.createElement(
-	                  "div",
-	                  { className: "col-sm-5 login-box" },
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "panel panel-default" },
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "panel-intro text-center" },
-	                      _react2.default.createElement(
-	                        "h2",
-	                        { className: "logo-title" },
-	                        "Sign In"
-	                      )
-	                    ),
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "panel-body" },
-	                      _react2.default.createElement(
-	                        "form",
-	                        { role: "form" },
-	                        _react2.default.createElement(
-	                          "div",
-	                          { className: "form-group" },
-	                          _react2.default.createElement(
-	                            "label",
-	                            { htmlFor: "sender-email", className: "control-label" },
-	                            "email:"
-	                          ),
-	                          _react2.default.createElement(
-	                            "div",
-	                            { className: "input-icon" },
-	                            _react2.default.createElement("i", { className: "icon-user fa" }),
-	                            _react2.default.createElement("input", { id: "sender-email", type: "text", placeholder: "Username", className: "form-control email", value: this.state.email, onChange: function onChange(event) {
-	                                return _this2.setState({ email: event.target.value.substr(0, 140) });
-	                              } })
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "div",
-	                          { className: "form-group" },
-	                          _react2.default.createElement(
-	                            "label",
-	                            { htmlFor: "user-pass", className: "control-label" },
-	                            "Password:"
-	                          ),
-	                          _react2.default.createElement(
-	                            "div",
-	                            { className: "input-icon" },
-	                            _react2.default.createElement("i", { className: "icon-lock fa" }),
-	                            _react2.default.createElement("input", { type: "password", className: "form-control", placeholder: "Password", id: "user-pass", value: this.state.password, onChange: function onChange(event) {
-	                                return _this2.setState({ password: event.target.value.substr(0, 25) });
-	                              } })
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "div",
-	                          { className: "form-group" },
-	                          _react2.default.createElement(
-	                            "a",
-	                            { className: "btn btn-primary btn-block", onClick: this._handleSubmit.bind(this) },
-	                            "Submit"
-	                          )
-	                        )
-	                      )
-	                    ),
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "panel-footer" },
-	                      _react2.default.createElement(
-	                        "div",
-	                        { className: "checkbox pull-left" },
-	                        _react2.default.createElement(
-	                          "label",
-	                          null,
-	                          " ",
-	                          _react2.default.createElement("input", { type: "checkbox", defaultValue: 1, name: "remember", id: "remember" }),
-	                          " Keep me logged in"
-	                        )
-	                      ),
-	                      _react2.default.createElement(
-	                        "p",
-	                        { className: "text-center pull-right" },
-	                        _react2.default.createElement(
-	                          "a",
-	                          { href: "/forgot-password" },
-	                          " Lost your password? "
-	                        )
-	                      ),
-	                      _react2.default.createElement("div", { style: { clear: 'both' } })
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "login-box-btm text-center" },
-	                    _react2.default.createElement(
-	                      "p",
-	                      null,
-	                      " Don't have an account? ",
-	                      _react2.default.createElement("br", null),
-	                      _react2.default.createElement(
-	                        "a",
-	                        { href: "/signup" },
-	                        _react2.default.createElement(
-	                          "strong",
-	                          null,
-	                          "Sign Up !"
-	                        ),
-	                        " "
-	                      )
-	                    )
-	                  )
-	                )
-	              )
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return SignInPage;
-	}(_react2.default.Component);
-
-	exports.default = SignInPage;
-
-/***/ },
-/* 243 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 	var AboutUsPage = function (_React$Component) {
 	  _inherits(AboutUsPage, _React$Component);
 
@@ -29982,7 +30002,7 @@
 	exports.default = AboutUsPage;
 
 /***/ },
-/* 244 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30340,9 +30360,7 @@
 	exports.default = FAQPage;
 
 /***/ },
-/* 245 */,
-/* 246 */,
-/* 247 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31324,6 +31342,108 @@
 	}(_react2.default.Component);
 
 	exports.default = ManagePostsPage;
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var base64_url_decode = __webpack_require__(246);
+
+	module.exports = function (token,options) {
+	  if (typeof token !== 'string') {
+	    throw new Error('Invalid token specified');
+	  }
+
+	  options = options || {};
+	  var pos = options.header === true ? 0 : 1;
+	  return JSON.parse(base64_url_decode(token.split('.')[pos]));
+	};
+
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var atob = __webpack_require__(247);
+
+	function b64DecodeUnicode(str) {
+	  return decodeURIComponent(atob(str).replace(/(.)/g, function (m, p) {
+	    var code = p.charCodeAt(0).toString(16).toUpperCase();
+	    if (code.length < 2) {
+	      code = '0' + code;
+	    }
+	    return '%' + code;
+	  }));
+	}
+
+	module.exports = function(str) {
+	  var output = str.replace(/-/g, "+").replace(/_/g, "/");
+	  switch (output.length % 4) {
+	    case 0:
+	      break;
+	    case 2:
+	      output += "==";
+	      break;
+	    case 3:
+	      output += "=";
+	      break;
+	    default:
+	      throw "Illegal base64url string!";
+	  }
+
+	  try{
+	    return b64DecodeUnicode(output);
+	  } catch (err) {
+	    return atob(output);
+	  }
+	};
+
+
+/***/ },
+/* 247 */
+/***/ function(module, exports) {
+
+	/**
+	 * The code was extracted from:
+	 * https://github.com/davidchambers/Base64.js
+	 */
+
+	var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+
+	function InvalidCharacterError(message) {
+	  this.message = message;
+	}
+
+	InvalidCharacterError.prototype = new Error();
+	InvalidCharacterError.prototype.name = 'InvalidCharacterError';
+
+	function polyfill (input) {
+	  var str = String(input).replace(/=+$/, '');
+	  if (str.length % 4 == 1) {
+	    throw new InvalidCharacterError("'atob' failed: The string to be decoded is not correctly encoded.");
+	  }
+	  for (
+	    // initialize result and counters
+	    var bc = 0, bs, buffer, idx = 0, output = '';
+	    // get next character
+	    buffer = str.charAt(idx++);
+	    // character found in table? initialize bit storage and add its ascii value;
+	    ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer,
+	      // and if not first of each 4 characters,
+	      // convert the first 8 bits to one ascii character
+	      bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0
+	  ) {
+	    // try to find character in table (0-63, not found => -1)
+	    buffer = chars.indexOf(buffer);
+	  }
+	  return output;
+	}
+
+
+	module.exports = typeof window !== 'undefined' && window.atob && window.atob.bind(window) || polyfill;
+
 
 /***/ }
 /******/ ]);

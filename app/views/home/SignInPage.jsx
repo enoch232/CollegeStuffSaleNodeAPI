@@ -1,6 +1,7 @@
 import React from 'react'
+import { browserHistory, Router, Route, Link, withRouter } from 'react-router'
 
-export default class SignInPage extends React.Component{
+class SignInPage extends React.Component{
   constructor(props){
     super(props)
     this.state = {
@@ -27,6 +28,7 @@ export default class SignInPage extends React.Component{
     .then((responseJson)=>{
       console.log(responseJson)
       localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken)
+      this.props.router.push('/account')
     })
     .catch((error) => {
       console.error(error)
@@ -92,3 +94,4 @@ export default class SignInPage extends React.Component{
     )
   }
 }
+export default withRouter(SignInPage)

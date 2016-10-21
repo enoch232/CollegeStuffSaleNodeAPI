@@ -1,4 +1,5 @@
 import React from 'react'
+import jwtDecode from 'jwt-decode'
 export default class SignUpPage extends React.Component{
   constructor(props){
     super(props)
@@ -40,8 +41,14 @@ export default class SignUpPage extends React.Component{
     })
     .then((responseJson)=>{
       console.log(responseJson)
-      localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken)
-
+      if (responseJson.webToken){
+        localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken)
+        let claim = jwtDecode(responseJson.webToken)
+        localStorage.setItem("collegestuffsale-name", claim.name)
+        localStorage.setItem("collegestuffsale-email", claim.email)
+        localStorage.setItem("collegestuffsale-bio", claim.bio)
+        localStorage.setItem("collegestuffsale-phoneNumber", claim.phoneNumber)
+      }
     })
     .catch((error) => {
       console.error(error)

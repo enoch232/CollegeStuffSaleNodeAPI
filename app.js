@@ -38,8 +38,8 @@ app.set('view engine','ejs')
 //     }
 // })
 
-const forDev = ['/new-post','/aboutus','/faq','/account','/manage-posts']
-const removeAuthenticationArray = ['/signin','/signup','/api/sessions', '/api/users','/',/(assets\/)/].concat(forDev)
+const forDev = ['/new-post','/manage-posts','/account']
+const removeAuthenticationArray = ['/signin','/signup','/aboutus','/faq','/api/sessions', '/api/users','/',/(assets\/)/].concat(forDev)
 
 app.use(expressJWT({secret: "this is secretkey"}).unless({path: removeAuthenticationArray}))
 app.use((err, req, res, next)=>{

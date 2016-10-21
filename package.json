@@ -24,6 +24,7 @@
     "express-react-views": "^0.10.2",
     "fetch": "^1.1.0",
     "jsonwebtoken": "^7.1.9",
+    "jwt-decode": "^2.1.0",
     "mongoose": "^4.6.2",
     "multer": "^1.2.0",
     "path": "^0.12.7",
