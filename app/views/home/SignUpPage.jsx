@@ -168,7 +168,7 @@ export default class SignUpPage extends React.Component{
 							                </label>
 							              </div>
 							              <div style={{clear: 'both'}} />
-							                <a disabled={!this.state.readTermsConditions} className="btn btn-primary" onClick = {this._handleSubmit.bind(this)}>
+							                <a disabled={!this.state.readTermsConditions} className="btn btn-primary" onClick = {this.state.readTermsConditions ? this._handleSubmit.bind(this) : ""}>
 							                  Register
 							                </a>
 							              </div>

@@ -11,6 +11,9 @@ const postSchema = new mongoose.Schema({
   price:{
   	type: Number
   },
+  obo:{
+    type: Boolean
+  },
   tag:{
   	type: String
   },

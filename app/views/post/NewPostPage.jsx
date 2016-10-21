@@ -1,5 +1,19 @@
 import React from 'react'
 export default class NewPostPage extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      postTitle: "",
+      postPrice: "",
+      postOBO: false,
+      postCategory: "",
+      postDescription: "",
+      postCondition: "",
+      postState: "",
+      postSchool: "",
+      postTag: ""
+    }
+  }
   render() {
     return (
       <div>
@@ -36,7 +50,7 @@ export default class NewPostPage extends React.Component{
                             <div className="form-group">
                               <label className="col-md-3 control-label" htmlFor="Adtitle">Ad title</label>
                               <div className="col-md-8">
-                                <input id="Adtitle" name="Adtitle" placeholder="Ad title" className="form-control input-md" required type="text" />
+                                <input id="Adtitle" name="Adtitle" placeholder="Ad title" className="form-control input-md" required type="text" value = {this.state.postTitle} onChange = {(event)=> this.setState({postTitle: event.target.value.substr(0,100)})} />
                                 <span className="help-block">A great title needs at least 60 characters. </span>
                               </div>
                             </div>
@@ -44,7 +58,7 @@ export default class NewPostPage extends React.Component{
                             <div className="form-group">
                               <label className="col-md-3 control-label" htmlFor="textarea">Describe item</label>
                               <div className="col-md-8">
-                                <textarea className="form-control" id="textarea" name="textarea" placeholder="Describe what makes your item unique" defaultValue={""} />
+                                <textarea className="form-control" id="textarea" name="textarea" placeholder="Describe what makes your item unique" value = {this.state.postDescription} onChange = {(event)=> this.setState({postDescription: event.target.value.substr(0,500)})}/>
                               </div>
                             </div>
                             {/* Prepended text*/}
@@ -52,14 +66,14 @@ export default class NewPostPage extends React.Component{
                               <label className="col-md-3 control-label" htmlFor="Price">Price</label>
                               <div className="col-md-4">
                                 <div className="input-group"><span className="input-group-addon">$</span>
-                                  <input id="Price" name="Price" className="form-control" placeholder={0} required type="text" />
+                                  <input id="Price" name="Price" className="form-control" required type="text" value = {this.state.postPrice} onChange = {(event)=>this.setState({postPrice: event.target.value.substr(0,8)})}/>
                                 </div>
                               </div>
                               <div className="col-md-4">
                                 <div className="checkbox">
                                   <label>
-                                    <input type="checkbox" />
-                                    Negotiable
+                                    <input type="checkbox" value = {this.state.postOBO} onChange = {(event)=> this.setState({postOBO: event.target.value})} />
+                                    Or Best Offer
                                   </label>
                                 </div>
                               </div>
@@ -129,7 +143,7 @@ export default class NewPostPage extends React.Component{
                               <div className="col-md-8">
                                 <label className="checkbox-inline" htmlFor="checkboxes-0">
                                   <input name="checkboxes" id="checkboxes-0" defaultValue="Remember above contact information." type="checkbox" />
-                                  Remember above contact information. </label>
+                                  I agree with terms and privacy. </label>
                               </div>
                             </div>
                             {/* Button  */}

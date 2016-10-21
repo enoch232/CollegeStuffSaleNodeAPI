@@ -27581,7 +27581,7 @@
 																																			_react2.default.createElement('div', { style: { clear: 'both' } }),
 																																			_react2.default.createElement(
 																																					'a',
-																																					{ disabled: !this.state.readTermsConditions, className: 'btn btn-primary', onClick: this._handleSubmit.bind(this) },
+																																					{ disabled: !this.state.readTermsConditions, className: 'btn btn-primary', onClick: this.state.readTermsConditions ? this._handleSubmit.bind(this) : "" },
 																																					'Register'
 																																			)
 																																	)
@@ -29182,15 +29182,30 @@
 	var NewPostPage = function (_React$Component) {
 	  _inherits(NewPostPage, _React$Component);
 
-	  function NewPostPage() {
+	  function NewPostPage(props) {
 	    _classCallCheck(this, NewPostPage);
 
-	    return _possibleConstructorReturn(this, (NewPostPage.__proto__ || Object.getPrototypeOf(NewPostPage)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (NewPostPage.__proto__ || Object.getPrototypeOf(NewPostPage)).call(this, props));
+
+	    _this.state = {
+	      postTitle: "",
+	      postPrice: "",
+	      postOBO: false,
+	      postCategory: "",
+	      postDescription: "",
+	      postCondition: "",
+	      postState: "",
+	      postSchool: "",
+	      postTag: ""
+	    };
+	    return _this;
 	  }
 
 	  _createClass(NewPostPage, [{
 	    key: "render",
 	    value: function render() {
+	      var _this2 = this;
+
 	      return _react2.default.createElement(
 	        "div",
 	        null,
@@ -29308,7 +29323,9 @@
 	                              _react2.default.createElement(
 	                                "div",
 	                                { className: "col-md-8" },
-	                                _react2.default.createElement("input", { id: "Adtitle", name: "Adtitle", placeholder: "Ad title", className: "form-control input-md", required: true, type: "text" }),
+	                                _react2.default.createElement("input", { id: "Adtitle", name: "Adtitle", placeholder: "Ad title", className: "form-control input-md", required: true, type: "text", value: this.state.postTitle, onChange: function onChange(event) {
+	                                    return _this2.setState({ postTitle: event.target.value.substr(0, 100) });
+	                                  } }),
 	                                _react2.default.createElement(
 	                                  "span",
 	                                  { className: "help-block" },
@@ -29327,7 +29344,9 @@
 	                              _react2.default.createElement(
 	                                "div",
 	                                { className: "col-md-8" },
-	                                _react2.default.createElement("textarea", { className: "form-control", id: "textarea", name: "textarea", placeholder: "Describe what makes your item unique", defaultValue: "" })
+	                                _react2.default.createElement("textarea", { className: "form-control", id: "textarea", name: "textarea", placeholder: "Describe what makes your item unique", value: this.state.postDescription, onChange: function onChange(event) {
+	                                    return _this2.setState({ postDescription: event.target.value.substr(0, 500) });
+	                                  } })
 	                              )
 	                            ),
 	                            _react2.default.createElement(
@@ -29349,7 +29368,9 @@
 	                                    { className: "input-group-addon" },
 	                                    "$"
 	                                  ),
-	                                  _react2.default.createElement("input", { id: "Price", name: "Price", className: "form-control", placeholder: 0, required: true, type: "text" })
+	                                  _react2.default.createElement("input", { id: "Price", name: "Price", className: "form-control", required: true, type: "text", value: this.state.postPrice, onChange: function onChange(event) {
+	                                      return _this2.setState({ postPrice: event.target.value.substr(0, 8) });
+	                                    } })
 	                                )
 	                              ),
 	                              _react2.default.createElement(
@@ -29361,8 +29382,10 @@
 	                                  _react2.default.createElement(
 	                                    "label",
 	                                    null,
-	                                    _react2.default.createElement("input", { type: "checkbox" }),
-	                                    "Negotiable"
+	                                    _react2.default.createElement("input", { type: "checkbox", value: this.state.postOBO, onChange: function onChange(event) {
+	                                        return _this2.setState({ postOBO: event.target.value });
+	                                      } }),
+	                                    "Or Best Offer"
 	                                  )
 	                                )
 	                              )
@@ -29512,7 +29535,7 @@
 	                                  "label",
 	                                  { className: "checkbox-inline", htmlFor: "checkboxes-0" },
 	                                  _react2.default.createElement("input", { name: "checkboxes", id: "checkboxes-0", defaultValue: "Remember above contact information.", type: "checkbox" }),
-	                                  "Remember above contact information. "
+	                                  "I agree with terms and privacy. "
 	                                )
 	                              )
 	                            ),
