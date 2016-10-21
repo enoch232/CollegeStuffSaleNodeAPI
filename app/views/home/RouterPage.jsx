@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, Link, browserHistory } from 'react-router'
+import { Redirect, Router, Route, Link, browserHistory, Navigation } from 'react-router'
 import SignUpPage from './SignUpPage.jsx'
 import IndexPage from './IndexPage.jsx'
 import SignInPage from './SignInPage.jsx'
@@ -15,8 +15,8 @@ export default class RouterPage extends React.Component{
     super(props)
   }
 
-  _authenticate(){
-    console.log(window.user)
+  _authenticate(nextState, replace){
+    replace('/')
 
   }
   render(){

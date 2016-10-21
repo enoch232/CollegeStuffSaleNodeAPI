@@ -1,5 +1,6 @@
 import React from 'react'
 import jwtDecode from 'jwt-decode'
+import {browserHistory} from 'react-router'
 export default class SignUpPage extends React.Component{
   constructor(props){
     super(props)
@@ -48,7 +49,9 @@ export default class SignUpPage extends React.Component{
         localStorage.setItem("collegestuffsale-email", claim.email)
         localStorage.setItem("collegestuffsale-bio", claim.bio)
         localStorage.setItem("collegestuffsale-phoneNumber", claim.phoneNumber)
+
       }
+      browserHistory.push("/account")
     })
     .catch((error) => {
       console.error(error)

@@ -21503,8 +21503,8 @@
 
 	  _createClass(RouterPage, [{
 	    key: '_authenticate',
-	    value: function _authenticate() {
-	      console.log(window.user);
+	    value: function _authenticate(nextState, replace) {
+	      replace('/');
 	    }
 	  }, {
 	    key: 'render',
@@ -27201,6 +27201,8 @@
 
 	var _jwtDecode2 = _interopRequireDefault(_jwtDecode);
 
+	var _reactRouter = __webpack_require__(173);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27264,6 +27266,7 @@
 											localStorage.setItem("collegestuffsale-bio", claim.bio);
 											localStorage.setItem("collegestuffsale-phoneNumber", claim.phoneNumber);
 									}
+									_reactRouter.browserHistory.push("/account");
 							}).catch(function (error) {
 									console.error(error);
 							});
