@@ -53,7 +53,7 @@ export default class RouterPage extends React.Component{
         <Route path="/signup" component={SignUpPage}></Route>
         <Route path="/signin" component={SignInPage}></Route>
         <Route path="/account" component={AccountPage} onEnter={this._authenticate.bind(this)}></Route>
-        <Route path="/new-post" component={NewPostPage} onEnter={this._authenticate.bind(this)}></Route>
+        <Route path="/new-post" component={()=>(<NewPostPage user = {"hello"}/>)} onEnter={this._authenticate.bind(this)}></Route>
         <Route path="/aboutus" component={AboutUsPage}></Route>
         <Route path="/faq" component={FAQPage}></Route>
         <Route path="/manage-posts" component={ManagePostsPage}></Route>

@@ -9,7 +9,8 @@ const postSchema = new mongoose.Schema({
   	type: String
   },
   price:{
-  	type: Number
+  	type: Number,
+    required: true
   },
   obo:{
     type: Boolean
@@ -18,19 +19,24 @@ const postSchema = new mongoose.Schema({
   	type: String
   },
   state:{
-  	type: String
+  	type: String,
+    required: true
   },
   school:{
-  	type: String
+  	type: String,
+    required: true
   },
   condition:{
-  	type: String
+  	type: String,
+    required: true
   },
   category:{
-  	type: String
+  	type: String,
+    required: true
   },
   user_id:{
-    type: String
+    type: String,
+    required: true
   }
 })
 

@@ -4,15 +4,53 @@ export default class NewPostPage extends React.Component{
     super(props)
     this.state = {
       postTitle: "",
-      postPrice: "",
+      postPrice: 0,
       postOBO: false,
-      postCategory: "",
+      postCategory: "none",
       postDescription: "",
-      postCondition: "",
-      postState: "",
-      postSchool: "",
-      postTag: ""
+      postCondition: "great",
+      postState: "az",
+      postSchool: "asu",
+      postTag: "",
+      postTerms: false,
+      user: "12345ab"
     }
+  }
+  _handleSubmit(){
+    console.log("posting..")
+    return fetch('http://localhost:3000/api/posts', {
+      method: 'POST',
+      headers: {
+        'Accept':"application/json",
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+	      postTitle: this.state.postTitle,
+	      postPrice: this.state.postPrice,
+	      postDescription: this.state.postDescription,
+	      postOBO: this.state.postOBO,
+	      postCategory: !this.state.postCategory,
+	      postCondition: this.state.postCondition,
+	      postState: this.state.postState,
+	      postSchool: this.state.postSchool,
+        userID: this.props.user
+      })
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((responseJson)=>{
+      console.log(responseJson)
+      if (responseJson.post){
+        browserHistory.push("/")
+
+      }else{
+        console.log("error")
+      }
+    })
+    .catch((error) => {
+      console.error(error)
+    })
   }
   render() {
     return (
@@ -33,17 +71,15 @@ export default class NewPostPage extends React.Component{
                             <div className="form-group">
                               <label className="col-md-3 control-label">Category</label>
                               <div className="col-md-8">
-                                <select name="category-group" id="category-group" className="form-control">
-                                  <option value={0} selected="selected"> Select a category...</option>
-                                  <option value="Automobiles"> Automobiles
-                                  </option>
-                                  <option value="Entertainment">Entertainment</option>
-                                  <option value="Fashion">Fashion</option>
-                                  <option value="Cellphones">Cellphones</option>
-                                  <option value="Home"> Home</option>
-                                  <option value="Jobs"> Jobs</option>
-                                  <option value="Textbooks">Textbooks</option>
-                                  <option value="Electronics">Electronics</option>
+                                <select name="category-group" id="category-group" className="form-control" value = {this.state.postCategory} onChange = {()=> this.setState({postCategory: event.target.value })}>
+                                  <option value="none"> Select a category...</option>
+                                  <option value="automobiles">Automobiles</option>
+                                  <option value="entertainment">Entertainment</option>
+                                  <option value="fashion">Fashion</option>
+                                  <option value="cellphones">Cellphones</option>
+                                  <option value="home">Home</option>
+                                  <option value="textbooks">Textbooks</option>
+                                  <option value="electronics">Electronics</option>
                                 </select>
                               </div>
                             </div>
@@ -84,12 +120,12 @@ export default class NewPostPage extends React.Component{
                                 Condition
                               </label>
                               <div className="col-md-8">
-                                <select id="item-Condition" name="item-condition" className="form-control">
-                                  <option value={1}>New </option>
-                                  <option value={2}>Excellent</option>
-                                  <option value={3}>Great</option>
-                                  <option value={4}>Acceptable</option>
-                                  <option value={5}>Bad</option>
+                                <select id="item-Condition" name="item-condition" className="form-control" value = {this.state.postCondition} onChange = {(event)=>this.setState({postCondition: event.target.value})}>
+                                  <option value="new">New </option>
+                                  <option value="excellent">Excellent</option>
+                                  <option value="great">Great</option>
+                                  <option value="acceptable">Acceptable</option>
+                                  <option value="bad">Bad</option>
                                 </select>
                               </div>
                             </div>
@@ -124,15 +160,16 @@ export default class NewPostPage extends React.Component{
                             <div className="form-group">
                               <label className="col-md-3 control-label" htmlFor="seller-Location">State</label>
                               <div className="col-sm-3">
-                                <select className="form-control selecter" name="state" id="id-state">
-                                  <option value="AZ">Arizona</option>
+                                <select className="form-control selecter" name="state" id="id-state" value = {this.state.postState} onChange = {(event)=> this.setState({postState: event.target.value})}>
+                                  <option value="az">Arizona</option>
                                 </select>
                               </div>
                             </div>
                             <div className="form-group">
                               <label className="col-md-3 control-label" htmlFor="seller-Location">School</label>
                               <div className="col-sm-3">
-                                <select className="form-control selecter" name="state" id="id-state">
+                                <select className="form-control selecter" name="state" id="id-state" value = {this.state.postSchool} onChange = {(event)=>this.setState({postSchool: event.target.value})}>
+                                  <option value = "other">Other...</option>
                                   <option value = "asu">ASU</option>
                                 </select>
                               </div>
@@ -142,14 +179,14 @@ export default class NewPostPage extends React.Component{
                               <label className="col-md-3 control-label">Terms</label>
                               <div className="col-md-8">
                                 <label className="checkbox-inline" htmlFor="checkboxes-0">
-                                  <input name="checkboxes" id="checkboxes-0" defaultValue="Remember above contact information." type="checkbox" />
+                                  <input name="checkboxes" id="checkboxes-0" type="checkbox" value = {this.state.postTerms} onChange = {(event)=> this.setState({postTerms: event.target.value})}/>
                                   I agree with terms and privacy. </label>
                               </div>
                             </div>
                             {/* Button  */}
                             <div className="form-group">
                               <label className="col-md-3 control-label" />
-                              <div className="col-md-8"><a href="posting-success.html" id="button1id" className="btn btn-success btn-lg">Submit</a></div>
+                              <div className="col-md-8"><a id="button1id" className="btn btn-success btn-lg" disabled = {!this.state.postTerms} onClick = {this.state.postTerms ? this._handleSubmit.bind(this) : ""} >Submit</a></div>
                             </div>
                           </fieldset>
                         </form>

@@ -68,6 +68,7 @@ app.get("/api/posts", postController.indexAPI)
 //POST
 app.post("/api/sessions", sessionController.createAPI)
 app.post("/api/users", userController.createAPI)
+app.post("/api/posts", postController.createAPI)
 app.post("/api/checkjwt", (req, res, next)=>{
   if (req.headers.authorization){
     let token = req.headers.authorization.split(' ')[1]

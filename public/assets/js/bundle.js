@@ -21543,7 +21543,9 @@
 	        _react2.default.createElement(_reactRouter.Route, { path: '/signup', component: _SignUpPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/signin', component: _SignInPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/account', component: _AccountPage2.default, onEnter: this._authenticate.bind(this) }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/new-post', component: _NewPostPage2.default, onEnter: this._authenticate.bind(this) }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/new-post', component: function component() {
+	            return _react2.default.createElement(_NewPostPage2.default, { user: "hello" });
+	          }, onEnter: this._authenticate.bind(this) }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/aboutus', component: _AboutUsPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/faq', component: _FAQPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/manage-posts', component: _ManagePostsPage2.default })
@@ -29189,19 +29191,55 @@
 
 	    _this.state = {
 	      postTitle: "",
-	      postPrice: "",
+	      postPrice: 0,
 	      postOBO: false,
-	      postCategory: "",
+	      postCategory: "none",
 	      postDescription: "",
-	      postCondition: "",
-	      postState: "",
-	      postSchool: "",
-	      postTag: ""
+	      postCondition: "great",
+	      postState: "az",
+	      postSchool: "asu",
+	      postTag: "",
+	      postTerms: false,
+	      user: "12345ab"
 	    };
 	    return _this;
 	  }
 
 	  _createClass(NewPostPage, [{
+	    key: "_handleSubmit",
+	    value: function _handleSubmit() {
+	      console.log("posting..");
+	      return fetch('http://localhost:3000/api/posts', {
+	        method: 'POST',
+	        headers: {
+	          'Accept': "application/json",
+	          'Content-Type': 'application/json'
+	        },
+	        body: JSON.stringify({
+	          postTitle: this.state.postTitle,
+	          postPrice: this.state.postPrice,
+	          postDescription: this.state.postDescription,
+	          postOBO: this.state.postOBO,
+	          postCategory: !this.state.postCategory,
+	          postCondition: this.state.postCondition,
+	          postState: this.state.postState,
+	          postSchool: this.state.postSchool,
+	          userID: this.props.user
+	        })
+	      }).then(function (response) {
+	        return response.json();
+	      }).then(function (responseJson) {
+	        console.log(responseJson);
+	        if (responseJson.post) {
+	          browserHistory.push("/");
+	        } else {
+	          console.log("error");
+	        }
+	      }).catch(function (error) {
+	        console.error(error);
+	      });
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
 	      var _this2 = this;
@@ -29263,50 +29301,47 @@
 	                                { className: "col-md-8" },
 	                                _react2.default.createElement(
 	                                  "select",
-	                                  { name: "category-group", id: "category-group", className: "form-control" },
+	                                  { name: "category-group", id: "category-group", className: "form-control", value: this.state.postCategory, onChange: function onChange() {
+	                                      return _this2.setState({ postCategory: event.target.value });
+	                                    } },
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: 0, selected: "selected" },
+	                                    { value: "none" },
 	                                    " Select a category..."
 	                                  ),
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: "Automobiles" },
-	                                    " Automobiles"
+	                                    { value: "automobiles" },
+	                                    "Automobiles"
 	                                  ),
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: "Entertainment" },
+	                                    { value: "entertainment" },
 	                                    "Entertainment"
 	                                  ),
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: "Fashion" },
+	                                    { value: "fashion" },
 	                                    "Fashion"
 	                                  ),
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: "Cellphones" },
+	                                    { value: "cellphones" },
 	                                    "Cellphones"
 	                                  ),
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: "Home" },
-	                                    " Home"
+	                                    { value: "home" },
+	                                    "Home"
 	                                  ),
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: "Jobs" },
-	                                    " Jobs"
-	                                  ),
-	                                  _react2.default.createElement(
-	                                    "option",
-	                                    { value: "Textbooks" },
+	                                    { value: "textbooks" },
 	                                    "Textbooks"
 	                                  ),
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: "Electronics" },
+	                                    { value: "electronics" },
 	                                    "Electronics"
 	                                  )
 	                                )
@@ -29403,30 +29438,32 @@
 	                                { className: "col-md-8" },
 	                                _react2.default.createElement(
 	                                  "select",
-	                                  { id: "item-Condition", name: "item-condition", className: "form-control" },
+	                                  { id: "item-Condition", name: "item-condition", className: "form-control", value: this.state.postCondition, onChange: function onChange(event) {
+	                                      return _this2.setState({ postCondition: event.target.value });
+	                                    } },
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: 1 },
+	                                    { value: "new" },
 	                                    "New "
 	                                  ),
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: 2 },
+	                                    { value: "excellent" },
 	                                    "Excellent"
 	                                  ),
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: 3 },
+	                                    { value: "great" },
 	                                    "Great"
 	                                  ),
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: 4 },
+	                                    { value: "acceptable" },
 	                                    "Acceptable"
 	                                  ),
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: 5 },
+	                                    { value: "bad" },
 	                                    "Bad"
 	                                  )
 	                                )
@@ -29489,10 +29526,12 @@
 	                                { className: "col-sm-3" },
 	                                _react2.default.createElement(
 	                                  "select",
-	                                  { className: "form-control selecter", name: "state", id: "id-state" },
+	                                  { className: "form-control selecter", name: "state", id: "id-state", value: this.state.postState, onChange: function onChange(event) {
+	                                      return _this2.setState({ postState: event.target.value });
+	                                    } },
 	                                  _react2.default.createElement(
 	                                    "option",
-	                                    { value: "AZ" },
+	                                    { value: "az" },
 	                                    "Arizona"
 	                                  )
 	                                )
@@ -29511,7 +29550,14 @@
 	                                { className: "col-sm-3" },
 	                                _react2.default.createElement(
 	                                  "select",
-	                                  { className: "form-control selecter", name: "state", id: "id-state" },
+	                                  { className: "form-control selecter", name: "state", id: "id-state", value: this.state.postSchool, onChange: function onChange(event) {
+	                                      return _this2.setState({ postSchool: event.target.value });
+	                                    } },
+	                                  _react2.default.createElement(
+	                                    "option",
+	                                    { value: "other" },
+	                                    "Other..."
+	                                  ),
 	                                  _react2.default.createElement(
 	                                    "option",
 	                                    { value: "asu" },
@@ -29534,7 +29580,9 @@
 	                                _react2.default.createElement(
 	                                  "label",
 	                                  { className: "checkbox-inline", htmlFor: "checkboxes-0" },
-	                                  _react2.default.createElement("input", { name: "checkboxes", id: "checkboxes-0", defaultValue: "Remember above contact information.", type: "checkbox" }),
+	                                  _react2.default.createElement("input", { name: "checkboxes", id: "checkboxes-0", type: "checkbox", value: this.state.postTerms, onChange: function onChange(event) {
+	                                      return _this2.setState({ postTerms: event.target.value });
+	                                    } }),
 	                                  "I agree with terms and privacy. "
 	                                )
 	                              )
@@ -29548,7 +29596,7 @@
 	                                { className: "col-md-8" },
 	                                _react2.default.createElement(
 	                                  "a",
-	                                  { href: "posting-success.html", id: "button1id", className: "btn btn-success btn-lg" },
+	                                  { id: "button1id", className: "btn btn-success btn-lg", disabled: !this.state.postTerms, onClick: this.state.postTerms ? this._handleSubmit.bind(this) : "" },
 	                                  "Submit"
 	                                )
 	                              )
