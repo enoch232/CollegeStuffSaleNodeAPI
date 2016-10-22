@@ -1,6 +1,7 @@
 "use strict"
 const Post = require("../models/post")
 
+
 module.exports.indexAPI = function(req, res){
 	Post.find().exec()
 	.then((posts)=>{
@@ -25,9 +26,10 @@ module.exports.createAPI = (req, res)=>{
 	console.log(newPost)
 	newPost.save()
 	.then((post)=>{
-		res.status(200).json({post: posts})
+		res.status(200).json({post: post})
 	})
 	.catch((err)=>{
+		console.log(err)
 		res.status(403).json({error: err})
 	})
 }
