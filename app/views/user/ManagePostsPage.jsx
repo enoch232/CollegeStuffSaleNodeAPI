@@ -45,7 +45,7 @@ export default class ManagePostsPage extends React.Component{
                           <h5 className="collapse-title"> Terminate Account <a className="pull-right" data-toggle="collapse" href="#TerminateAccount"><i className="fa fa-angle-down" /></a></h5>
                           <div id="TerminateAccount" className="panel-collapse collapse in">
                             <ul className="acc-list">
-                              <li><a href="account-close.html"><i className="icon-cancel-circled " /> Close
+                              <li><a href="/account-close"><i className="icon-cancel-circled " /> Close
                                   account </a></li>
                             </ul>
                           </div>
@@ -98,7 +98,7 @@ export default class ManagePostsPage extends React.Component{
                             <td style={{width: '14%'}} className="add-img-td"><a href="ads-details.html"><img className="thumbnail  img-responsive" src="assets/img/item/FreeGreatPicture.com-46407-nexus-4-starts-at-199.jpg" alt="img" /></a></td>
                             <td style={{width: '58%'}} className="ads-details-td">
                               <div>
-                                <p><strong> <a href="ads-details.html" title="Brend New Nexus 4">Brend New
+                                <p><strong> <a href="ads-details.html" title="Brend New Nexus 4">Brand New
                                       Nexus 4</a> </strong></p>
                                 <p><strong> Posted On </strong>:
                                   02-Oct-2014, 04:38 PM </p>

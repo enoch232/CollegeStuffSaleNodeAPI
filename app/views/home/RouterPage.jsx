@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import jwtDecode from 'jwt-decode'
 import { Redirect, Router, Route, Link, browserHistory, Navigation } from 'react-router'
 import SignUpPage from './SignUpPage.jsx'
 import IndexPage from './IndexPage.jsx'
@@ -13,6 +14,9 @@ import ManagePostsPage from '../user/ManagePostsPage.jsx'
 export default class RouterPage extends React.Component{
   constructor(props){
     super(props)
+    this.state = {
+      currentUser: ""
+    }
   }
   _checkJWT(cb){
     return fetch('http://localhost:3000/api/checkjwt', {
@@ -40,6 +44,7 @@ export default class RouterPage extends React.Component{
       console.log("finished: " + result)
       if (result){
         console.log("successfully Signed In")
+        this.setState({currentUser: jwtDecode(localStorage.getItem("collegestuffsale-webtoken")).user_id) })
       }else{
         console.log("Failed")
         browserHistory.replace('/signin')

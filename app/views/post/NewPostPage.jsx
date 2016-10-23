@@ -30,7 +30,7 @@ export default class NewPostPage extends React.Component{
 	      postPrice: this.state.postPrice,
 	      postDescription: this.state.postDescription,
 	      postOBO: this.state.postOBO,
-	      postCategory: !this.state.postCategory,
+	      postCategory: this.state.postCategory,
 	      postCondition: this.state.postCondition,
 	      postState: this.state.postState,
 	      postSchool: this.state.postSchool,
@@ -180,7 +180,7 @@ export default class NewPostPage extends React.Component{
                               <label className="col-md-3 control-label">Terms</label>
                               <div className="col-md-8">
                                 <label className="checkbox-inline" htmlFor="checkboxes-0">
-                                  <input name="checkboxes" id="checkboxes-0" type="checkbox" value = {this.state.postTerms} onChange = {(event)=> this.setState({postTerms: event.target.value})}/>
+                                  <input name="checkboxes" id="checkboxes-0" type="checkbox" checked = {this.state.postTerms} onChange = {()=> this.setState({postTerms: !this.state.postTerms})}/>
                                   I agree with terms and privacy. </label>
                               </div>
                             </div>
