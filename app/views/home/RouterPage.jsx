@@ -44,7 +44,8 @@ export default class RouterPage extends React.Component{
       console.log("finished: " + result)
       if (result){
         console.log("successfully Signed In")
-        this.setState({currentUser: jwtDecode(localStorage.getItem("collegestuffsale-webtoken")).user_id) })
+        console.log(jwtDecode(localStorage.getItem("collegestuffsale-webtoken")).user_id)
+        this.setState({currentUser: jwtDecode(localStorage.getItem("collegestuffsale-webtoken")).user_id})
       }else{
         console.log("Failed")
         browserHistory.replace('/signin')
@@ -58,7 +59,7 @@ export default class RouterPage extends React.Component{
         <Route path="/signup" component={SignUpPage}></Route>
         <Route path="/signin" component={SignInPage}></Route>
         <Route path="/account" component={AccountPage} onEnter={this._authenticate.bind(this)}></Route>
-        <Route path="/new-post" component={()=>(<NewPostPage user = {"hello"}/>)} onEnter={this._authenticate.bind(this)}></Route>
+        <Route path="/new-post" component={()=>(<NewPostPage user = {this.state.currentUser}/>)} onEnter={this._authenticate.bind(this)}></Route>
         <Route path="/aboutus" component={AboutUsPage}></Route>
         <Route path="/faq" component={FAQPage}></Route>
         <Route path="/manage-posts" component={ManagePostsPage}></Route>

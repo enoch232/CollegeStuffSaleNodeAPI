@@ -14,7 +14,7 @@ export default class NewPostPage extends React.Component{
       postSchool: "asu",
       postTag: "",
       postTerms: false,
-      user: "12345ab"
+      user: this.props.user
     }
   }
   _handleSubmit(){
@@ -72,7 +72,7 @@ export default class NewPostPage extends React.Component{
                             <div className="form-group">
                               <label className="col-md-3 control-label">Category</label>
                               <div className="col-md-8">
-                                <select name="category-group" id="category-group" className="form-control" value = {this.state.postCategory} onChange = {()=> this.setState({postCategory: event.target.value })}>
+                                <select name="category-group" id="category-group" className="form-control" value = {this.state.postCategory} onChange = {(event)=> this.setState({postCategory: event.target.value })}>
                                   <option value="none"> Select a category...</option>
                                   <option value="automobiles">Automobiles</option>
                                   <option value="entertainment">Entertainment</option>
