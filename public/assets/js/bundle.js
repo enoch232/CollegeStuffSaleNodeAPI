@@ -27806,7 +27806,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _categories = __webpack_require__(241);
+	var _categories = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./categories.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _categories2 = _interopRequireDefault(_categories);
 
@@ -27851,12 +27851,12 @@
 	                  _react2.default.createElement(
 	                    "h1",
 	                    { className: "intro-title animated fadeInDown" },
-	                    "The Online Marketplace for Your College Expereince "
+	                    "The Online Marketplace for College Experience. "
 	                  ),
 	                  _react2.default.createElement(
 	                    "p",
 	                    { className: "sub animateme fittext3 animated fadeIn" },
-	                    " Buy, Sell Your College Items Today "
+	                    " Buy, Sell Your College Essentials Today! "
 	                  ),
 	                  _react2.default.createElement(
 	                    "div",
@@ -27901,7 +27901,91 @@
 	              _react2.default.createElement(
 	                "div",
 	                { className: "col-lg-12 content-box", id: "content-box" },
-	                _react2.default.createElement(_categories2.default, null)
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "row row-featured row-featured-category" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "col-lg-12  box-title no-border" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "inner" },
+	                      _react2.default.createElement(
+	                        "h2",
+	                        null,
+	                        _react2.default.createElement(
+	                          "span",
+	                          null,
+	                          "Browse by"
+	                        ),
+	                        " Category ",
+	                        _react2.default.createElement(
+	                          "a",
+	                          { href: "/search", className: "sell-your-item" },
+	                          " View more ",
+	                          _react2.default.createElement("i", { className: "icon-th-list" }),
+	                          " "
+	                        )
+	                      )
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 f-category" },
+	                    _react2.default.createElement(
+	                      "a",
+	                      { href: "/search" },
+	                      _react2.default.createElement("img", { src: "/assets/img/category/cellphones.png", className: "img-responsive", alt: "img" }),
+	                      _react2.default.createElement(
+	                        "h6",
+	                        null,
+	                        " Cellphones"
+	                      )
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 f-category" },
+	                    _react2.default.createElement(
+	                      "a",
+	                      { href: "/search" },
+	                      _react2.default.createElement("img", { src: "/assets/img/category/laptops.png", className: "img-responsive", alt: "img" }),
+	                      _react2.default.createElement(
+	                        "h6",
+	                        null,
+	                        "Electronics "
+	                      )
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 f-category" },
+	                    _react2.default.createElement(
+	                      "a",
+	                      { href: "/search" },
+	                      _react2.default.createElement("img", { src: "/assets/img/category/textbooks.jpg", className: "img-responsive", alt: "img" }),
+	                      _react2.default.createElement(
+	                        "h6",
+	                        null,
+	                        " Textbooks "
+	                      )
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 f-category" },
+	                    _react2.default.createElement(
+	                      "a",
+	                      { href: "/search" },
+	                      _react2.default.createElement("img", { src: "/assets/img/category/home .png", className: "img-responsive", alt: "img" }),
+	                      _react2.default.createElement(
+	                        "h6",
+	                        null,
+	                        " Home "
+	                      )
+	                    )
+	                  )
+	                )
 	              ),
 	              _react2.default.createElement("div", { style: { clear: 'both' } }),
 	              _react2.default.createElement(
@@ -28134,140 +28218,7 @@
 	exports.default = IndexPage;
 
 /***/ },
-/* 241 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Category = function (_React$Component) {
-	  _inherits(Category, _React$Component);
-
-	  function Category(props) {
-	    _classCallCheck(this, Category);
-
-	    var _this = _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).call(this, props));
-
-	    _this.state = {
-	      name: "Enoch Ko"
-	    };
-	    return _this;
-	  }
-
-	  _createClass(Category, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "div",
-	        { className: "row row-featured row-featured-category" },
-	        _react2.default.createElement(
-	          "div",
-	          { className: "col-lg-12  box-title no-border" },
-	          _react2.default.createElement(
-	            "div",
-	            { className: "inner" },
-	            _react2.default.createElement(
-	              "h2",
-	              null,
-	              _react2.default.createElement(
-	                "span",
-	                null,
-	                "Browse by"
-	              ),
-	              "Category ",
-	              _react2.default.createElement(
-	                "a",
-	                { href: "/search", className: "sell-your-item" },
-	                " View more ",
-	                _react2.default.createElement("i", { className: "icon-th-list" }),
-	                " "
-	              )
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          "div",
-	          { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 f-category" },
-	          _react2.default.createElement(
-	            "a",
-	            { href: "/search" },
-	            _react2.default.createElement("img", { src: "/assets/img/category/cellphones.png", className: "img-responsive", alt: "img" }),
-	            _react2.default.createElement(
-	              "h6",
-	              null,
-	              " Cellphones"
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          "div",
-	          { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 f-category" },
-	          _react2.default.createElement(
-	            "a",
-	            { href: "/search" },
-	            _react2.default.createElement("img", { src: "/assets/img/category/laptops.png", className: "img-responsive", alt: "img" }),
-	            _react2.default.createElement(
-	              "h6",
-	              null,
-	              "Electronics "
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          "div",
-	          { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 f-category" },
-	          _react2.default.createElement(
-	            "a",
-	            { href: "/search" },
-	            _react2.default.createElement("img", { src: "/assets/img/category/textbooks.jpg", className: "img-responsive", alt: "img" }),
-	            _react2.default.createElement(
-	              "h6",
-	              null,
-	              " Textbooks "
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          "div",
-	          { className: "col-md-3 col-md-4 col-sm-4 col-xs-6 f-category" },
-	          _react2.default.createElement(
-	            "a",
-	            { href: "/search" },
-	            _react2.default.createElement("img", { src: "/assets/img/category/home .png", className: "img-responsive", alt: "img" }),
-	            _react2.default.createElement(
-	              "h6",
-	              null,
-	              " Home "
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return Category;
-	}(_react2.default.Component);
-
-	exports.default = Category;
-
-/***/ },
+/* 241 */,
 /* 242 */
 /***/ function(module, exports, __webpack_require__) {
 

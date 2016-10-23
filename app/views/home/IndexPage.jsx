@@ -11,8 +11,8 @@ export default class IndexPage extends React.Component{
             <div className="dtable hw100">
               <div className="dtable-cell hw100">
                 <div className="container text-center">
-                  <h1 className="intro-title animated fadeInDown">The Online Marketplace for Your College Expereince </h1>
-                  <p className="sub animateme fittext3 animated fadeIn"> Buy, Sell Your College Items Today </p>
+                  <h1 className="intro-title animated fadeInDown">The Online Marketplace for College Experience. </h1>
+                  <p className="sub animateme fittext3 animated fadeIn"> Buy, Sell Your College Essentials Today! </p>
                   <div className="row search-row animated fadeInUp">
                     <div className="col-lg-4 col-sm-4 search-col relative locationicon">
                       <i className="icon-location-2 icon-append" />
@@ -33,8 +33,37 @@ export default class IndexPage extends React.Component{
           <div className="main-container">
             <div className="container">
               <div className="col-lg-12 content-box" id="content-box">
-                {/*moved to react file */}
-                <Category />
+                <div className="row row-featured row-featured-category">
+          		  	<div className="col-lg-12  box-title no-border">
+          	        <div className="inner"><h2><span>Browse by</span> Category <a href="/search" className="sell-your-item"> View more <i className="icon-th-list"></i> </a></h2>
+          	        </div>
+          	      </div>
+
+          	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 f-category">
+                    <a href="/search"><img src="/assets/img/category/cellphones.png" className="img-responsive" alt="img"/>
+                      <h6> Cellphones</h6>
+                    </a>
+          	      </div>
+
+          	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 f-category">
+                    <a href="/search"><img src="/assets/img/category/laptops.png" className="img-responsive" alt="img"/>
+                    	<h6>Electronics </h6>
+                    </a>
+          	      </div>
+
+          	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 f-category">
+                    <a href="/search">
+                    	<img src="/assets/img/category/textbooks.jpg" className="img-responsive" alt="img"/>
+                      <h6> Textbooks </h6>
+                    </a>
+          	      </div>
+
+          	      <div className="col-md-3 col-md-4 col-sm-4 col-xs-6 f-category">
+          	        <a href="/search"><img src="/assets/img/category/home .png" className="img-responsive" alt="img"/>
+          	        	<h6> Home </h6>
+          	        </a>
+          	      </div>
+                </div>
               </div>
               <div style={{clear: 'both'}} />
 
