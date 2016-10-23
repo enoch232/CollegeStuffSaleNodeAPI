@@ -7,6 +7,7 @@ import IndexPage from './IndexPage.jsx'
 import SignInPage from './SignInPage.jsx'
 import AccountPage from '../user/AccountPage.jsx'
 import NewPostPage from '../post/NewPostPage.jsx'
+import PostSearchPage from '../post/PostSearchPage.jsx'
 import AboutUsPage from './AboutUsPage.jsx'
 import FAQPage from './FAQPage.jsx'
 import ManagePostsPage from '../user/ManagePostsPage.jsx'
@@ -63,6 +64,7 @@ export default class RouterPage extends React.Component{
         <Route path="/aboutus" component={AboutUsPage}></Route>
         <Route path="/faq" component={FAQPage}></Route>
         <Route path="/manage-posts" component={ManagePostsPage}></Route>
+        <Route path="/search" component={PostSearchPage}></Route>
       </Router>
     )
   }

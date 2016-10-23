@@ -1,6 +1,13 @@
 import React from 'react'
-import Category from "./categories.jsx"
+import {browserHistory} from 'react-router'
 export default class IndexPage extends React.Component{
+  constructor(props){
+    super(props)
+
+  }
+  _pressFind(){
+    browserHistory.push('/search')
+  }
   render() {
     return (
       <div>
@@ -22,7 +29,7 @@ export default class IndexPage extends React.Component{
                       <input type="text" name="ads" className="form-control has-icon" placeholder="I'm looking for a ..." />
                     </div>
                     <div className="col-lg-4 col-sm-4 search-col">
-                      <button className="btn btn-primary btn-search btn-block"><i className="icon-search" /><strong>Find</strong></button>
+                      <button className="btn btn-primary btn-search btn-block" onClick = {this._pressFind.bind(this)}><i className="icon-search" /><strong>Find</strong></button>
                     </div>
                   </div>
                 </div>
