@@ -21463,19 +21463,19 @@
 
 	var _IndexPage2 = _interopRequireDefault(_IndexPage);
 
-	var _SignInPage = __webpack_require__(242);
+	var _SignInPage = __webpack_require__(241);
 
 	var _SignInPage2 = _interopRequireDefault(_SignInPage);
 
-	var _AccountPage = __webpack_require__(243);
+	var _AccountPage = __webpack_require__(242);
 
 	var _AccountPage2 = _interopRequireDefault(_AccountPage);
 
-	var _NewPostPage = __webpack_require__(244);
+	var _NewPostPage = __webpack_require__(243);
 
 	var _NewPostPage2 = _interopRequireDefault(_NewPostPage);
 
-	var _PostSearchPage = __webpack_require__(248);
+	var _PostSearchPage = __webpack_require__(244);
 
 	var _PostSearchPage2 = _interopRequireDefault(_PostSearchPage);
 
@@ -28226,8 +28226,7 @@
 	exports.default = IndexPage;
 
 /***/ },
-/* 241 */,
-/* 242 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28444,7 +28443,7 @@
 	exports.default = (0, _reactRouter.withRouter)(SignInPage);
 
 /***/ },
-/* 243 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29132,7 +29131,7 @@
 	exports.default = AccountPage;
 
 /***/ },
-/* 244 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29676,6 +29675,795 @@
 	}(_react2.default.Component);
 
 	exports.default = NewPostPage;
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _PostInSearch = __webpack_require__(248);
+
+	var _PostInSearch2 = _interopRequireDefault(_PostInSearch);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var PostSearchPage = function (_React$Component) {
+	  _inherits(PostSearchPage, _React$Component);
+
+	  function PostSearchPage() {
+	    _classCallCheck(this, PostSearchPage);
+
+	    return _possibleConstructorReturn(this, (PostSearchPage.__proto__ || Object.getPrototypeOf(PostSearchPage)).apply(this, arguments));
+	  }
+
+	  _createClass(PostSearchPage, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'search-row-wrapper' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'container ' },
+	            _react2.default.createElement(
+	              'form',
+	              { action: '#', method: 'GET' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'col-sm-3' },
+	                _react2.default.createElement('input', { className: 'form-control keyword', type: 'text', placeholder: 'e.g. Mobile Sale' })
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'col-sm-3' },
+	                _react2.default.createElement(
+	                  'select',
+	                  { className: 'form-control selecter', name: 'category', id: 'search-category' },
+	                  _react2.default.createElement(
+	                    'option',
+	                    { value: 'Automobiles' },
+	                    ' Automobiles'
+	                  ),
+	                  _react2.default.createElement(
+	                    'option',
+	                    { value: 'Entertainment' },
+	                    ' Entertainment'
+	                  ),
+	                  _react2.default.createElement(
+	                    'option',
+	                    { value: 'Home' },
+	                    ' Home'
+	                  ),
+	                  _react2.default.createElement(
+	                    'option',
+	                    { value: 'Jobs' },
+	                    ' Jobs'
+	                  ),
+	                  _react2.default.createElement(
+	                    'option',
+	                    { value: 'Other' },
+	                    ' Other'
+	                  ),
+	                  '-->'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'col-sm-3' },
+	                _react2.default.createElement(
+	                  'select',
+	                  { className: 'form-control selecter', name: 'location', id: 'id-location' },
+	                  _react2.default.createElement(
+	                    'option',
+	                    { selected: 'selected', value: true },
+	                    'All Locations'
+	                  ),
+	                  _react2.default.createElement(
+	                    'option',
+	                    { value: 'AZ' },
+	                    'Arizona'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'col-sm-3' },
+	                _react2.default.createElement(
+	                  'button',
+	                  { className: 'btn btn-block btn-primary' },
+	                  _react2.default.createElement('i', { className: 'fa fa-search' })
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'main-container' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'container' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'row' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'col-sm-3 page-sidebar mobile-filter-sidebar' },
+	                _react2.default.createElement(
+	                  'aside',
+	                  null,
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'inner-box' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'categories-list  list-filter' },
+	                      _react2.default.createElement(
+	                        'h5',
+	                        { className: 'list-title' },
+	                        _react2.default.createElement(
+	                          'strong',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: '#' },
+	                            'All Categories'
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'ul',
+	                        { className: ' list-unstyled' },
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            _react2.default.createElement(
+	                              'span',
+	                              { className: 'title' },
+	                              'Electronics'
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            _react2.default.createElement(
+	                              'span',
+	                              { className: 'title' },
+	                              'Automobiles '
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            _react2.default.createElement(
+	                              'span',
+	                              { className: 'title' },
+	                              'Home '
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            _react2.default.createElement(
+	                              'span',
+	                              { className: 'title' },
+	                              'Roomates '
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            _react2.default.createElement(
+	                              'span',
+	                              { className: 'title' },
+	                              'Textbooks '
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            _react2.default.createElement(
+	                              'span',
+	                              { className: 'title' },
+	                              'Learning '
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            _react2.default.createElement(
+	                              'span',
+	                              { className: 'title' },
+	                              'Jobs '
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            _react2.default.createElement(
+	                              'span',
+	                              { className: 'title' },
+	                              'Cars & Vehicles'
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            _react2.default.createElement(
+	                              'span',
+	                              { className: 'title' },
+	                              'Beauty'
+	                            )
+	                          )
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'locations-list  list-filter' },
+	                      _react2.default.createElement(
+	                        'h5',
+	                        { className: 'list-title' },
+	                        _react2.default.createElement(
+	                          'strong',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: '#' },
+	                            'Price range'
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'form',
+	                        { role: 'form', className: 'form-inline ' },
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'form-group col-sm-4 no-padding' },
+	                          _react2.default.createElement('input', { type: 'text', placeholder: '$ 2000 ', id: 'minPrice', className: 'form-control' })
+	                        ),
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'form-group col-sm-1 no-padding text-center hidden-xs' },
+	                          ' -'
+	                        ),
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'form-group col-sm-4 no-padding' },
+	                          _react2.default.createElement('input', { type: 'text', placeholder: '$ 3000 ', id: 'maxPrice', className: 'form-control' })
+	                        ),
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'form-group col-sm-3 no-padding' },
+	                          _react2.default.createElement(
+	                            'button',
+	                            { className: 'btn btn-default pull-right btn-block-xs', type: 'submit' },
+	                            'GO'
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement('div', { style: { clear: 'both' } })
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'locations-list  list-filter' },
+	                      _react2.default.createElement(
+	                        'h5',
+	                        { className: 'list-title' },
+	                        _react2.default.createElement(
+	                          'strong',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: '#' },
+	                            'Condition'
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'ul',
+	                        { className: 'browse-list list-unstyled long-list' },
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            'New '
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            'Excellent '
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            'Great '
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            'Acceptable '
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          'li',
+	                          null,
+	                          _react2.default.createElement(
+	                            'a',
+	                            { href: 'sub-category-sub-location.html' },
+	                            'Bad '
+	                          )
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement('div', { style: { clear: 'both' } })
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'col-sm-9 page-content col-thin-left' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'category-list' },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'tab-box ' },
+	                    _react2.default.createElement(
+	                      'ul',
+	                      { className: 'nav nav-tabs add-tabs', id: 'ajaxTabs', role: 'tablist' },
+	                      _react2.default.createElement(
+	                        'li',
+	                        { className: 'active' },
+	                        _react2.default.createElement(
+	                          'a',
+	                          { href: 'ajax/1.html', 'data-url': 'ajax/1.html', role: 'tab', 'data-toggle': 'tab' },
+	                          'All Ads '
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'tab-filter' },
+	                      _react2.default.createElement(
+	                        'select',
+	                        { className: 'selectpicker', 'data-style': 'btn-select', 'data-width': 'auto' },
+	                        _react2.default.createElement(
+	                          'option',
+	                          null,
+	                          'Sort by'
+	                        ),
+	                        _react2.default.createElement(
+	                          'option',
+	                          null,
+	                          'Price: Low to High'
+	                        ),
+	                        _react2.default.createElement(
+	                          'option',
+	                          null,
+	                          'Price: High to Low'
+	                        )
+	                      )
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'listing-filter' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'pull-left col-xs-6' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'breadcrumb-list' },
+	                        _react2.default.createElement(
+	                          'a',
+	                          { href: '#', className: 'current' },
+	                          _react2.default.createElement(
+	                            'span',
+	                            null,
+	                            'All ads'
+	                          )
+	                        ),
+	                        ' in New York ',
+	                        _react2.default.createElement(
+	                          'a',
+	                          { href: '#selectRegion', id: 'dropdownMenu1', 'data-toggle': 'modal' },
+	                          _react2.default.createElement('span', { className: 'caret' })
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'pull-right col-xs-6 text-right listing-view-action' },
+	                      _react2.default.createElement(
+	                        'span',
+	                        { className: 'list-view active' },
+	                        _react2.default.createElement('i', { className: '  icon-th' })
+	                      ),
+	                      _react2.default.createElement(
+	                        'span',
+	                        { className: 'compact-view' },
+	                        _react2.default.createElement('i', { className: ' icon-th-list  ' })
+	                      ),
+	                      _react2.default.createElement(
+	                        'span',
+	                        { className: 'grid-view ' },
+	                        _react2.default.createElement('i', { className: ' icon-th-large ' })
+	                      )
+	                    ),
+	                    _react2.default.createElement('div', { style: { clear: 'both' } })
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'mobile-filter-bar col-lg-12  ' },
+	                    _react2.default.createElement(
+	                      'ul',
+	                      { className: 'list-unstyled list-inline no-margin no-padding' },
+	                      _react2.default.createElement(
+	                        'li',
+	                        { className: 'filter-toggle' },
+	                        _react2.default.createElement(
+	                          'a',
+	                          { className: true },
+	                          _react2.default.createElement('i', { className: '  icon-th-list' }),
+	                          'Filters'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'dropdown' },
+	                          _react2.default.createElement(
+	                            'a',
+	                            { 'data-toggle': 'dropdown', className: 'dropdown-toggle' },
+	                            _react2.default.createElement('i', { className: 'caret ' }),
+	                            ' Sort by '
+	                          ),
+	                          _react2.default.createElement(
+	                            'ul',
+	                            { className: 'dropdown-menu' },
+	                            _react2.default.createElement(
+	                              'li',
+	                              null,
+	                              _react2.default.createElement(
+	                                'a',
+	                                { href: true, rel: 'nofollow' },
+	                                'Relevance'
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'li',
+	                              null,
+	                              _react2.default.createElement(
+	                                'a',
+	                                { href: true, rel: 'nofollow' },
+	                                'Date'
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              'li',
+	                              null,
+	                              _react2.default.createElement(
+	                                'a',
+	                                { href: true, rel: 'nofollow' },
+	                                'Company'
+	                              )
+	                            )
+	                          )
+	                        )
+	                      )
+	                    )
+	                  ),
+	                  _react2.default.createElement('div', { className: 'menu-overly-mask' }),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'adds-wrapper' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'tab-content' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'tab-pane active', id: 'allAds' },
+	                        'Loading...'
+	                      ),
+	                      _react2.default.createElement(_PostInSearch2.default, null)
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'tab-box  save-search-bar text-center' },
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: true },
+	                      _react2.default.createElement('i', { className: ' icon-star-empty' }),
+	                      'Save Search'
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'pagination-bar text-center' },
+	                  _react2.default.createElement(
+	                    'ul',
+	                    { className: 'pagination' },
+	                    _react2.default.createElement(
+	                      'li',
+	                      { className: 'active' },
+	                      _react2.default.createElement(
+	                        'a',
+	                        { href: '#' },
+	                        '1'
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      _react2.default.createElement(
+	                        'a',
+	                        { href: '#' },
+	                        '2'
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      _react2.default.createElement(
+	                        'a',
+	                        { href: '#' },
+	                        '3'
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      _react2.default.createElement(
+	                        'a',
+	                        { href: '#' },
+	                        '4'
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      _react2.default.createElement(
+	                        'a',
+	                        { href: '#' },
+	                        '5'
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      _react2.default.createElement(
+	                        'a',
+	                        { href: '#' },
+	                        ' ...'
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'li',
+	                      null,
+	                      _react2.default.createElement(
+	                        'a',
+	                        { className: 'pagination-btn', href: '#' },
+	                        'Next \xBB'
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'modal fade', id: 'selectRegion', tabindex: -1, role: 'dialog', 'aria-labelledby': 'exampleModalLabel', 'aria-hidden': 'true' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'modal-dialog' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'modal-content' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'modal-header' },
+	                _react2.default.createElement(
+	                  'button',
+	                  { type: 'button', className: 'close', 'data-dismiss': 'modal' },
+	                  _react2.default.createElement(
+	                    'span',
+	                    { 'aria-hidden': 'true' },
+	                    '\xD7'
+	                  ),
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'sr-only' },
+	                    'Close'
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'h4',
+	                  { className: 'modal-title', id: 'exampleModalLabel' },
+	                  _react2.default.createElement('i', { className: ' icon-map' }),
+	                  ' Select your region'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'modal-body' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'row' },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'col-sm-12' },
+	                    _react2.default.createElement(
+	                      'p',
+	                      null,
+	                      'Popular cities in ',
+	                      _react2.default.createElement(
+	                        'strong',
+	                        null,
+	                        'New York'
+	                      )
+	                    ),
+	                    _react2.default.createElement('div', { style: { clear: 'both' } }),
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'col-sm-6 no-padding' },
+	                      _react2.default.createElement(
+	                        'select',
+	                        { className: 'form-control selecter  ', id: 'region-state', name: 'region-state' },
+	                        _react2.default.createElement(
+	                          'option',
+	                          { value: true },
+	                          'All States/Provinces'
+	                        ),
+	                        _react2.default.createElement(
+	                          'option',
+	                          { value: 'Arizona' },
+	                          'Arizona'
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement('div', { style: { clear: 'both' } }),
+	                    _react2.default.createElement('hr', { className: 'hr-thin' })
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'col-md-4' },
+	                    _react2.default.createElement(
+	                      'ul',
+	                      { className: 'list-link list-unstyled' },
+	                      _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        _react2.default.createElement(
+	                          'a',
+	                          { href: '#', title: 'East Meadow' },
+	                          'East Meadow'
+	                        )
+	                      )
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'col-md-4' },
+	                    _react2.default.createElement(
+	                      'ul',
+	                      { className: 'list-link list-unstyled' },
+	                      _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        _react2.default.createElement(
+	                          'a',
+	                          { href: '#', title: 'Garden City' },
+	                          'Garden City'
+	                        )
+	                      )
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'col-md-4' },
+	                    _react2.default.createElement(
+	                      'ul',
+	                      { className: 'list-link list-unstyled' },
+	                      _react2.default.createElement(
+	                        'li',
+	                        null,
+	                        _react2.default.createElement(
+	                          'a',
+	                          { href: '#', title: 'Oceanside' },
+	                          'Oceanside'
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return PostSearchPage;
+	}(_react2.default.Component);
+
+	exports.default = PostSearchPage;
 
 /***/ },
 /* 245 */
@@ -31256,16 +32044,16 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var PostSearchPage = function (_React$Component) {
-	  _inherits(PostSearchPage, _React$Component);
+	var PostInSearch = function (_React$Component) {
+	  _inherits(PostInSearch, _React$Component);
 
-	  function PostSearchPage() {
-	    _classCallCheck(this, PostSearchPage);
+	  function PostInSearch() {
+	    _classCallCheck(this, PostInSearch);
 
-	    return _possibleConstructorReturn(this, (PostSearchPage.__proto__ || Object.getPrototypeOf(PostSearchPage)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (PostInSearch.__proto__ || Object.getPrototypeOf(PostInSearch)).apply(this, arguments));
 	  }
 
-	  _createClass(PostSearchPage, [{
+	  _createClass(PostInSearch, [{
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -31273,737 +32061,123 @@
 	        null,
 	        _react2.default.createElement(
 	          "div",
-	          { className: "search-row-wrapper" },
+	          { className: "item-list" },
 	          _react2.default.createElement(
 	            "div",
-	            { className: "container " },
+	            { className: "cornerRibbons featuredAds" },
 	            _react2.default.createElement(
-	              "form",
-	              { action: "#", method: "GET" },
-	              _react2.default.createElement(
-	                "div",
-	                { className: "col-sm-3" },
-	                _react2.default.createElement("input", { className: "form-control keyword", type: "text", placeholder: "e.g. Mobile Sale" })
-	              ),
-	              _react2.default.createElement(
-	                "div",
-	                { className: "col-sm-3" },
-	                _react2.default.createElement(
-	                  "select",
-	                  { className: "form-control selecter", name: "category", id: "search-category" },
-	                  _react2.default.createElement(
-	                    "option",
-	                    { value: "Automobiles" },
-	                    " Automobiles"
-	                  ),
-	                  _react2.default.createElement(
-	                    "option",
-	                    { value: "Entertainment" },
-	                    " Entertainment"
-	                  ),
-	                  _react2.default.createElement(
-	                    "option",
-	                    { value: "Home" },
-	                    " Home"
-	                  ),
-	                  _react2.default.createElement(
-	                    "option",
-	                    { value: "Jobs" },
-	                    " Jobs"
-	                  ),
-	                  _react2.default.createElement(
-	                    "option",
-	                    { value: "Other" },
-	                    " Other"
-	                  ),
-	                  "-->"
-	                )
-	              ),
-	              _react2.default.createElement(
-	                "div",
-	                { className: "col-sm-3" },
-	                _react2.default.createElement(
-	                  "select",
-	                  { className: "form-control selecter", name: "location", id: "id-location" },
-	                  _react2.default.createElement(
-	                    "option",
-	                    { selected: "selected", value: true },
-	                    "All Locations"
-	                  ),
-	                  _react2.default.createElement(
-	                    "option",
-	                    { value: "AZ" },
-	                    "Arizona"
-	                  )
-	                )
-	              ),
-	              _react2.default.createElement(
-	                "div",
-	                { className: "col-sm-3" },
-	                _react2.default.createElement(
-	                  "button",
-	                  { className: "btn btn-block btn-primary" },
-	                  _react2.default.createElement("i", { className: "fa fa-search" })
-	                )
-	              )
+	              "a",
+	              { href: "#" },
+	              " Featured Ads"
 	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          "div",
-	          { className: "main-container" },
+	          ),
 	          _react2.default.createElement(
 	            "div",
-	            { className: "container" },
+	            { className: "col-sm-2 no-padding photobox" },
 	            _react2.default.createElement(
 	              "div",
-	              { className: "row" },
+	              { className: "add-image" },
 	              _react2.default.createElement(
-	                "div",
-	                { className: "col-sm-3 page-sidebar mobile-filter-sidebar" },
-	                _react2.default.createElement(
-	                  "aside",
-	                  null,
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "inner-box" },
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "categories-list  list-filter" },
-	                      _react2.default.createElement(
-	                        "h5",
-	                        { className: "list-title" },
-	                        _react2.default.createElement(
-	                          "strong",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "#" },
-	                            "All Categories"
-	                          )
-	                        )
-	                      ),
-	                      _react2.default.createElement(
-	                        "ul",
-	                        { className: " list-unstyled" },
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            _react2.default.createElement(
-	                              "span",
-	                              { className: "title" },
-	                              "Electronics"
-	                            )
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            _react2.default.createElement(
-	                              "span",
-	                              { className: "title" },
-	                              "Automobiles "
-	                            )
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            _react2.default.createElement(
-	                              "span",
-	                              { className: "title" },
-	                              "Home "
-	                            )
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            _react2.default.createElement(
-	                              "span",
-	                              { className: "title" },
-	                              "Roomates "
-	                            )
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            _react2.default.createElement(
-	                              "span",
-	                              { className: "title" },
-	                              "Textbooks "
-	                            )
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            _react2.default.createElement(
-	                              "span",
-	                              { className: "title" },
-	                              "Learning "
-	                            )
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            _react2.default.createElement(
-	                              "span",
-	                              { className: "title" },
-	                              "Jobs "
-	                            )
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            _react2.default.createElement(
-	                              "span",
-	                              { className: "title" },
-	                              "Cars & Vehicles"
-	                            )
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            _react2.default.createElement(
-	                              "span",
-	                              { className: "title" },
-	                              "Beauty"
-	                            )
-	                          )
-	                        )
-	                      )
-	                    ),
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "locations-list  list-filter" },
-	                      _react2.default.createElement(
-	                        "h5",
-	                        { className: "list-title" },
-	                        _react2.default.createElement(
-	                          "strong",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "#" },
-	                            "Price range"
-	                          )
-	                        )
-	                      ),
-	                      _react2.default.createElement(
-	                        "form",
-	                        { role: "form", className: "form-inline " },
-	                        _react2.default.createElement(
-	                          "div",
-	                          { className: "form-group col-sm-4 no-padding" },
-	                          _react2.default.createElement("input", { type: "text", placeholder: "$ 2000 ", id: "minPrice", className: "form-control" })
-	                        ),
-	                        _react2.default.createElement(
-	                          "div",
-	                          { className: "form-group col-sm-1 no-padding text-center hidden-xs" },
-	                          " -"
-	                        ),
-	                        _react2.default.createElement(
-	                          "div",
-	                          { className: "form-group col-sm-4 no-padding" },
-	                          _react2.default.createElement("input", { type: "text", placeholder: "$ 3000 ", id: "maxPrice", className: "form-control" })
-	                        ),
-	                        _react2.default.createElement(
-	                          "div",
-	                          { className: "form-group col-sm-3 no-padding" },
-	                          _react2.default.createElement(
-	                            "button",
-	                            { className: "btn btn-default pull-right btn-block-xs", type: "submit" },
-	                            "GO"
-	                          )
-	                        )
-	                      ),
-	                      _react2.default.createElement("div", { style: { clear: 'both' } })
-	                    ),
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "locations-list  list-filter" },
-	                      _react2.default.createElement(
-	                        "h5",
-	                        { className: "list-title" },
-	                        _react2.default.createElement(
-	                          "strong",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "#" },
-	                            "Condition"
-	                          )
-	                        )
-	                      ),
-	                      _react2.default.createElement(
-	                        "ul",
-	                        { className: "browse-list list-unstyled long-list" },
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            "New "
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            "Excellent "
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            "Great "
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            "Acceptable "
-	                          )
-	                        ),
-	                        _react2.default.createElement(
-	                          "li",
-	                          null,
-	                          _react2.default.createElement(
-	                            "a",
-	                            { href: "sub-category-sub-location.html" },
-	                            "Bad "
-	                          )
-	                        )
-	                      )
-	                    ),
-	                    _react2.default.createElement("div", { style: { clear: 'both' } })
-	                  )
-	                )
+	                "span",
+	                { className: "photo-count" },
+	                _react2.default.createElement("i", { className: "fa fa-camera" }),
+	                " 2 "
 	              ),
+	              " ",
 	              _react2.default.createElement(
-	                "div",
-	                { className: "col-sm-9 page-content col-thin-left" },
-	                _react2.default.createElement(
-	                  "div",
-	                  { className: "category-list" },
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "tab-box " },
-	                    _react2.default.createElement(
-	                      "ul",
-	                      { className: "nav nav-tabs add-tabs", id: "ajaxTabs", role: "tablist" },
-	                      _react2.default.createElement(
-	                        "li",
-	                        { className: "active" },
-	                        _react2.default.createElement(
-	                          "a",
-	                          { href: "ajax/1.html", "data-url": "ajax/1.html", role: "tab", "data-toggle": "tab" },
-	                          "All Ads "
-	                        )
-	                      )
-	                    ),
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "tab-filter" },
-	                      _react2.default.createElement(
-	                        "select",
-	                        { className: "selectpicker", "data-style": "btn-select", "data-width": "auto" },
-	                        _react2.default.createElement(
-	                          "option",
-	                          null,
-	                          "Short by"
-	                        ),
-	                        _react2.default.createElement(
-	                          "option",
-	                          null,
-	                          "Price: Low to High"
-	                        ),
-	                        _react2.default.createElement(
-	                          "option",
-	                          null,
-	                          "Price: High to Low"
-	                        )
-	                      )
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "listing-filter" },
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "pull-left col-xs-6" },
-	                      _react2.default.createElement(
-	                        "div",
-	                        { className: "breadcrumb-list" },
-	                        _react2.default.createElement(
-	                          "a",
-	                          { href: "#", className: "current" },
-	                          _react2.default.createElement(
-	                            "span",
-	                            null,
-	                            "All ads"
-	                          )
-	                        ),
-	                        " in New York ",
-	                        _react2.default.createElement(
-	                          "a",
-	                          { href: "#selectRegion", id: "dropdownMenu1", "data-toggle": "modal" },
-	                          _react2.default.createElement("span", { className: "caret" })
-	                        )
-	                      )
-	                    ),
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "pull-right col-xs-6 text-right listing-view-action" },
-	                      _react2.default.createElement(
-	                        "span",
-	                        { className: "list-view active" },
-	                        _react2.default.createElement("i", { className: "  icon-th" })
-	                      ),
-	                      _react2.default.createElement(
-	                        "span",
-	                        { className: "compact-view" },
-	                        _react2.default.createElement("i", { className: " icon-th-list  " })
-	                      ),
-	                      _react2.default.createElement(
-	                        "span",
-	                        { className: "grid-view " },
-	                        _react2.default.createElement("i", { className: " icon-th-large " })
-	                      )
-	                    ),
-	                    _react2.default.createElement("div", { style: { clear: 'both' } })
-	                  ),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "mobile-filter-bar col-lg-12  " },
-	                    _react2.default.createElement(
-	                      "ul",
-	                      { className: "list-unstyled list-inline no-margin no-padding" },
-	                      _react2.default.createElement(
-	                        "li",
-	                        { className: "filter-toggle" },
-	                        _react2.default.createElement(
-	                          "a",
-	                          { className: true },
-	                          _react2.default.createElement("i", { className: "  icon-th-list" }),
-	                          "Filters"
-	                        )
-	                      ),
-	                      _react2.default.createElement(
-	                        "li",
-	                        null,
-	                        _react2.default.createElement(
-	                          "div",
-	                          { className: "dropdown" },
-	                          _react2.default.createElement(
-	                            "a",
-	                            { "data-toggle": "dropdown", className: "dropdown-toggle" },
-	                            _react2.default.createElement("i", { className: "caret " }),
-	                            " Short by "
-	                          ),
-	                          _react2.default.createElement(
-	                            "ul",
-	                            { className: "dropdown-menu" },
-	                            _react2.default.createElement(
-	                              "li",
-	                              null,
-	                              _react2.default.createElement(
-	                                "a",
-	                                { href: true, rel: "nofollow" },
-	                                "Relevance"
-	                              )
-	                            ),
-	                            _react2.default.createElement(
-	                              "li",
-	                              null,
-	                              _react2.default.createElement(
-	                                "a",
-	                                { href: true, rel: "nofollow" },
-	                                "Date"
-	                              )
-	                            ),
-	                            _react2.default.createElement(
-	                              "li",
-	                              null,
-	                              _react2.default.createElement(
-	                                "a",
-	                                { href: true, rel: "nofollow" },
-	                                "Company"
-	                              )
-	                            )
-	                          )
-	                        )
-	                      )
-	                    )
-	                  ),
-	                  _react2.default.createElement("div", { className: "menu-overly-mask" }),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "adds-wrapper" },
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "tab-content" },
-	                      _react2.default.createElement(
-	                        "div",
-	                        { className: "tab-pane active", id: "allAds" },
-	                        "Loading..."
-	                      )
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "tab-box  save-search-bar text-center" },
-	                    _react2.default.createElement(
-	                      "a",
-	                      { href: true },
-	                      _react2.default.createElement("i", { className: " icon-star-empty" }),
-	                      "Save Search"
-	                    )
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  "div",
-	                  { className: "pagination-bar text-center" },
-	                  _react2.default.createElement(
-	                    "ul",
-	                    { className: "pagination" },
-	                    _react2.default.createElement(
-	                      "li",
-	                      { className: "active" },
-	                      _react2.default.createElement(
-	                        "a",
-	                        { href: "#" },
-	                        "1"
-	                      )
-	                    ),
-	                    _react2.default.createElement(
-	                      "li",
-	                      null,
-	                      _react2.default.createElement(
-	                        "a",
-	                        { href: "#" },
-	                        "2"
-	                      )
-	                    ),
-	                    _react2.default.createElement(
-	                      "li",
-	                      null,
-	                      _react2.default.createElement(
-	                        "a",
-	                        { href: "#" },
-	                        "3"
-	                      )
-	                    ),
-	                    _react2.default.createElement(
-	                      "li",
-	                      null,
-	                      _react2.default.createElement(
-	                        "a",
-	                        { href: "#" },
-	                        "4"
-	                      )
-	                    ),
-	                    _react2.default.createElement(
-	                      "li",
-	                      null,
-	                      _react2.default.createElement(
-	                        "a",
-	                        { href: "#" },
-	                        "5"
-	                      )
-	                    ),
-	                    _react2.default.createElement(
-	                      "li",
-	                      null,
-	                      _react2.default.createElement(
-	                        "a",
-	                        { href: "#" },
-	                        " ..."
-	                      )
-	                    ),
-	                    _react2.default.createElement(
-	                      "li",
-	                      null,
-	                      _react2.default.createElement(
-	                        "a",
-	                        { className: "pagination-btn", href: "#" },
-	                        "Next \xBB"
-	                      )
-	                    )
-	                  )
-	                )
+	                "a",
+	                { href: "ads-details.html" },
+	                _react2.default.createElement("img", { className: "thumbnail no-margin", src: "images/item/tp/Image00008.jpg", alt: "img" })
 	              )
 	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          "div",
-	          { className: "modal fade", id: "selectRegion", tabindex: -1, role: "dialog", "aria-labelledby": "exampleModalLabel", "aria-hidden": "true" },
+	          ),
 	          _react2.default.createElement(
 	            "div",
-	            { className: "modal-dialog" },
+	            { className: "col-sm-7 add-desc-box" },
 	            _react2.default.createElement(
 	              "div",
-	              { className: "modal-content" },
+	              { className: "add-details" },
 	              _react2.default.createElement(
-	                "div",
-	                { className: "modal-header" },
+	                "h5",
+	                { className: "add-title" },
+	                " ",
 	                _react2.default.createElement(
-	                  "button",
-	                  { type: "button", className: "close", "data-dismiss": "modal" },
-	                  _react2.default.createElement(
-	                    "span",
-	                    { "aria-hidden": "true" },
-	                    "\xD7"
-	                  ),
-	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "sr-only" },
-	                    "Close"
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  "h4",
-	                  { className: "modal-title", id: "exampleModalLabel" },
-	                  _react2.default.createElement("i", { className: " icon-map" }),
-	                  " Select your region"
+	                  "a",
+	                  { href: "ads-details.html" },
+	                  "Sony Xperia  dual sim 100% brand new"
 	                )
 	              ),
 	              _react2.default.createElement(
-	                "div",
-	                { className: "modal-body" },
+	                "span",
+	                { className: "info-row" },
+	                " ",
 	                _react2.default.createElement(
-	                  "div",
-	                  { className: "row" },
+	                  "span",
+	                  { className: "add-type business-ads tooltipHere", "data-toggle": "tooltip", "data-placement": "right", title: "Business Ads" },
+	                  "B "
+	                ),
+	                " ",
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "date" },
 	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-sm-12" },
-	                    _react2.default.createElement(
-	                      "p",
-	                      null,
-	                      "Popular cities in ",
-	                      _react2.default.createElement(
-	                        "strong",
-	                        null,
-	                        "New York"
-	                      )
-	                    ),
-	                    _react2.default.createElement("div", { style: { clear: 'both' } }),
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "col-sm-6 no-padding" },
-	                      _react2.default.createElement(
-	                        "select",
-	                        { className: "form-control selecter  ", id: "region-state", name: "region-state" },
-	                        _react2.default.createElement(
-	                          "option",
-	                          { value: true },
-	                          "All States/Provinces"
-	                        ),
-	                        _react2.default.createElement(
-	                          "option",
-	                          { value: "Arizona" },
-	                          "Arizona"
-	                        )
-	                      )
-	                    ),
-	                    _react2.default.createElement("div", { style: { clear: 'both' } }),
-	                    _react2.default.createElement("hr", { className: "hr-thin" })
+	                    "i",
+	                    { className: " icon-clock" },
+	                    " "
 	                  ),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-md-4" },
-	                    _react2.default.createElement(
-	                      "ul",
-	                      { className: "list-link list-unstyled" },
-	                      _react2.default.createElement(
-	                        "li",
-	                        null,
-	                        _react2.default.createElement(
-	                          "a",
-	                          { href: "#", title: "East Meadow" },
-	                          "East Meadow"
-	                        )
-	                      )
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-md-4" },
-	                    _react2.default.createElement(
-	                      "ul",
-	                      { className: "list-link list-unstyled" },
-	                      _react2.default.createElement(
-	                        "li",
-	                        null,
-	                        _react2.default.createElement(
-	                          "a",
-	                          { href: "#", title: "Garden City" },
-	                          "Garden City"
-	                        )
-	                      )
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-md-4" },
-	                    _react2.default.createElement(
-	                      "ul",
-	                      { className: "list-link list-unstyled" },
-	                      _react2.default.createElement(
-	                        "li",
-	                        null,
-	                        _react2.default.createElement(
-	                          "a",
-	                          { href: "#", title: "Oceanside" },
-	                          "Oceanside"
-	                        )
-	                      )
-	                    )
-	                  )
-	                )
+	                  " Today 1:21 pm "
+	                ),
+	                " - ",
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "category" },
+	                  "Electronics "
+	                ),
+	                "- ",
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "item-location" },
+	                  _react2.default.createElement("i", { className: "fa fa-map-marker" }),
+	                  " London "
+	                ),
+	                " "
 	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "col-sm-3 text-right  price-box" },
+	            _react2.default.createElement(
+	              "h2",
+	              { className: "item-price" },
+	              " $ 250 "
+	            ),
+	            _react2.default.createElement(
+	              "a",
+	              { className: "btn btn-danger  btn-sm make-favorite" },
+	              " ",
+	              _react2.default.createElement("i", { className: "fa fa-certificate" }),
+	              " ",
+	              _react2.default.createElement(
+	                "span",
+	                null,
+	                "Featured Ads"
+	              ),
+	              " "
+	            ),
+	            " ",
+	            _react2.default.createElement(
+	              "a",
+	              { className: "btn btn-default  btn-sm make-favorite" },
+	              " ",
+	              _react2.default.createElement("i", { className: "fa fa-heart" }),
+	              " ",
+	              _react2.default.createElement(
+	                "span",
+	                null,
+	                "Save"
+	              ),
+	              " "
 	            )
 	          )
 	        )
@@ -32011,10 +32185,10 @@
 	    }
 	  }]);
 
-	  return PostSearchPage;
+	  return PostInSearch;
 	}(_react2.default.Component);
 
-	exports.default = PostSearchPage;
+	exports.default = PostInSearch;
 
 /***/ }
 /******/ ]);

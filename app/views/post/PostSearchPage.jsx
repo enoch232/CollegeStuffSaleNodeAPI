@@ -1,4 +1,5 @@
 import React from 'react'
+import PostInSearch from './PostInSearch.jsx'
 export default class PostSearchPage extends React.Component{
   render(){
     return(
@@ -171,7 +172,7 @@ export default class PostSearchPage extends React.Component{
                     <div className="tab-filter">
                       <select className="selectpicker" data-style="btn-select" data-width="auto">
                         <option>
-                          Short by
+                          Sort by
                         </option>
                         <option>
                           Price: Low to High
@@ -215,7 +216,7 @@ export default class PostSearchPage extends React.Component{
                       </li>
                       <li>
                         <div className="dropdown">
-                          <a data-toggle="dropdown" className="dropdown-toggle"><i className="caret " /> Short by </a>
+                          <a data-toggle="dropdown" className="dropdown-toggle"><i className="caret " /> Sort by </a>
                           <ul className="dropdown-menu">
                             <li>
                               <a href rel="nofollow">Relevance</a>
@@ -237,6 +238,8 @@ export default class PostSearchPage extends React.Component{
                   <div className="adds-wrapper">
                     <div className="tab-content">
                       <div className="tab-pane active" id="allAds">Loading...</div>
+                        <PostInSearch />
+
                     </div>
                   </div>
                       {/*/.adds-wrapper*/}
