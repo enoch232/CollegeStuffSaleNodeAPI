@@ -1,6 +1,23 @@
 import React from 'react'
 import PostInSearch from './PostInSearch.jsx'
 export default class PostSearchPage extends React.Component{
+  componentDidMount(){
+    console.log("fetching the list of posts")
+    return fetch("http://localhost:3000/api/posts",{
+        method: "GET",
+        headers: {
+          "Authorization":"bearer"+localStorage.getItem("collegestuffsale-webtoken"),
+          "Accept":"application/json",
+          "Content-Type":"application/json"
+        }
+    })
+    .then((response)=>{
+      return response.json()
+    })
+    .then((responseJSON)=>{
+      console.log(responseJSON)
+    })
+  }
   render(){
     return(
       <div>
@@ -282,7 +299,7 @@ export default class PostSearchPage extends React.Component{
         {/* /.main-container */}
         {/* /.wrapper */}
           {/* Modal Change City */}
-        <div className="modal fade" id="selectRegion" tabindex={-1} role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade" id="selectRegion" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">

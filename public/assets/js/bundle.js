@@ -29714,6 +29714,23 @@
 	  }
 
 	  _createClass(PostSearchPage, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      console.log("fetching the list of posts");
+	      return fetch("http://localhost:3000/api/posts", {
+	        method: "GET",
+	        headers: {
+	          "Authorization": "bearer" + localStorage.getItem("collegestuffsale-webtoken"),
+	          "Accept": "application/json",
+	          "Content-Type": "application/json"
+	        }
+	      }).then(function (response) {
+	        return response.json();
+	      }).then(function (responseJSON) {
+	        console.log(responseJSON);
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -30328,7 +30345,7 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'modal fade', id: 'selectRegion', tabindex: -1, role: 'dialog', 'aria-labelledby': 'exampleModalLabel', 'aria-hidden': 'true' },
+	          { className: 'modal fade', id: 'selectRegion', role: 'dialog', 'aria-labelledby': 'exampleModalLabel', 'aria-hidden': 'true' },
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'modal-dialog' },
