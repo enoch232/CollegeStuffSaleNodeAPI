@@ -1,6 +1,12 @@
 import React from 'react'
 import PostInSearch from './PostInSearch.jsx'
 export default class PostSearchPage extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      posts: []
+    }
+  }
   componentDidMount(){
     console.log("fetching the list of posts")
     return fetch("http://localhost:3000/api/posts",{
@@ -14,8 +20,13 @@ export default class PostSearchPage extends React.Component{
     .then((response)=>{
       return response.json()
     })
-    .then((responseJSON)=>{
-      console.log(responseJSON)
+    .then((responseJson)=>{
+      console.log(responseJson)
+      if (responseJson.posts){
+        this.setState({
+          posts: responseJson.posts
+        })
+      }
     })
   }
   render(){
@@ -254,8 +265,12 @@ export default class PostSearchPage extends React.Component{
                   {/* Mobile Filter bar End*/}
                   <div className="adds-wrapper">
                     <div className="tab-content">
-                      <div className="tab-pane active" id="allAds">Loading...</div>
-                        <PostInSearch />
+
+                      <div className="tab-pane active" id="allAds">
+                        {this.state.posts.map((post)=>{
+                          return <PostInSearch post = {post}/>
+                        })}
+                      </div>
 
                     </div>
                   </div>
