@@ -29,7 +29,9 @@ class SignInPage extends React.Component{
       console.log(responseJson)
       if (responseJson.webToken){
         localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken)
-        this.props.router.push('/account')
+        console.log("sign in page is redirecting the page to "+ this.props.route.nextPath)
+        console.log(this.props)
+        this.props.router.push(this.props.route.nextPath)
       }else{
         console.log(responseJson)
       }

@@ -21479,15 +21479,15 @@
 
 	var _PostSearchPage2 = _interopRequireDefault(_PostSearchPage);
 
-	var _AboutUsPage = __webpack_require__(245);
+	var _AboutUsPage = __webpack_require__(246);
 
 	var _AboutUsPage2 = _interopRequireDefault(_AboutUsPage);
 
-	var _FAQPage = __webpack_require__(246);
+	var _FAQPage = __webpack_require__(247);
 
 	var _FAQPage2 = _interopRequireDefault(_FAQPage);
 
-	var _ManagePostsPage = __webpack_require__(247);
+	var _ManagePostsPage = __webpack_require__(248);
 
 	var _ManagePostsPage2 = _interopRequireDefault(_ManagePostsPage);
 
@@ -21509,7 +21509,8 @@
 	    var _this = _possibleConstructorReturn(this, (RouterPage.__proto__ || Object.getPrototypeOf(RouterPage)).call(this, props));
 
 	    _this.state = {
-	      currentUser: ""
+	      currentUser: "",
+	      path: "/account"
 	    };
 	    return _this;
 	  }
@@ -21544,8 +21545,13 @@
 	          console.log("successfully Signed In");
 	          console.log((0, _jwtDecode2.default)(localStorage.getItem("collegestuffsale-webtoken")).user_id);
 	          _this2.setState({ currentUser: (0, _jwtDecode2.default)(localStorage.getItem("collegestuffsale-webtoken")).user_id });
+	          _this2.setState({ path: nextState.location.pathname });
+	          console.log("new path set:" + nextState.location.pathname);
 	        } else {
+	          console.log("new path set:" + nextState.location.pathname);
 	          console.log("Failed");
+	          _this2.setState({ path: nextState.location.pathname });
+	          console.log(_this2.state.path);
 	          _reactRouter.browserHistory.replace('/signin');
 	        }
 	      });
@@ -21560,7 +21566,7 @@
 	        { history: _reactRouter.browserHistory },
 	        _react2.default.createElement(_reactRouter.Route, { path: '/', component: _IndexPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/signup', component: _SignUpPage2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/signin', component: _SignInPage2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/signin', component: _SignInPage2.default, nextPath: this.state.path }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/account', component: _AccountPage2.default, onEnter: this._authenticate.bind(this) }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/new-post', component: function component() {
 	            return _react2.default.createElement(_NewPostPage2.default, { user: _this3.state.currentUser });
@@ -28288,7 +28294,9 @@
 	        console.log(responseJson);
 	        if (responseJson.webToken) {
 	          localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken);
-	          _this2.props.router.push('/account');
+	          console.log("sign in page is redirecting the page to " + _this2.props.route.nextPath);
+	          console.log(_this2.props);
+	          _this2.props.router.push(_this2.props.route.nextPath);
 	        } else {
 	          console.log(responseJson);
 	        }
@@ -29692,7 +29700,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _PostInSearch = __webpack_require__(248);
+	var _PostInSearch = __webpack_require__(245);
 
 	var _PostInSearch2 = _interopRequireDefault(_PostInSearch);
 
@@ -30506,6 +30514,176 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var PostInSearch = function (_React$Component) {
+	  _inherits(PostInSearch, _React$Component);
+
+	  function PostInSearch() {
+	    _classCallCheck(this, PostInSearch);
+
+	    return _possibleConstructorReturn(this, (PostInSearch.__proto__ || Object.getPrototypeOf(PostInSearch)).apply(this, arguments));
+	  }
+
+	  _createClass(PostInSearch, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { className: "item-list" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "cornerRibbons featuredAds" },
+	            _react2.default.createElement(
+	              "a",
+	              { href: "#" },
+	              " Featured Ads"
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "col-sm-2 no-padding photobox" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "add-image" },
+	              _react2.default.createElement(
+	                "span",
+	                { className: "photo-count" },
+	                _react2.default.createElement("i", { className: "fa fa-camera" }),
+	                " 2 "
+	              ),
+	              " ",
+	              _react2.default.createElement(
+	                "a",
+	                { href: "ads-details.html" },
+	                _react2.default.createElement("img", { className: "thumbnail no-margin", src: "images/item/tp/Image00008.jpg", alt: "img" })
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "col-sm-7 add-desc-box" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "add-details" },
+	              _react2.default.createElement(
+	                "h5",
+	                { className: "add-title" },
+	                " ",
+	                _react2.default.createElement(
+	                  "a",
+	                  { href: "ads-details.html" },
+	                  "Sony Xperia  dual sim 100% brand new"
+	                )
+	              ),
+	              _react2.default.createElement(
+	                "span",
+	                { className: "info-row" },
+	                " ",
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "add-type business-ads tooltipHere", "data-toggle": "tooltip", "data-placement": "right", title: "Business Ads" },
+	                  "B "
+	                ),
+	                " ",
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "date" },
+	                  _react2.default.createElement(
+	                    "i",
+	                    { className: " icon-clock" },
+	                    " "
+	                  ),
+	                  " Today 1:21 pm "
+	                ),
+	                " - ",
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "category" },
+	                  "Electronics "
+	                ),
+	                "- ",
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "item-location" },
+	                  _react2.default.createElement("i", { className: "fa fa-map-marker" }),
+	                  " London "
+	                ),
+	                " "
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "col-sm-3 text-right  price-box" },
+	            _react2.default.createElement(
+	              "h2",
+	              { className: "item-price" },
+	              " $ 250 "
+	            ),
+	            _react2.default.createElement(
+	              "a",
+	              { className: "btn btn-danger  btn-sm make-favorite" },
+	              " ",
+	              _react2.default.createElement("i", { className: "fa fa-certificate" }),
+	              " ",
+	              _react2.default.createElement(
+	                "span",
+	                null,
+	                "Featured Ads"
+	              ),
+	              " "
+	            ),
+	            " ",
+	            _react2.default.createElement(
+	              "a",
+	              { className: "btn btn-default  btn-sm make-favorite" },
+	              " ",
+	              _react2.default.createElement("i", { className: "fa fa-heart" }),
+	              " ",
+	              _react2.default.createElement(
+	                "span",
+	                null,
+	                "Save"
+	              ),
+	              " "
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return PostInSearch;
+	}(_react2.default.Component);
+
+	exports.default = PostInSearch;
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 	var AboutUsPage = function (_React$Component) {
 	  _inherits(AboutUsPage, _React$Component);
 
@@ -30696,7 +30874,7 @@
 	exports.default = AboutUsPage;
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31054,7 +31232,7 @@
 	exports.default = FAQPage;
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32036,176 +32214,6 @@
 	}(_react2.default.Component);
 
 	exports.default = ManagePostsPage;
-
-/***/ },
-/* 248 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var PostInSearch = function (_React$Component) {
-	  _inherits(PostInSearch, _React$Component);
-
-	  function PostInSearch() {
-	    _classCallCheck(this, PostInSearch);
-
-	    return _possibleConstructorReturn(this, (PostInSearch.__proto__ || Object.getPrototypeOf(PostInSearch)).apply(this, arguments));
-	  }
-
-	  _createClass(PostInSearch, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "div",
-	        null,
-	        _react2.default.createElement(
-	          "div",
-	          { className: "item-list" },
-	          _react2.default.createElement(
-	            "div",
-	            { className: "cornerRibbons featuredAds" },
-	            _react2.default.createElement(
-	              "a",
-	              { href: "#" },
-	              " Featured Ads"
-	            )
-	          ),
-	          _react2.default.createElement(
-	            "div",
-	            { className: "col-sm-2 no-padding photobox" },
-	            _react2.default.createElement(
-	              "div",
-	              { className: "add-image" },
-	              _react2.default.createElement(
-	                "span",
-	                { className: "photo-count" },
-	                _react2.default.createElement("i", { className: "fa fa-camera" }),
-	                " 2 "
-	              ),
-	              " ",
-	              _react2.default.createElement(
-	                "a",
-	                { href: "ads-details.html" },
-	                _react2.default.createElement("img", { className: "thumbnail no-margin", src: "images/item/tp/Image00008.jpg", alt: "img" })
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            "div",
-	            { className: "col-sm-7 add-desc-box" },
-	            _react2.default.createElement(
-	              "div",
-	              { className: "add-details" },
-	              _react2.default.createElement(
-	                "h5",
-	                { className: "add-title" },
-	                " ",
-	                _react2.default.createElement(
-	                  "a",
-	                  { href: "ads-details.html" },
-	                  "Sony Xperia  dual sim 100% brand new"
-	                )
-	              ),
-	              _react2.default.createElement(
-	                "span",
-	                { className: "info-row" },
-	                " ",
-	                _react2.default.createElement(
-	                  "span",
-	                  { className: "add-type business-ads tooltipHere", "data-toggle": "tooltip", "data-placement": "right", title: "Business Ads" },
-	                  "B "
-	                ),
-	                " ",
-	                _react2.default.createElement(
-	                  "span",
-	                  { className: "date" },
-	                  _react2.default.createElement(
-	                    "i",
-	                    { className: " icon-clock" },
-	                    " "
-	                  ),
-	                  " Today 1:21 pm "
-	                ),
-	                " - ",
-	                _react2.default.createElement(
-	                  "span",
-	                  { className: "category" },
-	                  "Electronics "
-	                ),
-	                "- ",
-	                _react2.default.createElement(
-	                  "span",
-	                  { className: "item-location" },
-	                  _react2.default.createElement("i", { className: "fa fa-map-marker" }),
-	                  " London "
-	                ),
-	                " "
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            "div",
-	            { className: "col-sm-3 text-right  price-box" },
-	            _react2.default.createElement(
-	              "h2",
-	              { className: "item-price" },
-	              " $ 250 "
-	            ),
-	            _react2.default.createElement(
-	              "a",
-	              { className: "btn btn-danger  btn-sm make-favorite" },
-	              " ",
-	              _react2.default.createElement("i", { className: "fa fa-certificate" }),
-	              " ",
-	              _react2.default.createElement(
-	                "span",
-	                null,
-	                "Featured Ads"
-	              ),
-	              " "
-	            ),
-	            " ",
-	            _react2.default.createElement(
-	              "a",
-	              { className: "btn btn-default  btn-sm make-favorite" },
-	              " ",
-	              _react2.default.createElement("i", { className: "fa fa-heart" }),
-	              " ",
-	              _react2.default.createElement(
-	                "span",
-	                null,
-	                "Save"
-	              ),
-	              " "
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return PostInSearch;
-	}(_react2.default.Component);
-
-	exports.default = PostInSearch;
 
 /***/ }
 /******/ ]);
