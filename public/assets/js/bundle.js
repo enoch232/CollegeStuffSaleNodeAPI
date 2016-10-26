@@ -21510,7 +21510,7 @@
 
 	    _this.state = {
 	      currentUser: "",
-	      path: "/account"
+	      afterSignInPath: "/account"
 	    };
 	    return _this;
 	  }
@@ -21545,14 +21545,11 @@
 	          console.log("successfully Signed In");
 	          console.log((0, _jwtDecode2.default)(localStorage.getItem("collegestuffsale-webtoken")).user_id);
 	          _this2.setState({ currentUser: (0, _jwtDecode2.default)(localStorage.getItem("collegestuffsale-webtoken")).user_id });
-	          _this2.setState({ path: nextState.location.pathname });
-	          console.log("new path set:" + nextState.location.pathname);
+	          _this2.setState({ afterSignInPath: nextState.location.pathname });
 	        } else {
-	          console.log("new path set:" + nextState.location.pathname);
 	          console.log("Failed");
-	          _this2.setState({ path: nextState.location.pathname });
-	          console.log(_this2.state.path);
-	          _reactRouter.browserHistory.replace('/signin');
+	          _this2.setState({ afterSignInPath: nextState.location.pathname });
+	          _reactRouter.browserHistory.push('/signin');
 	        }
 	      });
 	    }
@@ -21566,7 +21563,9 @@
 	        { history: _reactRouter.browserHistory },
 	        _react2.default.createElement(_reactRouter.Route, { path: '/', component: _IndexPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/signup', component: _SignUpPage2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/signin', component: _SignInPage2.default, nextPath: this.state.path }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/signin', component: function component() {
+	            return _react2.default.createElement(_SignInPage2.default, { nextPath: _this3.state.afterSignInPath });
+	          } }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/account', component: _AccountPage2.default, onEnter: this._authenticate.bind(this) }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/new-post', component: function component() {
 	            return _react2.default.createElement(_NewPostPage2.default, { user: _this3.state.currentUser });
@@ -28294,9 +28293,7 @@
 	        console.log(responseJson);
 	        if (responseJson.webToken) {
 	          localStorage.setItem("collegestuffsale-webtoken", responseJson.webToken);
-	          console.log("sign in page is redirecting the page to " + _this2.props.route.nextPath);
-	          console.log(_this2.props);
-	          _this2.props.router.push(_this2.props.route.nextPath);
+	          _this2.props.router.push(_this2.props.nextPath);
 	        } else {
 	          console.log(responseJson);
 	        }

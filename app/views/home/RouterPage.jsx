@@ -17,7 +17,7 @@ export default class RouterPage extends React.Component{
     super(props)
     this.state = {
       currentUser: "",
-      path: "/account"
+      afterSignInPath: "/account"
     }
   }
   _checkJWT(cb){
@@ -48,14 +48,11 @@ export default class RouterPage extends React.Component{
         console.log("successfully Signed In")
         console.log(jwtDecode(localStorage.getItem("collegestuffsale-webtoken")).user_id)
         this.setState({currentUser: jwtDecode(localStorage.getItem("collegestuffsale-webtoken")).user_id})
-        this.setState({path: nextState.location.pathname})
-        console.log("new path set:"+ nextState.location.pathname)
+        this.setState({afterSignInPath: nextState.location.pathname})
       }else{
-        console.log("new path set:"+ nextState.location.pathname)
         console.log("Failed")
-        this.setState({path: nextState.location.pathname})
-        console.log(this.state.path);
-        browserHistory.replace('/signin')
+        this.setState({afterSignInPath: nextState.location.pathname})
+        browserHistory.push('/signin')
       }
     })
   }
@@ -64,7 +61,7 @@ export default class RouterPage extends React.Component{
       <Router history={browserHistory}>
         <Route path="/" component={IndexPage}></Route>
         <Route path="/signup" component={SignUpPage}></Route>
-        <Route path="/signin" component={SignInPage} nextPath = {this.state.path}></Route>
+        <Route path="/signin" component={()=>(<SignInPage nextPath = {this.state.afterSignInPath} />)}></Route>
         <Route path="/account" component={AccountPage} onEnter={this._authenticate.bind(this)}></Route>
         <Route path="/new-post" component={()=>(<NewPostPage user = {this.state.currentUser}/>)} onEnter={this._authenticate.bind(this)}></Route>
         <Route path="/aboutus" component={AboutUsPage}></Route>
