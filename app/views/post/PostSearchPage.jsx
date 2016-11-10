@@ -275,9 +275,6 @@ export default class PostSearchPage extends React.Component{
                     </div>
                   </div>
                       {/*/.adds-wrapper*/}
-                  <div className="tab-box  save-search-bar text-center">
-                    <a href><i className=" icon-star-empty" />Save Search</a>
-                  </div>
                 </div>
                 <div className="pagination-bar text-center">
                   <ul className="pagination">
