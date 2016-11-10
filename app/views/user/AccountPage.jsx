@@ -29,10 +29,6 @@ export default class AccountPage extends React.Component{
                               <li><a href="/manage-posts"><i className="icon-docs" /> My Posts <span className="badge">42</span> </a></li>
                               <li><a href="account-favourite-ads.html"><i className="icon-heart" />
                                   Favourite ads <span className="badge">42</span> </a></li>
-                              <li><a href="account-saved-search.html"><i className="icon-star-circled" />
-                                  Saved search <span className="badge">42</span> </a></li>
-                              <li><a href="account-archived-ads.html"><i className="icon-folder-close" />
-                                  Archived ads <span className="badge">42</span></a></li>
                               <li><a href="account-pending-approval-ads.html"><i className="icon-hourglass" /> Pending approval <span className="badge">42</span></a></li>
                             </ul>
                           </div>
@@ -64,16 +60,6 @@ export default class AccountPage extends React.Component{
                       <div className="col-md-7 col-xs-8 col-xxs-12">
                         <div className="header-data text-center-xs">
                           {/* Traffic data */}
-                          <div className="hdata">
-                            <div className="mcol-left">
-                              {/* Icon with red background */}
-                              <i className="fa fa-eye ln-shadow" /></div>
-                            <div className="mcol-right">
-                              {/* Number of visitors */}
-                              <p><a href="#">7000</a> <em>visits</em></p>
-                            </div>
-                            <div className="clearfix" />
-                          </div>
                           {/* revenue data */}
                           <div className="hdata">
                             <div className="mcol-left">
@@ -188,13 +174,13 @@ export default class AccountPage extends React.Component{
                               <div className="form-group">
                                 <label className="col-sm-3 control-label">New Password</label>
                                 <div className="col-sm-9">
-                                  <input type="password" className="form-control" placeholder />
+                                  <input type="password" className="form-control" />
                                 </div>
                               </div>
                               <div className="form-group">
                                 <label className="col-sm-3 control-label">Confirm Password</label>
                                 <div className="col-sm-9">
-                                  <input type="password" className="form-control" placeholder />
+                                  <input type="password" className="form-control" />
                                 </div>
                               </div>
                               <div className="form-group">
