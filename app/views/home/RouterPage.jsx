@@ -11,6 +11,7 @@ import PostSearchPage from '../post/PostSearchPage.jsx'
 import AboutUsPage from './AboutUsPage.jsx'
 import FAQPage from './FAQPage.jsx'
 import ManagePostsPage from '../user/ManagePostsPage.jsx'
+import PostDetailPage from '../post/PostDetailPage.jsx'
 //refactor so that all goes in the '/' and refactor the header and footer, so that it doesnt load up first"
 export default class RouterPage extends React.Component{
   constructor(props){
@@ -68,6 +69,7 @@ export default class RouterPage extends React.Component{
         <Route path="/faq" component={FAQPage}></Route>
         <Route path="/manage-posts" component={ManagePostsPage}></Route>
         <Route path="/search" component={PostSearchPage}></Route>
+        <Route path="/post" component={PostDetailPage}></Route>
       </Router>
     )
   }

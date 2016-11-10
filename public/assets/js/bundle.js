@@ -21491,6 +21491,10 @@
 
 	var _ManagePostsPage2 = _interopRequireDefault(_ManagePostsPage);
 
+	var _PostDetailPage = __webpack_require__(249);
+
+	var _PostDetailPage2 = _interopRequireDefault(_PostDetailPage);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21573,7 +21577,8 @@
 	        _react2.default.createElement(_reactRouter.Route, { path: '/aboutus', component: _AboutUsPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/faq', component: _FAQPage2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/manage-posts', component: _ManagePostsPage2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/search', component: _PostSearchPage2.default })
+	        _react2.default.createElement(_reactRouter.Route, { path: '/search', component: _PostSearchPage2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/post', component: _PostDetailPage2.default })
 	      );
 	    }
 	  }]);
@@ -32153,6 +32158,873 @@
 	}(_react2.default.Component);
 
 	exports.default = ManagePostsPage;
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var PostDetailPage = function (_React$Component) {
+	  _inherits(PostDetailPage, _React$Component);
+
+	  function PostDetailPage() {
+	    _classCallCheck(this, PostDetailPage);
+
+	    return _possibleConstructorReturn(this, (PostDetailPage.__proto__ || Object.getPrototypeOf(PostDetailPage)).apply(this, arguments));
+	  }
+
+	  _createClass(PostDetailPage, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { id: "wrapper" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "main-container" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "ol",
+	                { className: "breadcrumb pull-left" },
+	                _react2.default.createElement(
+	                  "li",
+	                  null,
+	                  _react2.default.createElement(
+	                    "a",
+	                    { href: "#" },
+	                    _react2.default.createElement("i", { className: "icon-home fa" })
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "li",
+	                  null,
+	                  _react2.default.createElement(
+	                    "a",
+	                    { href: "category.html" },
+	                    "All Ads"
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "li",
+	                  null,
+	                  _react2.default.createElement(
+	                    "a",
+	                    { href: "sub-category-sub-location.html" },
+	                    "Electronics"
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "li",
+	                  { className: "active" },
+	                  "Mobile Phones"
+	                )
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "pull-right backtolist" },
+	                _react2.default.createElement(
+	                  "a",
+	                  { href: "sub-category-sub-location.html" },
+	                  " ",
+	                  _react2.default.createElement("i", { className: "fa fa-angle-double-left" }),
+	                  " Back to Results"
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "container" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-9 page-content col-thin-right" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "inner inner-box ads-details-wrapper" },
+	                    _react2.default.createElement(
+	                      "h2",
+	                      null,
+	                      " Xperia\u2122 C3 Dual available",
+	                      _react2.default.createElement(
+	                        "small",
+	                        { className: "label label-default adlistingtype" },
+	                        "Company ad"
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "span",
+	                      { className: "info-row" },
+	                      " ",
+	                      _react2.default.createElement(
+	                        "span",
+	                        { className: "date" },
+	                        _react2.default.createElement(
+	                          "i",
+	                          { className: " icon-clock" },
+	                          " "
+	                        ),
+	                        " Today 1:21 pm "
+	                      ),
+	                      " - ",
+	                      _react2.default.createElement(
+	                        "span",
+	                        { className: "category" },
+	                        "Electronics "
+	                      ),
+	                      "- ",
+	                      _react2.default.createElement(
+	                        "span",
+	                        { className: "item-location" },
+	                        _react2.default.createElement("i", { className: "fa fa-map-marker" }),
+	                        " New York "
+	                      ),
+	                      " "
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "ads-image" },
+	                      _react2.default.createElement(
+	                        "h1",
+	                        { className: "pricetag" },
+	                        " $25"
+	                      ),
+	                      _react2.default.createElement(
+	                        "ul",
+	                        { className: "bxslider" },
+	                        _react2.default.createElement(
+	                          "li",
+	                          null,
+	                          _react2.default.createElement("img", { src: "images/item/tp-big/Image00014.jpg", alt: "img" })
+	                        ),
+	                        _react2.default.createElement(
+	                          "li",
+	                          null,
+	                          _react2.default.createElement("img", { src: "images/item/tp-big/Image00015.jpg", alt: "img" })
+	                        ),
+	                        _react2.default.createElement(
+	                          "li",
+	                          null,
+	                          _react2.default.createElement("img", { src: "images/item/tp-big/Image00013.jpg", alt: "img" })
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { id: "bx-pager" },
+	                        _react2.default.createElement(
+	                          "a",
+	                          { className: "thumb-item-link", "data-slide-index": 0, href: true },
+	                          _react2.default.createElement("img", { src: "images/item/tp/Image00014.jpg", alt: "img" })
+	                        ),
+	                        _react2.default.createElement(
+	                          "a",
+	                          { className: "thumb-item-link", "data-slide-index": 1, href: true },
+	                          _react2.default.createElement("img", { src: "images/item/tp/Image00015.jpg", alt: "img" })
+	                        ),
+	                        _react2.default.createElement(
+	                          "a",
+	                          { className: "thumb-item-link", "data-slide-index": 2, href: true },
+	                          _react2.default.createElement("img", { src: "images/item/tp/Image00013.jpg", alt: "img" })
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "Ads-Details" },
+	                      _react2.default.createElement(
+	                        "h5",
+	                        { className: "list-title" },
+	                        _react2.default.createElement(
+	                          "strong",
+	                          null,
+	                          "Ads Detsils"
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "row" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "ads-details-info col-md-8" },
+	                          _react2.default.createElement(
+	                            "p",
+	                            null,
+	                            "Sony Xperia C3 Dual smartphone with 5.50-inch 720x1280 display powered by 1.2GHz processor alongside 1GB RAM and 8-megapixel rear camera. "
+	                          ),
+	                          _react2.default.createElement(
+	                            "h4",
+	                            null,
+	                            "Camera and video"
+	                          ),
+	                          _react2.default.createElement(
+	                            "ul",
+	                            { className: "list-circle" },
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "5 MP Front-facing camera (720p)"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "Front flash LED"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "Wide view front camera"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "8 MP camera with auto focus"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "HD video recording 1080 p"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "Sony Exmor RS for mobile image sensor"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "HDR (High Dynamic Range) for photos and videos"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "Pulsed LED flash"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "16x digital zoom"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "Superior Auto \u2013 automatic scene selection"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "Geotagging \u2013 add location info to your photos"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "Object tracking \u2013 lock focus on a specific object"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "Red-eye reduction"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "Image capture, supported file format: JPEG"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "Image playback, supported file formats: BMP, GIF, JPEG, PNG; WebP"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "Video capture, supported file formats: 3GPP, MP4"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "Video playback, supported file formats: 3GPP, MP4, M4V, AvI, XVID, WEBM"
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "h4",
+	                            null,
+	                            "Networks"
+	                          ),
+	                          _react2.default.createElement(
+	                            "ul",
+	                            null,
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "GSM GPRS/EDGE (2G)"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "UMTS HSPA (3G)"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              "LTE (4G)"
+	                            )
+	                          )
+	                        ),
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "col-md-4" },
+	                          _react2.default.createElement(
+	                            "aside",
+	                            { className: "panel panel-body panel-details" },
+	                            _react2.default.createElement(
+	                              "ul",
+	                              null,
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  { className: " no-margin " },
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Price:"
+	                                  ),
+	                                  " $ 2,45"
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  { className: "no-margin" },
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Type:"
+	                                  ),
+	                                  " Mobile Mobiles,For sale"
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  { className: "no-margin" },
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Location:"
+	                                  ),
+	                                  " New York "
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  { className: " no-margin " },
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Condition:"
+	                                  ),
+	                                  " New"
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "p",
+	                                  { className: "no-margin" },
+	                                  _react2.default.createElement(
+	                                    "strong",
+	                                    null,
+	                                    "Brand:"
+	                                  ),
+	                                  " Sony"
+	                                )
+	                              )
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "div",
+	                            { className: "ads-action" },
+	                            _react2.default.createElement(
+	                              "ul",
+	                              { className: "list-border" },
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "#" },
+	                                  " ",
+	                                  _react2.default.createElement("i", { className: " fa fa-user" }),
+	                                  " More ads by User "
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "#" },
+	                                  " ",
+	                                  _react2.default.createElement("i", { className: " fa fa-heart" }),
+	                                  " Save ad "
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "#" },
+	                                  " ",
+	                                  _react2.default.createElement("i", { className: "fa fa-share-alt" }),
+	                                  " Share ad "
+	                                )
+	                              ),
+	                              _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                  "a",
+	                                  { href: "#reportAdvertiser", "data-toggle": "modal" },
+	                                  " ",
+	                                  _react2.default.createElement("i", { className: "fa icon-info-circled-alt" }),
+	                                  " Report abuse "
+	                                )
+	                              )
+	                            )
+	                          )
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "content-footer text-left" },
+	                        _react2.default.createElement(
+	                          "a",
+	                          { className: "btn  btn-default", "data-toggle": "modal", href: "#contactAdvertiser" },
+	                          _react2.default.createElement("i", { className: " icon-mail-2" }),
+	                          " Send a message "
+	                        ),
+	                        " ",
+	                        _react2.default.createElement(
+	                          "a",
+	                          { className: "btn  btn-info" },
+	                          _react2.default.createElement("i", { className: " icon-phone-1" }),
+	                          " 01680 531 352 "
+	                        )
+	                      )
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-3  page-sidebar-right" },
+	                  _react2.default.createElement(
+	                    "aside",
+	                    null,
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel sidebar-panel panel-contact-seller" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "panel-heading" },
+	                        "Contact Seller"
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "panel-content user-info" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body text-center" },
+	                          _react2.default.createElement(
+	                            "div",
+	                            { className: "seller-info" },
+	                            _react2.default.createElement(
+	                              "h3",
+	                              { className: "no-margin" },
+	                              "Richard Aki"
+	                            ),
+	                            _react2.default.createElement(
+	                              "p",
+	                              null,
+	                              "Location: ",
+	                              _react2.default.createElement(
+	                                "strong",
+	                                null,
+	                                "New York"
+	                              )
+	                            ),
+	                            _react2.default.createElement(
+	                              "p",
+	                              null,
+	                              " Joined: ",
+	                              _react2.default.createElement(
+	                                "strong",
+	                                null,
+	                                "12 Mar 2009"
+	                              )
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "div",
+	                            { className: "user-ads-action" },
+	                            _react2.default.createElement(
+	                              "a",
+	                              { href: "#contactAdvertiser", "data-toggle": "modal", className: "btn   btn-default btn-block" },
+	                              _react2.default.createElement("i", { className: " icon-mail-2" }),
+	                              " Send a message "
+	                            ),
+	                            " ",
+	                            _react2.default.createElement(
+	                              "a",
+	                              { className: "btn  btn-info btn-block" },
+	                              _react2.default.createElement("i", { className: " icon-phone-1" }),
+	                              " 01680 531 352"
+	                            )
+	                          )
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "panel sidebar-panel" },
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "panel-heading" },
+	                        "Safety Tips for Buyers"
+	                      ),
+	                      _react2.default.createElement(
+	                        "div",
+	                        { className: "panel-content" },
+	                        _react2.default.createElement(
+	                          "div",
+	                          { className: "panel-body text-left" },
+	                          _react2.default.createElement(
+	                            "ul",
+	                            { className: "list-check" },
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              " Meet seller at a public place"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              " Check the item before you buy"
+	                            ),
+	                            _react2.default.createElement(
+	                              "li",
+	                              null,
+	                              " Pay only after collecting the item"
+	                            )
+	                          ),
+	                          _react2.default.createElement(
+	                            "p",
+	                            null,
+	                            _react2.default.createElement(
+	                              "a",
+	                              { className: "pull-right", href: "#" },
+	                              " Know more ",
+	                              _react2.default.createElement("i", { className: "fa fa-angle-double-right" }),
+	                              " "
+	                            )
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "modal fade", id: "reportAdvertiser", tabIndex: -1, role: "dialog" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "modal-dialog" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "modal-content" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "modal-header" },
+	                _react2.default.createElement(
+	                  "button",
+	                  { type: "button", className: "close", "data-dismiss": "modal" },
+	                  _react2.default.createElement(
+	                    "span",
+	                    { "aria-hidden": "true" },
+	                    "\xD7"
+	                  ),
+	                  _react2.default.createElement(
+	                    "span",
+	                    { className: "sr-only" },
+	                    "Close"
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "h4",
+	                  { className: "modal-title" },
+	                  _react2.default.createElement("i", { className: "fa icon-info-circled-alt" }),
+	                  " There's something wrong with this ads?"
+	                )
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "modal-body" },
+	                _react2.default.createElement(
+	                  "form",
+	                  { role: "form" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "form-group" },
+	                    _react2.default.createElement(
+	                      "label",
+	                      { htmlFor: "report-reason", className: "control-label" },
+	                      "Reason:"
+	                    ),
+	                    _react2.default.createElement(
+	                      "select",
+	                      { name: "report-reason", id: "report-reason", className: "form-control" },
+	                      _react2.default.createElement(
+	                        "option",
+	                        { value: true },
+	                        "Select a reason"
+	                      ),
+	                      _react2.default.createElement(
+	                        "option",
+	                        { value: "soldUnavailable" },
+	                        "Item unavailable"
+	                      ),
+	                      _react2.default.createElement(
+	                        "option",
+	                        { value: "fraud" },
+	                        "Fraud"
+	                      ),
+	                      _react2.default.createElement(
+	                        "option",
+	                        { value: "duplicate" },
+	                        "Duplicate"
+	                      ),
+	                      _react2.default.createElement(
+	                        "option",
+	                        { value: "spam" },
+	                        "Spam"
+	                      ),
+	                      _react2.default.createElement(
+	                        "option",
+	                        { value: "wrongCategory" },
+	                        "Wrong category"
+	                      ),
+	                      _react2.default.createElement(
+	                        "option",
+	                        { value: "other" },
+	                        "Other"
+	                      )
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "form-group" },
+	                    _react2.default.createElement(
+	                      "label",
+	                      { htmlFor: "recipient-email", className: "control-label" },
+	                      "Your E-mail:"
+	                    ),
+	                    _react2.default.createElement("input", { type: "text", name: "email", maxLength: 60, className: "form-control", id: "recipient-email" })
+	                  ),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "form-group" },
+	                    _react2.default.createElement(
+	                      "label",
+	                      { htmlFor: "message-text2", className: "control-label" },
+	                      "Message ",
+	                      _react2.default.createElement(
+	                        "span",
+	                        { className: "text-count" },
+	                        "(300) "
+	                      ),
+	                      ":"
+	                    ),
+	                    _react2.default.createElement("textarea", { className: "form-control", id: "message-text2", defaultValue: "" })
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "modal-footer" },
+	                _react2.default.createElement(
+	                  "button",
+	                  { type: "button", className: "btn btn-default", "data-dismiss": "modal" },
+	                  "Cancel"
+	                ),
+	                _react2.default.createElement(
+	                  "button",
+	                  { type: "button", className: "btn btn-primary" },
+	                  "Send Report"
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "modal fade", id: "contactAdvertiser", tabIndex: -1, role: "dialog" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "modal-dialog" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "modal-content" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "modal-header" },
+	                _react2.default.createElement(
+	                  "button",
+	                  { type: "button", className: "close", "data-dismiss": "modal" },
+	                  _react2.default.createElement(
+	                    "span",
+	                    { "aria-hidden": "true" },
+	                    "\xD7"
+	                  ),
+	                  _react2.default.createElement(
+	                    "span",
+	                    { className: "sr-only" },
+	                    "Close"
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "h4",
+	                  { className: "modal-title" },
+	                  _react2.default.createElement("i", { className: " icon-mail-2" }),
+	                  " Contact advertiser "
+	                )
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "modal-body" },
+	                _react2.default.createElement(
+	                  "form",
+	                  { role: "form" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "form-group" },
+	                    _react2.default.createElement(
+	                      "label",
+	                      { htmlFor: "recipient-name", className: "control-label" },
+	                      "Name:"
+	                    ),
+	                    _react2.default.createElement("input", { className: "form-control required", id: "recipient-name", placeholder: "Your name", "data-placement": "top", "data-trigger": "manual", "data-content": "Must be at least 3 characters long, and must only contain letters.", type: "text" })
+	                  ),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "form-group" },
+	                    _react2.default.createElement(
+	                      "label",
+	                      { htmlFor: "sender-email", className: "control-label" },
+	                      "E-mail:"
+	                    ),
+	                    _react2.default.createElement("input", { id: "sender-email", type: "text", "data-content": "Must be a valid e-mail address (user@gmail.com)", "data-trigger": "manual", "data-placement": "top", placeholder: "email@you.com", className: "form-control email" })
+	                  ),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "form-group" },
+	                    _react2.default.createElement(
+	                      "label",
+	                      { htmlFor: "recipient-Phone-Number", className: "control-label" },
+	                      "Phone Number:"
+	                    ),
+	                    _react2.default.createElement("input", { type: "text", maxLength: 60, className: "form-control", id: "recipient-Phone-Number" })
+	                  ),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "form-group" },
+	                    _react2.default.createElement(
+	                      "label",
+	                      { htmlFor: "message-text", className: "control-label" },
+	                      "Message ",
+	                      _react2.default.createElement(
+	                        "span",
+	                        { className: "text-count" },
+	                        "(300) "
+	                      ),
+	                      ":"
+	                    ),
+	                    _react2.default.createElement("textarea", { className: "form-control", id: "message-text", placeholder: "Your message here..", "data-placement": "top", "data-trigger": "manual", defaultValue: "" })
+	                  ),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "form-group" },
+	                    _react2.default.createElement(
+	                      "p",
+	                      { className: "help-block pull-left text-danger hide", id: "form-error" },
+	                      "\xA0 The form is not valid. "
+	                    )
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "modal-footer" },
+	                _react2.default.createElement(
+	                  "button",
+	                  { type: "button", className: "btn btn-default", "data-dismiss": "modal" },
+	                  "Cancel"
+	                ),
+	                _react2.default.createElement(
+	                  "button",
+	                  { type: "submit", className: "btn btn-success pull-right" },
+	                  "Send message!"
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return PostDetailPage;
+	}(_react2.default.Component);
+
+	exports.default = PostDetailPage;
 
 /***/ }
 /******/ ]);
