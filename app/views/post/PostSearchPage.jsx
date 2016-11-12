@@ -144,12 +144,12 @@ export default class PostSearchPage extends React.Component{
                       </h5>
                       <form role="form" className="form-inline ">
                         <div className="form-group col-sm-4 no-padding">
-                          <input type="text" placeholder="$ 2000 " id="minPrice" className="form-control" />
+                          <input type="text" placeholder="$ 50 " id="minPrice" className="form-control" />
                         </div>
                         <div className="form-group col-sm-1 no-padding text-center hidden-xs"> -
                         </div>
                         <div className="form-group col-sm-4 no-padding">
-                          <input type="text" placeholder="$ 3000 " id="maxPrice" className="form-control" />
+                          <input type="text" placeholder="$ 100 " id="maxPrice" className="form-control" />
                         </div>
                         <div className="form-group col-sm-3 no-padding">
                           <button className="btn btn-default pull-right btn-block-xs" type="submit">GO</button>

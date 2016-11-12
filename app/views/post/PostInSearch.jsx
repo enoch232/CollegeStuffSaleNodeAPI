@@ -26,7 +26,7 @@ export default class PostInSearch extends React.Component{
           </div>
           {/*/.add-desc-box*/}
           <div className="col-sm-3 text-right  price-box">
-            <h2 className="item-price">{this.props.post.price}</h2>
+            <h2 className="item-price">$ {this.props.post.price}</h2>
             <a className="btn btn-danger  btn-sm make-favorite"> <i className="fa fa-certificate" /> <span>Featured Ads</span> </a> <a className="btn btn-default  btn-sm make-favorite"> <i className="fa fa-heart" /> <span>Save</span> </a>
           </div>
           {/*/.add-desc-box*/}

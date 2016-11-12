@@ -29954,7 +29954,7 @@
 	                        _react2.default.createElement(
 	                          'div',
 	                          { className: 'form-group col-sm-4 no-padding' },
-	                          _react2.default.createElement('input', { type: 'text', placeholder: '$ 2000 ', id: 'minPrice', className: 'form-control' })
+	                          _react2.default.createElement('input', { type: 'text', placeholder: '$ 50 ', id: 'minPrice', className: 'form-control' })
 	                        ),
 	                        _react2.default.createElement(
 	                          'div',
@@ -29964,7 +29964,7 @@
 	                        _react2.default.createElement(
 	                          'div',
 	                          { className: 'form-group col-sm-4 no-padding' },
-	                          _react2.default.createElement('input', { type: 'text', placeholder: '$ 3000 ', id: 'maxPrice', className: 'form-control' })
+	                          _react2.default.createElement('input', { type: 'text', placeholder: '$ 100 ', id: 'maxPrice', className: 'form-control' })
 	                        ),
 	                        _react2.default.createElement(
 	                          'div',
@@ -30564,6 +30564,7 @@
 	            _react2.default.createElement(
 	              "h2",
 	              { className: "item-price" },
+	              "$ ",
 	              this.props.post.price
 	            ),
 	            _react2.default.createElement(
